@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="kurtosis.html">
+<link rel="next" href="selvtest.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.1</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.2</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.3</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.4</b> Modus</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="medianen-kvartiler-og-fraktilen.html"><a href="medianen-kvartiler-og-fraktilen.html"><i class="fa fa-check"></i><b>4</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="medianen-kvartiler-og-fraktilen.html"><a href="medianen-kvartiler-og-fraktilen.html#fraktiler"><i class="fa fa-check"></i><b>4.0.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="skvhed.html"><a href="skvhed.html"><i class="fa fa-check"></i><b>5</b> Skævhed</a></li>
+<li class="chapter" data-level="6" data-path="kurtosis.html"><a href="kurtosis.html"><i class="fa fa-check"></i><b>6</b> Kurtosis</a></li>
+<li class="chapter" data-level="7" data-path="sprgsmal-deskriptiv-statistik.html"><a href="sprgsmal-deskriptiv-statistik.html"><i class="fa fa-check"></i><b>7</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="8" data-path="selvtest.html"><a href="selvtest.html"><i class="fa fa-check"></i><b>8</b> Selvtest</a></li>
+<li class="chapter" data-level="9" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>9</b> Normalfordelingen</a></li>
+<li class="chapter" data-level="10" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html"><i class="fa fa-check"></i><b>10</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>10.0.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.2" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-1"><i class="fa fa-check"></i><b>10.0.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.3" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-2"><i class="fa fa-check"></i><b>10.0.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.4" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-3"><i class="fa fa-check"></i><b>10.0.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.5" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-4"><i class="fa fa-check"></i><b>10.0.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.6" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>10.0.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="10.0.7" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>10.0.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="10.0.8" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>10.0.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="normalfraktildiagram.html"><a href="normalfraktildiagram.html"><i class="fa fa-check"></i><b>11</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="12" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html"><i class="fa fa-check"></i><b>12</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="12.0.1" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>12.0.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="12.0.2" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>12.0.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="12.0.3" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>12.0.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="12.0.4" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>12.0.4</b> Den centrale grænseværdisætning CLT</a></li>
+<li class="chapter" data-level="12.1" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#frihedsgrader"><i class="fa fa-check"></i><b>12.1</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="12.2" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#t-fordelingen"><i class="fa fa-check"></i><b>12.2</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>13</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="13.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>13.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="13.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>13.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="13.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>13.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sprgsmal-deskriptiv-statistik" class="section level1">
+<h1><span class="header-section-number">Kapitel 7</span> Spørgsmål deskriptiv statistik</h1>
+<details>
+<p><summary>Spørgsmål deskriptiv statistik</summary>
+<strong>1.</strong> Hvad bliver medianen for datasættet {2,5,2,5,3,4}?<br />
+<strong>2.</strong> Hvad bliver 25% fraktilen for datasættet {2,5,2,5,3,4}?<br />
+<strong>3.</strong> Hvad bliver 1. kvartil for datasættet {2,5,2,5,3,4}?<br />
+<strong>4.</strong> Hvad bliver 2. kvartil for datasættet {2,5,2,5,3,4}?<br />
+<strong>5.</strong> Hvad bliver 0.75 fraktilen for datasættet {2,5,2,5,3,4}?<br />
+<strong>6.</strong> Du er nystartet porteføljeforvalter i private banking afdelingen i en større bank, du forestår forvaltningen af 10 kunders formuer. I antal tusinde kroner udgør porteføljerne: {344,421,293,459,228,391,375,377,318,428}. Du er fredag aften på Victor i dit Tiger suit. Under cocktails i baren falder du i snak med en ældre svensk mand, Ingvar Kamprad. Han er meget imponeret over dine prognoser og investeringsforslag. Mandag morgen kontakter en af hans medarbejdere dig, Ingvar Kamprad ønsker du skal forvalte en formue på 2 mia. kr. altså 2.000.000 tusinde kr. for ham.
+Hvorledes vil du bedst beskrive din typiske klient ved medianen eller middelværdien?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar deskriptiv statistik </summary>
+<strong>1.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. Der er 2 midterste observationer 3 og 4, {2,2,<strong>3</strong>,<strong>4</strong>,5,5}, gennemsnittet af disse er 3.5
+Medianen bliver altså 3.5<br />
+<strong>2.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 25% fraktilen bliver {2,<strong>2</strong>,3,4,5,5}<br />
+<strong>3.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 1. kvartil bliver {2,<strong>2</strong>,3,4,5,5}<br />
+<strong>4.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 2. kvartil bliver {2,2,<strong>3</strong>,<strong>4</strong>,5,5} <span class="math inline">\(\frac{3+4}{2}=3.5\)</span><br />
+<strong>5.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 0.75 fraktilen bliver {2,2,3,4,<strong>5</strong>,5}<br />
+<strong>6.</strong> Middelværdi og median for den gamle portefølje er henholdsvis 363 400 og 376 000.
+Middelværdi og median for den ny portefølje er henholdsvis 182 148 545 og 377 000.<br />
+Den gennemsnitlige porteføljeværdi, er steget voldsomt efter den nye superklient, men den typiske klient beskrives her bedst ved medianen. Dette skyldes medianen ikke påvirkes væsentligt af denne nye store kunde, vi kan kalde denne observation for en outlier. Medianen er altså mere stabil overfor outliers i forhold til middelværdien.</p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Forbes 400 rigeste i USA formue</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlYTRWVWozb09PRTQ">Forbes 400 2014 RICH US</a>, filen indeholder data vedr. de 400 rigeste amerikanere i 2014. Formuen worth er opgjort i antal milliarder USD, de følgende spørgsmål relaterer sig udelukkende til denne variabel.</p>
+<p><strong>1.</strong> Hvilken type variabel er variablen worth?<br />
+<strong>2.</strong> Hvad er den gennemsnitlige formue for de 400 rigeste?<br />
+<strong>3.</strong> Hvad er medianen for de 400 rigeste?<br />
+<strong>4.</strong> Hvad er fordelingens skævhed?<br />
+<strong>5.</strong> Hvad er 3. kvartil?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden?<br />
+<strong>7.</strong> 10% af de rigeste velhavere har en formue der er større end?<br />
+<strong>8.</strong> 2.5% af de rigeste velhavere har en formue der er større end?<br />
+<strong>9.</strong> 90% af de fattigste velhavere har en formue der er mindre end?<br />
+<strong>10</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12</strong> Hvad er variationsbredden?</p>
+</details>
+<br>
+<details>
+<p><summary>Svar Forbes 400 rigeste i USA formue</summary></p>
+<p><strong>1.</strong> Variablen worth er en kvanitativ, kontinuert variabel, ratioskala.<br />
+<strong>2.</strong> Den gennemsnitlige formue er 3.81 mia. USD<br />
+<strong>3.</strong> Medianen for variablen worth er 2.1 mia. USD<br />
+<strong>4.</strong> Fordelingens skævhed er 4.98, fordelingen er som vi vel ville forvente klart højreskæv. Der er velhavere med meget store formuer, dvs. outliers med høje værdier, vanvittigt rige mennesker, som fx Bill Gates, Warren Buffet etc. disse danner en hale mod højre.<br />
+<strong>5.</strong> 3. kvartil er 3.4.<br />
+<strong>6.</strong> Kvartilafstanden er 1.9 mia. USD, størrelsen findes som 3. kvartil minus 1. kvartil. 50% af velhaverne ligger i et spænd på 1.9 mia. USD<br />
+<strong>7.</strong> 10% af velhaverne har en formue der er større end 7 mia. USD, her skal vi bestemme 90% fraktilen, denne fremgår direkte af Freestat.<br />
+<strong>8.</strong> 2.5% af velhaverne har en formue der er større end 20.51 mia. USD, her skal vi bestemme 97.5% fraktilen, denne fremgår direkte af Freestat.<br />
+<strong>9.</strong> 90% af velhaverne har en formue der er mindre end 7 mia. USD, her skal vi bestemme 90% fraktilen, denne fremgår direkte af Freestat, dette er samme svar som i spørgsmål 7.<br />
+<strong>10</strong> Fordelingen er klart spids, da kurtosis er meget høj 34.92<br />
+<strong>11</strong> Fordelingen er pr. definition leptokurtisk, da kurtosis er meget høj 34.92<br />
+<strong>12</strong> Variationsbredden findes som den rigeste minus den fattigste milliardær, variationsbredden bliver altså 59-1.05 = 57.95</p>
+<p>Vi kan da også se af histgrammet nedenfor at fordelingen er meget højreskæv og spids:</p>
+<p><img src="bookdown-demo_files/figure-html/ForbesWorth-hist1-1.svg" width="864" /></p>
+<p>Herunder ses det output man ville generere i Freestat.</p>
+<p><img src="img/deskriptivForbes400worth.png" alt="deskriptivForbes400worth.png" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Forbes 400 rigeste amerikanere</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlYTRWVWozb09PRTQ">Forbes 400 2014 RICH US</a>, filen indeholder data vedr. de 400 rigeste amerikanere i 2014. Vi vil i de næste spørgsmål se på fordelingen af variablen alder, pas på denne variabel er ikke komplet, sørg for at fjerne observationer med manglende data. Der er 2 personer, for hvem man ikke har indhentet oplysninger om alder.</p>
+<strong>1.</strong> Er datasættet bivariat?<br />
+<strong>2.</strong> Hvad er den gennemsnitlige alder for de 400 rigeste?<br />
+<strong>3.</strong> Hvad er medianen for alder?<br />
+<strong>4.</strong> Hvad er aldersfordelingens skævhed?<br />
+<strong>5.</strong> Hvad er 3. kvartil for Age?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden for Age?<br />
+<strong>7.</strong> 25% af af velhaverne er ældre end?<br />
+<strong>8.</strong> 2.5% af de yngste velhavere er yngre end?<br />
+<strong>9.</strong> 0.5% er yngre end?<br />
+<strong>10.</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11.</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12.</strong> Hvad er aldersspændet?
+</details>
+<br>
+<details>
+<p><summary>Svar Forbes 400 rigeste amerikanere</summary></p>
+<p><strong>1.</strong> Nej datasættet er ikke bivariat men multivariat.<br />
+<strong>2.</strong> Den gennemsnitlige alder for de 400 rigeste er 65.35 år.<br />
+<strong>3.</strong> Medianen for alder er 66 år.<br />
+<strong>4.</strong> Aldersfordelingens skævhed -0.14 fordelingen kan derfor betegnes som symmetrisk.<br />
+<strong>5.</strong> 3. kvartil for Age er 74 år.<br />
+<strong>6.</strong> Kvartilafstanden for Age er 18 år.<br />
+<strong>7.</strong> 25% af af velhaverne er ældre end 74 år.<br />
+<strong>8.</strong> 2.5% af de yngste velhavere er yngre end 42 år.<br />
+<strong>9.</strong> 0.5% er ynrgre end 27.99 år.<br />
+<strong>10.</strong> Fordelingen er klokkeformet da kurtosis er -0.18 dvs meget tæt på 0.<br />
+<strong>11.</strong> Er fordelingen mesokurtisk, jvf. spørgsmål 10.<br />
+<strong>12.</strong> Aldersspændet er 69</p>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_bin).
+
+## Warning: Removed 2 rows containing non-finite values (stat_bin).</code></pre>
+<p><img src="bookdown-demo_files/figure-html/ForbesAge-hist-1.svg" width="864" /></p>
+<p>Herunder ses det output man ville generere i Freestat.</p>
+<p><img src="img/deskriptivForbes400Age.png" alt="deskriptivForbes400Age.png" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål BNP 2015 for verden på lande i millioner USD.</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlamdFSkk4SWU4eWM">GDP2015</a>. Besvar følgende spørgsmål for variablen BNP/GDP. BNP bruttonationalproduktet er værdien af de varer og ydelser som et land producerer.</p>
+<p><strong>1.</strong> Hvilken type variabel er variablen GDP?<br />
+<strong>2.</strong> Hvad er det gennemsnitlige GDP for landene?<br />
+<strong>3.</strong> Hvad er medianen for landene?<br />
+<strong>4.</strong> Hvad er fordelingens skævhed, er denne som du ville have forventet?<br />
+<strong>5.</strong> Hvad er 3. kvartil?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden?<br />
+<strong>7.</strong> 25% af landene med størst produktion, har et BNP der er større end?<br />
+<strong>8.</strong> 2.5% af landene med mindst produktion, har et BNP der er mindre end?<br />
+<strong>9.</strong> 90% af landene med mindst produktion, har et BNP der er mindre end?<br />
+<strong>10</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12</strong> Hvad er variationsbredden?</p>
+</details>
+<br>
+<details>
+<p><summary>Svar BNP 2015 for verden på lande i millioner USD.</summary></p>
+<p><strong>1.</strong> Variablen GDP er en kvanitativ, kontinuert variabel, ratioskala.<br />
+<strong>2.</strong> Hvad er det gennemsnitlige GDP for landene 375027.63 mio USD.<br />
+<strong>3.</strong> Medianen for variablen GDP er 27529.25 mio USD.<br />
+<strong>4.</strong> Fordelingens skævhed er 8.83<br />
+<strong>5.</strong> 3. kvartil er 184772.4 mio USD.<br />
+<strong>6.</strong> Hvad er Kvartilafstanden 178154.72 mio USD.<br />
+<strong>7.</strong> 25% af landene med størst produktion, har et BNP der er større end 184772.4 mio USD.<br />
+<strong>8.</strong> 2.5% af landene med mindst produktion, har et BNP der er mindre end 310.84 mio USD.<br />
+<strong>9.</strong> 90% af landene med mindst produktion, har et BNP der er mindre end 620868.55 mio USD.<br />
+<strong>10</strong> Fordelingen er klart spids, der er rigtig mange lande med et mindre BNP, mens vi har en gruppe lande med forholdsmæssig høj produktion hvilket som ses af histogrammet giver en meget spids fordeling.<br />
+<strong>11</strong> Er fordelingen derfor leptokurtisk da den er spids.<br />
+<strong>12</strong> Variationsbredden er forskellen mellem det landet med højeste og laveste produktion, dvs. 18036648-32.67 =18036615.33 mio USD.</p>
+<p>Herunder ses histogrammet for BNP for forskellige lande, vi kan af histogrammet se at fordelingen er højreskæv og leptokurtisk. Der er klare outliers fx USA.</p>
+<img src="bookdown-demo_files/figure-html/GDP-hist-1.svg" width="864" />
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Danske virksomheder egenkapital.</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlVmxHTDltNk1VSG8">VIRKSOMHEDER-DK</a>, der viser data for 369 danske virksomheder med ekstern revision. Der er således en overvægt af virksomheder af en vis størrelse, hvorfor samtlige beløb er angivet i antal 1000 DKK. Besvar følgende spørgsmål for variablen egenkapital i antal 1000 DKK.</p>
+<strong>1.</strong> Hvilken type variabel er variablen egenkapital?<br />
+<strong>2.</strong> Hvad er det gennemsnitlige egenkapital for virksomhederne?<br />
+<strong>3.</strong> Hvad er medianen for egenkapital?<br />
+<strong>4.</strong> Hvad er fordelingens skævhed, er denne som du ville have forventet?<br />
+<strong>5.</strong> Hvad er 3. kvartil?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden?<br />
+<strong>7.</strong> 25% af de mest velpolstrede virksomheder, har en egenkapital der er større end?<br />
+<strong>8.</strong> 2.5% af de mindst velpolstrede virksomheder, har en egenkapital der er mindre end?<br />
+<strong>9.</strong> 90% af virksomhederne med mindst egenkapital, har en egenkapital der er mindre end?<br />
+<strong>10</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12</strong> Hvad er variationsbredden?
+</details>
+<br>
+<details>
+<p><summary>Svar Danske virksomheder egenkapital.</summary></p>
+<p><strong>1.</strong> Variablen egenkapital er en kvanitativ, kontinuert variabel, ratioskala.<br />
+<strong>2.</strong> Hvad er det gennemsnitlige egenkapital for virksomhederne 155327.97 DKK.<br />
+<strong>3.</strong> Medianen for variablen egenkapital er 26054 1000 DKK.<br />
+<strong>4.</strong> Fordelingens skævhed er 12.28<br />
+<strong>5.</strong> 3. kvartil er 113453 1000 DKK.<br />
+<strong>6.</strong> Hvad er Kvartilafstanden 112169 1000 DKK.<br />
+<strong>7.</strong> 25% af de mest velpolstrede virksomheder, har en egenkapital der er større end 113453 1000 DKK.<br />
+<strong>8.</strong> 2.5% af de mindst velpolstrede virksomheder, har en egenkapital der er mindre end 116.6 DKK.<br />
+<strong>9.</strong> 90% af virksomhederne med mindst egenkapital, har en egenkapital der er mindre end 229359.6 1000 DKK.<br />
+<strong>10</strong> Fordelingen er klart spids med positiv kurtosis.<br />
+<strong>11</strong> Fordelingen derfor leptokurtisk da den er spids.<br />
+<strong>12</strong> Variationsbredden er forskellen mellem det virksomheden med højeste og laveste egenkapital, dvs. 10712042-37 =10712005 1000 DKK.</p>
+<p>Herunder ses histogrammet for egenkapital for de danske virksomheder i antal 1000 DKK, vi kan af histogrammet se at fordelingen er højreskæv og leptokurtisk. Der er klare outliers, dvs store etablerede virksomheder med megen egenkapital.</p>
+<img src="bookdown-demo_files/figure-html/egenkapital-1.svg" width="864" />
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Diskussions spørgsmål til dagsafkast på danske aktier.</summary></p>
+<!-- [DK aktiekurser.xls hentes her](https://www.dropbox.com/s/8rxorw99odikion/DK%20aktiekurser.xls?dl=01) -->
+<p>Data for <a href="https://www.dropbox.com/s/yfkk73fg9735pis/DK%20aktiekurser.xlsx?dl=1">DK aktiekurser.xlsx hentes her</a></p>
+<p>Man siger ofte at kursfaldet ved en korrektion, er hurtigere og voldsommere end stigningen i et positivt marked. Kan man baseret på data for aktierne, konkludere at dette synes at være tilfældet?</p>
+<p>Hvorfor kan en portefølje, der ikke er volatil (dvs. porteføljen har en lille standardafvigelse), være en fordel for den risikoaverse investor?</p>
+</details>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="kurtosis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="selvtest.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

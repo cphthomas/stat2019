@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="normalfordelingen.html">
+<link rel="next" href="hypotesetests-middelvrdi.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.1.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.5</b> Modus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.2</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.2.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.3</b> Skævhed</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.4</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.5</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.6</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="konfidensintervaller" class="section level1">
+<h1><span class="header-section-number">Kapitel 5</span> Konfidensintervaller</h1>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337810" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/257603202" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Konfidensintervallet også kaldet KI eller CI (engelsk), fortæller os, baseret på en simpelt tilfældigt udvalgt stikprøve, med en bestemt konfidens- eller sikkerhed, indenfor hvilken nedre og øvre grænse, en populationsparameter ligger.</p>
+<p>Vi taler om et 95% konfidensniveau, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i konfidensintervallet (populationsparameteren kan fx. være andelen, middelværdien eller standardafvigelsen i populationen). Sandsynligheden for at populationens parameter, ikke ligger i konfidensintervallet er 5%, dette kalder vi signifikansniveauet og betegner med <span class="math inline">\(\alpha\)</span>. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores konfidensinterval. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.</p>
+<div id="konfidensinterval-for-middelvrdien" class="section level3">
+<h3><span class="header-section-number">5.0.1</span> Konfidensinterval for middelværdien</h3>
+<p>Vi bestemmer nedre og øvre grænse for konfidensintervallet, når vi ikke kender populationens standardafvigelse <span class="math inline">\(\sigma\)</span> og estimerer denne vha. S altså <span class="math inline">\(\hat{\sigma}\)</span>, ved hjælp af følgende (bliv ikke bange software beregner grænserne for os) formel:</p>
+<p><span class="math display">\[(1-\alpha)\ KI=\left[\bar{X} - t_{1-\frac{\alpha}{2}}\cdot \frac{s}{\sqrt[]{n}};\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}\right]\]</span></p>
+<p>Hvor <span class="math inline">\(t_{1-\frac{\alpha}{2}}\)</span> er <span class="math inline">\(1-\alpha\)</span> fraktilen for t-fordelingen. En forudsætning for at benytte ovennævnte fordeling, ved små stikprøver (n ca. mindre end 30), er at populationen er appoximativt (tilnærmelsesvist) normalfordelt. Man kan fx. teste normaliteten af populationen, ved at undersøge om observationerne fra stikprøven ligger pænt i et normalfraktildiagram. Er populationen ikke normal, kan man altså benytte en større stikprøve.</p>
+<p><img src="img/crop-realty-graph-diagram.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>En ejendomsmægler, der ønsker at vide, hvor langt kunderne har til nærmeste filial, indsamler en repræsentativ
+stikprøve ved 200 respondender. Det viser sig, at den gennemsnitlige afstand er 748 meter i stikprøven. Hvis mægleren ønsker at vide hvor lang den gennemsnitlige afstand i populationen til nærmeste filial er med en bestemt sikkerhed, kan han beregne et konfidensinterval. Det er klart man ikke kan få en sikkerhed på 100%, man har jo kun en stikprøve, men man beregner ofte et 95% konfidensinterval. Hvis standard afvigelsen er 102 meter, kan han nu ved ovenstående formel bestemme et 95% konfidensinterval.</p>
+<p>Han ved at når han har beregnet formlen kan han sætte de nedre og øvre grænser for konfidensintervallet ind i nedenstående sætning:</p>
+<p><em>Vi kan med 95% sikkerhed sige at den gennemsnitlige afstand til filialen, for kunderne i populationen ligger mellem nedre bla bla og øvre bla bla meter</em></p>
+<p>Vi bestemmer nedre grænse for 95% KI ved:</p>
+<p><span class="math display">\[\bar{X} - t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
+<span class="math display">\[748-1.972\cdot \frac{102}{\sqrt[]{200}}=733.7773\]</span></p>
+<p>Hvor vi har benyttet 97.5% fraktilen for t-fordelingen med <span class="math inline">\(n-1=199\)</span> frihedsgrader denne er 1.972, bemærk denne er ikke langt fra 97.5% fraktilen for z-fordelingen 1.96, når vi har en stikprøve på 200.</p>
+<p>Vi bestemmer tilsvarende øvre grænse for 95% KI ved:</p>
+<p><span class="math display">\[\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
+<span class="math display">\[748+1.972\cdot \frac{102}{\sqrt[]{200}}=762.2227\]</span></p>
+<p><em>Vi kan med 95% sikkerhed sige at den gennemsnitlige afstand til filialen, for kunderne i populationen ligger mellem 733.7773 og 762.2227 meter</em></p>
+<div id="middelvrdi-standardafvigelse-ki-freestat" class="section level4">
+<h4><span class="header-section-number">5.0.1.1</span> Middelværdi standardafvigelse KI Freestat</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226077779" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="fejlmargin-teori" class="section level4">
+<h4><span class="header-section-number">5.0.1.2</span> Fejlmargin teori</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337972" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="fejlmargin-ved-middelvrdi" class="section level4">
+<h4><span class="header-section-number">5.0.1.3</span> Fejlmargin ved middelværdi</h4>
+<p>Fejlmarginen er den halve længde af konfidensintervallet, denne kan altså i forrige eksempel beregnes som:</p>
+<p><span class="math display">\[\frac{762.2227-733.7773}{2}=14.2227\]</span></p>
+<p>Vi kan også udregne fejlmarginen ved formlen:</p>
+<p><span class="math display">\[1.972\cdot \frac{102}{\sqrt[]{200}}=14.2227\]</span></p>
+<p>Vi bruger t-fordelingen når vi ikke kender standardafvigelsen <span class="math inline">\(\sigma\)</span> for populationen. Hvis standardafvigelsen <span class="math inline">\(\sigma\)</span> for populationen er kendt bruger vi standard normalfordelingen vi kalder også denne z-fordelingen. Er stikprøven stor kan vi ligeledes bruge z-fordelingen. Forskellen på z-fordelingen og t-fordelingen er at t-fordelingen har federe haler i forhold til z-fordelingens klokkeform. I Figuren til venstre er forskellen mellem disse indtegnet.</p>
+<p>KI beregnes ved z-fordelingen som:</p>
+<p><span class="math display">\[(1-\alpha)\ KI=\left[\bar{X} - z_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}};\bar{X} + z_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}\right]\]</span></p>
+</div>
+</div>
+<div id="eksempler-konfidensinterval-middelvrdi" class="section level3">
+<h3><span class="header-section-number">5.0.2</span> Eksempler konfidensinterval middelværdi</h3>
+<div id="tryg-aktien-1" class="section level4">
+<h4><span class="header-section-number">5.0.2.1</span> Tryg aktien</h4>
+<p>Hent seneste data for dagsafkastet i procent på trygaktien <a href="https://www.dropbox.com/s/yfkk73fg9735pis/DK%20aktiekurser.xlsx?dl=1">her DK aktiekurser.xls</a></p>
+<p>Vi bestemmer nedre grænse for 95% KI ved:</p>
+<p><span class="math display">\[\bar{X} - t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
+<span class="math display">\[0.0775481 - 1.9661\cdot \frac{0.9848608}{\sqrt[]{387}}=\]</span>
+<span class="math display">\[-0.0209\]</span></p>
+<p>Hvor vi har benyttet 97.5% fraktilen for t-fordelingen med 386 frihedsgrader denne er 1.9661, bemærk denne er ikke langt fra 97.5% fraktilen for z-fordelingen 1.96, når vi har en stikprøve på 387</p>
+<p>Vi bestemmer tilsvarende øvre grænse for 95% KI ved:</p>
+<p><span class="math display">\[\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
+<span class="math display">\[0.0775481 + 1.9661\cdot \frac{0.9848608}{\sqrt[]{387}}=\]</span>
+<span class="math display">\[0.176\]</span></p>
+<p>Vi kan altså med 95% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0209% og 0.176%.</p>
+<p>Tilsvarende bestemmer vi 90% KI for Tryg aktien:</p>
+<p>Vi kan altså med 90% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.005% og 0.1601%.</p>
+<p>99% KI for Tryg aktien bliver:</p>
+<p>Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.052% og 0.2071%.</p>
+</div>
+</div>
+<div id="sprgsmal-konfidensinterval-og-fejlmargin" class="section level2">
+<h2><span class="header-section-number">5.1</span> Spørgsmål konfidensinterval og fejlmargin</h2>
+<br>
+<details>
+<p><summary>Spørgsmål konfidensinterval og fejlmargin</summary></p>
+<p>Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6%</p>
+<p><strong>1.</strong> Hvad bliver 95% konfidensintervallet for middelværdien i populationen, som er alle handelsdage for aktien?</p>
+<p><strong>2.</strong> Hvor stor skal stikprøven være for at fejlmarginen er 0.1?</p>
+<strong>3.</strong> Hvor stor skal stikprøven være for at fejlmarginen er 0.1, hvis vi kender populationen, og denne er 500 handelsdage?
+</details>
+<br>
+<details>
+<p><summary>Svar konfidensinterval og fejlmargin</summary></p>
+<p>Vi har ikke rådata for de 80 handelsdage, derfor må vi i stedet benytte beregnede data i Freestat fanen Middelværdi standardafvigelse.</p>
+<p><strong>1.</strong> Vi kan med 95% sikkerhed sige at middelværdien i populationen <span class="math inline">\(\mu\)</span> ligger mellem 0.52% og 0.71%. Den ukendte middelværdi blandt alle handelsdage ligger med 95% sikkerhed mellem -0.08% og 0.18%</p>
+<p><img src="img/stdafvKI.png" alt="stdafvKI" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vi kan se Freestat beregner konfidensintervallet KI i celle U6 og U7, ligeledes står en kort sætning i celle T18, der beskriver konfidensintervallet.</p>
+<p><strong>2.</strong> Stikprøven skal mindst være 139 handelsdage for at fejlmarginen bliver 0.1 eller derunder. Bemærk for at finde stikprøvestørrelsen skrives ønsket fejlmargin i celle U12 i Freestat.</p>
+<p><img src="img/kimargin.png" alt="kimargin" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p><strong>3.</strong> Stikprøven skal mindst være 127 handelsdage for at fejlmarginen bliver 0.1 eller derunder, når populationen er kendt og mindre end 500 handelsdage. Pas meget på hvis du skriver i gule felter fx. celle V6, slet tallene bagefter ellers korrigeres for den mindre populationen i alle følgende beregninger.</p>
+<p><img src="img/kimarginkendt.png" alt="kimarginkendt" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål konfidensinterval</summary></p>
+<p>Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt antal års uddannelse EDUCATION. Datasættet kan hentes her <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRENKWWxlNlBXbmM">bankdata</a><br />
+<strong>1.</strong> Bestem 90% Konfidensintervallet for middelværdien<br />
+<strong>2.</strong> Bestem 95% Konfidensintervallet for middelværdien<br />
+<strong>3.</strong> Bestem 99% Konfidensintervallet for middelværdien</p>
+</details>
+<br>
+<details>
+<p><summary>Svar konfidensinterval</summary></p>
+<p><strong>1.</strong> Antal års uddannelse i populationen ligger med 90% sikkerhed mellem 13.27 og 13.71 år</p>
+<p><img src="img/stdKI90.png" alt="stdKI90" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p><strong>2.</strong> Antal års uddannelse i populationen ligger med 95% sikkerhed mellem 13.23 og 13.75 år</p>
+<p><img src="img/stdKI95.png" alt="stdKI95" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p><strong>3.</strong> Antal års uddannelse i populationen ligger med 99% sikkerhed mellem 13.15 og 13.83 år</p>
+<p><img src="img/stdKI99.png" alt="stdKI99" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+</div>
+<div id="konfidensinterval-for-standardafvigelsen" class="section level2">
+<h2><span class="header-section-number">5.2</span> Konfidensinterval for standardafvigelsen</h2>
+<p>Ligesom vi kan sige at middelværdien for populationen med en vis sikkerhed ligger i et bestemt interval, kan vi beregne konfidensintervaller for standardafvigelsen i populationen. Freetat beregner konfidensintervallet for standardafvigelsen for os, beregningen er lidt indviklet denne er angivet herunder for en ordens skyld, men vi vil blot benytte Freestat.</p>
+<p><span class="math display">\[(1-\alpha)\  KI=\left[\sqrt[]{\frac{(n-1)s^2}{\chi^2_{1-\frac{\alpha}{2},df_{n-1}}}};\sqrt[]{\frac{(n-1)s^2}{\chi^2_{1-\frac{\alpha}{2},df_{n-1}}}}\right]\]</span></p>
+<p>Hvor <span class="math inline">\(\chi^2_{1-\frac{\alpha}{2},df_{n-1}}\)</span> er <span class="math inline">\(1-\frac{\alpha}{2}\)</span> fraktilen for <span class="math inline">\(\chi^2\)</span> fordelingen med <span class="math inline">\(n-1\)</span> frihedsgrader. s er <span class="math inline">\(\hat{\sigma}\)</span></p>
+<p>Husk at chekke for normalitet fx. i et normalfraktildiagram. Det er en forudsætning for at benytte formlen ved konfidensintervallet for standardafvigelsen, at stikprøven stammer fra en normalfordelt population.</p>
+<div id="imdb-ratings-datast" class="section level4">
+<h4><span class="header-section-number">5.2.0.1</span> IMDB ratings datasæt</h4>
+<p>I datasættet <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlWlFNLTVoMEU1WHM">IMDB data</a>, findes oplysninger om 759 film inklusiv ratings for disse. Hvis vi betragter datasættet som en simpelt tilfældigt udtrukket stikprøve, kan vi udtale os om populationen. Vi undersøger vha. Freestat normalfraktildiagram, om stikprøven kan antages at stamme fra en normalfordelt population. Af nedenstående plot ses denne forudsætning at være opfyldt.</p>
+<p><img src="img/imdbratingqq.png" alt="freestatvirkdksem" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vores bedste gæt på standardafvigelsen i populationen er <span class="math inline">\(\hat\sigma=1.5414\)</span>, dvs. en films rating typisk afviger 1.54 point fra gennemsnittet 5.96.</p>
+<p><img src="img/imdbratingdescr.png" alt="freestatvirkdksem" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vi kan af Freestat se, at den sande standard afvigelse i populationen med 95% sikkerhed ligger mellem 1.4676 og 1.6231 point.</p>
+</div>
+</div>
+<div id="sprgsmal-konfidensinterval-for-standardafvigelsen" class="section level2">
+<h2><span class="header-section-number">5.3</span> Spørgsmål konfidensinterval for standardafvigelsen</h2>
+<br>
+<details>
+<summary>Spørgsmål konfidensinterval for standardafvigelsen</summary>
+Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6% Bestem 95% konfidensintervallet for standardafvigelsen i populationen, som er alle handelsdage for aktien.
+</details>
+<br>
+<details>
+<p><summary>Svar konfidensinterval for standardafvigelsen</summary>
+Vi har ikke rådata for de 80 handelsdage, derfor må vi i stedet benytte beregnede data i Freestat fanen Middelværdi standardafvigelse.</p>
+<p>Vi kan med 95% sikkerhed sige at standardafvigelsen i populationen <span class="math inline">\(\sigma\)</span> ligger mellem 0.52% og 0.71%. Den ukendte typiske afvigelse fra gennemsnittet blandt alle handelsdage ligger med 95% sikkerhed mellem 0.52% og 0.71%.</p>
+<p><img src="img/stdafvKI.png" alt="stdafvKI" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vi kan se Freestat beregner konfidensintervallet KI i celle U8 og U9, ligeledes står en kort sætning i celle T20 der beskriver konfidensintervallet.</p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål konfidensinterval for standardafvigelsen bankansatte USA</summary></p>
+Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt antal års uddannelse EDUCATION. Datasættet kan hentes her: <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRENKWWxlNlBXbmM">bankdata</a><br />
+<strong>1.</strong> Bestem 90% Konfidensinterval for standardafvigelsen for variablen education.<br />
+<strong>2.</strong> Bestem 95% Konfidensinterval for standardafvigelsen for variablen education.<br />
+<strong>3.</strong> Bestem 99% Konfidensinterval for standardafvigelsen for variablen education.
+</details>
+<br>
+<details>
+<p><summary>Svar konfidensinterval for standardafvigelsen bankansatte USA</summary><br />
+<strong>1.</strong> Vi kan med 90% sikkerhed sige at standardafvigelsen for antal års uddannelse i populationen σ ligger mellem 2.74 år og 3.05 år.</p>
+<p><img src="img/stdKI90.png" alt="stdKI90" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p><strong>2.</strong> Vi kan med 95% sikkerhed sige at standardafvigelsen for antal års uddannelse i populationen σ ligger mellem 2.71 år og 3.08 år.</p>
+<p><img src="img/stdKI95.png" alt="stdKI95" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p><strong>3.</strong> Vi kan med 99% sikkerhed sige at standardafvigelsen for antal års uddannelse i populationen σ ligger mellem 2.66 år og 3.15 år.</p>
+<p><img src="img/stdKI99.png" alt="stdKI99" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="normalfordelingen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypotesetests-middelvrdi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

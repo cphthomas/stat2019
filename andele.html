@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="andel.html">
+<link rel="next" href="middelvrdier.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.1.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.5</b> Modus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.2</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.2.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.3</b> Skævhed</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.4</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.5</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.6</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="andele" class="section level1">
+<h1><span class="header-section-number">Kapitel 8</span> 2 andele</h1>
+<div id="konfidensinterval-for-2-andele" class="section level2">
+<h2><span class="header-section-number">8.1</span> Konfidensinterval for 2 andele</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226075888" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><img src="img/mobilepay.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vi igen ser på MobilePay undersøgelsen hvor 31 ud af 100 brugte MobilePay, man har en 1 år gammel undersøgelse, hvor man havde spurgt 200 respondenter om de bruger MobilePay, af disse svarede 45, at de bruger Danske Banks app.</p>
+<p>Vi så tidligere, hvordan vi udregner konfidensintervaller for andele.
+Vi fandt i den nye undersøgelse at mellem 0.23% og 0.41% i populationen med 95% sandsynlighed i dag bruger MobilPay.</p>
+<p>Tilsvarende kan vi sige at andelen af MobilePay brugere i populationen med 95% sandsynlighed tidligere lå mellem 0.17% og 0.29%. Det kan være lidt svært af afgøre om forskellen er signifikant da vi af nedenstående grafiske præsentation kan se at der er et mindre overlap mellem de 2 konfidensintervaller.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.svg" width="864" /></p>
+<p>Hvis vi ønsker at undersøge om der er en signifikant forskel i andelen af brugere, kan vi se på konfidensintervallet for forskellen mellem andelene. Vi kan med 95% sikkerhed sige at forskellen i populationens andele er mellem -0.02% og 0.19%</p>
+<p>Vi kan i software beregne dette, vi undlader formlen og udregningen her</p>
+<p>Output fra fanen andele i FreestatDK er vist herunder, bemærk vi skriver kun i de hvide felter. Nederst til højre ses konfidensintervallet for forskelle i andele:</p>
+<p><img src="img/freestat2andelemobilepay.png"  width="70%" height="70%"/><br></p>
+<p>Vi sammenligner altså de 2 andele og betragter et konfidensinterval for differencen mellem disse. Hvis 0 er indeholdt i dette interval som her, er der ikke signifikant forskel på andelene. Det er altså en mulighed, at forskellen mellem MobilePay brugere før og nu er 0, hvilket er det samme som ingen forskel på andelene.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.svg" width="864" /></p>
+<p>Vi kan altså ikke konkludere, at der er forskel på andelen af MobilePay brugere før og nu.</p>
+</div>
+<div id="sprgsmal-2-andele-konfidensintervaller" class="section level2">
+<h2><span class="header-section-number">8.2</span> Spørgsmål 2 andele konfidensintervaller</h2>
+<br>
+<details>
+<p><summary> Spørgsmål 2 andele utroskab.</summary></p>
+<p>Vi ser igen på data om utroskab, <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRlVQcFBtdVlHZ1U">Fairs Affairs</a>. Er der forskel på andelen af utro mænd og kvinder, bestem konfidensintervaller på 90% og 95% signifikansniveau?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar 2 andele utroskab.</summary></p>
+<p>Forskellen i andelene af utro kvinder og mænd ligger med 95% sikkerhed mellem -0.03 og 0.11, en signifikant forskel kan således ikke påvises ved 5% signifikans niveau. Det er dog tæt på, vi vil når vi begynder at teste, se at denne konklusion er tæt på at være niveaufølsom. Andelen af utro mænd, ligger på 27.27%, og andelen af kvinder er 22.86%.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.svg" width="864" /></p>
+<p>Benytter vi i stedet et 90% konfidensniveau, får vi Forskellen i andelene af utro kvinder og mænd ligger med 90% sikkerhed mellem -0.01 og 0.1, det er nu tættere på at forskellen er signifikant.</p>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.svg" width="864" />
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål 2 andele bankdata.</summary></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRENKWWxlNlBXbmM">Bankdata</a>. Er der forskel på andelen af i ledelse (manage), bestem konfidenintervaller på 5% og 1% signifikans niveau?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar 2 andele bankdata.</summary></p>
+<p>I populationen ligger forskellen i andelene af kvinder og mænd i ledelse med 95% sikkerhed mellem 0.18 og 0.3, der er altså signifikant forskel ved 5% signifikans niveau. Andelen af mænd i ledelse, ligger på 28.68% og andelen af kvinder i ledelse ligger på 4.63%.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-37-1.svg" width="864" /></p>
+<p>I populationen ligger forskellen i andelene af kvinder og mænd i ledelse med 99% sikkerhed mellem 0.16 og 0.32, der er altså signifikant forskel ved 1% signifikans niveau. Andelen af mænd i ledelse, ligger på 28.68% er altså helt sikkert større end andelen af kvinder i ledelse ligger på 4.63%.</p>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-38-1.svg" width="864" />
+</details>
+</div>
+<div id="hypotesetests-2-andele" class="section level2">
+<h2><span class="header-section-number">8.3</span> Hypotesetests 2 andele</h2>
+<p>I den nye undersøgelse så vi at 31 ud af 100 bruger MobilePay, mod tidligere 45 ud af 200. Er der forskel på de 2 andele?</p>
+<p>Da vi spørger om der er forskel svarer dette til operatoren <span class="math inline">\(\neq\)</span>. Vi kan skrive hypotesetestet som:</p>
+<p><span class="math display">\[H_0: p_{nu}=p_{før}\]</span></p>
+<p><span class="math display">\[H_1: p_{nu} \neq p_{før}\]</span></p>
+<p>eller som det er formuleret i Freestat:</p>
+<p><span class="math display">\[H_0:p_{nu}-p_{før}=D\]</span></p>
+<p><span class="math display">\[H_1:p_{nu}-p_{før}\neq D\]</span></p>
+<p>D står for difference, denne er som udgangspunkt 0. Hvis man skriver fx. 3 det gule felt, sættes D=3. Man tester så om en forskel er større end 3 procentpoint. Pas på husk altid at slette data i det gule felt, da man ellers kan nå den forkerte konklusion.</p>
+<p>Da signifikanssandsynligheden/p-værdien 0.1105 er større end signifikansniveauet 5%, kan vi ikke forkaste nulhypotesen.</p>
+<p>Vi konkluderer andelen af MobilePay brugere før og nu ikke er forskellig.</p>
+<p>I nedenstående output fra Freestat når vi samme konklusion, her benytter vi testet med den tosidede alternativ hypotese hvor:
+<span class="math display">\[p_{nu}=p_1\]</span>
+<span class="math display">\[p_{tidligere}=p_2\]</span></p>
+<p>Bemærk ved tests af 2 andele, med ensidet alternativ hypotese, er det vigtigt at holde styr på, hvad man vælger som stikprøve 1 og stikprøve 2.</p>
+<p><img src="img/freestattest2andeleMobilepay.png" /></p>
+<div id="eksempler" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> Eksempler</h3>
+<div id="utroskab-og-kn" class="section level4">
+<h4><span class="header-section-number">8.3.1.1</span> Utroskab og køn</h4>
+<p>Vi ser på igen på Fairs afairs datasættet.</p>
+<p>Test om mænd er mere utro end kvinder?</p>
+<p>Her skal vi først filtrere data på køn, for hhv. mænd og kvinder skal vi herefter bestemme andelen af utro.</p>
+<p>78 ud af ialt 286 mænd er utro, andelen af utro mænd i stikprøven er altså 0.2727.</p>
+<p>72 ud af ialt 315 kvinder er utro, andelen af utro kvinder i stikprøven er altså 0.2286.</p>
+<p>Der er forskel på andelene i stikprøverne, men betyder dette at der er en signifikant forskel på andelene i populationerne?</p>
+<p>Hypoteserne bliver</p>
+<p><span class="math display">\[H_0:p_{mand} \leq p_{kvinde}\]</span>
+<span class="math display">\[H_1:p_{mand}&gt;p_{kvinde}\]</span></p>
+<p>eller som det er formuleret i Freestat:</p>
+<p><span class="math display">\[H_0:p_{mand}-p_{kvinde}\leq 0\]</span>
+<span class="math display">\[H_1:p_{mand}-p_{kvinde}&gt;0\]</span></p>
+<p>Vi har altså sat</p>
+<p><span class="math display">\[p_{mand}=p_1\]</span>
+<span class="math display">\[p_{kvinde}=p_2\]</span></p>
+<p>P-værdien bliver 0.1058, hvilket er større end 5%, vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at mænd ikke er signifikant mere utro end kvinder i populationen. Vi har dog en p-værdi der er tæt på 10%, så det er ikke en meget sikker konklusion.</p>
+<p>Nedenfor ses output fra Freestat:</p>
+<p><img src="img/freestattest2andeleutroskab.png" /></p>
+</div>
+<div id="utroskab-og-religisitet" class="section level4">
+<h4><span class="header-section-number">8.3.1.2</span> Utroskab og religiøsitet</h4>
+<p>Vi definerer nu meget religiøse, som folk med religiousness større end 3.
+Er mindre religiøse, mere utro end religiøse?</p>
+<p>260 er meget religiøse, ud af disse er 46 utro.</p>
+<p>341 er mindre religiøse, ud af disse er 104 utro.</p>
+<p>Vor hypoteser bliver:</p>
+<p><span class="math display">\[H_0:p_{religioese}\geq p_{mindre-religioese}\]</span>
+<span class="math display">\[H_0:p_{religioese}&lt; p_{mindre-religioese}\]</span></p>
+<p>Vi finder har en signifikanssandsynlighed på 0.000163, dette er en meget lille signifikanssandsynlighed, så vi forkaster klart nulhypotesen.</p>
+<p>Mindre Religiøse personer er altså mere utro end religiøse.</p>
+</div>
+</div>
+</div>
+<div id="sprgsmal-2-andele" class="section level2">
+<h2><span class="header-section-number">8.4</span> Spørgsmål 2 andele</h2>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål 2 andele vandskader.</summary>
+Et forsikringsselskab ønsker at undersøge om andelen af anmeldelser af oversvømmede kældre er steget i 2018 er steget i forhold til en lignende undersøgelse i 2014.
+Man har i 2018 undersøgt 309 forsikringstagere med kælder, af disse har 43 anmeldt vandskader.</p>
+<p>Tidligere i 2014 har man konstateret at i en stikprøve på 350 forsikringstagere, havde 35 Beskadigede kældre.</p>
+<p><strong>1.</strong> Er der forskel på andelen af anmeldte skader?<br />
+<strong>2.</strong> Er forudsætningerne for testet opfyldt?<br />
+<strong>3.</strong> Er antallet af anmeldte skader steget fra 2014 til 2018?<br />
+<strong>4.</strong> Er antallet af anmeldte skader steget fra 2014 til 2018, hvis vi tester på 10% signifikansniveau?</p>
+</details>
+<br>
+<details>
+<p><summary>Svar 2 andele vandskader.</summary></p>
+<p><strong>1.</strong> Er der forskel på andelen af anmeldte skader?<br />
+Vi opstiller hypoteserne:<br />
+<span class="math display">\[H_0:p_{2018}=p_{2014}\]</span>
+<span class="math display">\[H_0:p_{2018}\neq p_{2014}\]</span></p>
+<p><img src="img/2andele1.png" alt="2andele1" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Da p værdien/signifikanssandsynligheden 0.1204 er større end 0.05 signifikansniveauet, kan vi ikke afvise nulhypotesen. Det vil sige andelen af anmeldte skader er ikke ændret fra 2014 til 2018. Bemærk vi tester to-sidet, da spørgsmålet er om andelen er <strong>ændret</strong>.</p>
+<p><strong>2.</strong> Er forudsætningerne for testet opfyldt?<br />
+<img src="img/2andele2.png" alt="2andele2" align="right" width="30%" height="30%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Da <span class="math inline">\(n\cdot\hat{p}\cdot(1-\hat{p})\)</span> klart er større end 9 for begge stikprøver, er disse tilstrækkeligt store til at vi kan forudsætningerne er opfyldt.</p>
+<p><strong>3.</strong> Er antallet af anmeldte skader steget fra 2014 til 2018?<br />
+<img src="img/2andele3.png" alt="2andele3" align="right" width="40%" height="40%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Bemærk vi tester med en-sidet alternativ hypotese, da spørgsmålet er om andelen er <strong>steget</strong>. Da vi vælger at sætte 2018 stikprøven som stikprøve 1 og 2014 stikprøven som stikprøve 2, bliver testet ensidet opad. Vi skal jo undersøge om <span class="math inline">\(p_{2018}\)</span> er større end <span class="math inline">\(p_{2014}\)</span>.</p>
+<p>Vi skal teste med ensidet alternativ hypotese opad. Hypoteserne i testet bliver derfor:<br />
+<span class="math display">\[H_0:p_{2018}\leq p_{2014}\]</span>
+<span class="math display">\[H_0:p_{2018}&gt;p_{2014}\]</span></p>
+<p>Da p værdien/signifikanssandsynligheden 0.0602 er større end 0.05 signifikansniveauet, kan vi ikke afvise nulhypotesen. Andelen af anmeldte skader er alså ikke steget. Dog er konklusionen niveaufølsom.</p>
+<p><strong>4.</strong> Er antallet af anmeldte skader steget fra 2014 til 2018, hvis vi tester på 10% signifikansniveau?<br />
+<img src="img/2andele4.png" alt="2andele4" align="right" width="40%" height="40%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vi skal fortsat teste med ensidet alternativ hypotese opad dog med 10% signifikansniveau. Hypoteserne i testet bliver derfor:<br />
+<span class="math display">\[H_0:p_{2018}\leq p_{2014}\]</span>
+<span class="math display">\[H_0:p_{2018}&gt;p_{2014}\]</span>
+Da p værdien/signifikanssandsynligheden 0.0602 er mindre end 0.1 signifikansniveauet, afviser vi nulhypotesen. Andelen af anmeldte skader er altså steget fra 2014 til 2018</p>
+</details>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål 2016 8 Eksamen Statistik opgave 2 Finansøkonom.</summary></p>
+<p>A. 2016 8 Eksamen Statistik opgave 2
+[toggle title=Spørgsmål]
+Nykøbing Bank er et mindre pengeinstitut med en stærk position i sit lokalområde.
+I Nykøbing Bank arbejder man med et rating-system af privatkunderne. Kunderne inddeles i risikogrupper efter deres risikoprofil på en skala fra 1 til 14. Et lavt antal point i rating-systemet betyder, at kunden har lav risiko for ikke at kunne overholde sine forpligtelser.
+I bedømmelsen af dine svar bliver der lagt vægt på, at du argumenterer for dine valg af løsningsmetoder, undersøger om eventuelle forudsætninger er opfyldt samt fortolker dine resultater.</p>
+<p>Opgave 2 (30 %)
+Nykøbing Bank er bekymret for kundernes overtræk. I 2015 foretog banken en analyse, hvor man i en stikprøve på 75 kunder registrerede 26 kunder med overtræk.
+Spørgsmål 2.1 (10 %)
+Du bedes beregne et punktestimat og et 95 % konfidensinterval for andelen af bankens kunder, der havde overtræk i 2015.
+Spørgsmål 2.2 (10 %)
+Ved hjælp at en test på 5 % testniveau bedes du undersøge, om andelen af kunder med overtræk var større end 25 % i 2015.
+Spørgsmål 2.3 (10 %)
+Banken har en formodning om, at andelen af kunder med overtræk er faldet siden 2015. Anvend resultaterne i den vedlagte stikprøve fra maj 2016 til at teste på 5 % testniveau, om banken har ret i denne formodning.</p>
+<p>Du finder hele opgaver i linket:
+<a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMldWRQVGRwZWlkdzQ">2016 8 Eksamen Statistik Opgave</a></p>
+<a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlN29HR09IRmJZSE0">2016 8 Eksamen Statistik data</a>
+</details>
+<br>
+<details>
+<p><summary>Svar 2016 8 Eksamen Statistik opgave 2 Finansøkonom.</summary></p>
+<div >
+<iframe width="500" height="280"
+src="https://www.youtube.com/embed/7rMQGhE2HIY"
+
+frameborder="0">
+<blockquote>
+</iframe>
+<p>
+<center>
+Løsning eksamensopgave
+</center>
+</p>
+<div class="clear">
+
+</div>
+</div>
+</blockquote>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlUThSYWllWG9pSG8">2016 8 Eksamen Statistik opg 2 LØSNING</a></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål 2016 8 Eksamen Statistik opgave 4 Finansøkonom.</summary></p>
+<p>Opgave 4 (10 %)
+Det er mange år siden bankens markedschef har beskæftiget sig med statistik. Han beder dig derfor forklare nogle begreber.
+Spørgsmål 4.1 (5 %)
+Forklar forskellen på et punktestimat og et konfidensinterval. Forklar endvidere formålet med at beregne et konfidensinterval.
+Spørgsmål 4.2 (5 %)
+Hvilken betydning har testniveauet for konklusionen i en hypotesetest?
+Hvilken betydning har stikprøvens størrelse for p-værdien, når der udarbejdes en hypotesetest?</p>
+<p>Du finder hele opgaver i linket:
+<a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMldWRQVGRwZWlkdzQ">2016 8 Eksamen Statistik Opgave</a></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlN29HR09IRmJZSE0">2016 8 Eksamen Statistik data</a></p>
+</details>
+<br>
+<details>
+<p><summary>Svar 2016 8 Eksamen Statistik opgave 4 Finansøkonom.</summary></p>
+<div >
+<iframe width="500" height="280"
+src="https://www.youtube.com/embed/Vt2SLnolNak"
+
+frameborder="0">
+<blockquote>
+</iframe>
+<p>
+<center>
+Løsning eksamensopgave
+</center>
+</p>
+<div class="clear">
+
+</div>
+</div>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlaWVxc1poYTVxMTA">2016 8 Eksamen Statistik opg 4 LØSNING</a></p>
+</blockquote>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål 2017 3 Eksamen Statistik opgave 1 Finansøkonom.</summary></p>
+<p>Opgave 1 (50%)<br />
+Det første din chef vil have dig til at undersøge er den gennemsnitlige forsikringspræmie, og da det er målet at tilbyde prisbillige forsikringer til unge bilister, skal den gennemsnitlige forsikringspræmie være under kr. 6.000. Til det formål er der fortaget en stikprøveundersøgelse blandt Safe Cars kunder. Stikprøven er udtaget tilfældigt, og resultatet ses i datasættet i Excelarket.<br />
+1.1 (5%)<br />
+Undersøg om forsikringspræmierne for år 2016 er normalfordelte.<br />
+1.2 (10%)
+Test på 5% niveau, hvorvidt Safe Car lever op til målet om at den gennemsnitlige forsikringspræmie er lavere end kr. 6.000.<br />
+Hvor sikre kan vi være på din konklusion?<br />
+1.3 (10%)<br />
+Beregn et 99% konfidensinterval for den gennemsnitlige forsikringspræmie for år 2016. Hvor anvendeligt er dette interval?<br />
+1.4 (5%)<br />
+Hvor stor skal stikprøven være, for at der maksimalt er kr. 100 mellem nedre og øvre grænse i 99% konfidensintervallet for den gennemsnitlige forsikringspræmie beregnet i 1.3?<br />
+Foruden kravet om lave forsikringspræmier har Safe Car har en politik om, at variansen for præmierne ikke må blive for stor. Der er således en målsætning om, at variansen for forsikringspræmierne skal være kr. 250.000.<br />
+1.5 (10%)<br />
+Test på 5% niveau hvorvidt den sande varians for forsikringspræmierne er lig med kr. 250.000. - Hvor sikre kan vi være på din konklusion?<br />
+Safe Car har også interne regler der siger, at andelen af kunder der har en forsikringspræmie over kr. 5800 maksimalt må udgøre en tredjedel.<br />
+1.6 (10%)<br />
+Beregn et 95% konfidensinterval for andelen af kunder der betaler mere end kr. 5800 i forsikringspræmie.<br />
+Hvor anvendeligt er dette interval?</p>
+<p>Du finder hele opgaver i linket:
+<a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlcTA2dDRiTEVRWUE">2017 3 Eksamen Statistik Opgave</a></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMldEVIQXVIUXlvTHM">2017 3 Eksamen Statistik data</a></p>
+</details>
+<br>
+<details>
+<p><summary>Svar 2017 3 Eksamen Statistik opgave 1 Finansøkonom.</summary></p>
+<div >
+<iframe width="500" height="280"
+src="https://www.youtube.com/embed/NorhSH4G87U"
+
+frameborder="0">
+<blockquote>
+</iframe>
+<p>
+<center>
+Løsning eksamensopgave
+</center>
+</p>
+<div class="clear">
+
+</div>
+</div>
+</blockquote>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlMzBpNjhtMXdCTUk">2017 3 Eksamen Statistik opg 1 LØSNING</a></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål 2017 3 Eksamen Statistik opgave 3 Finansøkonom.</summary></p>
+<p>Opgave 3 (20%)
+Hos Safe Car har man foruden fokus på billige forsikringspræmier også fokus på andelen af skader for forskellige aldersgrupper, og derfor har Safe Car for nylig lavet en analyse på baggrund af en tilfældigt udvalgt stikprøve på 175 personer blandt selskabets unge kunderne. Resultatet ses i dataarket under fane 2:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Alder</th>
+<th align="left">Lille skade</th>
+<th align="left">Mellem skade</th>
+<th align="left">Stor skade</th>
+<th align="left">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">18-19 år</td>
+<td align="left">15</td>
+<td align="left">20</td>
+<td align="left">35</td>
+<td align="left">70</td>
+</tr>
+<tr class="even">
+<td align="left">20-21 år</td>
+<td align="left">20</td>
+<td align="left">20</td>
+<td align="left">20</td>
+<td align="left">60</td>
+</tr>
+<tr class="odd">
+<td align="left">22-23 år</td>
+<td align="left">15</td>
+<td align="left">15</td>
+<td align="left">15</td>
+<td align="left">45</td>
+</tr>
+<tr class="even">
+<td align="left">Total</td>
+<td align="left">50</td>
+<td align="left">55</td>
+<td align="left">70</td>
+<td align="left">175</td>
+</tr>
+</tbody>
+</table>
+<p>3.1 (10%)
+Test på 5% niveau om andelen af personer som har lavet en stor skade er mindre end 65% for den yngste aldersgruppe.<br />
+Safe Car er ligeledes interesseret i at finde ud af, om der er forskel mellem aldersgrupper<br />
+3.2 (10%)<br />
+Test på 5% om andelen af personer, der laver en stor skade, er større blandt de 18-19 årige end blandt de 22-23 årige.</p>
+<p>Du finder hele opgaver i linket:
+<a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlcTA2dDRiTEVRWUE">2017 3 Eksamen Statistik Opgave</a></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMldEVIQXVIUXlvTHM">2017 3 Eksamen Statistik data</a></p>
+</details>
+<br>
+<details>
+<p><summary>Svar 2017 3 Eksamen Statistik opgave 3 Finansøkonom.</summary></p>
+<div >
+<iframe width="500" height="280"
+src="https://www.youtube.com/embed/e5ooenttb1Q"
+
+frameborder="0">
+<blockquote>
+</iframe>
+<p>
+<center>
+Løsning eksamensopgave
+</center>
+</p>
+<div class="clear">
+
+</div>
+</div>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlZkVhZGpXYkJPZnc">2017 3 Eksamen Statistik opg 3 LØSNING</a></p>
+</blockquote>
+</details>
+</div>
+<div id="selvtest-6" class="section level2">
+<h2><span class="header-section-number">8.5</span> Selvtest</h2>
+<h2>
+<a href="https://www.edutest.dk/mod/quiz/view.php?id=59" target="_blank">Selvtest 2 andele med videoløsning.</a>
+</h2>
+<p><img src="img/bankfront.jpg" align="right" width="50%" height="50%" style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="andel.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="middelvrdier.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

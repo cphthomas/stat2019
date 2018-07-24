@@ -217,11 +217,246 @@ For testing.
 
 You must have JavaScript enabled in order to log in.
 
-\hypertarget{udvidet-statistik}{%
-\chapter{Udvidet Statistik}\label{udvidet-statistik}}
+ \# Indledning
 
-Udvidet Statistik Udvidet Statistik Udvidet Statistik Udvidet Statistik
-Udvidet Statistik Udvidet Statistik Udvidet Statistik
+Dette er undervisningsmateriale og opgaver til faget statistik, for
+erhvervsakademierne.
+
+ Orley Ashenfelter en Princeton økonom udviklede i 1980'erne en
+statistik model til forudsigelse af vinpriser baseret på nedbør,
+solskinstimer og andre klimadata. Hele den etablerede vinverden var i
+oprør, ved en præsentation i Christie's vinafdeling, blev han buhet ud.
+Robert Parker den verdenskendte vinkender udtalte ``Det svarer til en
+filmanmelder der ikke ser filmen, men udelukkende baserer sin anmeldelse
+på instruktøren og skuespilleren''. Orley udtalte, lang tid før det var
+muligt for vinseksperterne, at 1989 Bordeux ville blive århundredets
+vin, uanset den kun havde ligget 3 måneder på fade. Flere analyser har
+siden vist Orleys model er langt mere præcis eksperterne. Meget få
+vinkendere har anerkendt kvaliteten af Orleys model, men deres forecasts
+ligger nu langt tættere på modellens forudsigelser.
+
+Bogen er opbygget med en del praktiske eksempler.
+
+Der er i nogle afsnit knapper med spørgsmål og svar, man kan klikke på
+disse og se om man kan nå frem til de rigtige løsninger.
+
+Bogen er bygget op så kapitlerne beskriver fanerne i Freestat
+programmet. Man kan se og hente excelfiler direkte ved at klikke på
+links.
+
+I alle brancher i den finansielle sektor spiller statistik en rolle.
+
+Bankerne sammensætter investeringsporteføljer, der minimerer risikoen
+(variansen), ved aktiver der har lav eller negativ samvariation
+(kovarians). Cykliske aktier som FL Smidth har fx. lav samvariation med
+en ikke cyklisk aktie som Novo.
+
+Forsikringsselskaberne beregner præmier for forsikringstageren, baseret
+på statistike sandsynligheder for at en hændelse indtræffer. Modellerne
+kan være meget specifikke, en indboforsikring kan fx. være baseret på
+ikke bare postnummer, boligform, men også etage.
+
+Finansielle virksomheder underlagt finanstilsynet, bruger modeller til
+beregning af risiko baseret på statistisk analyse.
+
+Mægleren beregner udbudspriser, udfra en multipel lineær
+regressionsmodel, der indeholder variable som størrelse, energimærke,
+tagtype etc.
+
+\hypertarget{freestat}{%
+\subsubsection{Freestat}\label{freestat}}
+
+Man kan få beregnet deskriptorerne i et utal af programmer heriblandt
+Freestat et gratis program, der kan hentes ved at klikke på billedet.
+Freestat kan gennemføre de mest almindelige statistiske analyser.
+
+Der findes opgaver quizzes og yderligere resourcer på
+\href{http://www.edutest.dk}{www.edutest.dk}
+
+Min gode ven Benjamin Tejlbjerg har lavet en super hjemmeside med
+gymnasie matematik og statistik
+\href{http://www.mathhx.dk/?q=node/117}{http://www.mathhx.dk}. Siden er
+gratis og god til at genopfriske basisbegreber indenfor statistik, vi
+kommer ikke i dybden med disse begreber her.
+
+Dette er 1. udgave af bogen, der tages forbehold for tryk og tastefejl,
+men alle fejl eller uklarheder i måtte finde rettes med fluks. Forslag
+til forbedringer modtages med kyshånd.
+
+For at få et overblik over hypoteserne for de forskellige tests kan man
+hente et hypotese mindmap ved at klikke på billedet til højre: \_\_\_
+
+\textbf{\emph{Noterne er kun til personligt brug. Alle rettigheder
+forbeholdes. Fotografisk eller anden gengivelse af eller kopiering eller
+anden udnyttelse, er uden forfatterens skriftlige samtykke forbudt
+ifølge dansk lov om ophavsret.}}
+
+\hypertarget{datast-og-data}{%
+\chapter{Datasæt og data}\label{datast-og-data}}
+
+\hypertarget{uni--bi--og-multivariate-datast}{%
+\subsection{Uni- bi- og multivariate
+datasæt}\label{uni--bi--og-multivariate-datast}}
+
+Datasæt er sæt af en eller flere variable:
+
+\begin{itemize}
+\tightlist
+\item
+  Univariate datasæt fx tider ved marathonløb\\
+\item
+  Bivariate datasæt fx tider ved marathonløb og køn
+\item
+  Multivariate datasæt fx tider ved marathonløb, køn, alder, medlem af
+  sports klub
+\end{itemize}
+
+\hypertarget{kvalitative-variable}{%
+\subsection{Kvalitative variable}\label{kvalitative-variable}}
+
+Kvalitative variable er data vi ikke kan måle eller tælle. De antager
+værdier i form af navne eller labels:
+
+\begin{itemize}
+\tightlist
+\item
+  Kæledyr: kat, hund, marsvin
+\item
+  Køn: mand, kvinde
+\item
+  Favorit app: Angry Birds, Messenger, Audible, Tinder
+\end{itemize}
+
+\hypertarget{kvantitative-variable}{%
+\subsection{Kvantitative variable}\label{kvantitative-variable}}
+
+Kvantitative variable er målbare numeriske variable, vi deler disse op i
+\emph{kontinuerte} og \emph{diskrete} variable
+
+\hypertarget{diskrete-variable}{%
+\subsubsection{Diskrete variable}\label{diskrete-variable}}
+
+Diskrete variable er fx.
+
+\begin{itemize}
+\tightlist
+\item
+  Antal biler der passerer en bro observeret over flere dage.
+\item
+  Dagsproduktionen af chokoladefrøer på Toms. 
+\item
+  Antal personer der har iphones
+\item
+  Antallet af indbyggere i en by
+\end{itemize}
+
+\hypertarget{kontinuerte-variable}{%
+\subsubsection{Kontinuerte variable}\label{kontinuerte-variable}}
+
+Kontinuerte variable er fx.
+
+\begin{itemize}
+\tightlist
+\item
+  Antal ml. indhold i shampoo flasker
+\item
+  Aktiekurser for Intel
+\item
+  Vægten på værnepligtige
+\item
+  Højden på studerende
+\end{itemize}
+
+\hypertarget{skalatyper}{%
+\subsection{Skalatyper}\label{skalatyper}}
+
+Vi kan ydermere inddele variable efter skalatype hvor lavere betyder
+mindst restriktiv.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Nominalskala, bruges til at måle kvalitative data (er der kun 2 mulige
+  udfald kaldes variablen specielt binær eller dikotom), fx.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Køn Mand Kvinde\\
+  \item
+    Styresystem: IOS Android Windows Symbian Andet
+  \item
+    Race: Europæisk, Afrikansk, Asiatisk Andet
+  \end{itemize}
+\item
+  Ordinalskala inddeler data efter en rangordning
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Karakterer på 7 trins skalaen -3 00 02\ldots{}
+  \item
+    Moodys credit ratings Aaa Aa A Baa Ba B Caa Ca C
+  \item
+    Tilfredshed meget utilfreds, noget utilfreds, nogenlunde tilfreds,
+    meget tilfreds
+  \end{itemize}
+\item
+  Intervalskala man kan sammenligne afstande og forskelle, men der er
+  intet meningsfuldt nulpunkt. Nul for en intervalskala variabel betyder
+  således ikke fravær af den målte størrelse. Nul grader celsius betyder
+  altså ikke fravær af temperatur (det absolutte nulpunkt 0 Kelvin, hvor
+  alle molekyler og atomer er i grundtilstanden). En IQ på 0 betyder
+  ikke fravær af intelligens.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Temperatur målt i Celsius 
+  \item
+    Temperatur målt i Fahrenheit
+  \item
+    PH
+  \item
+    IQ
+  \end{itemize}
+\item
+  Ratioskala
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Beløb i lommen
+  \item
+    Højde på studerende
+  \item
+    Hastighed af biler ved vejkryds
+  \item
+    Indhold i Coca Cola flasker 
+  \end{itemize}
+\end{enumerate}
+
+``Statistics are used much like a drunk uses a lamppost: for support,
+not illumination.''\\
+- Vin Scully
+
+Interval- og ratioskalaer omtales som numeriske eller kontinuerte
+skalaer, disse er knyttet til kvantitative variable.\\
+Nominal- og ordinalskalaer omtales ofte som kategorisk eller faktor,
+disse er knyttet til kvalitative variable.
+
+En stikprøve af skalatype ratio kan fx. reduceres til ordinal, eller
+nominal. Temperatur målt i celsius kan fx. omskrives til en ordinal
+variabel: koldt normalt varmt, eller en nominal variabel: ekstrem
+temperatur eller normal temperatur.
+
+Kategoriske skalaer kan yderligere reduceres til en dikotom skala, ved
+at sammenlægge kategorierne, til man kun har 2 kategorier.
+
+Det er vanskeligere at ændre en nominal- ordinal- eller ratioskala til
+en intervalskala. At ændre variablen nominalskala variablen køn til
+ordinal giver fx. ikke mening.
 
 \hypertarget{dette-er-anden-nummerede-fil}{%
 \chapter{Dette er anden nummerede
@@ -251,11 +486,79 @@ Some \emph{significant} applications are demonstrated in this chapter.
 \hypertarget{example-two}{%
 \section{Example two}\label{example-two}}
 
-\hypertarget{final-words}{%
-\chapter{Final Words}\label{final-words}}
+\hypertarget{indledning}{%
+\chapter{Indledning}\label{indledning}}
 
-We have finished a nice book. Udvidet Statistik Udvidet Statistik
-Udvidet Statistik
+ Dette er noter og opgaver til faget statistik, for erhvervsakademierne.
+
+ Orley Ashenfelter en Princeton økonom udviklede i 1980'erne en
+statistik model til forudsigelse af vinpriser baseret på nedbør,
+solskinstimer og andre klimadata. Hele den etablerede vinverden var i
+oprør, ved en præsentation i Christie's vinafdeling, blev han buhet ud.
+Robert Parker den verdenskendte vinkender udtalte ``Det svarer til en
+filmanmelder der ikke ser filmen, men udelukkende baserer sin anmeldelse
+på instruktøren og skuespilleren''. Orley udtalte, lang tid før det var
+muligt for vinseksperterne, at 1989 Bordeux ville blive århundredets
+vin, uanset den kun havde ligget 3 måneder på fade. Flere analyser har
+siden vist Orleys model er langt mere præcis eksperterne. Meget få
+vinkendere har anerkendt kvaliteten af Orleys model, men deres forecasts
+ligger nu langt tættere på modellens forudsigelser.
+
+Bogen er opbygget med en del praktiske eksempler.
+
+Der er i nogle afsnit knapper med spørgsmål og svar, man kan klikke på
+disse og se om man kan nå frem til de rigtige løsninger.
+
+Bogen er bygget op så kapitlerne beskriver fanerne i Freestat
+programmet. Man kan se og hente excelfiler direkte ved at klikke på
+links.
+
+I alle brancher i den finansielle sektor spiller statistik en rolle.
+
+Bankerne sammensætter investeringsporteføljer, der minimerer risikoen
+(variansen), ved aktiver der har lav eller negativ samvariation
+(kovarians). Cykliske aktier som FL Smidth har fx. lav samvariation med
+en ikke cyklisk aktie som Novo.
+
+Forsikringsselskaberne beregner præmier for forsikringstageren, baseret
+på statistike sandsynligheder for at en hændelse indtræffer. Modellerne
+kan være meget specifikke, en indboforsikring kan fx. være baseret på
+ikke bare postnummer, boligform, men også etage.
+
+Finansielle virksomheder underlagt finanstilsynet, bruger modeller til
+beregning af risiko baseret på statistisk analyse.
+
+Mægleren beregner udbudspriser, udfra en multipel lineær
+regressionsmodel, der indeholder variable som størrelse, energimærke,
+tagtype etc.
+
+\hypertarget{freestat-1}{%
+\subsubsection{Freestat}\label{freestat-1}}
+
+Man kan få beregnet deskriptorerne i et utal af programmer heriblandt
+Freestat et gratis program, der kan hentes ved at klikke på billedet.
+Freestat kan gennemføre de mest almindelige statistiske analyser.
+
+Der findes opgaver quizzes og yderligere resourcer på
+\href{http://www.edutest.dk}{www.edutest.dk}
+
+Min gode ven Benjamin Tejlbjerg har lavet en super hjemmeside med
+gymnasie matematik og statistik
+\href{http://www.mathhx.dk/?q=node/117}{http://www.mathhx.dk}. Siden er
+gratis og god til at genopfriske basisbegreber indenfor statistik, vi
+kommer ikke i dybden med disse begreber her.
+
+Dette er 1. udgave af bogen, der tages forbehold for tryk og tastefejl,
+men alle fejl eller uklarheder i måtte finde rettes med fluks. Forslag
+til forbedringer modtages med kyshånd.
+
+For at få et overblik over hypoteserne for de forskellige tests kan man
+hente et hypotese mindmap ved at klikke på billedet til højre: \_\_\_
+
+\textbf{\emph{Noterne er kun til personligt brug. Alle rettigheder
+forbeholdes. Fotografisk eller anden gengivelse af eller kopiering eller
+anden udnyttelse, er uden forfatterens skriftlige samtykke forbudt
+ifølge dansk lov om ophavsret.}}
 
 \hypertarget{applications-tilfjet}{%
 \chapter{Applications tilføjet}\label{applications-tilfjet}}

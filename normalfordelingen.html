@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="deskriptiv-statistik.html">
+<link rel="next" href="konfidensintervaller.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.1.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.5</b> Modus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.2</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.2.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.3</b> Skævhed</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.4</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.5</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.6</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="normalfordelingen" class="section level1">
+<h1><span class="header-section-number">Kapitel 4</span> Normalfordelingen</h1>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337728" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Vi vil i dette kapitel se på forskellige typer af fordelinger. Data- stikprøve og sandsynlighedsfordelingen. For at forstå sammenhængen mellem disse er normalfordelingen essentiel. Normalfordelingen er den vigtigste sandsynligheds fordeling,<img src="img/height.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> den er kontinuert symmetrisk mesokurtisk og bestemmes entydigt ud fra middelværdien <span class="math inline">\(\mu\)</span> og standardafvigelsen <span class="math inline">\(\sigma\)</span>.</p>
+<p>En undersøgelse hos <a href="https://tall.life/height-percentile-calculator-age-country/">Tall life</a> viste, at danske mænds højde i gennemsnit er 180.4 centimeter, med en standardafgivelse på 7.42 centimeter. Vi udtager simpelt tilfældigt 3 stikprøver på 1000 danske mænd og måler deres højde, og markerer hver persons højde i centimeter på x-aksen.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-7-1.svg" width="864" /></p>
+<p>Bemærk hvorledes personerne ligger meget tættere omkring middelværdien 180.4, her er figuren næsten sort. Vi kan se at der er forskellige meget høje og lave personer i de 3 stikprøver. Vi kan indtegne fordelingen af alle danske mænds højder, som en normalfordelings tæthedsfunktion. Når observationerne ligger tættere vil kurven være højere.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-8-1.svg" width="864" /></p>
+<p><img src="img/popcorn.png" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>IQ, Popcorn poptider, nedbør, vandstand etc. er normalfordelte fænomener. Tæthedsfunktionen for normalfordelingen er givet ved:</p>
+<p><span class="math display">\[ f\left( x, \mu, \sigma \right) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^ { - \frac {\left( x - \mu \right)^2} {2 \sigma^2} }\]</span></p>
+<p>Grafen nedenfor viser 3 normalfordelinger alle med middelværdi <span class="math inline">\(\mu=0\)</span> og standardafvigelser <span class="math inline">\(\sigma\)</span> på hhv. 1, 2 and 4.</p>
+<p><img src="bookdown-demo_files/figure-html/3Normalfordelingersd3-1.svg" width="864" /></p>
+<p>Grafen nedenfor viser 3 normalfordelinger med middelværdier <span class="math inline">\(\mu\)</span> på hhv. -1, 0, 4 alle med standardafvigelse <span class="math inline">\(\sigma=1\)</span>.</p>
+<p><img src="bookdown-demo_files/figure-html/3Normalfordelinger-1_0_4-1.svg" width="864" /></p>
+<p>Middelværdi, median og modus/typetal er altid identisk for normalfordelingen, skævhed og kurtosis er 0.</p>
+<div id="normalfordelt-stokastisk-variabel" class="section level2">
+<h2><span class="header-section-number">4.1</span> Normalfordelt Stokastisk variabel</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337765" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>En stokastisk variabel X inden for sandsynlighedsregning, er en variabel hvis værdi påvirkes af tilfældigheder. Når der er tilknyttet et sandsynlighedsmål, kan vi måle sandsynligheden for forskellige udfald.</p>
+<p>Hvis sandsynlighedsmålet fx. er normalfordelt skriver vi <span class="math inline">\(X\sim N(\mu,\sigma)\)</span>. Vi kan så beregne sandsynligheder for at X antager forskellige værdier.
+Ønsker vi at bestemme sandsynligheden for at at få et udfald mindre end fx 3, skriver vi dette som <span class="math inline">\(P(X&lt;3)\)</span>, hvor P står for probability sandsynligheden. Vi skriver altid stort P, lille p betyder proportion andel indenfor statistik. Skal vi bestemme sandsynligheden for at X antager en værdi mellem 3 og 5, skriver vi dette som <span class="math inline">\(P(3 &lt; X &lt; 5)\)</span>.</p>
+<p>Ser vi på eksemplet med danske mænds højde, kan vi definere en normalfordelt stokastisk variabel <span class="math inline">\(X\sim N(\mu=180.4,\sigma=7.42)\)</span>. Skal vi bestemme sandsynligheden for at en person er lavere end 178 cm, skriver vi dette som <span class="math inline">\(P(X&lt;178)\)</span>. Vi kan beregne sandsynligheder i det meste software. I Excel ville vi beregne <span class="math inline">\(P(X&lt;178)=0.37\)</span>, ved hjælp af formlen =NORMAL.FORDELING(178;180,4;7,42;1).</p>
+<div id="standard-normalfordelingen" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Standard normalfordelingen</h3>
+<p>Der findes en særlig kendt normalfordeling, kaldet standard normalfordelingen, denne har parametrene <span class="math inline">\(\mu=0\)</span> og <span class="math inline">\(\sigma=1\)</span>, hvilket altså betyder den har middel, median og modus 0 og standardafvigelse 1. Standard normalfordelingen ses i figuren herunder.</p>
+<p><img src="bookdown-demo_files/figure-html/stdnormal-1.svg" width="864" /></p>
+<p>Ligesom for andre fordelinger, kan vi beregne fraktiler for alle normalfordelinger, vi kan således beregne fx. 5% fraktilen -1.64 for standard normalfordelingen. Dette betyder at der er 5% sandsynlighed for at få værdier mindre end -1.64 og således 95% sandsynlighed for at få værdier der er større end -1.64, dette er illustreret i figuren.
+<img src="bookdown-demo_files/figure-html/5fraktil-1.svg" width="864" /></p>
+<p>På grund af symmetrien for normalfordelingen, og da standardnormalfordelingen har middel 0 bliver 95% fraktilen bliver 1.64. Denne er vist i figuren herunder. Der gælder at hvis en vilkårlig <span class="math inline">\(\alpha\)</span>%-fraktil for standard normalfordelingen er <span class="math inline">\(-a\)</span>, bliver <span class="math inline">\(1-\alpha\)</span>%-fraktilen <span class="math inline">\(a\)</span>.
+<img src="bookdown-demo_files/figure-html/95fraktil-1.svg" width="864" /></p>
+</div>
+<div id="normalfordelingen-1" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> 68% Normalfordelingen</h3>
+<p>Hvis man trækker 1 gange standardafvigelsen <span class="math inline">\(\sigma\)</span> fra <span class="math inline">\(\mu\)</span> og lægger 1 gange standardafvigelsen til <span class="math inline">\(\mu\)</span>, får man for en vilkårlig normalfordeling altid 68.27% af sandsynlighedsmassen. Denne egenskab er illustreret for standard normalfordelingen nedenfor, arealet er markeret med mørkegråt, dermed har man naturligvis 15.87% i hver hale da arealet under tæthedfunktionen er 1 eller 100%.</p>
+<p><span class="math display">\[P(\mu-1\cdot \sigma \leq X \leq \mu+1\cdot \sigma) \approx 0.68\]</span></p>
+<p><img src="bookdown-demo_files/figure-html/68-1.svg" width="864" /></p>
+</div>
+<div id="normalfordelingen-2" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> 90% Normalfordelingen</h3>
+<p>Hvis man trækker 1.6448 gange standardafvigelsen <span class="math inline">\(\sigma\)</span> fra <span class="math inline">\(\mu\)</span> og lægger 1.6448 gange standardafvigelsen til <span class="math inline">\(\mu\)</span>, får man i normalfordelingen altid 90% af sandsynlighedsmassen.</p>
+<p><span class="math display">\[P(\mu-1.64\cdot \sigma \leq X \leq \mu+1.64\cdot \sigma) \approx 0.9\]</span></p>
+<p><img src="bookdown-demo_files/figure-html/90-1.svg" width="864" /></p>
+</div>
+<div id="normalfordelingen-3" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> 95% Normalfordelingen</h3>
+<p>Hvis man trækker 1.96 gange standardafvigelsen <span class="math inline">\(\sigma\)</span> fra <span class="math inline">\(\mu\)</span> og lægger 1.96 gange standardafvigelsen til <span class="math inline">\(\mu\)</span>, får man i normalfordelingen altid 95% af sandsynlighedsmassen. Denne z-score 0.975 fraktilen i standard normalfordelingen, er meget vigtig, vi bruger den fx. når vi beregner 95% konfidensinterval for middelværdien. Vi har alså følgende resultat:</p>
+<p><span class="math display">\[P(\mu-1.96\cdot \sigma \leq X \leq \mu+1.96\cdot \sigma)\approx 0.95\]</span></p>
+<p><img src="bookdown-demo_files/figure-html/95-1.svg" width="864" /></p>
+</div>
+<div id="normalfordelingen-4" class="section level3">
+<h3><span class="header-section-number">4.1.5</span> 99% Normalfordelingen</h3>
+<p>Hvis man trækker 2.5758 gange standardafvigelsen <span class="math inline">\(\sigma\)</span> fra <span class="math inline">\(\mu\)</span> og lægger 2.5758 gange standardafvigelsen til <span class="math inline">\(\mu\)</span>, får man i normalfordelingen altid 99% af sandsynlighedsmassen. Vi illustrerer igen for standard normalfordelingen, men resultatet er ækvivalent for samtlige normalfordelinger.</p>
+<p><span class="math display">\[P(\mu-2.58\cdot \sigma \leq X \leq \mu+2.58\cdot \sigma)\approx 0.99\]</span></p>
+<p><img src="bookdown-demo_files/figure-html/99-1.svg" width="864" /></p>
+</div>
+<div id="addition-af-normalfordelinger" class="section level3">
+<h3><span class="header-section-number">4.1.6</span> Addition af normalfordelinger</h3>
+<p>Der er en lang række gode egenskaber for normalfordelinger, der gør disse fordelinger særlig nemme at arbejde med.
+Hvis man har n uafhængige stokastiske normalfordelte variable <span class="math inline">\(X_1\sim N(\mu_1,\sigma^2_1),X_2\sim N(\mu_2,\sigma^2_2)...X_n\sim N(\mu_n,\sigma^2_n)\)</span>, så er deres sum Z også normalfordelt med parametrene
+<span class="math inline">\(Z\sim N(\mu_1+\mu_2...+\mu_n,\sigma^2_1+\sigma^2_2+..+\sigma^2_n)\)</span>
+Middelværdien er altså summen af middelværdierne, variansen er summen af varianserne. Husk der er tale om summen af varianserne ikke standardafvigelserne.</p>
+<p>Hvis man fx. har en investering med fremtidige tilbagediskonterede cashflows 4, 2 og 3 fra tidspunkt 1, 2 og 3, hvor der er en usikkerhed på de tilbagediskonterede fremtidige cashflows beskrevet ved variansen for de 3 cashflows 2, 3, 4. Vi antager de fremtidige tilbagediskonterede cashflows er normalfordelte, hvor den forventede værdi for tilbagediskonterede cashflows er middelværdierne og usikkerheden for betalingsstrømmene beskrives ved variansen. Dette giver god mening, jo længere ude i fremtiden, des større usikkerhed dvs. varians.
+<span class="math inline">\(X_1\sim N(\mu =4,\sigma^2=2)\)</span>
+<span class="math inline">\(X_2\sim N(\mu =2,\sigma^2=3)\)</span>
+<span class="math inline">\(X_3\sim N(\mu =3,\sigma^2=4)\)</span>
+Det betyder summen af de tilbagediskonterede cashflows er normalfordelt med parametrene
+<span class="math inline">\(X_{cashflow}\sim N(\mu =4+2+3=9,\sigma^2=2+3+4=9)\)</span>
+Man kan således bruge reglen om addition af normalfordelinger, til at få et overblik over det samlede forventede tilbagediskonterede cashflow og usikkerheden.</p>
+</div>
+<div id="linearkombinationer-af-normalfordelinger" class="section level3">
+<h3><span class="header-section-number">4.1.7</span> Linearkombinationer af normalfordelinger</h3>
+<p>Vi kan sammensætte n normalfordelte variable <span class="math inline">\(X_1\sim N(\mu_1,\sigma^2_1),X_2\sim N(\mu_2,\sigma^2_2)...X_n\sim N(\mu_n,\sigma^2_n)\)</span> med en vektor af af n reelle tal <span class="math inline">\((a_1,a_2,..a_n)\)</span> samt en konstant b, denne linearkombinationen Y også normalfordelt med parametrene
+<span class="math inline">\(Y\sim N(a_1 \cdot \mu_1+a_2 \cdot \mu_2...+a_n \cdot \mu_n+b,a_1^2 \cdot \sigma^2_1+a_2^2 \cdot \sigma^2_2+..+a_n^2 \cdot \sigma^2_n)\)</span></p>
+<p>Betragter man fx 3 aktiver, der kan beskrives ved normalfordelinger, med forventet afkast <span class="math inline">\(\mu_1=120, \mu_2=100\ og\  \mu_3=150\)</span> og usikkerhed <span class="math inline">\(\sigma^2_1=3, \sigma^2_3=9\ og\  \sigma^2_3=4\)</span>, samt et risikofrit aktiv med afkast 100. Har man en portefølje der indholder hhv. 3, 2, 4 enheder af aktiver 1, 2 og 3 samt 1 risikofrit aktiv. Kan det forventede afkast af den samlede portefølje beskrives ved en normalfordelt stokastisk variabel med parametrene:
+<span class="math display">\[X_{portefø\ lje}\sim N(a_1 \cdot \mu_1+a_2 \cdot \mu_2...+a_n \cdot \mu_n+b,a_1^2 \cdot \sigma^2_1+a_2^2 \cdot \sigma^2_2+..+a_n^2 \cdot \sigma^2_n)=\]</span>
+<span class="math display">\[X_{portefø\ lje}\sim N(\mu=3 \cdot 120+2 \cdot 100+4 \cdot 150+100=1260,\sigma^2=3^2 \cdot 3+2^2 \cdot 9+4^2 \cdot 4=127)\]</span></p>
+</div>
+<div id="transformation-af-normalfordelinger" class="section level3">
+<h3><span class="header-section-number">4.1.8</span> Transformation af normalfordelinger</h3>
+<p>En anden god egenskab ved normalfordelinger, er at de kan transformeres til standardnormalfordelingen, dette gør det nemmere at beregne sandsynligheder hvis man ikke har software til at udregne disse.</p>
+<p><span class="math display">\[X\sim N(\mu,\sigma^2)\rightarrow\ Z=\frac{X-\mu}{\sigma}\sim N(\mu=0,\sigma^2=1)\]</span>
+Vi kan nu beregne sandsynligheder for at den oprindelige normalfordelte variabel er mindre end a <span class="math inline">\(P(X&lt;a)\)</span>, ved hjælp af standard normalfordelingen <span class="math inline">\(P(Z&lt;\frac{a-\mu}{\sigma})\)</span>.</p>
+<p>Hvis vi ser på investeringen ovenfor <span class="math inline">\(X_{cashflow}\sim N(\mu =9,\sigma^2=9)\)</span> kan vi transformere <span class="math inline">\(X_{cashflow}\)</span> til standard normalfordelingen.</p>
+<p><span class="math display">\[X_{cashflow}\sim N(\mu =9,\sigma^2=9)\rightarrow\ Z=\frac{X-9}{3}\sim N(\mu=0,\sigma^2=1)\]</span>
+Vi kan bestemme, hvor stor sandsynligheden er, for at de fremtidige diskonterede cashflows er negative vha. standardnormalfordelingen dvs.
+<span class="math display">\[P(X_{cashflow}&lt;0)= P(Z&lt;\frac{0-9}{3}=-3)=0135\%\]</span>
+Nedenfor ses begge fordelinger med 0.00135 fraktilen.
+<img src="bookdown-demo_files/figure-html/port-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/port2-1.svg" width="864" /></p>
+</div>
+</div>
+<div id="normalfraktildiagram" class="section level2">
+<h2><span class="header-section-number">4.2</span> Normalfraktildiagram</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337668" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Hvis vi har mindre stikprøver, skal vi sikre os at data stammer fra normalfordelte populationer. Dette kan vi gøre vha. normalfraktildiagrammer, disse skal ligge pænt omkring den rette linje. Har man en lille stikprøve og ønsker at sikre sig data stammer fra en normalfordelt population, kan man i Freestat indsætte stikprøven i 1 kvantitativ stikprøve og sikre sig at punkterne ligger pænt omkring den rette linje. En stikprøve er lille, når den er mindre end 30 observationer. Det kan ofte være svært at se om data stammer en normalfordeling. Som det fremgår af nedenstående normalfraktildiagrammer er kun 4 af de 18 normalfordelte, specielt ved de mindre stikprøver er det svært at se præcis om data er normalfordelte. Man kan generelt sige at afvigelser fra den rette linje i enderne, er mindre kritiske en afvigelser omkring midten. Hvis man i forbindelse med analyse fx. konfidensinterval eller hypotesetest, konstaterer data ikke er normalfordelte, bør man bemærke dette og illustrere vha. normalfraktildiagrammet. Når man har rapporteret problemet gennemfører man herefter analysen.</p>
+<p><img src="bookdown-demo_files/figure-html/qqplots15_25-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/qqplots100_500-1.svg" width="864" /></p>
+</div>
+<div id="parametre-og-parameter-estimater" class="section level2">
+<h2><span class="header-section-number">4.3</span> Parametre og parameter-estimater</h2>
+<div id="stikprvefordelingen" class="section level4">
+<h4><span class="header-section-number">4.3.0.1</span> Stikprøvefordelingen</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337553" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="stikprvefordelingen-2" class="section level4">
+<h4><span class="header-section-number">4.3.0.2</span> Stikprøvefordelingen 2</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337520" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="parameter-estimat" class="section level4">
+<h4><span class="header-section-number">4.3.0.3</span> Parameter-estimat</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337632" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Når man indsamler en stikprøve fx 100 studerendes højde, kan vi bruge denne stikprøve til at sige noget om alle studerendes højde. I dette tilfælde er alle studerende, det vi kalder populationen, det er dem vi ønsker at vide noget om. Den gennemsnitlige højde i populationen er den ukendte parameter <span class="math inline">\(\mu\)</span>. Den gennemsnitlige højde på de studerende i stikprøven kalder vi parameterestimatet, estimatet betyder vores gæt på den ukendte sande gennemsnitlige højde på alle studerende, altså parameteren <span class="math inline">\(\mu\)</span>. Vi bruger betegnelsen <span class="math inline">\(\hat{\mu}\)</span>, når vi taler om paramterestimater, så vores gæt angiver vi med en hat <span class="math inline">\(\hat{}\)</span>. Da paramterestimatet er et gæt, er vi interesserede i kvaliteten af vort gæt. Vi ser nedenfor på stikprøvefordelingen, som vi kan bruge til at måle præcision af estimatet ved hjælp af konfidensintervaller.</p>
+</div>
+<div id="parameter-estimat-for-middelvrdi" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Parameter-estimat for middelværdi</h3>
+<p>Hvis vi ønsker at udtale os om det gennemsnitlige daglige afkast af Tryg aktien den sande middelværdi <span class="math inline">\(latex \mu\)</span>, kan vi estimere det gennemsnitlige afkast i populationen, ved gennemsnittet i stikprøven $ {x}$.</p>
+<p><span class="math display">\[\hat{\mu}=\bar{x}=\frac{\sum_1^n (x_i)}{n}=\frac{30.0111}{387}=0.0775\]</span></p>
+</div>
+<div id="parameter-estimat-for-standardafvigelsen" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Parameter-estimat for standardafvigelsen</h3>
+<p>Vi har nævnt at standardafvigelsen af afkastet, er en vigtig faktor, når en investor skal bestemme volatiliteten i en aktie. Vi kan estimere den sande standardafvigelse i populationen <span class="math inline">\(\sigma\)</span>, ud fra estimatet af standardafvigelsen <span class="math inline">\(\hat{\sigma}\)</span> vha. stikprøven. For Tryg aktien regnes dette ud som:</p>
+<p><span class="math display">\[Parameteren\  \sigma\  estimeres\ ved\ \hat{\sigma}=S=\sqrt[]{\frac{\sum_1^n (x_i-\bar{x})^2}{n-1}}=\sqrt[]{\frac{374.401}{387-1}}=0.98\]</span></p>
+<p>Nedenfor er en oversigt over vigtige parametre samt deres estimater. Vi er udover estimatet interesseret i, hvor sikre vi er på dette estimat, her er det vi vil benytte konfidensintervaller.</p>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="32%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Estimat</th>
+<th>Beregning af estimatet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Andelen\ p\)</span></td>
+<td><span class="math inline">\(\hat{p}\)</span></td>
+<td><span class="math inline">\(\hat{p}=\frac{x}{n}=\frac{antal\ succeser}{antal\ trials}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Middel\ \mu\)</span></td>
+<td><span class="math inline">\(\hat{\mu}\)</span></td>
+<td><span class="math inline">\(\hat{\mu}=\bar{x}=\frac{\sum_1^n (x_i)}{n}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Variansen\ \sigma^2\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}^2\ eller \ s^2\)</span></td>
+<td><span class="math inline">\(s^2=\frac{\sum_1^n (x_i-\bar{x})^2}{n-1}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Spredningen\ \sigma\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}\ eller \ s\)</span></td>
+<td><span class="math inline">\(s=\sqrt[]{\frac{\sum_1^n (x_i-\bar{x})^2}{n-1}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="data--stikprve--og-populationsfordelingen" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Data- stikprøve- og populationsfordelingen</h3>
+<p>Vi sondrer mellem flere forskellige typer af fordelinger.</p>
+<ul>
+<li><p>Populations fordelingen af størrelse N. Denne er ikke kendt, men vi ønsker at drage slutninger om fordelingen, baseret på en stikprøve.</p></li>
+<li><p>Datafordeligen er fordelingen af den stikprøve af størrelse n, vi har indsamlet.</p></li>
+<li><p>Stikprøve fordelingen fremkommer, hvis man fra populationen, udtager alle stikprøver, af størrelse n. Fordelingen af parameter estimaterne kaldes stikprøve fordelingen.</p></li>
+</ul>
+<div class="Keatswide">
+<p><img src="img/finanstilsynet.jpg" align="right" width="50%" height="50%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
+Vi forestiller os nu at Finanstilsynet, ønsker at estimere det gennemsnitlige indestående på danskernes nem konti. Den ukendte populations parameter Finanstilsynet er interesseret er altså <span class="math inline">\(\mu\)</span>. Her er populationen samtlige nem konti, hvis der er fx. er 3 mio konti er N altså 3 mio. Vi ved at der i populationen, vil være personer med meget store indståender på deres konti, nok flere mio. DKK. og nogle konti med negativt indestående. Sandsynligvis vil standard afvigelsen <span class="math inline">\(\sigma\)</span> være stor. Vi kan formode at fordelingen vil være højreskæv, i en eller anden grad, da der vil være enkelte ekstremt store indeståender der danner en lang hale mod højre.</p>
+<p>Hvis vi simpelt tilfældigt udvælger en stikprøve på n=10000, vil gennemsnittet <span class="math inline">\(\bar{x}\)</span> (som jo er parameterestimatet <span class="math inline">\(\hat{\mu}\)</span>) i stikprøven udviske outliers.</p>
+<p>Hvis man udtog alle mulige stikprøver af populationen og beregnede samtlige gennemsnit, ville disse gennemsnit ligge ganske tæt omkring den sande parameter <span class="math inline">\(\mu\)</span>. Denne sandsynlighedsfordeling af stikprøve gennemsnit er stikprøvefordelingen Vi kan med den centrale grænseværdisætning vise at stikprøvefordelingen vil være approximativt normal med middelværdi <span class="math inline">\(\mu\)</span> og standardafvigelse <span class="math inline">\(\frac{\sigma}{\sqrt[]{10000}}\)</span>. Standardafvigelsen for stikprøvefordelingen vil være 100 gange mindre, end standardafvigelsen for populationen. Bemærk havde stikprøven været på n=100 i stedet, ville standard afvigelsen for stikprøvefordelingen kun være <span class="math inline">\(\sqrt[]{100}=10\)</span> gange mindre end standard afvigelsen for populationen.</p>
+</div>
+</div>
+<div id="den-centrale-grnsevrdistning-clt" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Den centrale grænseværdisætning CLT</h3>
+<p>Den centrale grænseværdisætning CLT siger, at hvis man med tilbagelægning udtager tilstrækkeligt store stikprøver af størrelse n af en population, vil stikprøvefordelingen af middelværdien være approximativt normal. Er populationsfordelingen hverken symmetrisk eller mesokurtisk vil stikprøve fordelingen stadig være tilnærmelsesvist normal, når blot stikprøve størrelsen er tilstrækkelig stor (mange bøger sætter denne grænse ved 30).</p>
+<p>Nedenfor har vi en højreskæv populationsfordeling med <span class="math inline">\(\mu=8\)</span> og <span class="math inline">\(\sigma=4\)</span>, dette er jo den sædvanligvis ukendte population, fra hvilken vi trækker en stikprøve på størrelse n.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-10-1.svg" width="864" /></p>
+<p>Middelværdien for stikprøvefordelingen skrives i mange bøger med notationen <span class="math inline">\(\mu_{\bar{X}}\)</span> er:
+<span class="math display">\[\mu_{\bar{X}}=\mu\]</span></p>
+<p>Standardafvigelsen for stikprøvefordelingen kaldes standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) <span class="math inline">\(\sigma_{\bar{X}}\)</span> er:</p>
+<p><span class="math display">\[SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}\]</span></p>
+<p>Vi bruger standardfejlen for middelværdien SEM til at beregne konfidensintervaller som vi ser på senere. Der gælder jo mindre SEM jo smallere konfidensinterval, og når stikprøvestørrelsen bliver større bliver SEM mindre. Det giver jo god mening, større stikprøve giver mindre SEM og dermed smallere konfidensinterval dvs. større præcision.</p>
+<p>På figurerne er udtaget 3 gange 100 stikprøver af størrelse n hhv. 30, 100 og 1000. På hver figur er gennemsnittene af de 100 stikprøver angivet. Der er altså 100 pinde i hvert diagram. Bemærk CLT siger at for alle tre stikprøvefordelinger er <span class="math inline">\(\mu=8\)</span>, det ses af figurerne at gennemsnittene i stikprøverne er centreret omkring middelværdien i populationen <span class="math inline">\(\mu=8\)</span>.</p>
+<p>Vi kan ligeledes se at variationen falder (stikprøvegennemsnittene ligger mere snævert), når stikprøvestørrelsen vokser.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-1.svg" width="864" /></p>
+<p>På de 3 figurer nedenfor ses de tilsvarende stikprøvefordelinger.</p>
+<p>Når stikprøvestørrelsen er n=30, kan standard fejlen da <span class="math inline">\(\sigma=4\)</span> jvf. CLT udregnes til:</p>
+<p><span class="math display">\[SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}=\frac{4}{\sqrt[]{30}}=0.73\]</span></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-12-1.svg" width="864" /></p>
+<p>Når stikprøvestørrelsen er n=100, kan standard fejlen da <span class="math inline">\(\sigma=4\)</span> jvf. CLT udregnes til:</p>
+<p><span class="math display">\[SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}=\frac{4}{\sqrt[]{100}}=0.4\]</span></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.svg" width="864" /></p>
+<p>Når stikprøvestørrelsen er n=1000, kan standard fejlen da <span class="math inline">\(\sigma=4\)</span> jvf. CLT udregnes til:</p>
+<p><span class="math display">\[SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}=\frac{4}{\sqrt[]{1000}}=0.13\]</span></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.svg" width="864" /></p>
+<p>Da stikprøvefordelingerne er normalfordelte, ved vi at hvis man trækker 1.96 gange standard fejlen SEM <span class="math inline">\(\frac{\sigma}{\sqrt[]{n}}\)</span> fra middelværdien <span class="math inline">\(\mu\)</span> og lægger 1.96 gange SEM <span class="math inline">\(\frac{\sigma}{\sqrt[]{n}}\)</span> til middelværiden <span class="math inline">\(\mu\)</span>, er der i hver hale 2.5% og imellem halerne 95% af sandsynligheden. Vi kan altså beregne følgende nedre og øvre intervalgrænser for de tre stikprøvefordelinger, jo større stikprøve jo smallere interval.</p>
+<p>Vi udregner nedre intervalgrænse når n er 30 som:</p>
+<p><span class="math inline">\(\mu-1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8-1.96\cdot\frac{4}{\sqrt[]{30}}=6.57\)</span></p>
+<p>Vi udregner øvre intervalgrænse når n er 30 som:</p>
+<p><span class="math inline">\(\mu+1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8+1.96\cdot\frac{4}{\sqrt[]{30}}=9.43\)</span></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.svg" width="864" /></p>
+<p>Vi udregner nedre intervalgrænse når n er 100 som:</p>
+<p><span class="math inline">\(\mu-1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8-1.96\cdot\frac{4}{\sqrt[]{100}}=7.22\)</span></p>
+<p>Vi udregner øvre intervalgrænse når n er 100 som:</p>
+<p><span class="math inline">\(\mu+1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8+1.96\cdot\frac{4}{\sqrt[]{100}}=8.78\)</span></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.svg" width="864" /></p>
+<p>Vi udregner nedre intervalgrænse når n er 1000 som:</p>
+<p><span class="math inline">\(\mu-1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8-1.96\cdot\frac{4}{\sqrt[]{1000}}=7.75\)</span></p>
+<p>Vi udregner øvre intervalgrænse når n er 1000 som:</p>
+<p><span class="math inline">\(\mu+1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8+1.96\cdot\frac{4}{\sqrt[]{1000}}=8.25\)</span></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.svg" width="864" /></p>
+</div>
+</div>
+<div id="frihedsgrader" class="section level2">
+<h2><span class="header-section-number">4.4</span> Frihedsgrader</h2>
+<p>Frihedsgrader eller degrees of freedom df betyder, hvor mange observationer kan variere frit. Hvis man fx. har en stikprøve med 4 observationer <span class="math inline">\({1,2,2,3}\)</span> og ønsker at estimere (gætte på) gennemsnittet i populationen <span class="math inline">\(\mu\)</span>, så bliver vores bedste estimat for (gæt på) gennemsnittet <span class="math inline">\(\hat{\mu}=\bar{x}=\frac{1+2+2+3}{4}=\frac{8}{4}=2\)</span>. Her er antallet af observationer, der kan variere frit, når gennemsnittet <span class="math inline">\(\bar{x}=2\)</span> er givet <span class="math inline">\(4-1=3\)</span>, hvilket er antallet af frihedsgrader. Hvis de 3 første observationer er <span class="math inline">\({1,2,2}\)</span>, vil den sidste observation være givet som 3, for at gennemsnittet bliver 2. Havde vi haft de 3 første observationer var <span class="math inline">\({1,1,1}\)</span> ville den sidste observation være givet som 5 for at gennemsnittet var 2. Ved 4 observationer, er der således <span class="math inline">\(4-1=3\)</span> frihedsgrader, ved 10 observationer, er der således <span class="math inline">\(10-1=9\)</span> frihedsgrader osv. Antallet af frihedsgrader når vi estimerer middelværdien, svarer til antallet af observationer i stikprøven n minus 1.</p>
+</div>
+<div id="t-fordelingen" class="section level2">
+<h2><span class="header-section-number">4.5</span> t-fordelingen</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337473" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Useendet af t-fordelinger bestemmes af parameteren antal frihedsgrader. Samtlige t-fordelinger har middelværdi <span class="math inline">\(\mu=0\)</span> og approximerer/tilnærmer sig standard normalfordelingen, når antallet af frihedsgrader vokser. Vi benytter populært sagt t-fordelinger i stedet for z-fordelinger, når populations variansen <span class="math inline">\(\sigma^2\)</span> er ukendt. Antallet af frihedsgrader for t-fordelingen, ved konfidensinterval for middelværdi, svarer til antallet af observationer i stikprøven n minus 1.</p>
+<p>I figuren er indtegnet 3 t-fordelinger med hhv. 5, 10 og 100 frihedsgrader (df degrees of fredom). Vi kan se fordelingerne har tykkere haler end normalfordelingen og når antallet at frihedsgrader er 100 ser z- og t-fordelingen næsten identiske ud.</p>
+<p><img src="bookdown-demo_files/figure-html/zogtfordelinger-1.svg" width="864" /></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="deskriptiv-statistik.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="konfidensintervaller.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

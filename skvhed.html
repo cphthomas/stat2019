@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="medianen-kvartiler-og-fraktilen.html">
+<link rel="next" href="kurtosis.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.1</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.2</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.3</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.4</b> Modus</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="medianen-kvartiler-og-fraktilen.html"><a href="medianen-kvartiler-og-fraktilen.html"><i class="fa fa-check"></i><b>4</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="medianen-kvartiler-og-fraktilen.html"><a href="medianen-kvartiler-og-fraktilen.html#fraktiler"><i class="fa fa-check"></i><b>4.0.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="skvhed.html"><a href="skvhed.html"><i class="fa fa-check"></i><b>5</b> Skævhed</a></li>
+<li class="chapter" data-level="6" data-path="kurtosis.html"><a href="kurtosis.html"><i class="fa fa-check"></i><b>6</b> Kurtosis</a></li>
+<li class="chapter" data-level="7" data-path="sprgsmal-deskriptiv-statistik.html"><a href="sprgsmal-deskriptiv-statistik.html"><i class="fa fa-check"></i><b>7</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="8" data-path="selvtest.html"><a href="selvtest.html"><i class="fa fa-check"></i><b>8</b> Selvtest</a></li>
+<li class="chapter" data-level="9" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>9</b> Normalfordelingen</a></li>
+<li class="chapter" data-level="10" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html"><i class="fa fa-check"></i><b>10</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>10.0.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.2" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-1"><i class="fa fa-check"></i><b>10.0.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.3" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-2"><i class="fa fa-check"></i><b>10.0.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.4" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-3"><i class="fa fa-check"></i><b>10.0.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.5" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#normalfordelingen-4"><i class="fa fa-check"></i><b>10.0.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="10.0.6" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>10.0.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="10.0.7" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>10.0.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="10.0.8" data-path="normalfordelt-stokastisk-variabel.html"><a href="normalfordelt-stokastisk-variabel.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>10.0.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="normalfraktildiagram.html"><a href="normalfraktildiagram.html"><i class="fa fa-check"></i><b>11</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="12" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html"><i class="fa fa-check"></i><b>12</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="12.0.1" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>12.0.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="12.0.2" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>12.0.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="12.0.3" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>12.0.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="12.0.4" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>12.0.4</b> Den centrale grænseværdisætning CLT</a></li>
+<li class="chapter" data-level="12.1" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#frihedsgrader"><i class="fa fa-check"></i><b>12.1</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="12.2" data-path="parametre-og-parameter-estimater.html"><a href="parametre-og-parameter-estimater.html#t-fordelingen"><i class="fa fa-check"></i><b>12.2</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>13</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="13.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>13.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="13.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>13.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="13.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>13.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="skvhed" class="section level1">
+<h1><span class="header-section-number">Kapitel 5</span> Skævhed</h1>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/228226797" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Skævheden angiver hvor meget en fordeling afviger fra en symmetrisk fordeling. Hvis skævheden er positiv (højreskæv), vil fordelingen have koncentrerede værdier til venstre og mere spredte værdier til højre, en hale mod højre. Er fordelingen venstreskæv vil skævheden være negativ, og fordelingen har hale mod venstre. Hvis skævheden er 0 eller tæt på nul siger vi fordelingen er symmetrisk.</p>
+<p>Formlen for skævhed er lidt indviklet, men softwarepakker kan beregne denne, der findes et par forskellige beregnings metoder så man kan godt få forskellige resultater. I Excel bruges formlen =SKEW() eller på dansk =SKÆVHED(). Skævheden for Tryg variablen kan beregnes til -0.21, det betyder fordelingen er en lille smule venstreskæv, det er svært at se men der er et par negative afkast som gør at middelværdien er mindre end medianen. Vi siger at medianen er mere stabil overfor outliers (ekstreme observationer) hvorimod middelværdien påvirkes af outliers. Bemærk man får måske et resultat, der afviger en smule fra det her beregnede, dette skyldes de forskellige metoder til beregning.</p>
+<div id="htmlwidget-7557d714bd43431f36c8" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7557d714bd43431f36c8">{"x":{"filter":"none","data":[["Højreskæv","Venstreskæv","Symmetrisk"],["Større end 0","Mindre end 0","0 eller tæt på 0"],["Større end 0","Hale mod venstre","Samme haler mod højre og venstre"],["Middelværdi større end Median","Median større end Middelværdi","Median tæt på middelværdi"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th>Skævhed<\/th>\n      <th>Værdi<\/th>\n      <th>Typisk form<\/th>\n      <th>Indikator<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-3-1.svg" width="864" /></p>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/228223866" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="medianen-kvartiler-og-fraktilen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kurtosis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

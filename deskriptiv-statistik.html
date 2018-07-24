@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="datast-og-data.html">
+<link rel="next" href="normalfordelingen.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.1.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.5</b> Modus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.2</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.2.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.3</b> Skævhed</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.4</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.5</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.6</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="deskriptiv-statistik" class="section level1">
+<h1><span class="header-section-number">Kapitel 3</span> Deskriptiv statistik</h1>
+<p>Deskriptiv eller beskrivende statistik er metoder til vha. figurer, tabeller og deskriptorer (middelværdi, median etc.) at præsentere et datamateriale. Beskrivende statistik er simplere metoder end inferentiel eller matematisk teoretisk statistik, hvor konklusioner drages på baggrund af en egentlig statistisk analyse.</p>
+<div id="deskriptorer" class="section level2">
+<h2><span class="header-section-number">3.1</span> Deskriptorer</h2>
+<p>Vi har nedenfor et multivariat datasæt bestående af daglige procentvise afkast for 6 OMX20 aktier: TRYG, DDB, FLS, GENMAB, TDC, ISS</p>
+<p>Herunder kan man i tabellen se det procentvise daglige afkast for de 6 OMX20 aktier:</p>
+<div id="htmlwidget-4f94b26ffa67790ed985" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4f94b26ffa67790ed985">{"x":{"filter":"none","data":[["2017-01-03","2017-01-04","2017-01-05","2017-01-06","2017-01-09","2017-01-10","2017-01-11","2017-01-12","2017-01-13","2017-01-16","2017-01-17","2017-01-18","2017-01-19","2017-01-20","2017-01-23","2017-01-24","2017-01-25","2017-01-26","2017-01-27","2017-01-30","2017-01-31","2017-02-01","2017-02-02","2017-02-03","2017-02-06","2017-02-07","2017-02-08","2017-02-09","2017-02-10","2017-02-13","2017-02-14","2017-02-15","2017-02-16","2017-02-17","2017-02-20","2017-02-21","2017-02-22","2017-02-23","2017-02-24","2017-02-27","2017-02-28","2017-03-01","2017-03-02","2017-03-03","2017-03-06","2017-03-07","2017-03-08","2017-03-09","2017-03-10","2017-03-13","2017-03-14","2017-03-15","2017-03-16","2017-03-17","2017-03-20","2017-03-21","2017-03-22","2017-03-23","2017-03-24","2017-03-27","2017-03-28","2017-03-29","2017-03-30","2017-03-31","2017-04-03","2017-04-04","2017-04-05","2017-04-06","2017-04-07","2017-04-10","2017-04-11","2017-04-12","2017-04-18","2017-04-19","2017-04-20","2017-04-21","2017-04-24","2017-04-25","2017-04-26","2017-04-27","2017-04-28","2017-05-01","2017-05-02","2017-05-03","2017-05-04","2017-05-05","2017-05-08","2017-05-09","2017-05-10","2017-05-11","2017-05-15","2017-05-16","2017-05-17","2017-05-18","2017-05-19","2017-05-22","2017-05-23","2017-05-24","2017-05-29","2017-05-30","2017-05-31","2017-06-01","2017-06-02","2017-06-06","2017-06-07","2017-06-08","2017-06-09","2017-06-12","2017-06-13","2017-06-14","2017-06-15","2017-06-16","2017-06-19","2017-06-20","2017-06-21","2017-06-22","2017-06-23","2017-06-26","2017-06-27","2017-06-28","2017-06-29","2017-06-30","2017-07-03","2017-07-04","2017-07-05","2017-07-06","2017-07-07","2017-07-10","2017-07-11","2017-07-12","2017-07-13","2017-07-14","2017-07-17","2017-07-18","2017-07-19","2017-07-20","2017-07-21","2017-07-24","2017-07-25","2017-07-26","2017-07-27","2017-07-28","2017-07-31","2017-08-01","2017-08-02","2017-08-03","2017-08-04","2017-08-07","2017-08-08","2017-08-09","2017-08-10","2017-08-11","2017-08-14","2017-08-15","2017-08-16","2017-08-17","2017-08-18","2017-08-21","2017-08-22","2017-08-23","2017-08-24","2017-08-25","2017-08-28","2017-08-29","2017-08-30","2017-08-31","2017-09-01","2017-09-04","2017-09-05","2017-09-06","2017-09-07","2017-09-08","2017-09-11","2017-09-12","2017-09-13","2017-09-14","2017-09-15","2017-09-18","2017-09-19","2017-09-20","2017-09-21","2017-09-22","2017-09-25","2017-09-26","2017-09-27","2017-09-28","2017-09-29","2017-10-02","2017-10-03","2017-10-04","2017-10-05","2017-10-06","2017-10-09","2017-10-10","2017-10-11","2017-10-12","2017-10-13","2017-10-16","2017-10-17","2017-10-18","2017-10-19","2017-10-20","2017-10-23","2017-10-24","2017-10-25","2017-10-26","2017-10-27","2017-10-30","2017-10-31","2017-11-01","2017-11-02","2017-11-03","2017-11-06","2017-11-07","2017-11-08","2017-11-09","2017-11-10","2017-11-13","2017-11-14","2017-11-15","2017-11-16","2017-11-17","2017-11-20","2017-11-21","2017-11-22","2017-11-23","2017-11-24","2017-11-27","2017-11-28","2017-11-29","2017-11-30","2017-12-01","2017-12-04","2017-12-05","2017-12-06","2017-12-07","2017-12-08","2017-12-11","2017-12-12","2017-12-13","2017-12-14","2017-12-15","2017-12-18","2017-12-19","2017-12-20","2017-12-21","2017-12-22","2017-12-27","2017-12-28","2017-12-29","2018-01-02","2018-01-03","2018-01-04","2018-01-05","2018-01-08","2018-01-09","2018-01-10","2018-01-11","2018-01-12","2018-01-15","2018-01-16","2018-01-17","2018-01-18","2018-01-19","2018-01-22","2018-01-23","2018-01-24","2018-01-25","2018-01-26","2018-01-29","2018-01-30","2018-01-31","2018-02-01","2018-02-02","2018-02-05","2018-02-06","2018-02-07","2018-02-08","2018-02-09","2018-02-12","2018-02-13","2018-02-14","2018-02-15","2018-02-16","2018-02-19","2018-02-20","2018-02-21","2018-02-22","2018-02-23","2018-02-26","2018-02-27","2018-02-28","2018-03-01","2018-03-02","2018-03-05","2018-03-06","2018-03-07","2018-03-08","2018-03-09","2018-03-12","2018-03-13","2018-03-14","2018-03-15","2018-03-16","2018-03-19","2018-03-20","2018-03-21","2018-03-22","2018-03-23","2018-03-26","2018-03-27","2018-03-28","2018-04-03","2018-04-04","2018-04-05","2018-04-06","2018-04-09","2018-04-10","2018-04-11","2018-04-12","2018-04-13","2018-04-16","2018-04-17","2018-04-18","2018-04-19","2018-04-20","2018-04-23","2018-04-24","2018-04-25","2018-04-26","2018-04-30","2018-05-01","2018-05-02","2018-05-03","2018-05-04","2018-05-07","2018-05-08","2018-05-09","2018-05-14","2018-05-15","2018-05-16","2018-05-17","2018-05-18","2018-05-22","2018-05-23","2018-05-24","2018-05-25","2018-05-28","2018-05-29","2018-05-30","2018-05-31","2018-06-01","2018-06-04","2018-06-06","2018-06-07","2018-06-08","2018-06-11","2018-06-12","2018-06-13","2018-06-14","2018-06-15","2018-06-18","2018-06-19","2018-06-20","2018-06-21","2018-06-22","2018-06-25","2018-06-26","2018-06-27","2018-06-28","2018-06-29","2018-07-02","2018-07-03","2018-07-04","2018-07-05","2018-07-06","2018-07-09","2018-07-10","2018-07-11","2018-07-12","2018-07-13","2018-07-16","2018-07-17","2018-07-18","2018-07-19","2018-07-20","2018-07-23"],[-0.3108,0.7015,1.0062,0.4598,-0.1526,-0.6876,0,0.8462,0.3814,2.9635,-0.4428,0.0741,0.6667,-2.9433,-4.3215,-0.2377,3.1771,1.1547,-0.761,1.1503,-0.3032,0.6844,0.1511,1.0558,-0.3731,0.5243,-0.149,0.1492,0.149,-0.4464,0.2989,-0.5961,-0.7496,-0.5287,0.2278,0,-0.5303,-0.1523,-1.4493,0.5418,0.4619,0.6131,0.3046,0.3037,-0.2271,-0.7587,-0.3823,-1.105,-0.7981,-0.4023,-0.0808,1.2126,0.3994,-0.3182,0.8779,-0.5538,-1.1933,1.2883,-0.477,0.0799,0.1596,0.0797,0.3981,0.3172,0.5534,0.4717,0.4695,0.4673,-1.5504,0.8772,-0.8696,1.9936,-0.0782,0.7825,-0.1553,-0.3111,1.8721,0.6125,0.8371,-0.0755,-1.0574,0.0763,0.9916,-0.3021,-0.2273,0.5315,0.5287,-0.1503,0.2257,-0.3754,0,-1.3564,-1.4515,1.938,0.7604,-0.2264,0.7564,0.5255,0.224,-0.149,1.6418,0.5874,0,-0.7299,0.3676,-0.0733,0.6598,0,2.622,-0.071,-1.0653,0.7179,2.2808,-0.7665,0.0702,-0.3509,0.5634,0.3501,-1.2561,0.3534,-0.0704,0.3523,0.9129,0.2088,-2.5694,-0.4277,-0.2147,0.7891,3.6299,-2.7778,0.7143,0.1418,0.4249,0.141,0.4225,0.1403,-1.3305,-0.2839,0.2847,0.071,0.7801,-0.6334,0.3541,0.7763,0.4202,-0.1395,0.3492,-0.2088,0.3487,-0.9034,-1.0519,-0.9922,0.7874,0,0.5682,-0.1412,0.9194,-1.1913,0.3546,-0.424,0.7097,0,-0.4228,-1.7693,0.2882,3.7356,1.108,-1.0274,-0.6228,-1.3231,-0.494,-0.0709,0.8517,0.7037,0.0699,0.5587,-1.9444,0.9207,0.7017,-0.1394,0.3489,-0.2086,0.2091,-0.4172,0.5587,1.1806,-0.2059,1.0316,-1.9741,-1.3194,1.4075,0.5552,1.2422,-0.409,0.4152,1.3784,-0.6118,0,2.052,0.8713,-0.4651,0.4673,-0.1329,-0.0665,-0.9321,1.8817,-0.066,0.33,0.0658,0.526,-0.9156,0,0,0.528,0.7223,-0.3911,0.3927,-1.2386,0.462,-0.0657,1.1177,0.6502,0,-0.1292,-1.3584,-0.459,0.3294,-0.3283,1.5152,0.584,-1.9355,-0.3289,3.4323,-2.4888,0.1309,-0.0654,1.4389,0,-1.4184,-0.1308,0.6549,-1.1711,1.3825,0.3896,-0.7762,-0.3911,1.0471,0.842,-0.2569,-0.0644,0.5155,0.0641,1.0891,-1.5209,0.1287,0.4499,0.3839,0.0637,-0.6369,0.1923,0.2559,-0.8934,-0.0644,0,-0.6443,-3.1777,1.5405,-1.6491,0.6036,-1.0667,-2.0216,0.3439,-0.7539,0.4144,-1.3067,-1.8119,1.4904,-0.7692,-0.0705,1.0578,-0.8374,0.3519,0.1403,1.4006,-0.4144,0.6241,0.4135,0,1.0981,0.611,-1.417,-0.616,-0.551,-1.108,0.7003,0.2782,1.0402,0.8922,-0.068,-0.3404,-0.2732,-0.0685,0.7539,1.7007,-3.7187,-0.0702,0,-1.6866,-0.9292,-0.0722,0.1444,1.2978,0.2135,-0.9943,0.7174,-0.4273,1.5737,-0.5634,0.5666,-0.8906,0.0719,0.6466,0.9279,-0.2122,0.6378,-0.9155,1.919,0.6276,0,0,1.314,-0.4778,0.3429,-0.2734,-0.8225,-0.0691,1.1757,0.1367,0.273,-1.3615,-1.5873,0.6311,0.4181,1.1797,0,0.1372,1.2329,0,0,0.3425,0,0,1.0128,-1.1364,0.5409,-0.2017,1.1456,-0.0666,1.5333,-1.1162,-0.3984,-0.7333,0.4701,0.4011,0.466,0.9278,-1.6415,-0.8011,-0.2019,-0.2697,1.2847,-0.8011,0.9421,0.8,-0.1984,0.2651,0.9914,0.4581,1.811,0.2587,-0.7742,0.1951,1.7521,-0.4464,-0.7047,0,0],[0.9646,-1.0464,0.2759,0.9629,-1.317,0.5982,-0.2287,0.8253,1.6371,0.4922,-1.024,-0.1799,0.5858,1.3889,-1.2373,-0.2685,2.6021,0.2186,0.349,-0.2609,-0.0436,0.5233,3.2972,0.126,-1.6359,0.8102,-0.8037,0.8529,-0.1269,0.0423,0.7194,1.8908,-0.2474,0.2067,-0.7426,0.8313,-1.0717,-0.625,-1.3837,0.2551,-0.6785,2.69,-0.1663,0.708,-0.3309,-0.2905,0.0832,0.5406,0.579,0.1234,0.2464,0.4916,0.6523,1.261,-0.083,-2.1604,-0.2123,0.5106,0.5504,-0.6737,1.1869,-0.7541,-0.4643,0.721,0.2947,0.4618,0.5433,-0.7481,-1.5494,0.1276,-0.7646,0.5565,-1.4474,0.6048,1.2452,-0.4241,2.9813,0.1654,-0.0826,0,2.4793,1.6129,-0.6349,0.0799,0.8779,0.8703,0.7451,0.2336,-0.5825,-0.3906,0.5882,-0.117,-2.1858,-0.3591,0.6408,-0.1194,0.3984,-0.1587,-0.8347,-0.2806,-0.0402,-0.0402,-0.1609,-0.282,0.202,0.7258,0.8807,-0.9127,0.4405,-0.0797,-0.9178,-0.2416,2.6241,0.3147,-1.3725,-0.8748,0,0.5616,-0.6382,0.6022,0.4789,-0.556,2.7556,0,0.0777,-0.2718,-0.5841,0.5875,-0.9735,0.6685,0.5078,0.0389,-0.0389,-0.6996,0.4305,-1.403,0.079,-0.7504,0.955,0.1182,0.8661,0,-0.6635,0.1965,-0.8235,0.0395,0.7905,-0.4706,-0.2758,-0.7902,-1.1549,-0.5238,1.2151,-0.6403,-0.0806,-0.7658,-0.7311,0.0409,0,-0.6135,0.6173,-0.0818,0.2865,-1.3469,0.8688,-0.4102,1.6474,-0.6888,-1.2648,-1.9422,-0.2107,0.2111,0.9692,1.6694,0.041,-0.2872,-1.1934,1.541,0.7793,-0.3256,1.0617,-0.2424,-0.3645,0.4472,0.607,0.8045,0.4789,0,0.5163,-2.2521,1.0509,0.32,-0.1196,0.1198,-0.0797,0,-0.6385,-0.8032,0.6073,0.5634,-0.5602,1.006,-0.3984,-0.96,-0.8481,-0.2444,-1.8375,0.2496,1.1203,-0.4924,2.7629,-2.0867,0.9836,1.177,-0.361,-1.2882,-0.2039,-2.1659,-1.8379,0.0851,-0.5102,0.0855,0.4697,-0.17,0.1703,-0.765,0.4283,-1.2793,1.3823,1.2782,-1.7249,-0.3425,-0.2148,-2.3676,-1.0141,1.2027,4.5775,2.1044,0.4946,-0.6563,-0.2064,-1.0343,1.7141,-0.4932,-0.1239,1.158,0.1635,-0.9388,-0.0824,-0.3711,0.4553,-0.5356,0.8699,0.1232,0.5742,-0.7749,2.0962,0.9259,-0.6781,0.7631,-0.3986,0.2401,-2.3154,-0.4087,1.3952,-0.6475,0,-2.8106,1.7603,0.9885,-0.9788,0.2883,-0.5749,1.1565,0,-2.5316,1.3406,-0.372,-0.166,0.9144,-0.5354,1.118,0.6552,1.2205,0.1206,-1.6459,0.6122,0.2028,0.6478,0.6034,-3.0388,1.5258,-0.9748,-0.5332,0.1649,-0.3705,1.157,-0.1634,0.7365,0.2437,0.3647,-1.4534,0.041,0.1281,0.2559,-0.0425,-0.5957,-2.1404,-0.2625,-0.9649,-0.3986,0.2223,-0.3993,-0.7572,1.167,-0.7542,0.2682,0.2229,-2.1352,0.6364,-0.2258,0.0905,0.8593,0.9417,-0.5775,0,0.3575,0.4898,0,0,-1.8679,1.1606,0.0459,-1.0092,0.0463,-0.4632,0.8376,-0.6922,-0.3253,0.3263,-0.7435,1.3109,-0.0462,-0.1849,0.4632,-1.8903,-0.188,0,0,-0.0483,0,0,1.1106,-1.4188,-0.0928,-0.8364,2.1556,0.367,-0.1371,0.2746,-0.5933,-2.112,-1.1257,-0.9962,-1.4375,0.4861,-1.4998,-2.9224,0.4807,0,0.5791,-0.1752,1.003,-2.0109,-2.6096,-0.8065,0.9441,0.7015,0.0774,0.5672,-0.564,-0.1031,0.6968,-9.1235,2.5945,-0.6322,1.7151],[4.9766,-2.2908,0.6513,0,-0.9706,4.737,1.8715,-2.8169,1.2287,0.1867,-2.7959,-0.3835,1.2512,0.4119,0.6627,-0.3135,2.7673,-1.071,2.0105,-2.547,-0.4978,1.626,0.6154,-0.6116,-1.2615,0.1558,-2.1157,8.2327,3.6711,0.8782,-0.337,-0.3663,-0.1697,-1.0198,0.0286,0.8584,-0.4823,-0.8267,-1.7246,0.6142,0,1.1628,0.8046,-2.0525,-0.4657,0.9357,2.6941,-0.7616,0.4832,1.3578,0.0837,2.2588,0.8181,3.4623,1.8301,-2.2336,-0.9191,0.2915,0.74,-2.9643,0.8381,-0.0536,0.912,0.7563,0.0804,0.2143,1.4702,1.686,-0.6995,-0.7044,0.5255,-0.6012,-2.314,0.8345,0.6674,-0.2917,3.75,4.1784,0.5413,-0.7587,1.2824,-0.4383,1.6141,-2.2864,-2.0936,-2.6918,0.4395,3.964,0.9408,-2.2075,-0.301,-0.2264,-3.53,0.575,2.5728,-0.7094,1.3014,0.0756,1.8122,0.1236,-0.4691,-1.0667,0.0501,0.2256,0.6252,-0.3976,2.4202,-2.1924,2.2416,-1.5834,-2.0544,2.9062,3.7328,-1.8703,2.9192,0.0234,0.3047,1.3785,-3.1574,-0.476,-1.2434,-0.3874,-0.0486,-0.5593,0,0.0245,0.3667,0.4141,-0.4367,0.5361,0.509,-1.061,1.1943,-2.2881,0.1232,-0.7386,-3.4722,0.2055,0.7692,-0.7634,-0.2051,-1.9013,0.7072,2.1326,0.331,-0.3553,-0.4839,0.9726,0.1267,-4,-1.2131,-2.456,0.1916,-0.956,1.3238,1.1976,-0.1883,-0.3234,3.7307,2.2935,0.1274,1.9338,-1.323,-1.9732,-0.2839,1.8116,1.6777,-0.225,0.9772,0.1241,1.6109,0.7561,0.0968,-0.4837,-1.0936,0.2948,-0.6859,0.8387,2.6174,-0.5483,0,0.3116,-1.0753,-0.0483,1.3291,-0.0715,-0.6444,0.0721,0.144,-0.1918,0.4563,-1.2192,0.9196,-0.9592,0.6295,0.0962,-0.2404,0.1205,0.3369,1.1993,-0.9955,1.0534,1.611,0.0933,-0.0932,0.2098,0.5119,0.4398,0.9449,0,-1.6438,-0.2553,0.0698,0.6279,-1.9644,-8.5809,-0.6189,-3.5807,-2.9871,-1.4979,2.9287,1.368,-0.6748,-0.4076,-0.1637,-2.569,-4.7686,1.1487,1.1648,-0.6908,-0.2319,-4.2127,2.8207,0.885,-0.5848,0.2941,-1.6129,-0.2981,-0.3289,2.8794,-0.8163,-0.147,0,3.8858,-0.6234,1.5968,0.9543,-0.278,-0.0558,0.781,1.9374,1.0318,1.72,0.1849,0.5274,1.128,-2.1271,-1.5372,-0.2692,-2.4022,0.1106,0.0276,-0.2762,1.4677,-0.4367,0.0548,-1.8356,-0.0279,1.368,-0.8538,-2.6111,0.7986,0.3961,-2.7621,-0.8696,0.6725,7.9872,2.2055,-0.8947,3.1067,1.0559,-0.3058,-1.5849,2,-1.9099,2.2586,2.9957,2.81,0.0479,0.9346,-0.831,-0.2394,-0.7679,-1.7896,0.1231,2.9021,-0.717,2.0222,-1.2978,-0.3825,-2.0878,-0.098,-0.0245,-0.7607,-2.3244,1.7215,-0.7218,-1.2785,0.5079,-0.48,0.3808,-1.6945,0.2058,-1.8485,2.0403,-1.1515,0.0794,2.6455,-1.6237,-4.5586,2.0313,-1.0492,2.4742,0.0796,1.9618,-1.3001,0.1317,-0.2631,0,0,1.6751,0.34,6.8543,4.5122,-3.4539,1.4503,0.7148,1.2538,-2.5701,1.9664,-0.4233,1.5588,-1.6512,2.8612,-0.5747,0,0.3931,0,0,0,0,0,1.6801,-1.4486,-0.2526,-0.5526,0.3705,-0.4844,-0.0927,0.4872,-1.2237,-0.9818,-2.5732,-0.0727,-3.4433,-1.3059,-2.0356,-0.2597,0.026,-2.6295,2.1123,-1.8068,0.5867,-1.7232,2.1041,-2.4042,1.2453,0.9626,-1.3771,1.3695,-0.2649,-0.2656,2.3702,0.5983,-0.4138,-0.1298,0.13],[1.0067,2.6578,4.4498,0.6971,-0.7692,-0.2326,0.3108,-3.1758,2.88,-1.7885,0.0792,0.8703,-1.0196,-0.9509,1.84,1.1783,0.7764,1.2327,0.9893,0.4521,-0.3751,1.5813,0.9637,1.1013,1.8155,0,-1.6405,2.8281,0.4231,0.7725,-0.4878,0.1401,0.2098,-1.8144,-0.8529,1.9355,-0.4923,0.636,-3.7219,-1.7505,3.1923,-1.0791,1.3818,-0.6456,-1.083,-0.5839,-0.7342,1.1095,1.8288,2.0115,1.6197,0.7623,1.9257,-0.4723,-1.8305,-2.279,-1.4134,-0.0717,0.8608,-1.6358,1.3738,1.7832,-0.9811,-4.954,-5.8824,1.9778,-2.4825,-0.1591,-1.1952,3.0645,-0.626,-1.1811,1.8327,1.6432,1.0778,-0.6093,0.8429,0.076,3.7965,0.2926,-0.9482,1.0309,0.656,-0.7965,0.073,-0.2918,0.3658,-2.0408,4.3899,-3.2787,1.916,0.4338,-3.5277,4.8507,0.9253,-1.1989,-1.3562,0.3618,-1.7304,-0.0734,3.7445,1.9108,0.9028,0.0688,-2.5447,-0.6351,-0.2841,-2.3504,3.7929,-0.7027,-1.2739,0.5018,1.5692,-0.4916,1.6937,2.4289,0.1355,-1.4885,-1.9231,-2.2409,0.0716,-0.5727,-0.576,-0.4345,1.0182,-0.9359,0.436,0.2894,-0.4329,2.4638,-0.1414,1.2748,0.2797,1.1158,-0.8276,-0.4172,0.419,-1.8776,0.4252,0.7763,0.6303,-0.5567,0,-1.2596,-0.9213,0.0715,-0.7148,1.3679,-0.9233,-0.6452,-3.824,1.9505,-0.0736,0.1473,0.4412,-0.4392,-2.6471,-1.0574,2.2137,-2.8379,11.299,-3.2459,1.7131,1.0526,-0.7639,2.0294,0.1372,-0.8904,-0.0691,-1.4523,1.193,0.8322,0.0688,-1.1684,0.4868,0.5536,-2.5465,0.7062,0.3506,-0.2795,-0.911,0.9901,0.4902,-2.5784,-0.4292,0.7184,-0.8559,2.0144,0.9168,0.2096,-0.1395,-2.933,0,2.2302,-0.0704,0.2817,0.5618,0.2095,-6.2021,-1.0401,-0.9009,0.6061,-0.3765,-3.2502,0.8594,-2.0139,2.5296,-1.2336,0.7026,-2.2481,-3.0135,-1.39,2.8192,-0.5645,-0.2433,-3.9837,-2.7096,-1.6536,-0.4425,0.7111,6.7961,1.2397,-2.449,3.0126,-2.3558,-0.3328,-0.2504,-0.4184,1.9328,-1.0717,2.5,-1.4634,-1.4026,-2.5941,2.4055,-2.2651,2.4893,-0.9213,-6.1708,-5.2252,-1.711,-0.1934,-0.0969,-0.7759,0.782,2.1339,-0.6648,0.6692,-1.2346,-1.0577,2.8183,-0.0473,-2.1277,6.2802,4.6818,0.0868,1.692,-1.8771,-0.4348,0,0.131,0.785,-1.601,2.9464,0,-3.2038,-1.6328,-1.3908,3.0027,0.3534,-3.081,-0.2725,-0.2732,-2.6484,-0.2345,-1.6455,2.4857,-1.5858,-1.7062,1.7358,-1.2796,3.1685,-0.1396,1.3979,-3.7684,0.2865,-2.9524,17.7625,3.4167,1.5713,-2.4197,1.3821,-1.1227,-1.3788,2.3026,0.7235,-0.2394,0.84,0.0793,-0.1189,-0.3968,0.6375,0.5146,-0.3545,0.0791,0.316,0.1575,-0.6289,-0.1582,-1.5848,3.0596,1.4062,-3.2357,-2.9459,2.0098,-1.0856,-1.0569,-0.5752,-0.5372,0.9555,-1.07,-0.9983,8.7395,-2.3184,1.068,-0.8219,-1.0655,-1.3562,0,0,-0.2788,-1.278,1.0113,1.2815,-1.3049,3.6458,0.8891,-4.6743,1.5675,-0.9893,-1.9984,2.3654,1.0359,-2.7997,-0.4462,-0.652,-2.1739,0,0,3.3047,0,0,0,0.3886,-1.9967,-1.0395,-0.5462,2.2391,0,2.0455,-2.7738,-0.9579,0.9462,5.603,-2.5444,0.6679,0.9248,-3.6853,1.8201,-1.8485,1.904,-0.528,2.3377,1.3466,1.3287,-0.34,0.3899,3.2524,-0.7522,2.558,0.2771,0.4146,2.2936,1.1211,-0.2217,1.0222,-1.1879],[-2.3915,1.9373,2.5992,0.0817,-0.8438,0.4666,1.2568,-0.3508,0.7582,-0.9675,0.0543,1.0306,-0.6711,3.9189,-0.7282,-0.0524,0.3932,-0.0783,-4.416,-0.9841,0.0828,-0.7172,0.3056,-0.7202,-0.3348,0.224,0.4749,2.1129,-0.844,0.3844,1.8873,0,1.0738,-0.3453,0.613,0.5298,0.2108,0.1052,-0.5254,0.132,-0.4219,-0.1854,0.398,-2.0085,-1.4024,1.0941,-0.5952,-1.0615,2.4894,0.0552,-0.4414,-0.0277,0.7761,1.5952,-0.2978,-0.5159,-0.7642,-0.0825,1.2662,-1.0601,0.1923,-0.9597,0.2769,-0.7178,-0.5006,-0.3633,0.7013,-0.9749,-0.7032,1.0765,0.5325,-0.2509,0.1398,0.4745,0.1389,-1.165,2.554,1.3957,0.2159,0.2963,-1.5843,-0.8186,1.0179,-0.1634,0.5456,4.178,-0.9375,-0.7361,-0.9534,-0.8289,0.0809,1.1315,-2.1044,-0.7347,0.6305,2.152,0.6667,1.2185,-0.3664,0.6304,3.1845,-0.5818,-0.687,-1.153,-1.1405,-0.7866,-0.5021,0.5578,0.0264,0.4489,-0.6309,1.2698,0.2874,1.7713,-0.6655,-0.6442,0.6483,1.1337,-1.9108,-1.0649,-0.2888,-0.316,0.4226,-0.0789,-0.4212,-1.216,-0.0803,0.4285,-1.2,1.1606,0.4269,0.2391,0.1855,1.5873,1.1719,-0.6435,-0.4145,-0.3122,0,1.6441,0.8216,-0.9677,-0.36,0.7742,0.3073,-1.0978,0.9035,-0.1791,0.3844,-0.2042,-2.6861,-1.2093,-0.3459,-0.4539,-0.2682,-1.1296,-0.4353,-0.1366,0.0821,-0.6014,1.8152,-1.1075,-0.3278,-0.5207,0.551,1.9726,-0.1343,-0.8609,-1.1126,-0.6037,-0.4417,-0.9151,1.6233,-1.0465,0.668,0.0829,-1.6022,0.8142,0.5013,0.1385,-1.6602,0.0281,0.2813,0.9818,0.1389,0.3329,1.9906,-0.8403,-0.164,0.0821,0.4651,-0.1089,2.4809,-0.266,0.4268,4.0106,-0.9959,-1.367,0.6799,-0.3636,-1.147,1.5559,-0.1818,-0.1301,-0.2865,0.5486,-1.377,0.1054,-0.6053,-1.112,-0.6426,-1.1587,0.6543,-1.5439,1.3205,-0.2987,0.5719,2.1121,0.1326,0.5826,0.6846,-1.3075,-0.6624,-1.2804,1.2429,0.0534,-0.7469,-0.2956,-0.0539,1.5102,1.1158,0.7882,-0.2086,-1.0711,-0.132,1.6129,-0.3383,-0.47,0.341,-0.4967,0.2627,-0.4193,2.1316,-0.6442,-0.8558,0.7847,-0.4672,0.6258,-0.4924,-0.7031,0.6557,0.3648,0.7269,1.0052,-0.1786,0.3579,-0.1528,-0.7653,0.2571,0,1.9487,-0.1761,-0.0504,-0.8067,0.9657,0.6796,-0.75,-0.1259,1.0593,0.8485,-1.6333,0.6541,-8.123,1.0337,0.5654,-1.9813,2.3491,17.8276,-1.1778,13.3853,-0.3032,-0.1419,0,0,0.1218,0.0811,-0.0608,0,0.5474,0.0202,-0.0806,0.3834,0,0,0.0603,-0.0603,-0.0603,0.0804,0.0402,-0.1205,-0.0201,0.0805,-0.0201,0,-0.0402,0,-0.0402,-0.0201,0.5232,-0.1802,0.1003,0.4208,-1.237,-0.2828,1.5802,-0.2992,-0.3801,0.7631,-0.1594,-0.0798,0,0.2397,-0.0399,-0.1595,0,0,-0.0399,0.1598,0,0,0.0797,0,-0.1592,0.1994,-0.3979,0.2797,-0.1195,0.0399,0.1994,-0.199,0,0.0399,0.0797,-0.0797,0,0.0797,-0.0398,0,0,0,0,0,2.6725,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0.7816,0.0408,-0.1224,-2.2059,-0.2506,-1.005,0.1692,0.5068,2.6471,0.0819,-1.1452,0.0414,0.0827,-0.5785,-0.1662,-0.2914,0.167,0.0417,2.5833,-1.8684,1.2831,1.7981,-0.3613,0.4835,-1.0024,2.7542,-0.1971,0.7504,-0.8232,0.7115,-0.3925,0.3546,-0.6282,-0.0395,0,0.3557,0.9453,2.263,1.3354,1.5437,1.3719,1.3533,-0.4691,-0.2538,-0.3272,0,-0.0365,0.1459,0.1457,-0.0364,-0.3275,0.0365,0.9854,0.5782,-0.9342,-1.1607,-1.3211,1.1157,-0.7356,-0.8151,0.3736,0.2233,-0.5199,1.3451,-0.5309,1.0294,4.0377,0.2539,-0.3256,0.1815,-0.1449,1.0522,-0.5027,1.0465,0.5,-0.2843,1.0335,-0.5291,1.0993,-0.3858,-0.2817,-0.4237,0.5319,0.776,0.035,-0.7348,0.9165,-0.1048,-0.5944,-0.3869,-0.565,-0.2486,-1.246,-0.8652,0.5455,0.651,0.3953,-0.2505,-1.1841,-0.6173,0.2923,-0.9107,0.9191,0.0729,-0.182,-1.2764,0.8866,-1.6844,0.4097,0.6676,-1.0685,0.5587,1,0.0367,-0.3666,-0.6255,-0.2221,-0.705,-2.3916,-1.1103,-1.2002,0.1959,0.704,-0.5437,-0.4295,-0.8627,-0.3165,1.7063,-0.5072,0.9412,0.3496,-0.5033,-0.1167,1.3635,0.9608,-0.2665,-1.7176,-1.3981,0.2363,0.4322,1.0563,-0.6581,0.4287,0.6597,-0.8096,0,0.4275,-0.0774,0.852,-1.3057,0.5837,0,0.619,-0.2307,0.501,-8.7423,3.3613,0.8943,1.0878,-2.3515,0.6122,-1.2576,0.0411,-1.191,0.2078,0.8295,1.5631,-1.6201,-0.247,-0.1238,0.8678,-0.4506,1.8107,0.768,-1.6446,0.8157,-2.1036,1.9421,0.8512,-0.3215,0.8065,0.64,0.159,-0.873,-0.2002,1.1231,0.4363,-0.4344,0.476,0.4343,0.7076,0.039,-0.1951,0.7037,0.0388,-0.0776,-0.0388,0.0389,0.5048,5.2164,-1.2119,1.0781,-0.2574,-1.5118,0.1872,0,0.4858,0.2231,0.3339,1.3314,-0.6204,0.5509,-0.4748,-1.9083,-5.275,-2.8831,1.1387,-1.8898,-1.2295,0.8714,0.5759,-0.9816,-0.7848,-0.4579,-1.0456,-0.3381,-0.7634,-0.5556,0.2578,-0.0857,1.4157,-1.7766,-0.1723,1.5099,-1.4875,0.2157,0.3013,-0.2146,-0.8172,1.6045,-0.7682,0.043,2.3216,-0.042,0.042,-0.1261,1.178,0.4158,0.207,-0.7025,0.2913,0.4149,0.9917,-0.0409,-0.9415,1.0331,-1.1861,-1.4487,0.042,0.4618,-0.4597,0.3359,0.7531,1.1213,-0.0411,0.2465,-0.6967,-1.6509,1.6786,0.2476,-1.3174,-2.4197,-0.4703,-1.3316,-1.6543,-0.3984,3.1111,-1.5517,-1.007,0.3538,-1.6307,1.1649,0.8857,0.5707,-2.5753,-0.4928,0.4052,5.5605,-3.0586,0.1315,-1.0941,-1.6372,-1.2146,-1.184,2.1659,0.8119,0.9843,0,-0.0886,0.2661,-0.6192,-0.6231,-0.2239,0.9425,-1.2895,-0.4504,-0.2715,-1.6334,1.107,-0.0456,1.6887,0.3591,-3.3989,-0.463,1.1628,-0.2759,0.0461,0.1382,-0.8283,1.0587,0.3333,0.2848,0,0.3786,1.3673,-0.093,0.5121,0.1853,0,0,-1.6393,-0.6019,1.7699,0.2288,0.1826,-0.5469,0.8249,0.4091,-2.8067,-1.537,0.2365,0.7079,0.5155,1.1655,-0.553,-0.3244,0.8368,0,0,0.1847,0,0,0.0455,-0.0455,1.4117,-0.1347,-0.7194,0.4076,0.1804,0.1351,1.8885,-1.5887,-0.0448,-0.0897,-0.5837,1.4002,-0.98,-1.3495,0.0912,-1.5945,1.5278,-1.368,0.8784,-1.3749,0.7435,1.5683,1.0899,1.3477,-0.7092,0.2232,0.0891,-0.7566,-0.1794,0.1797,2.1076,0.4831,-0.2185]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>TRYG<\/th>\n      <th>DDB<\/th>\n      <th>FLS<\/th>\n      <th>GENMAB<\/th>\n      <th>TDC<\/th>\n      <th>ISS<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="tryg-aktien" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Tryg aktien</h3>
+<p><img src="img/trygkylling.jpg" alt="trygkylling.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Data for <a href="https://www.dropbox.com/s/yfkk73fg9735pis/DK%20aktiekurser.xlsx?dl=1">DK aktiekurser.xlsx hentes her</a>, vi ønsker at beskrive det procentvise daglige afkast for Tryg vha. forskellige deskriptorer.</p>
+<p>Vi kan grafisk illustrere Tryg data i et histogram, nedenfor er et histogram, på x-aksen er afkastet i procent, på y-aksen er hyppighederne:</p>
+<p><img src="bookdown-demo_files/figure-html/OMX-hist1-1.svg" width="864" /></p>
+<p>Her er samme data med færre søjler, nu har vi på y-aksen frekvensen af søjlerne i stedet for hyppigheden altså antallet af observationer:</p>
+<p><img src="bookdown-demo_files/figure-html/OMX-hist2-1.svg" width="864" /></p>
+<!-- ```{r OMX-tabel,echo=FALSE} -->
+<!-- library(DT) -->
+<!-- datatable(DKdf[,1], options = list(pageLength = 5)) -->
+<!-- ``` -->
+<!-- ```{r OMX-histplotly,echo=FALSE,fig.width=9, fig.height=5, dev='svg'} -->
+<!-- hc <- ggplot(data=DKdf, aes(DKdf$TRYG, ..density..)) +  -->
+<!--   geom_histogram( binwidth=1, -->
+<!--                  col="white",  -->
+<!--                  aes(fill=..density..)) + -->
+<!--     scale_fill_gradient("Frekvens", low = "lightgrey", high = "black") + -->
+<!--   scale_size_area() +  -->
+<!--   stat_bin(binwidth=1, geom="text", aes(label=round(..density..,2)), vjust=-1.5,size=2)+ -->
+<!--   xlab("Dagligt afkast Tryg aktien") + -->
+<!--   ylab("Frekvens=Hyppighed/n") + -->
+<!--   ggtitle("Histogram") -->
+<!-- ggplotly(hc) -->
+<!-- ``` -->
+<!-- ```{r OMX-grafer, echo=FALSE} -->
+<!-- library(dygraphs) -->
+<!-- dygraph(DKdf, main = paste0("Danske aktiekurser pr. ",Sys.Date())) %>% -->
+<!--   dyOptions(colors = RColorBrewer::brewer.pal(6, "Set2")) -->
+<!-- barx <- round(mean(DKdf[,1]),4) -->
+<!-- s2 <- round(var(DKdf[,1]),4) -->
+<!-- ``` -->
+</div>
+<div id="middelvrdien" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Middelværdien</h3>
+<p>Middelværdien af en variabel bestemmes ved at bestemme gennemsnittet for variablen. Da afkastet for Tryg indeholder n=387 observationer bliver formlen:</p>
+<p><span class="math display">\[ \bar{x}=\frac{\sum_1^n (x_i)}{n}=\frac{-0.3108+0.7015+1.0062...+0}{387}=0.0775\]</span></p>
+</div>
+<div id="variansen" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Variansen</h3>
+<p>Variansen (stikprøvevariansen) er et udtryk for variationen omkring middelværdien i data:</p>
+<p><span class="math display">\[ S^2=\frac{\sum_1^n (x_i-\bar{x})^2}{n-1}=\\ \frac{(-0.3108-0.0775)^2+(0.7015-0.0775)^2+(1.0062-0.0775)^2...+(0-0.0775)^2}{386}=\\\\ \\ \\0.97\]</span></p>
+<p><br>
+<br></p>
+<div class="Keats">
+<p>“Every two days now we create as much information as we did from the dawn of civilization up until 2003”<br />
+- Eric Schmidt Google</p>
+</div>
+</div>
+<div id="standardafvigelsen" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Standardafvigelsen</h3>
+<p>Standardafvigelsen er lig med kvadratroden af variansen, og er dermed ligeledes et mål for variationen omkring middelværdien. Standardafvigelsen har i modsætning til variansen samme enhed som data, hvilket gør tolkning lettere. Varians og standardafvigelse er afhængige af skala, hvilket fx. betyder, at værdier i kr. vil have 1000 gange større variation end størrelser målt i antal tusinde kr. For fx. aktie afkast vil standardafvigelsen være en vigtig parameter, da investorer er risikoaverse ønskes mindst mulig standardafvigelse i forhold til afkastet.</p>
+<p><span class="math display">\[ S=\sqrt{S^2}=\sqrt{0.97}=0.9849\]</span></p>
+</div>
+<div id="modus" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> Modus</h3>
+<div class="Keats">
+<p>Gennemsnit</p>
+<p><img src="img/moose.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
+En finansøkonom, en biolog og en statistiker er på elgjagt. De ser er flot stor elg. Finansøkonomen skyder og rammer en cm. foran snuden. Biologen skyder og rammer 1 cm. bag halen. Statistikeren jubler og råber: “Vi fik den!!! Vi fik den !!!”</p>
+</div>
+<p>Modus/modalværdi/typetallet er den hyppigst forekommende observation for et observations sæt. Typetallet er ikke nødvendigvis godt til at beskrive data. Har vi fx. observations sættet: {1,1,2,3,4,5,6,7,8,9,10} er typetallet 1, medianen 5 og middelværdien 5.09. I dette tilfælde ville modus være en ringe deskriptor for observations sættet.</p>
+<p>Har vi en fordeling med en top kalder vi den for unimodal, har fordelingen 2 toppe kalder vi den bimodal.</p>
+</div>
+</div>
+<div id="medianen-kvartiler-og-fraktilen" class="section level2">
+<h2><span class="header-section-number">3.2</span> Medianen, kvartiler og fraktilen</h2>
+<p>Når vi ønsker at beskrive middeltendensen i et datasæt kan vi angive middelværdien, typetallet eller medianen.</p>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/228228875" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Medianen også kaldet 2. kvartil eller 50% fraktilen er den midterste observation i det ordnede datasæt, er der et lige antal observationer tages gennemsnittet. Man kan nu bestemme nedre kvartil også kaldet 1. kvartil eller 25% fraktilen, som midten af den nedre halvdel af det ordnede datasæt. Tilsvarende gælder for øvre kvartil også kaldet 3. kvartil eller 75% fraktilen blot for den øvre halvdel at det ordnede datasæt.</p>
+<p>Hvis vi har et ordnet datasæt {11,13,15,16,16,18,20}, finder vi således medianen som den midterste observation, da vi har et ulige antal observationer. {11,13,15,<strong><em>16</em></strong>,16,18,20}. Vi kan udtrykke dette som at 50% af observationerne er 16 eller derover, eller ævkvivalent, at 50% af observationerne er mindre end 16.</p>
+<p>Vi kan bestemme 1. kvartil, som den midterste observation, i den nedre del at datasættet {11,13,15,16}. Vi har to midterste observationer {11,<strong><em>13</em></strong>,<strong><em>15</em></strong>,16}, i den nedre del af datasættet og bestemmer 0.25 fraktilen som gennemsnittet af disse: <span class="math inline">\(\frac{13+15}{2}=14\)</span>. Vi kan udtrykke dette som at 75% af observationerne er 14 eller derover, eller at 25% af observationerne er mindre en 14.</p>
+<div class="Keats">
+<p>“Most murders are committed by someone who is known to the victim. In fact, you are most likely to be murdered by a member of your own family on Christmas day.”<br />
+- Mark Haddon</p>
+</div>
+<p>Der er mere end 8 forskellige definitioner på kvartiler og fraktiler alt efter kontinent og region, vi går ikke i deltaljer med beregnings metoderne, men softwareprogrammer kan beregne fraktiler for os, disse kan altså afvige en smule alt efter beregningsmetoden. 1. og 2. kvartil er fx. ikke helt de samme når vi regner disse ud i excel.</p>
+<p>Data for <a href="https://www.dropbox.com/s/yfkk73fg9735pis/DK%20aktiekurser.xlsx?dl=1">DK aktiekurser.xlsx hentes her</a>, vi ønsker at beskrive det procentvise daglige afkast for Tryg vha. forskellige deskriptorer.</p>
+<p>Medianen for Tryg findes ved at sortere data -4.3215, -3.7187, -3.1777,…,3.7356 vi finder at medianen bliver 0.0719.</p>
+<p>Vi bestemmer ligeledes 1. kvartil til -0.4117, og 2. kvartil til 0.61175. 1. kvartil, Medianen og 3. kvartil kan ses i nedenstående boxplot diagram, som hhv. første, anden og tredie vandrette streg i boxplottet for Tryg. Vi kan hvis vi skal forsøge at udtrykke fx. 1. kvartil med menneskeord sige at 25% af dagene var der et afkast på -0.4117 eller derunder. Man kunne også udtrykke det som at 75% af dagene var afkastet på mere end-0.4117.</p>
+<p>Kvartilafstanden eller IQR interquantile range betyder 3. kvartil minus 1. kvartil, i Tryg eksemplet bliver kvartilafstanden 0.61175- -0.4117= 1.02345. Dette svarer præcis til højden på boksen i boxplottet for Tryg, vi kan altså konstatere at halvdelen af afkastene lå i et spænd på 1.02345 procent.</p>
+<p><img src="bookdown-demo_files/figure-html/OMX-boxplots-1.svg" width="864" /></p>
+<div id="fraktiler" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Fraktiler</h3>
+<p>Vi kan ligeledes bestemme alle mulige andre fraktiler end 25% 50% og 75% fraktilerne, software angiver ofte en række af disse så man hurtigt kan danne sig et billede af datasættet. Nedenfor er en del fraktiler for Tryg datasættet angivet, mange af disse kan direkte aflæses i boxplottet.</p>
+<p>10% fraktilen, 20% fraktilen,…,90% fraktilen kaldes også for deciler.</p>
+<p>Herunder ses fraktiler for dagligt afkast på Tryg aktien.</p>
+<p><br>
+<br></p>
+<div id="htmlwidget-38ed37c1b2801dcb9c38" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-38ed37c1b2801dcb9c38">{"x":{"filter":"none","caption":"<caption>Fraktiler for Dagligt afkast Tryg aktien<\/caption>","data":[["0% Fraktilen","0.5% Fraktilen","2.5% Fraktilen","5% Fraktilen","10% Fraktilen","20% Fraktilen","25% Fraktilen","30% Fraktilen","40% Fraktilen","50% Fraktilen","60% Fraktilen","70% Fraktilen","75% Fraktilen","80% Fraktilen","90% Fraktilen","95% Fraktilen","97.5% Fraktilen","99.5% Fraktilen","100% Fraktilen"],[-4.322,-3.216,-1.939,-1.451,-1.082,-0.59,-0.412,-0.273,-0.068,0.072,0.337,0.517,0.612,0.718,1.147,1.528,1.926,3.446,3.736]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Dagsafkast i procent<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><br>
+<br></p>
+<p><br></p>
+</div>
+</div>
+<div id="skvhed" class="section level2">
+<h2><span class="header-section-number">3.3</span> Skævhed</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/228226797" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Skævheden angiver hvor meget en fordeling afviger fra en symmetrisk fordeling. Hvis skævheden er positiv (højreskæv), vil fordelingen have koncentrerede værdier til venstre og mere spredte værdier til højre, en hale mod højre. Er fordelingen venstreskæv vil skævheden være negativ, og fordelingen har hale mod venstre. Hvis skævheden er 0 eller tæt på nul siger vi fordelingen er symmetrisk.</p>
+<p>Formlen for skævhed er lidt indviklet, men softwarepakker kan beregne denne, der findes et par forskellige beregnings metoder så man kan godt få forskellige resultater. I Excel bruges formlen =SKEW() eller på dansk =SKÆVHED(). Skævheden for Tryg variablen kan beregnes til -0.21, det betyder fordelingen er en lille smule venstreskæv, det er svært at se men der er et par negative afkast som gør at middelværdien er mindre end medianen. Vi siger at medianen er mere stabil overfor outliers (ekstreme observationer) hvorimod middelværdien påvirkes af outliers. Bemærk man får måske et resultat, der afviger en smule fra det her beregnede, dette skyldes de forskellige metoder til beregning.</p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="26%" />
+<col width="26%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Navn</th>
+<th align="left">Skævhed</th>
+<th align="left">Typisk form</th>
+<th align="left">Indikator</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Højreskæv</td>
+<td align="left">Større end 0</td>
+<td align="left">Hale mod højre</td>
+<td align="left">Middelværdi større end Median</td>
+</tr>
+<tr class="even">
+<td align="left">Venstreskæv</td>
+<td align="left">Mindre end 0</td>
+<td align="left">Hale mod venstre</td>
+<td align="left">Median større end Middelværdi</td>
+</tr>
+<tr class="odd">
+<td align="left">Symmetrisk</td>
+<td align="left">0 eller tæt på 0</td>
+<td align="left">Samme haler mod højre og venstre</td>
+<td align="left">Median tæt på middelværdi</td>
+</tr>
+</tbody>
+</table>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.svg" width="864" /></p>
+</div>
+<div id="kurtosis" class="section level2">
+<h2><span class="header-section-number">3.4</span> Kurtosis</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/228223866" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Kurtosis eller topstejlhed beskriver hvor spids eller flad en fordeling er. Hvis kurtosis er positiv, er der meget vægt helt inde ved midten og ud i halerne det giver en spids, slank bredfodet fordeling, der kaldes leptokurtisk. Hvis kurtosis er negativ er der meget vægt mellem middelværdien og halerne, er kurven platykurtisk. Et typisk leptokurtisk datasæt vil i et histogram typisk have få høje søjler i midten og en eller to lange flade haler. Et platykurtisk datasæt vil typisk have mange næsten lige høje søjler, og kun enkelte lave søjler i siderne. Er kurtosis tæt på nul, siger vi fordelingen er mesokurtisk eller klokkeformet, normalfordelinger er mesokurtiske.</p>
+<p>Der findes forskellige lidt indviklede beregningsformler for kurtosis, men softwarepakker rapporterer den. I Excel bruges formlen =KURT() eller på dansk =TOPSTEJL(). Kurtosis for Tryg variablen er positiv, det betyder fordelingen er spids eller leptokurtisk, hvilket man måske kan fornemme, bemærk man får ikke nødvendigvis præcis samme værdi når man beregner kurtosis, ligesom med fraktiler findes der mange forskellige måder at beregne kurtosis på. Det er ikke vigtigt hvilken metode der benyttes, tolkningen er vigtigere.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Fordeling</th>
+<th align="left">Kurtosis</th>
+<th align="left">Typisk form</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Leptokurtisk</td>
+<td align="left">Større end 0</td>
+<td align="left">Spids</td>
+</tr>
+<tr class="even">
+<td align="left">Mesokurtisk</td>
+<td align="left">0 eller tæt på 0</td>
+<td align="left">Klokkeformet</td>
+</tr>
+<tr class="odd">
+<td align="left">Platykurtisk</td>
+<td align="left">Mindre end nul</td>
+<td align="left">Flad</td>
+</tr>
+</tbody>
+</table>
+<p><img src="bookdown-demo_files/figure-html/kurtosis-diagrammer-1.svg" width="864" /></p>
+</div>
+<div id="sprgsmal-deskriptiv-statistik" class="section level2">
+<h2><span class="header-section-number">3.5</span> Spørgsmål deskriptiv statistik</h2>
+<details>
+<p><summary>Spørgsmål deskriptiv statistik</summary>
+<strong>1.</strong> Hvad bliver medianen for datasættet {2,5,2,5,3,4}?<br />
+<strong>2.</strong> Hvad bliver 25% fraktilen for datasættet {2,5,2,5,3,4}?<br />
+<strong>3.</strong> Hvad bliver 1. kvartil for datasættet {2,5,2,5,3,4}?<br />
+<strong>4.</strong> Hvad bliver 2. kvartil for datasættet {2,5,2,5,3,4}?<br />
+<strong>5.</strong> Hvad bliver 0.75 fraktilen for datasættet {2,5,2,5,3,4}?<br />
+<strong>6.</strong> Du er nystartet porteføljeforvalter i private banking afdelingen i en større bank, du forestår forvaltningen af 10 kunders formuer. I antal tusinde kroner udgør porteføljerne: {344,421,293,459,228,391,375,377,318,428}. Du er fredag aften på Victor i dit Tiger suit. Under cocktails i baren falder du i snak med en ældre svensk mand, Ingvar Kamprad. Han er meget imponeret over dine prognoser og investeringsforslag. Mandag morgen kontakter en af hans medarbejdere dig, Ingvar Kamprad ønsker du skal forvalte en formue på 2 mia. kr. altså 2.000.000 tusinde kr. for ham.
+Hvorledes vil du bedst beskrive din typiske klient ved medianen eller middelværdien?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar deskriptiv statistik </summary>
+<strong>1.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. Der er 2 midterste observationer 3 og 4, {2,2,<strong>3</strong>,<strong>4</strong>,5,5}, gennemsnittet af disse er 3.5
+Medianen bliver altså 3.5<br />
+<strong>2.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 25% fraktilen bliver {2,<strong>2</strong>,3,4,5,5}<br />
+<strong>3.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 1. kvartil bliver {2,<strong>2</strong>,3,4,5,5}<br />
+<strong>4.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 2. kvartil bliver {2,2,<strong>3</strong>,<strong>4</strong>,5,5} <span class="math inline">\(\frac{3+4}{2}=3.5\)</span><br />
+<strong>5.</strong> Det ordnede datasæt bliver: {2,2,3,4,5,5}. 0.75 fraktilen bliver {2,2,3,4,<strong>5</strong>,5}<br />
+<strong>6.</strong> Middelværdi og median for den gamle portefølje er henholdsvis 363 400 og 376 000.
+Middelværdi og median for den ny portefølje er henholdsvis 182 148 545 og 377 000.<br />
+Den gennemsnitlige porteføljeværdi, er steget voldsomt efter den nye superklient, men den typiske klient beskrives her bedst ved medianen. Dette skyldes medianen ikke påvirkes væsentligt af denne nye store kunde, vi kan kalde denne observation for en outlier. Medianen er altså mere stabil overfor outliers i forhold til middelværdien.</p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Forbes 400 rigeste i USA formue</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlYTRWVWozb09PRTQ">Forbes 400 2014 RICH US</a>, filen indeholder data vedr. de 400 rigeste amerikanere i 2014. Formuen worth er opgjort i antal milliarder USD, de følgende spørgsmål relaterer sig udelukkende til denne variabel.</p>
+<p><strong>1.</strong> Hvilken type variabel er variablen worth?<br />
+<strong>2.</strong> Hvad er den gennemsnitlige formue for de 400 rigeste?<br />
+<strong>3.</strong> Hvad er medianen for de 400 rigeste?<br />
+<strong>4.</strong> Hvad er fordelingens skævhed?<br />
+<strong>5.</strong> Hvad er 3. kvartil?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden?<br />
+<strong>7.</strong> 10% af de rigeste velhavere har en formue der er større end?<br />
+<strong>8.</strong> 2.5% af de rigeste velhavere har en formue der er større end?<br />
+<strong>9.</strong> 90% af de fattigste velhavere har en formue der er mindre end?<br />
+<strong>10</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12</strong> Hvad er variationsbredden?</p>
+</details>
+<br>
+<details>
+<p><summary>Svar Forbes 400 rigeste i USA formue</summary></p>
+<p><strong>1.</strong> Variablen worth er en kvanitativ, kontinuert variabel, ratioskala.<br />
+<strong>2.</strong> Den gennemsnitlige formue er 3.81 mia. USD<br />
+<strong>3.</strong> Medianen for variablen worth er 2.1 mia. USD<br />
+<strong>4.</strong> Fordelingens skævhed er 4.98, fordelingen er som vi vel ville forvente klart højreskæv. Der er velhavere med meget store formuer, dvs. outliers med høje værdier, vanvittigt rige mennesker, som fx Bill Gates, Warren Buffet etc. disse danner en hale mod højre.<br />
+<strong>5.</strong> 3. kvartil er 3.4.<br />
+<strong>6.</strong> Kvartilafstanden er 1.9 mia. USD, størrelsen findes som 3. kvartil minus 1. kvartil. 50% af velhaverne ligger i et spænd på 1.9 mia. USD<br />
+<strong>7.</strong> 10% af velhaverne har en formue der er større end 7 mia. USD, her skal vi bestemme 90% fraktilen, denne fremgår direkte af Freestat.<br />
+<strong>8.</strong> 2.5% af velhaverne har en formue der er større end 20.51 mia. USD, her skal vi bestemme 97.5% fraktilen, denne fremgår direkte af Freestat.<br />
+<strong>9.</strong> 90% af velhaverne har en formue der er mindre end 7 mia. USD, her skal vi bestemme 90% fraktilen, denne fremgår direkte af Freestat, dette er samme svar som i spørgsmål 7.<br />
+<strong>10</strong> Fordelingen er klart spids, da kurtosis er meget høj 34.92<br />
+<strong>11</strong> Fordelingen er pr. definition leptokurtisk, da kurtosis er meget høj 34.92<br />
+<strong>12</strong> Variationsbredden findes som den rigeste minus den fattigste milliardær, variationsbredden bliver altså 59-1.05 = 57.95</p>
+<p>Vi kan da også se af histgrammet nedenfor at fordelingen er meget højreskæv og spids:</p>
+<p><img src="bookdown-demo_files/figure-html/ForbesWorth-hist1-1.svg" width="864" /></p>
+<p>Herunder ses det output man ville generere i Freestat.</p>
+<p><img src="img/deskriptivForbes400worth.png" alt="deskriptivForbes400worth.png" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Forbes 400 rigeste amerikanere</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlYTRWVWozb09PRTQ">Forbes 400 2014 RICH US</a>, filen indeholder data vedr. de 400 rigeste amerikanere i 2014. Vi vil i de næste spørgsmål se på fordelingen af variablen alder, pas på denne variabel er ikke komplet, sørg for at fjerne observationer med manglende data. Der er 2 personer, for hvem man ikke har indhentet oplysninger om alder.</p>
+<strong>1.</strong> Er datasættet bivariat?<br />
+<strong>2.</strong> Hvad er den gennemsnitlige alder for de 400 rigeste?<br />
+<strong>3.</strong> Hvad er medianen for alder?<br />
+<strong>4.</strong> Hvad er aldersfordelingens skævhed?<br />
+<strong>5.</strong> Hvad er 3. kvartil for Age?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden for Age?<br />
+<strong>7.</strong> 25% af af velhaverne er ældre end?<br />
+<strong>8.</strong> 2.5% af de yngste velhavere er yngre end?<br />
+<strong>9.</strong> 0.5% er yngre end?<br />
+<strong>10.</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11.</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12.</strong> Hvad er aldersspændet?
+</details>
+<br>
+<details>
+<p><summary>Svar Forbes 400 rigeste amerikanere</summary></p>
+<p><strong>1.</strong> Nej datasættet er ikke bivariat men multivariat.<br />
+<strong>2.</strong> Den gennemsnitlige alder for de 400 rigeste er 65.35 år.<br />
+<strong>3.</strong> Medianen for alder er 66 år.<br />
+<strong>4.</strong> Aldersfordelingens skævhed -0.14 fordelingen kan derfor betegnes som symmetrisk.<br />
+<strong>5.</strong> 3. kvartil for Age er 74 år.<br />
+<strong>6.</strong> Kvartilafstanden for Age er 18 år.<br />
+<strong>7.</strong> 25% af af velhaverne er ældre end 74 år.<br />
+<strong>8.</strong> 2.5% af de yngste velhavere er yngre end 42 år.<br />
+<strong>9.</strong> 0.5% er ynrgre end 27.99 år.<br />
+<strong>10.</strong> Fordelingen er klokkeformet da kurtosis er -0.18 dvs meget tæt på 0.<br />
+<strong>11.</strong> Er fordelingen mesokurtisk, jvf. spørgsmål 10.<br />
+<strong>12.</strong> Aldersspændet er 69</p>
+<p><img src="bookdown-demo_files/figure-html/ForbesAge-hist-1.svg" width="864" /></p>
+<p>Herunder ses det output man ville generere i Freestat.</p>
+<p><img src="img/deskriptivForbes400Age.png" alt="deskriptivForbes400Age.png" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål BNP 2015 for verden på lande i millioner USD.</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlamdFSkk4SWU4eWM">GDP2015</a>. Besvar følgende spørgsmål for variablen BNP/GDP. BNP bruttonationalproduktet er værdien af de varer og ydelser som et land producerer.</p>
+<p><strong>1.</strong> Hvilken type variabel er variablen GDP?<br />
+<strong>2.</strong> Hvad er det gennemsnitlige GDP for landene?<br />
+<strong>3.</strong> Hvad er medianen for landene?<br />
+<strong>4.</strong> Hvad er fordelingens skævhed, er denne som du ville have forventet?<br />
+<strong>5.</strong> Hvad er 3. kvartil?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden?<br />
+<strong>7.</strong> 25% af landene med størst produktion, har et BNP der er større end?<br />
+<strong>8.</strong> 2.5% af landene med mindst produktion, har et BNP der er mindre end?<br />
+<strong>9.</strong> 90% af landene med mindst produktion, har et BNP der er mindre end?<br />
+<strong>10</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12</strong> Hvad er variationsbredden?</p>
+</details>
+<br>
+<details>
+<p><summary>Svar BNP 2015 for verden på lande i millioner USD.</summary></p>
+<p><strong>1.</strong> Variablen GDP er en kvanitativ, kontinuert variabel, ratioskala.<br />
+<strong>2.</strong> Hvad er det gennemsnitlige GDP for landene 375027.63 mio USD.<br />
+<strong>3.</strong> Medianen for variablen GDP er 27529.25 mio USD.<br />
+<strong>4.</strong> Fordelingens skævhed er 8.83<br />
+<strong>5.</strong> 3. kvartil er 184772.4 mio USD.<br />
+<strong>6.</strong> Hvad er Kvartilafstanden 178154.72 mio USD.<br />
+<strong>7.</strong> 25% af landene med størst produktion, har et BNP der er større end 184772.4 mio USD.<br />
+<strong>8.</strong> 2.5% af landene med mindst produktion, har et BNP der er mindre end 310.84 mio USD.<br />
+<strong>9.</strong> 90% af landene med mindst produktion, har et BNP der er mindre end 620868.55 mio USD.<br />
+<strong>10</strong> Fordelingen er klart spids, der er rigtig mange lande med et mindre BNP, mens vi har en gruppe lande med forholdsmæssig høj produktion hvilket som ses af histogrammet giver en meget spids fordeling.<br />
+<strong>11</strong> Er fordelingen derfor leptokurtisk da den er spids.<br />
+<strong>12</strong> Variationsbredden er forskellen mellem det landet med højeste og laveste produktion, dvs. 18036648-32.67 =18036615.33 mio USD.</p>
+<p>Herunder ses histogrammet for BNP for forskellige lande, vi kan af histogrammet se at fordelingen er højreskæv og leptokurtisk. Der er klare outliers fx USA.</p>
+<img src="bookdown-demo_files/figure-html/GDP-hist-1.svg" width="864" />
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Danske virksomheder egenkapital.</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlVmxHTDltNk1VSG8">VIRKSOMHEDER-DK</a>, der viser data for 369 danske virksomheder med ekstern revision. Der er således en overvægt af virksomheder af en vis størrelse, hvorfor samtlige beløb er angivet i antal 1000 DKK. Besvar følgende spørgsmål for variablen egenkapital i antal 1000 DKK.</p>
+<strong>1.</strong> Hvilken type variabel er variablen egenkapital?<br />
+<strong>2.</strong> Hvad er det gennemsnitlige egenkapital for virksomhederne?<br />
+<strong>3.</strong> Hvad er medianen for egenkapital?<br />
+<strong>4.</strong> Hvad er fordelingens skævhed, er denne som du ville have forventet?<br />
+<strong>5.</strong> Hvad er 3. kvartil?<br />
+<strong>6.</strong> Hvad er Kvartilafstanden?<br />
+<strong>7.</strong> 25% af de mest velpolstrede virksomheder, har en egenkapital der er større end?<br />
+<strong>8.</strong> 2.5% af de mindst velpolstrede virksomheder, har en egenkapital der er mindre end?<br />
+<strong>9.</strong> 90% af virksomhederne med mindst egenkapital, har en egenkapital der er mindre end?<br />
+<strong>10</strong> Er fordelingen flad, klokkeformet eller spids?<br />
+<strong>11</strong> Er fordelingen platykurtisk, mesokurtisk eller leptokurtisk?<br />
+<strong>12</strong> Hvad er variationsbredden?
+</details>
+<br>
+<details>
+<p><summary>Svar Danske virksomheder egenkapital.</summary></p>
+<p><strong>1.</strong> Variablen egenkapital er en kvanitativ, kontinuert variabel, ratioskala.<br />
+<strong>2.</strong> Hvad er det gennemsnitlige egenkapital for virksomhederne 155327.97 DKK.<br />
+<strong>3.</strong> Medianen for variablen egenkapital er 26054 1000 DKK.<br />
+<strong>4.</strong> Fordelingens skævhed er 12.28<br />
+<strong>5.</strong> 3. kvartil er 113453 1000 DKK.<br />
+<strong>6.</strong> Hvad er Kvartilafstanden 112169 1000 DKK.<br />
+<strong>7.</strong> 25% af de mest velpolstrede virksomheder, har en egenkapital der er større end 113453 1000 DKK.<br />
+<strong>8.</strong> 2.5% af de mindst velpolstrede virksomheder, har en egenkapital der er mindre end 116.6 DKK.<br />
+<strong>9.</strong> 90% af virksomhederne med mindst egenkapital, har en egenkapital der er mindre end 229359.6 1000 DKK.<br />
+<strong>10</strong> Fordelingen er klart spids med positiv kurtosis.<br />
+<strong>11</strong> Fordelingen derfor leptokurtisk da den er spids.<br />
+<strong>12</strong> Variationsbredden er forskellen mellem det virksomheden med højeste og laveste egenkapital, dvs. 10712042-37 =10712005 1000 DKK.</p>
+<p>Herunder ses histogrammet for egenkapital for de danske virksomheder i antal 1000 DKK, vi kan af histogrammet se at fordelingen er højreskæv og leptokurtisk. Der er klare outliers, dvs store etablerede virksomheder med megen egenkapital.</p>
+<img src="bookdown-demo_files/figure-html/egenkapital2-1.svg" width="864" />
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Diskussions spørgsmål til dagsafkast på danske aktier.</summary></p>
+<!-- [DK aktiekurser.xls hentes her](https://www.dropbox.com/s/8rxorw99odikion/DK%20aktiekurser.xls?dl=01) -->
+<p>Data for <a href="https://www.dropbox.com/s/yfkk73fg9735pis/DK%20aktiekurser.xlsx?dl=1">DK aktiekurser.xlsx hentes her</a></p>
+<p>Man siger ofte at kursfaldet ved en korrektion, er hurtigere og voldsommere end stigningen i et positivt marked. Kan man baseret på data for aktierne, konkludere at dette synes at være tilfældet?</p>
+<p>Hvorfor kan en portefølje, der ikke er volatil (dvs. porteføljen har en lille standardafvigelse), være en fordel for den risikoaverse investor?</p>
+</details>
+</div>
+<div id="selvtest" class="section level2">
+<h2><span class="header-section-number">3.6</span> Selvtest</h2>
+<h2>
+<a href="https://www.edutest.dk/mod/quiz/view.php?id=50" target="_blank">Selvtest Diamanter Deskriptiv statistik</a>
+</h2>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="datast-og-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="normalfordelingen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

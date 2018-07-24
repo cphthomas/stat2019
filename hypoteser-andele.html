@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="andele.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.1.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.5</b> Modus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.2</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.2.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.3</b> Skævhed</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.4</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.5</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.6</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>7</b> Andele</a><ul>
+<li class="chapter" data-level="7.1" data-path="andele.html"><a href="andele.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andele.html"><a href="andele.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andele.html"><a href="andele.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andele.html"><a href="andele.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andele.html"><a href="andele.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andele.html"><a href="andele.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="hypoteser-andele.html"><a href="hypoteser-andele.html"><i class="fa fa-check"></i><b>8</b> Hypoteser Andele</a><ul>
+<li class="chapter" data-level="8.0.1" data-path="hypoteser-andele.html"><a href="hypoteser-andele.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>8.0.1</b> Hypotesetest en andel, tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="8.0.2" data-path="hypoteser-andele.html"><a href="hypoteser-andele.html#z-teststrrelsen"><i class="fa fa-check"></i><b>8.0.2</b> z-teststørrelsen</a></li>
+<li class="chapter" data-level="8.0.3" data-path="hypoteser-andele.html"><a href="hypoteser-andele.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>8.0.3</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="8.0.4" data-path="hypoteser-andele.html"><a href="hypoteser-andele.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>8.0.4</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hypoteser-andele" class="section level1">
+<h1><span class="header-section-number">Kapitel 8</span> Hypoteser Andele</h1>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/225968110" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Når vi tester en hypotese, undersøger vi om en egenskab ved en populationsparameter (eller flere parametre) er opfyldt. Vi siger i udgangspunktet at nulhypotesen er sand, så der skal vægtige grunde til at vi forkaster (afviser) denne. Nulhypotesen kan fx. være:</p>
+<p>Andelen p er lig med 50%, dette skriver vi som:</p>
+<p><span class="math display">\[H_0: p=0.5\]</span></p>
+<p>Bemærk en nulhypotesen indeholder altid udsagnet med lighedstegnet.</p>
+<p>Alternativ hypotesen er altid det modsatte udsagn, det vil altså sige:</p>
+<p>Andelen er ikke lig med 50%</p>
+<p>Vores alternativ hypotese skrives som:</p>
+<p><span class="math display">\[H_1: p \neq 0.5\]</span></p>
+<p>eller</p>
+<p><span class="math display">\[H_a: p \neq 0.5\]</span></p>
+<p>Husk når vi tester en hypotese, er det altid parameteren vi skriver i hypoteserne, ALDRIG parameterestimaterne. Vi ved jo præcis hvad andelen i stikprøven er, derfor ved vi præcis hvad <span class="math inline">\(\hat{p}\)</span> er, derfor giver det ingen mening at teste dette.</p>
+<div id="hypotesetest-en-andel-tosidet-alternativ-hypotese" class="section level3">
+<h3><span class="header-section-number">8.0.1</span> Hypotesetest en andel, tosidet alternativ hypotese</h3>
+<p>Vi fandt i en stikprøve at 31 ud af 100 brugte MobilePay i Freestat test af andele taster vi:</p>
+<p><img src="img/mobilepay.jpg" align="right" width="30%" height="30%"/><br><br></p>
+<p>Kan vi sige at andelen af MobilePay brugere i populationen er 35%? For at undersøge dette opstiller vi nul- og alternativhypotesen.</p>
+<p><span class="math display">\[H_0: p = 0.35\]</span></p>
+<p><span class="math display">\[H_1: p \neq 0.35\]</span></p>
+<p>Vi siger at alternativhypotesen er tosidet, da både stikprøve resultater, væsentlig mindre og større end 0.35, medfører at vi forkaster nulhypotesen.</p>
+<p>Vi taler om at forkaste nulhypotesen, eller at vi ikke kan forkaste nulhypotesen. Vi skriver helst ikke vi accepterer nulhypotesen. Det ville jo strengt taget betyde vi mente <span class="math inline">\(p=0.3500000...\)</span></p>
+<p>Notationen er lidt forskellig for værdien af andelen 0.35, vi ønsker at teste, nogle bøger benævner den <span class="math inline">\(\pi\)</span>, her kalder vi den <span class="math inline">\(p_0\)</span>.</p>
+<p>Stikprøven er tilstrækkelig stor da <span class="math inline">\(n\cdot\hat{p}(1-\hat{p})=100\cdot0.31(1-0.31)=21.39\)</span> er større end 9. Approximationsbetingelsen er altså opfyldt.</p>
+</div>
+<div id="z-teststrrelsen" class="section level3">
+<h3><span class="header-section-number">8.0.2</span> z-teststørrelsen</h3>
+<p>Hvis vi ikke kan afvise nulhypotesen betyder det at den sande populations parameter p er <span class="math inline">\(p=p_0\)</span>. Så gælder fra CLT, at stikprøvefordelingen er normalfordelt med middelværdi <span class="math inline">\(\mu=p_0\)</span>. Vi ved at standardfejlen for andele SE er:</p>
+<p><span class="math display">\[\sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.35(1-0.35)}{100}}=0.0477\]</span></p>
+<p>Vi ønsker at teste om andelen i populationen, der bruger MobilePay, kan antages at være 35%, derfor ønsker vi at måle hvor stor forskellen er mellem den observerede andel 31% og hypotese andelen <span class="math inline">\(P_0\)</span> 35%. Til dette bruger vi z-teststørrelsen.</p>
+<p><span class="math display">\[z-score=\frac{\hat{p}-p_0}{SE}=\frac{0.31-0.35}{0.0462}=-0.8386\]</span></p>
+<p>Når vi bestemmer teststørrelsen ser vi på forskellen mellem <span class="math inline">\(\hat{p}\)</span> og <span class="math inline">\(p_0\)</span>. Vi skalerer teststørrelsen til standard normalfordelingen ved at dividere med standardfejlen . Her bruges z-fordelingen dvs. standard normalfordelingen. Vi kalder teststørrelsen for z-teststørrelsen eller z-scoren. Andre tests hvor man benytter fx. t-fordelingen eller F-fordelingen, kaldes t-teststørrelsen og F-teststørrelsen.</p>
+<p>Vi bemærker teststørrelsen er negativ, da parameter estimatet <span class="math inline">\(\hat{p}=0.31\)</span> er mindre end <span class="math inline">\(p_0=0.35\)</span>. z-teststørrelsen er tilpasset til standard normalfordelingen, det betyder vi kan sammenligne denne med nedre og øvre grænser for KI i z-fordelingen. Når vi tester på 5% signifikansniveau, er den nedre og øvre grænse for 95% KI i z-fordelingen -1.96 og 1.96, vi har derfor en kritiske værdier -1.96 og 1.96. Når vi tester på 1% signifikansniveau, vi har kritiske værdier -2.58 og 2.58 og på 10% signifikansniveau -1.64 og 1.64.</p>
+<p>Teststørrelsen -0.8386, ligger mellem -1.96 og 1.96, derfor vil vi ikke forkaste nulhypotesen på 5% signifikansniveau, i øvrigt heller ikke på 10% signifikansniveu. Det betyder vi kan ikke afvise, nulhypotesen.</p>
+<p>I figuren nedenfor er indtegnet z-scoren, samt forkast ikke regionen samt forkast halerne når vi betragter 95% KI dvs. et 5% signifikansniveu.</p>
+<p><img src="bookdown-demo_files/figure-html/z-scoreensidetnedad1-1.svg" width="864" /></p>
+<div id="andel-fejlmargin-og-fpc" class="section level4">
+<h4><span class="header-section-number">8.0.2.1</span> 1 Andel fejlmargin og FPC</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226076060" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+</div>
+<div id="hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad" class="section level3">
+<h3><span class="header-section-number">8.0.3</span> Hypotesetest en andel, ensidet alternativ hypotese nedad</h3>
+<p>Hvis vi baseret på MobilePay stikprøven i stedet havde spurgt:</p>
+<p>Er andelen af MobilePay brugere i populationen mindre end 35%?
+Er andelen af MobilePay brugere i populationen mindst 35%?</p>
+<p>Begge disse udsagn leder hver sin vej til samme hypotese test.</p>
+<p>Andelen af MobilePay brugere i populationen er mindre end 35%?<br />
+Kan omskrives til en alternativ hypotese
+<span class="math display">\[H_1:p&lt;0.35\]</span>
+Bemærk da operatoren mindre end <span class="math inline">\(&lt;\)</span> ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ hypotese. Det komplementære udsagn er altså nulhypotesen:
+<span class="math display">\[H_0:p\geq 0.35\]</span></p>
+<p>Andelen af MobilePay brugere i populationen er mindst 35%?
+Kan omskrives til nulhypotesen
+<span class="math display">\[H_0:p\geq 0.35\]</span>
+Det komplementære udsagn bliver:
+<span class="math display">\[H_1:p&lt;0.35\]</span></p>
+<p>Vi siger, vi har en ensidet alternativ hypotese, da kun stikprøveandele signifikant mindre end 0.35 (<span class="math inline">\(H_1:p&lt;0.35\)</span>), vil være kritiske for nulhypotesen. Det betyder at kun venstre hale i z-fordelingen vil medføre at vi forkaster nulhypotesen.</p>
+<p>Vi får, som tidligere samme z-teststørrelse -0.8386. Men som det ses af standard normalfordelingen i figuren nedenfor interesserer vi os kun for venstre hale.</p>
+<p><img src="bookdown-demo_files/figure-html/z-scoreensidetnedad2-1.svg" width="864" /></p>
+<p>Tilsvarende finder vi p-værdien ved:</p>
+<p><img src="bookdown-demo_files/figure-html/pv%C3%A6rdiensidetned-1.svg" width="864" /></p>
+<p>Da p-værdien er større end 5% er forskellen mellem stikprøvens andel 31% og den hypoteseværdien 35% ikke signifikant. Vi kan altså ikke afvise nulhypotesen, og konkluderer at andelen af Mobilepay brugere er mindst 35%. I Freestat vil vi altså vælge den 3. hypotesetest i test af andele, illustreret herunder.</p>
+<p><img src="img/freestattestpropmobilepayhyp.png"  width="50%" height="50%"style="border:0.0px solid #eeeeee; padding:0px; margin:0px;"/></p>
+</div>
+<div id="hypotesetest-en-andel-ensidet-alternativ-hypotese-opad" class="section level3">
+<h3><span class="header-section-number">8.0.4</span> Hypotesetest en andel, ensidet alternativ hypotese opad</h3>
+<p>Hvis vi baseret på MobilePay stikprøven i stedet havde spurgt:</p>
+<p>Er andelen af MobilePay brugere i populationen større end 35%?
+Er andelen af MobilePay brugere i populationen højst 35%?</p>
+<p>Begge disse udsagn leder hver sin vej til samme hypotese test.<br />
+Andelen af MobilePay brugere i populationen er større end 35%?<br />
+Kan omskrives til en alternativ hypotese
+<span class="math display">\[H_1:p&gt;0.35\]</span>
+Bemærk da operatoren større end <span class="math inline">\(&gt;\)</span> ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ hypotese. Det komplementære udsagn er altså nulhypotesen:
+<span class="math display">\[H_0:p\leq 0.35\]</span></p>
+<p>Andelen af MobilePay brugere i populationen er højst 35%?
+Kan omskrives til nulhypotesen
+<span class="math display">\[H_0:p\leq 0.35\]</span>
+Det komplementære udsagn bliver:
+<span class="math display">\[H_1:p&gt;0.35\]</span></p>
+<p>Så begge udsagn fører altså til samme hypotesetest med ensidet alternativ hypotese opad
+Vi siger, vi har en ensidet alternativ hypotese opad, da kun stikprøveandele signifikant større end 0.35 (<span class="math inline">\(H_1:p&gt;0.35\)</span>), vil være kritiske for nulhypotesen. Det betyder at kun højre hale i z-fordelingen vil medføre at vi forkaster nulhypotesen.</p>
+<p>Vi får, igen samme z-teststørrelse -0.8386. Men som det ses af standard normalfordelingen i figuren nedenfor interesserer vi os nu kun for højre hale.</p>
+<p><img src="bookdown-demo_files/figure-html/zscoreensidetop-1.svg" width="864" /></p>
+<p>Vi kan nu finde p-værdien som arealet af den hvide højre hale.</p>
+<p><img src="bookdown-demo_files/figure-html/pv%C3%A6rdiplotensidetop-1.svg" width="864" /></p>
+<p>Vi kan se der er stor forskel på teststørrelsen og den kritiske værdi, p-værdien det hvide areal er meget stort. Vi er her meget langt fra en p-værdi på 5%, så vi forkaster klart ikke nulhypotesen. Vi konkluderer at andelen af mobilepay brugere er højst 35%. I Freestat vil vi vælge den 2. hypotesetest i test af andele.</p>
+<p><img src="img/testandelemobilepay.png" alt="testandelemobilepay" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<hr />
+<p>[toggle title=Spørgsmål]
+##### MobilePay 1
+Vi benytter fortsat undersøgelsen med 31 MobilePay brugere ud af 100 adspurgte.
+Hvad er sandsynligheden for at andelen af MobilePay brugere er 25%?
+Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.
+[/toggle]
+[toggle title=Svar]
+Her bliver hypoteserne</p>
+<p><span class="math inline">\(H_0: p=0.25\)</span></p>
+<p><span class="math inline">\(H_1:p\neq 0.25\)</span></p>
+<p>z-teststørrelsen bliver her:
+1.3856406</p>
+<p>p-værdien altså signifikanssandsynligheden bliver:
+0.1659</p>
+<p>Da der ikke er angivet et signifikansniveau sættes dette til 5%.</p>
+<p>Da 0.1659&gt;0.05 kan vi ikke afvise nulhypotesen. Det betyder vi kan ikke afvise nulhypotesen p=0.25.</p>
+<p>Vi konkluderer altså andelen af MobilePay brugere er 25%.
+[/toggle]<br />
+[toggle title=Spørgsmål]
+##### MobilePay 2
+Hvad er sandsynligheden for at andelen af MobilePay brugere er 20%?
+Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.
+[/toggle]
+[toggle title=Svar]
+Her bliver hypoteserne</p>
+<p><span class="math inline">\(H_0: p=0.2\)</span></p>
+<p><span class="math inline">\(H_1:p\neq 0.2\)</span></p>
+<p>z-teststørrelsen bliver her:
+2.75</p>
+<p>p-værdien altså signifikanssandsynligheden bliver:
+0.006</p>
+<p>Da der ikke er angivet et signifikansniveau sættes dette til 5%.</p>
+<p>Da 0.006&lt;0.05 kan afviser vi nulhypotesen. Det betyder <span class="math inline">\(p \neq0.2\)</span>.</p>
+<p>Vi konkluderer altså andelen af MobilePay brugere ikke er 20%.</p>
+<p>Da signifikanssandsynligheden er mindre end 1% ville vi også have nået samme konklusion selv med 1% signifikansniveau.
+[/toggle]
+[toggle title=Spørgsmål]
+##### MobilePay 3</p>
+<p>Hvad er sandsynligheden for at andelen af MobilePay brugere er højst 22%?
+Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.
+[/toggle]
+[toggle title=Svar]
+Her bliver hypoteserne</p>
+<p><span class="math inline">\(H_0: p\leq 0.22\)</span></p>
+<p><span class="math inline">\(H_1:p &gt; 0.22\)</span></p>
+<p>z-teststørrelsen bliver her:
+2.1726205</p>
+<p>p-værdien altså signifikanssandsynligheden bliver:
+0.0149</p>
+<p>Da der ikke er angivet et signifikansniveau sættes dette til 5%.</p>
+<p>Da 0.0149&lt;0.05 kan afviser vi nulhypotesen. Det betyder p&gt;0.22.</p>
+<p>Vi konkluderer altså andelen af MobilePay brugere er større end 22%.</p>
+<p>Da signifikanssandsynligheden er større end 1%, ville vi ikke have afvist nulhypotesen hvis vi havde testet på 1% signifikansniveau. Vi siger derfor at konklusionen er niveaufølsom.
+[/toggle]<br />
+[toggle title=Spørgsmål]
+#### Bankdata</p>
+<div id="bankdata-kvinder" class="section level5">
+<h5><span class="header-section-number">8.0.4.0.1</span> Bankdata kvinder</h5>
+<p>Vi ser igen på datasættet <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRENKWWxlNlBXbmM">bankdata</a>, her findes data på funktion, antal års uddannelse, køn og race for 474 amerikanske bankansatte.</p>
+<p>Vi betragter nu andelen af kvinder i ledelse (manage). Er andelen af kvinder i ledelsen mindre end 50%?
+Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.
+[/toggle]
+[toggle title=Svar]
+Parameterestimatet er <span class="math inline">\(\hat{p}=0.1190476\)</span>.
+Vi ønsker at teste</p>
+<p><span class="math display">\[H_0:p\geq0.5 \]</span>
+<span class="math display">\[H_1:p&lt;0.5 \]</span></p>
+<p>Signifikanssandsynligheden p er afrundet med 4 decimaler 0, hvilket betyder vi klart forkaster nulhypotesen. Andelen er kvinder er altså mindre end 50%.</p>
+<p>Det er vigtigt at bemærke at stikprøven er så lille at approximationsbetingelsen <span class="math inline">\(n\cdot\hat{p}(1-\hat{p})&gt;9\)</span> ikke er opfyldt da <span class="math inline">\(n\cdot\hat{p}(1-\hat{p})=8.8095\)</span>. Man skal derfor være varsom mht. konklusioner, p-værdien er dog så lille her, at der ikke kan være tvivl om konklusionen.
+[/toggle]<br />
+[toggle title=Spørgsmål]</p>
+</div>
+<div id="bankdata-kvinder-2" class="section level5">
+<h5><span class="header-section-number">8.0.4.0.2</span> Bankdata kvinder 2</h5>
+<p>Test om andelen af kvinder i ledelsen mindre end 15%, opstil hypoteser samt teknisk og let forståelig konklusion?
+Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.
+[/toggle]
+[toggle title=Svar]
+<span class="math display">\[H_0:p\geq0.15 \]</span>
+<span class="math display">\[H_1:p&lt;0.15 \]</span></p>
+<p>Signifikanssandsynligheden p er afrundet med 4 decimaler 0.2135, hvilket betyder vi ikke kan forkaste nulhypotesen.</p>
+<p>Andelen er kvinder er altså ikke mindre end 15%.</p>
+<p>Husk at bemærke at stikprøven er så lille at approximationsbetingelsen <span class="math inline">\(n\cdot\hat{p}(1-\hat{p})&gt;9\)</span> ikke er opfyldt da <span class="math inline">\(n\cdot\hat{p}(1-\hat{p})=8.8095\)</span>.
+[/toggle]
+[toggle title=Spørgsmål]
+##### Bankdata sikkerhedsmedarbejdere blandt minoriteter</p>
+<p>Vi skal teste om halvdelen af medarbejdere i custodial tjeneste dvs. sikkerhedsmedarbejdere er minoriteter.
+Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.
+[/toggle]
+[toggle title=Svar]
+I stikprøven på 474 personer, tilhører 104 personer blandt bankpersonalet minoriteter. Test om halvdelen af medarbejdere i custodial tjeneste dvs. sikkerhedsmedarbejdere er minoriteter.</p>
+<p>Hypoteserne bliver:</p>
+<p><span class="math display">\[H_0:p=0.5\]</span>
+<span class="math display">\[H_1:p\neq 0.5\]</span></p>
+<p>13 ud af 27 sikkerhedsmedarbejdere er minoriteter. Det giver en z-teststørrelse på -0.1924501 hvilket fører til en meget høj signifikanssandsynlighed på 84.738966%. Vi kan absolut ikke forkaste nulhypotesen.</p>
+<p>Vi konkluderer at 50% af bankens sikkerhedspersonale er minoriteter.
+[/toggle]</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="andele.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

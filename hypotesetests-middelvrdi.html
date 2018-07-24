@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="konfidensintervaller.html">
+<link rel="next" href="andel.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.1.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.5</b> Modus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.2</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.2.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.3</b> Skævhed</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.4</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.5</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.6</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hypotesetests-middelvrdi" class="section level1">
+<h1><span class="header-section-number">Kapitel 6</span> Hypotesetests middelværdi</h1>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/227337869" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/257601661" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<div id="hypotesetest-tosidet-alternativ-hypotese" class="section level2">
+<h2><span class="header-section-number">6.1</span> Hypotesetest tosidet alternativ hypotese</h2>
+<p>Vi kan ud fra en stikprøve udtale os om, hvad den sande middelværdi <span class="math inline">\(\mu\)</span> i populationen er.
+I eksemplet med mægleren tidligere, var den gennemsnitlige afstand til nærmeste filial 748 meter, standardafvigelsen 102 meter og stikprøvestørrelsen 200.</p>
+<p>Mægleren mener, den sande afstand til nærmeste filial i gennemsnit er 730 meter. Kan dette være korrekt? Hypotesen bliver:</p>
+<p><span class="math display">\[H_0:\mu = 730\]</span>
+<span class="math display">\[H_1:\mu \neq 730\]</span></p>
+<p>Påstanden i nulhypotesen <span class="math inline">\(H_0\)</span> er vores udgangspunkt, noget vi på forhånd mener er korrekt. Der skal en del til at vi forkaster nulhypotesen og dermed konkluderer at udsagnet i alternativ hypotesen <span class="math inline">\(H_1\)</span> eller <span class="math inline">\(H_a\)</span> er korrekt. Alternativ hypotesen <span class="math inline">\(H_1\)</span> er altid det komplementære udsagn til nulhypotesen, dvs. når nulhypotesen er <span class="math inline">\(=\)</span> bliver alternativ hypotesen <span class="math inline">\(\neq\)</span>.</p>
+<div id="signifikansniveau" class="section level4">
+<h4><span class="header-section-number">6.1.0.1</span> Signifikansniveau</h4>
+<p>Signifikansniveauet <span class="math inline">\(\alpha\)</span> angiver sandsynligheden for at forkaste en sand nulhypotese, ofte sættes dette til 5%. Det betyder at i 1 ud af 20 tilfælde, vil vi komme til at forkaste nulhypotesen, til trods for at denne var sand. Vi udtager stikprøver simpelt tilfældigt fra populationen, enkelte af disse vil give et forkert billede af virkeligheden. Ønsker man yderligere sikkerhed, for ikke at forkaste en sand nulhypotese, kan man sætte signifikansniveauet til 1%, så vil man kun i 1 ud af 100 tilfælde forkaste en korrekt nulhypotese.</p>
+<p>I medicinalindustrien bruger man typisk 1% signifikansniveu for at sikre at et produkt har en effekt. Hypoteserne ville da være.
+<span class="math display">\[H_0\ produktet\ har\ ingen\ effekt\]</span>
+<span class="math display">\[H_1\ produktet\ har\ effekt\]</span>
+Man ville således kun i 1 ud af 100 tilfælde fejlagtigt konkludere at et produkt har effekt. Signifikansniveauet <span class="math inline">\(\alpha\)</span>, betegner sandsynligheden for at begå en type 1 fejl. En type 1 fejl, er alså sandsynligheden for at forkaste en nulhypotese der er sand.</p>
+<p>Konfidensniveauet angiver sandsynligheden for at ikke forkaste en sand nulhypotese, summen af konfidensniveau og signifikansniveau er således 100%. 5% signifikansniveau svarer til 95% konfidensniveau, 1% signifikansniveau svarer til 99% konfidensniveau. De gængse signifikansniveauer er 1%, 5% og 10%. Er intet angivet, tester vi på 5% signifikansniveu, man beslutter sig inden testet for hvilket signifikansniveau man sætter.</p>
+</div>
+<div id="teststrrelse" class="section level4">
+<h4><span class="header-section-number">6.1.0.2</span> Teststørrelse</h4>
+<p>Vi kalder hypoteseværdien <span class="math inline">\(\mu_0=730\)</span>, vores teststørrelse bliver:</p>
+<p><span class="math display">\[\frac{\hat{\mu}-\mu_0}{SEM}=\frac{748-730}{\frac{s}{\sqrt{n}}}=\frac{18}{\frac{102}{\sqrt{100}}}=\frac{18}{7.2125}=2.4957\]</span></p>
+<p>Teststørrelser er et centralt begreb i hypotesetests, tælleren 748-730, er et mål for hvor stor forskellen er mellem det vi har observeret i stikprøven 748, og den værdi vi antager under nulhypotesen 730. Der gælder for alle typer af tests at store teststørrelser er kritiske for nulhypotesen. Store teststørelser betyder vi ikke tror på nulhypotesen. I dette tilfælde er nulhypotesen, at afstanden til nærmeste filial er 730 meter. Hvornår er en teststørrelse så stor? Det afhænger af testtypen og stikprøvestørrelsen. Her er der tale om en tosidet (da alternativ hypotesen er <span class="math inline">\(\neq\)</span>) t-test, det betyder at numerisk store teststørrelser er kritiske. Havde vi fx observeret afstanden til nærmeste filial var 700 meter, var tælleren 700-730 blevet negativ, da nævneren altid er positiv ville teststørrelsen blive negativ. Var afstanden kun 700 meter i stikprøven, ville vi ikke tro på at afstanden i populationen er 730 meter. Når vi tester tosidet er meget negative eller positive teststørrelser kritiske for nulhypotesen, dvs. når teststørrelsen numerisk bliver stor, tror vi ikke på nulhypotesen. Da vi ser på en t-test afhænger fraktilerne af antallet af frihedsgrader og signifikansniveauet, når vi har en stor stikprøve på 5% signifikansniveau, vil værdier mindre end -1.96 eller større end 1.96 være kritiske for nulhypotsen. Her er stikprøvestørrelsen 200, dvs. vi benytter t-fordelingen med 199 frihedsgrader, hvilket gør at de kritiske værdier bliver -1.97 og 1.97. I teststørrelsen dividerer vi med standardfejlen SEM, dette er for at skalere teststørrelsen korrekt, så den altid er i en skala, der svarer til t-fordelingen. Havde vi fx målt afstanden til nærmeste filial i centimeter, ville tælleren blive 74800-73000=1800, vi korrigerer for skala ved at dividere med SEM, skalerer vi så teststørrelsen bliver den samme uanset om vi måler i meter eller centimeter.</p>
+</div>
+<div id="signifikanssandsynlighed-p-vrdi" class="section level4">
+<h4><span class="header-section-number">6.1.0.3</span> Signifikanssandsynlighed p-værdi</h4>
+<p>Signifikanssandsynligheden også kaldet p-værdien, angiver sandsynligheden for at få en mere ekstrem teststørrelse, hvis vi udtager en ny tilsvarende stikprøve, når nulhypotesen er sand. I mægler eksemplet er p-værdien lille 0.0134, der kun 1.34% chance for at få en teststørrelse der numerisk er større end 2.4957, hvis vi udtog en ny stikprøve på 200, hvis nulhypotesen er sand. Da 1.34% er mindre end 5%, tror vi ikke på nulhypotesen om at der gennemsnitligt er 730 meter til nærmeste filial.Vi beregner p-værdien ved arealet af halen, der skæres af ved teststørrelsen eller teststørrelsen numerisk. Arealet ved højre hale, der skæres af 2.4957 er 0.0067, arealet ved venstre hale, der skæres af -2.4957 er ligeledes 0.0067. Når vi tester 2-sidet lægger vi begge halearealer sammen og får 0.0067+0.0067=0.0134, hvilket er p-værdien.</p>
+<p>Nedenstående figurer viser p-værdi på 0.0134. Vi forkaster altså nulhypotesen på 5% signifikansniveauet.</p>
+<p>Den sande afstand til nærmeste filial, er altså forskellig fra 730 meter. Afstanden er større end 730 meter kan vi af konstatere da p-værdien 0.0067 er mindre end signifikansniveauet.</p>
+<p><img src="bookdown-demo_files/figure-html/t-score-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/t-score2-1.svg" width="864" /></p>
+<p>Hvis vi ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er forskellig fra, skal vi se på både venstre og højre hale. Vi skal beregne sandsynligheden (p-værdien) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse mindre end -2.4957 og større end 2.4957, når nulhypotesen om at afstanden er 730 meter er sand. At teststørrelsen er mindre end -2.4957, svarer oversat til meter at afstanden er mindre end 712 meter, sandsynligheden for en numerisk mere ekstrem teststørrelse bliver arealet af begge haler 0.0067+0.0067=0.0134.</p>
+<p>Vi kan benytte fanen 1 kvantitativ stikprøve beregnede data i venstre side. Her skal vi benytte testen med to-sidet alternativ hypotese.
+<img src="img/freestatmiddelmaegler.png" alt="freestatmiddelmaegler" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vi siger ovenstående konklusion er niveaufølsom, vi ville ikke have forkastet på 1% signifikansniveau, da 1% er mindre end p-værdien på 1.34%. At konklusionen er niveaufølsom, betyder altså at forskellige signifikansniveaer giver forskellige konklusioner.</p>
+<p>Hvis vi kender populationens standardafvigelse <span class="math inline">\(\sigma\)</span>, eller vi har store stikprøver, kan vi benytte z-fordelingen, til beregning af signifikanssandsynligheder. Software benytter ofte konsekvent t-fordelingen, der approximerer z-fordelingen, når antallet af frihedsgrader vokser. Jo større stikprøven er jo mindre forskel vil der være mellem de to metoder. Vi kan for små stikprøver benytte t-fordelingen, hvis stikprøven stammer fra en normalfordelt population. I Freestat benyttes kun t-fordelingen da vi forudsætter at populationsvariansen er ukendt.</p>
+</div>
+</div>
+<div id="tosidet-alternativ-hypotese-og-konfidensintervallet." class="section level2">
+<h2><span class="header-section-number">6.2</span> Tosidet alternativ hypotese og konfidensintervallet.</h2>
+<p>Når vi tester med tosidet alternativ hypotese, kan vi bruge konfidensintervallet svarende til signifikansniveauet til at afgøre om en nulhypotese forkastes. Ligger parameter estimatet <span class="math inline">\(\hat\mu\)</span> indenfor konfidensintervallets nedre og øvre grænse, kan vi ikke forkaste nulhypotesen, ligger det udenfor forkaster vi nulhypotesen. Denne metode er dog ikke så præcis som testet, hvor vi finder størrelsen af p-værdien. Ud fra størrelsen af p-værdien, kan vi afgøre hvor sikker hvor konklusion er.</p>
+</div>
+<div id="ensidet-alternativ-hypotese" class="section level2">
+<h2><span class="header-section-number">6.3</span> Ensidet alternativ hypotese</h2>
+<p>Ovenfor undersøgte vi om den sande afstand til nærmeste filial i gennemsnit er 730 meter mod alternativ hypotesen den sande afstand til nærmeste filial i gennemsnit er forskellig fra 730 meter. Vi kunne fx. være interesseret i:</p>
+<ol style="list-style-type: decimal">
+<li>Afstanden til nærmeste filial er mindst 730 meter mod alternativ hypotesen at afstanden til nærmeste filial er mindre end 730 meter.<br />
+</li>
+<li>Afstanden til nærmeste filial er højst 730 meter mod alternativ hypotesen at afstanden til nærmeste filial er større end 730 meter.</li>
+</ol>
+<p>I formuleringen af spørgsmålet der stilles ligger nøglen til hvilken type test vi bruger, nedenfor er et skema over de ord man oplever i en formuleringen af et spørgsmål, disse skal benyttes til at afgøre om det er den ene eller anden hypotese vi skal benytte. Bemærk når man opstiller en konkret hypotese vil <span class="math inline">\(\mu_0\)</span> blive skiftet ud med den mulige middelværdi i populationen man ønsker at teste:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Ord</th>
+<th align="left">Operator</th>
+<th align="left">Hypotese</th>
+<th align="left">Passer med</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Er, kan være,</td>
+<td align="left"><span class="math inline">\(=\)</span></td>
+<td align="left"><span class="math inline">\(H_0:\mu=\mu_0\)</span></td>
+<td align="left"><span class="math inline">\(H_1:\mu\neq\mu_0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Er ikke, er forskellig fra</td>
+<td align="left"><span class="math inline">\(\neq\)</span></td>
+<td align="left"><span class="math inline">\(H_1:\mu\neq\mu_0\)</span></td>
+<td align="left"><span class="math inline">\(H_0:\mu=\mu_0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Højst</td>
+<td align="left"><span class="math inline">\(\leq\)</span></td>
+<td align="left"><span class="math inline">\(H_0:\mu\leq\mu_0\)</span></td>
+<td align="left"><span class="math inline">\(H_1:\mu&gt;\mu_0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Større end</td>
+<td align="left"><span class="math inline">\(&gt;\)</span></td>
+<td align="left"><span class="math inline">\(H_1:\mu&gt;\mu_0\)</span></td>
+<td align="left"><span class="math inline">\(H_0:\mu\leq\mu_0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Mindst</td>
+<td align="left"><span class="math inline">\(\geq\)</span></td>
+<td align="left"><span class="math inline">\(H_0:\mu\geq\mu_0\)</span></td>
+<td align="left"><span class="math inline">\(H_1:\mu&lt;\mu_0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Mindre end</td>
+<td align="left"><span class="math inline">\(&lt;\)</span></td>
+<td align="left"><span class="math inline">\(H_1:\mu&lt;\mu_0\)</span></td>
+<td align="left"><span class="math inline">\(H_0:\mu\geq\mu_0\)</span></td>
+</tr>
+</tbody>
+</table>
+<div id="ensidet-alternativ-hypotese-opad" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Ensidet alternativ hypotese opad</h3>
+<p>Vi kan eksempelvis spørge på følgende måder og komme til samme konklusion:</p>
+<ol style="list-style-type: decimal">
+<li>Afstanden til nærmeste filial er højst 730 meter</li>
+<li>Afstanden til nærmeste filial er større end 730 meter
+I 1. får vi givet nulhypotesen da lighedstegnet ALTID skal i nulhypotesen, alternativhypotesen følger som det komplementære udsagn.
+I 2. får vi givet alternativ hypotesen da udsagnet ikke indeholder lig med, nulhypotesen følger som det komplementære udsagn.</li>
+</ol>
+<p><span class="math display">\[H_0:\mu \leq 730\]</span>
+<span class="math display">\[H_1:\mu &gt; 730\]</span></p>
+<p>Hvilket betyder vi skal benytte den 2. af de 3 testmuligheder i Freestat output, dvs. signifikanssandsynligheden bliver 0.67%, vi forkaster altså nulhypotesen. Vi konkluderer derfor at <span class="math inline">\(\mu &gt; 730\)</span>. Den gennemsnitlige afstand til nærmeste filial i populationen er altså større end 730 meter. p-værdien er illustreret i figuren nedenfor, som den hvide højre hale.</p>
+<p>Hvis vi her ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er større end, skal vi se på højre hale. Vi skal beregne sandsynligheden (p-værdien) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse større end 2.4957, når nulhypotesen om at afstanden er 730 meter er sand. At teststørrelsen er større end 2.4957, svarer oversat til meter, til at afstanden er større end end 748 meter, sandsynligheden for en mere ekstrem teststørrelse bliver arealet højre hale 0.0067 altså p-værdien.</p>
+<p><img src="bookdown-demo_files/figure-html/t-score3-1.svg" width="864" />
+### Ensidet alternativ hypotese nedad
+Vi viser her testet for ensidet alternativ hypotese nedad. Der er ingen grund til at teste her, vi ved der skal meget til at forkaste nulhypotesen, og vi har et stikprøvegennemsnit, der er større end 730. Vi vil derfor helt sikkert finde, at nulhypotesen om at afstanden til nærmeste filial er mindst 730 meter, ikke kan forkastes. Vi viser alligevel eksemplet med samme værdier, for at man kan se hvorledes sammenhængen er mellem de 3 typer af tests.</p>
+<ol style="list-style-type: decimal">
+<li>Afstanden til nærmeste filial er mindst 730 meter</li>
+<li>Afstanden til nærmeste filial er mindre end 730 meter
+I 1 får vi givet nulhypotesen, da lighedstegnet ALTID skal i nulhypotesen, alternativhypotesen følger som det komplementære udsagn.
+I 2 får vi givet alternativ hypotesen, da udsagnet ikke indeholder lig med, nulhypotesen følger som det komplementære udsagn.</li>
+</ol>
+<p><span class="math display">\[H_0:\mu \geq 730\]</span>
+<span class="math display">\[H_1:\mu &lt; 730\]</span></p>
+<p>Hvilket betyder vi skal benytte den 3. af de 3 testmuligheder i Freestat output, dvs. signifikanssandsynligheden bliver 99.33%, vi forkaster altså IKKE nulhypotesen. Vi konkluderer derfor at <span class="math inline">\(\mu \geq 730\)</span>. Den gennemsnitlige afstand til nærmeste filial i populationen er altså mindst 730 meter. p-værdien er illustreret i figuren nedenfor, som den store grå venstre hale.</p>
+<p>Hvis vi ser på teststørrelsen har vi beregnet denne til 2.4957, da alternativhypotesen er mindre end, skal vi se på venstre hale. Vi skal beregne sandsynligheden (p-værdien) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse mindre end 2.4957, når nulhypotesen om at afstanden er mindst 730 meter er sand. At teststørrelsen er mindre end 2.4957, svarer oversat til meter at afstanden er mindre end 748 meter, sandsynligheden for dette er meget høj nemlig 99.33%. Dette svarer til den grå venstre hale, vi er altså meget langt fra 5% signifikansniveauet og forkaster ikke nulhypotesen.</p>
+<p><img src="bookdown-demo_files/figure-html/t-score4-1.svg" width="864" /></p>
+</div>
+<div id="eksempel" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Eksempel</h3>
+<div id="statistik-karakterer" class="section level4">
+<h4><span class="header-section-number">6.3.2.1</span> Statistik karakterer</h4>
+<p>I datasættet <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ">Statkarakterer</a> <img src="img/12-Ball-Real.pngc200.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> findes 54 statistik 2015 finansøkonom karakterer. Man kan med rette diskutere om karakterer for specifikke klasser/undervisere/lokationer etc. er repræsentative for populationen.
+Her antager vi at stikprøven er respræsentativ. Det er ligeledes tvivlsomt om vi kan behandle karakterer som en kontinuert variabel, der er tale om en kvalitativ ordinal variabel. I uddannelsesmæssige sammenhænge behandles karakterer som en kontinuert variabel, der beregnes gennemsnit og standardafvigelser, derfor forudsætter vi her variablen er kontinuert.</p>
+<p>Vi finder parameterestimatet ved stikprøvegennemsnittet som <span class="math inline">\(\hat{\mu}=4.65\)</span></p>
+<p>Vi ønsker nu at undersøge om gennemsnittet i populationen, kan antages at ligge præcis mellem 4 og 7 dvs. 5.5. Det betyder vores <span class="math inline">\(\mu_0=5.5\)</span>. Hypoteserne bliver:</p>
+<p><span class="math display">\[H_0: \mu = 5.5\]</span>
+<span class="math display">\[H_1: \mu \neq 5.5\]</span></p>
+<p>Standard fejlen SE for middelværdien er 0.63, . Det betyder teststørrelsen bliver -1.34.
+Vi kan nu bestemme p-værdien, arealet af de 2 haler i t-fordelingen med 53 frihedsgrader. bliver 0.1844, da teststørrelsen er større end 5%, kan vi altså ikke forkaste nulhypotesen.</p>
+<p>Vi konkluderer altså gennemsnittet i populationen, kan antages at være 5.5.</p>
+</div>
+</div>
+</div>
+<div id="standardafvigelse-test" class="section level2">
+<h2><span class="header-section-number">6.4</span> Standardafvigelse test</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226076398" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<div id="fpc-endelig-populations-korrektion-og-z-test" class="section level4">
+<h4><span class="header-section-number">6.4.0.1</span> FPC endelig populations korrektion og z-test</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226018075" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="type-1-og-type-2-fejl" class="section level4">
+<h4><span class="header-section-number">6.4.0.2</span> Type 1 og type 2 fejl</h4>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/249729447" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><img src="img/mandoc.jpg" align="right" width="100%" height="100%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Hvis man forkaster en sand nulhypotese, kaldes det en type 1 fejl, det betyder nulhyposen er sand, men vi forkaster fejlagtigt nulhypotesen, dette kaldes en falsk negativ. Man kan tænke på nulhypotesen som den generelle opfattelse, alternativhypotesen er den den nye tanke/revolutionen der går imod den gængse opfattelse. Vi kan forestille os følgende eksempler på nulhypoteser:</p>
+<ol style="list-style-type: decimal">
+<li>En mand anklaget for mord er uskyldig.</li>
+<li>Du har ikke kræft.</li>
+<li>Der findes ikke liv på Mars.</li>
+<li>Omsætningen er ikke steget.</li>
+<li>Udgifterne er uændrede.</li>
+<li>Jorden er flad (i meget gamle dage).</li>
+<li>Jorden er rund (nu).</li>
+<li>Du er ikke gravid.</li>
+<li>Medicinen har ingen effekt</li>
+</ol>
+<p>Vi kan bestemme sandsynligheden for at forkaste en sand nulhypotese/en type 1 fejl/en falsk negativ, det er vores signifikansniveau <span class="math inline">\(\alpha\)</span>, tilsvarende er sandsynligheden for ikke at forkaste en sand nulhypotese <span class="math inline">\(1-\alpha\)</span>. Dvs. når vi tester på 5% signifikansniveu vil vi 1 ud af 20 gange (5%) begå en type 1 fejl. I medicinalindustrien skal man være helt sikker på et nyt produkt har en effekt, derfor tester man ofte på 1% signifikansnivaeu (100%-1% = 99% konfidensniveau). Dette betyder at man kun 1 ud af 100 gange begår en type 1 fejl og konkluderer et medicinalprodukt har en effekt selv om det i virkeligheden ingen effekt har. Type 1 fejl er ofte noget, vi meget gerne vil undgå. Vi kan for statistiske hypoteser styre hvor ofte der begås fejl vha. signifikansniveauet, men tankegangen gælder også når vi ikke statistisk kan måle p-værdien. Hvis nulhypotesen er en mand anklaget for mord er uskyldig, svarer en type 1 fejl til at begå justitsmord, derfor skal beviserne i straffesager være stærke for at sikre domsfældelse. Hvis omsætningen ikke er steget, men vi konkluderer den er steget er der tale om en type 1 fejl.</p>
+<p><img src="img/docandpregnant.jpg" align="right" width="100%" height="100%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>En type 2 fejl kaldes en falsk positiv, sandsynligheden for at begå en type 2 fejl kan ikke beregnes direkte. En skyldig mand der frikendes, er en type 2 fejl. Hvis omsætningen er steget, men vi konkluderer den ikke er steget, er der ligeledes tale om en type 2 fejl.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left"><span class="math inline">\(H_0\ Sand\)</span></th>
+<th align="left"><span class="math inline">\(H_0\ Falsk\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\ Forkast\ ikke\  H_0\)</span></td>
+<td align="left">Korrekt beslutning</td>
+<td align="left">Type 2 fejl, falsk positiv</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\ Forkast\ H_0\)</span></td>
+<td align="left">Type 1 fejl falsk negativ</td>
+<td align="left">Korrekt beslutning</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+</div>
+<div id="sprgsmal-hypotesetests" class="section level2">
+<h2><span class="header-section-number">6.5</span> Spørgsmål hypotesetests</h2>
+<details>
+<p><summary> Spørgsmål hypotesetest dagsafkast </summary>
+Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6%</p>
+<p><strong>1.</strong> Test på 5% signifikansniveau om det gennemsnitlige dagsafkast <span class="math inline">\(\mu\)</span> i populationen antages at være 0%?</p>
+<p><strong>2.</strong> Test på 5% signifikansniveau om standardafvigelsen <span class="math inline">\(\sigma\)</span> i populationen antages at være mindre end 0.7% dvs. 0.007?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar hypotesetest dagsafkast </summary></p>
+<p>Vi har ikke rådata for de 80 handelsdage, derfor må vi i stedet benytte beregnede data i Freestat fanen Middelværdi standardafvigelse.</p>
+<p><strong>1.</strong> Hypoteserne bliver:</p>
+<p><span class="math display">\[H_0:\mu=0\]</span>
+<span class="math display">\[H_1:\mu\neq0\]</span>
+<img src="img/mu0test.png" alt="mu0test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Da p værdien/signifikanssandsynligheden 45.83% er større end 5% signifikansniveauet, kan vi ikke forkaste nulhypotesen. Det betyder det gennemsnitlige dagsafkast kan antages at være 0% for denne aktie.</p>
+<p><br>
+<br>
+<br></p>
+<p><strong>2.</strong> Hypoteserne bliver:</p>
+<p><span class="math display">\[H_0:\sigma\geq0.007\]</span>
+<span class="math display">\[H_1:\sigma&lt;0.007\]</span>
+<img src="img/sigma0.7test.png" alt="sigma0.7test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Da p-værdien/signifikanssandsynligheden 3.68% er mindre end 5% signifikansniveauet, afviser vi nulhypotesen. Det betyder standardafvigelsen <span class="math inline">\(\sigma\)</span> for aktien er mindre end 0.7%</p>
+<p><br>
+<br>
+<br></p>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål hypotesetest uddannelse </summary></p>
+<p>Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt antal års uddannelse EDUCATION. Datasættet kan hentes her <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRENKWWxlNlBXbmM">bankdata</a><br />
+<strong>1.</strong> Er det gennemsnitlige antal års uddannelse i populationen 13 år?<br />
+<strong>2.</strong> Er standardafvigelsen i populationen mindre end 3 år?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar hypotesetest uddannelse </summary></p>
+<p><strong>1.</strong> Hypoteserne bliver:<br />
+<span class="math display">\[H_0:\mu=13\]</span>
+<span class="math display">\[H_1:\mu\neq13\]</span>
+<img src="img/mu13test.png" alt="mu13test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Da p værdien/signifikanssandsynligheden 0.02% er mindre end 5% signifikansniveauet, afviser vi nulhypotesen. Det gennemsnitlige antal års uddannelse i populationen altså ikke 13 år.</p>
+<p><br>
+<br>
+<br></p>
+<p><strong>2.</strong> Hypoteserne bliver:<br />
+<span class="math display">\[H_0:\sigma\geq3\]</span>
+<span class="math display">\[H_1:\sigma&lt;3\]</span>
+<img src="img/sigma3test.png" alt="sigma3test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Da p værdien/signifikanssandsynligheden 12.17% er mindre end 5% signifikansniveauet, kan vi ikke afvise nulhypotesen, standardafvigelsen er altså mindst 3 i populationen.</p>
+<p><br>
+<br>
+<br></p>
+</details>
+</div>
+<div id="sprgsmal-hypotesetests-og-normalfordeling" class="section level2">
+<h2><span class="header-section-number">6.6</span> Spørgsmål hypotesetests og normalfordeling</h2>
+<br>
+<details>
+<p><summary> Spørgsmål Standard normalfordelingen </summary></p>
+<ol style="list-style-type: decimal">
+<li>Hvad er parametrene for z-fordelingen og hvad kalder man også denne fordeling?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 95% konfidensintervallet for standard normalfordelingen?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 90% konfidensintervallet for standard normalfordelingen?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 99% konfidensintervallet for standard normalfordelingen?<br />
+</li>
+<li>Hvad er 0.025 fraktilen for standard normalfordelingen (hint brug Excelfunktionen NORM.INV, angiv fraktil, middelværdi og standardafvigelse som argumenter)?<br />
+</li>
+<li>Hvad er 0.975 fraktilen for standard normalfordelingen?<br />
+</li>
+<li>Hvorfor er de 2 fraktiler numerisk identiske?<br />
+</li>
+<li>Hvad er 0.05 fraktilen for standard normalfordelingen?<br />
+</li>
+<li>Hvad er 0.95 fraktilen for standard normalfordelingen?<br />
+</li>
+<li>Hvad er 0.005 fraktilen for standard normalfordelingen?<br />
+</li>
+<li>Hvad er 0.995 fraktilen for standard normalfordelingen?<br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Svar Standard normalfordelingen </summary></p>
+<ol style="list-style-type: decimal">
+<li>Parametrene for z-fordelingen <span class="math inline">\(\mu=0\)</span> og <span class="math inline">\(\sigma=1\)</span>, z-fordelingen kaldes også standard normalfordelingen<br />
+</li>
+<li>Nedre og øvre grænse for 95% konfidensintervallet for standard normalfordelingen er -1.96 og 1.96<br />
+</li>
+<li>Nedre og øvre grænse for 90% konfidensintervallet for standard normalfordelingen er -1.64 og 1.64<br />
+</li>
+<li>Nedre og øvre grænse for 99% konfidensintervallet for standard normalfordelingen er -2.58 og 2.58<br />
+</li>
+<li>0.025 fraktilen for standard normalfordelingen, findes i excel som =NORM.INV(0.025;0;1) resultatet bliver -1.96, hvilket netop er nedre grænse i 95% konfidensintervallet for standard normalfordelingen.<br />
+</li>
+<li>0.975 fraktilen for standard normalfordelingen er 1.96<br />
+</li>
+<li>De 2 fraktiler numerisk identiske, da normalfordelinger er symmetriske og standard normalfordelingen har middelværdi 0.<br />
+</li>
+<li>0.05 fraktilen for standard normalfordelingen er -1.64<br />
+</li>
+<li>0.95 fraktilen for standard normalfordelingen er 1.64<br />
+</li>
+<li>0.005 fraktilen for standard normalfordelingen er -2.58<br />
+</li>
+<li>0.995 fraktilen for standard normalfordelingen er 2.58<br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål Konfidensintervaller for normalfordelinger </summary></p>
+<ol style="list-style-type: decimal">
+<li>Hvad er nedre og øvre grænse for 95% konfidensintervallet for en normalfordelt stokastisk variabel <span class="math inline">\(X\sim N(\mu=4,\sigma=1)\)</span>?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 90% konfidensintervallet for en normalfordelt stokastisk variabel <span class="math inline">\(X\sim N(\mu=4,\sigma=1)\)</span>?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 99% konfidensintervallet for en normalfordelt stokastisk variabel <span class="math inline">\(X\sim N(\mu=4,\sigma=2)\)</span>?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 95% konfidensintervallet for en normalfordelt stokastisk variabel <span class="math inline">\(X\sim N(\mu=100,\sigma=20)\)</span>?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 90% konfidensintervallet for en normalfordelt stokastisk variabel <span class="math inline">\(X\sim N(\mu=100,\sigma=20)\)</span>?<br />
+</li>
+<li>Hvad er nedre og øvre grænse for 99% konfidensintervallet for en normalfordelt stokastisk variabel <span class="math inline">\(X\sim N(\mu=1000,\sigma=100)\)</span>?<br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Svar Konfidensintervaller for normalfordelinger </summary></p>
+<ol style="list-style-type: decimal">
+<li>Nedre og øvre grænse for 95% konfidensintervallet for <span class="math inline">\(X\sim N(\mu=4,\sigma=1)\)</span> er <span class="math inline">\(\mu-1.96\cdot\sigma=4-1.96\cdot1=2.04\)</span> og <span class="math inline">\(\mu+1.96\cdot\sigma=4+1.96\cdot1=5.96\)</span><br />
+</li>
+<li>Nedre og øvre grænse for 90% konfidensintervallet for <span class="math inline">\(X\sim N(\mu=4,\sigma=1)\)</span> er <span class="math inline">\(\mu-1.64\cdot\sigma=4-1.64\cdot1=2.36\)</span> og <span class="math inline">\(\mu+1.64\cdot\sigma=4+1.64\cdot1=5.64\)</span><br />
+</li>
+<li>Nedre og øvre grænse for 99% konfidensintervallet for <span class="math inline">\(X\sim N(\mu=4,\sigma=2)\)</span> er <span class="math inline">\(\mu-2.58\cdot\sigma=4-2.58\cdot2=-1.16\)</span> og <span class="math inline">\(\mu+2.58\cdot\sigma=4+2.58\cdot2=9.16\)</span><br />
+</li>
+<li>Nedre og øvre grænse for 95% konfidensintervallet for <span class="math inline">\(X\sim N(\mu=100,\sigma=20)\)</span> er <span class="math inline">\(\mu-1.96\cdot\sigma=100-1.96\cdot20=60.8\)</span> og <span class="math inline">\(\mu+1.96\cdot\sigma=100+1.96\cdot20=139.2\)</span><br />
+</li>
+<li>Nedre og øvre grænse for 90% konfidensintervallet for <span class="math inline">\(X\sim N(\mu=100,\sigma=20)\)</span> er <span class="math inline">\(\mu-1.64\cdot\sigma=100-1.64\cdot20=67.2\)</span> og <span class="math inline">\(\mu+1.64\cdot\sigma=100+1.64\cdot20=132.8\)</span><br />
+</li>
+<li>Nedre og øvre grænse for 99% konfidensintervallet for <span class="math inline">\(X\sim N(\mu=1000,\sigma=100)\)</span> er <span class="math inline">\(\mu-2.58\cdot\sigma=1000-2.58\cdot100=742\)</span> og <span class="math inline">\(\mu+2.58\cdot\sigma=1000+2.58\cdot100=1258\)</span><br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål t-fordelingen </summary></p>
+<ol style="list-style-type: decimal">
+<li>Hvad er 0.025 og 0.975 fraktilerne for t-fordelingen, for en stikprøvestørrelse n=1000 dvs. 999 frihedsgrader (hint brug Excelfunktionen =TINV(0,025;999) eller =TINV(0,05;999) lidt afhængigt af office-version værdien er den numeriske værdi af fraktilen)?<br />
+</li>
+<li>Hvad er 0.025 og 0.975 fraktilerne for t-fordelingen, for en stikprøvestørrelse n=100 dvs. 99 frihedsgrader?<br />
+</li>
+<li>Hvad er 0.025 og 0.975 fraktilerne for t-fordelingen, for en stikprøvestørrelse n=25 dvs. 24 frihedsgrader?<br />
+</li>
+<li>Hvorfor ændres fraktilerne for t-fordelingen sig afhængigt af antallet af frihedsgrader?<br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<summary> Svar t-fordelingen </summary><br />
+1. 0.025 fraktilen er -1.9623 og 0.975 fraktilen 1.9623<br />
+2. 0.025 fraktilen er -1.9842 og 0.975 fraktilen 1.9842<br />
+3. 0.025 fraktilen er -2.0639 og 0.975 fraktilen 2.0639<br />
+4. t-fordelingerne nærmer sig standard normalfordelingen når antallet af frihedsgrader dvs. stikprøvestørrelsen vokser, dvs fraktilerne nærmer sig 1.96
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål Standardfejlen for middelværdien, og konfidensinterval for middelværdien. </summary></p>
+<ol style="list-style-type: decimal">
+<li>Der er udtaget en stikprøve på 100, fra en population med kendt standardafvigelse <span class="math inline">\(\sigma=10\)</span>, hvad bliver standardfejlen for middelværdien?<br />
+</li>
+<li>Der er udtaget en stikprøve på 900, fra en population med kendt standardafvigelse <span class="math inline">\(\sigma=15\)</span>, hvad bliver SEM?<br />
+</li>
+<li>Der er udtaget en stikprøve på 81, fra en population med kendt standardafvigelse <span class="math inline">\(\sigma=36\)</span>, hvad bliver standardfejlen for middelværdien?<br />
+</li>
+<li>Der er udtaget en stikprøve på 100, fra en population med kendt standardafvigelse <span class="math inline">\(\sigma=10\)</span>, stikprøvegennemsnittet dvs. parameterestimatet <span class="math inline">\(\hat\mu\)</span>, for den ukendte middelværdi <span class="math inline">\(\mu\)</span> i populationen er <span class="math inline">\(\bar{x}=\hat\mu=20\)</span>, hvad bliver nedre og øvre grænser 95% konfidensintervallet for middelværdien?<br />
+</li>
+<li>Der er udtaget en stikprøve på 900, fra en population med kendt standardafvigelse <span class="math inline">\(\sigma=15\)</span>, stikprøvegennemsnittet dvs. parameterestimatet <span class="math inline">\(\hat\mu\)</span>, for den ukendte middelværdi <span class="math inline">\(\mu\)</span> i populationen er <span class="math inline">\(\bar{x}=\hat\mu=20\)</span>, hvad bliver nedre og øvre grænser 95% konfidensintervallet for middelværdien?<br />
+</li>
+<li>Der er udtaget en stikprøve på 81, fra en population med kendt standardafvigelse <span class="math inline">\(\sigma=36\)</span>, stikprøvegennemsnittet dvs. parameterestimatet <span class="math inline">\(\hat\mu\)</span>, for den ukendte middelværdi <span class="math inline">\(\mu\)</span> i populationen er <span class="math inline">\(\bar{x}=\hat\mu=100\)</span>, hvad bliver nedre og øvre grænser 95% konfidensintervallet for middelværdien?<br />
+</li>
+<li>Hvad ville 95% konfidensintervallet blive i 4. hvis standardafvigelsen i <span class="math inline">\(\sigma\)</span> i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til <span class="math inline">\(\hat\sigma=10\)</span>?<br />
+</li>
+<li>Hvad ville 95% konfidensintervallet blive i 5. hvis standardafvigelsen i <span class="math inline">\(\sigma\)</span> i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til <span class="math inline">\(\hat\sigma=15\)</span>?<br />
+</li>
+<li>Hvad ville 95% konfidensintervallet blive i 6. hvis standardafvigelsen i <span class="math inline">\(\sigma\)</span> i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til <span class="math inline">\(\hat\sigma=36\)</span>?<br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<summary> Svar Standardfejlen for middelværdien, og konfidensinterval for middelværdien. </summary><br />
+1. Standardfejlen for middelværdien kan udregnes til <span class="math inline">\(\frac{\sigma}{\sqrt{n}}=\frac{10}{\sqrt{100}}=1\)</span><br />
+2. Standardfejlen for middelværdien kan udregnes til <span class="math inline">\(\frac{\sigma}{\sqrt{n}}=\frac{15}{\sqrt{900}}=0.5\)</span><br />
+3. Standardfejlen for middelværdien kan udregnes til <span class="math inline">\(\frac{\sigma}{\sqrt{n}}=\frac{36}{\sqrt{81}}=4\)</span><br />
+4. 95% konfidensintervallet for middelværdien udregnes vha. standardfejlen vi fandt i 1. Nedre grænse bliver <span class="math inline">\(\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=20-1.96\cdot1=18.04\)</span>, øvre grænse for 95% konfidensintervallet for middelværdien bliver <span class="math inline">\(\hat\mu+1.96\cdot1=20+1.96=21.96\)</span>. Sagt med andre ord: “Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 18.04 og 21.96”<br />
+5. 95% konfidensintervallet for middelværdien udregnes vha. standardfejlen vi fandt i 2. Nedre grænse bliver <span class="math inline">\(\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=\hat\mu-1.96\cdot0.5=20-0.98=19.02\)</span>, øvre grænse for 95% konfidensintervallet for middelværdien bliver <span class="math inline">\(\hat\mu+1.96\cdot0.5=20+0.98=20.98\)</span>. Sagt med andre ord: “Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 19.02 og 20.98”<br />
+6. 95% konfidensintervallet for middelværdien udregnes vha. standardfejlen vi fandt i 3. Nedre grænse bliver <span class="math inline">\(\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=100-1.96\cdot4=100-7.84=92.16\)</span>, øvre grænse for 95% konfidensintervallet for middelværdien bliver <span class="math inline">\(\hat\mu+1.96\cdot4=100+7.84=107.84\)</span>. Sagt med andre ord: “Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 92.16 og 107.84”<br />
+7. Hvis standardafvigelsen i <span class="math inline">\(\sigma\)</span> i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til <span class="math inline">\(\hat\sigma=10\)</span>, benytter vi t-fordelingen med 100-1=99 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;99) hvilket giver 1.9842. 95% konfidensintervallet for middelværdien bliver:<br />
+Nedre grænse <span class="math inline">\(20-1.9842\cdot1=18.02\)</span><br />
+Øvre grænse <span class="math inline">\(20+1.9842\cdot1=21.98\)</span><br />
+“Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 18.02 og 21.98”<br />
+8. Hvis standardafvigelsen i <span class="math inline">\(\sigma\)</span> i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til <span class="math inline">\(\hat\sigma=15\)</span>, benytter vi t-fordelingen med 900-1=899 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;899) hvilket giver 1.9626.<br />
+95% konfidensintervallet for middelværdien bliver:<br />
+Nedre grænse <span class="math inline">\(20-1.9626\cdot0.5=19.02\)</span><br />
+Øvre grænse <span class="math inline">\(20+1.9626\cdot0.5=20.98\)</span><br />
+“Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 19.02 og 20.98”<br />
+9. Hvis standardafvigelsen i <span class="math inline">\(\sigma\)</span> i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til <span class="math inline">\(\hat\sigma=36\)</span>, benytter vi t-fordelingen med 81-1=80 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;80), hvilket giver 1.9901. 95% konfidensintervallet for middelværdien bliver:<br />
+Nedre grænse <span class="math inline">\(100-1.9901\cdot4=92.04\)</span><br />
+Øvre grænse <span class="math inline">\(100+1.9901\cdot4=107.96\)</span><br />
+“Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 92.04 og 107.96”
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål Danske virksomheder egenkapital</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlVmxHTDltNk1VSG8">VIRKSOMHEDER-DK</a>, der viser data for 369 danske virksomheder med ekstern revision. Der er således en overvægt af virksomheder af en vis størrelse, hvorfor samtlige beløb er angivet i antal 1000 DKK. Besvar følgende spørgsmål for variablen egenkapital i antal 1000 DKK.</p>
+<ol style="list-style-type: decimal">
+<li>Hvad bliver parameterestimatet for middelværdien for variablen egenkapital?<br />
+</li>
+<li>Hvad bliver parameterestimatet for standard afvigelsen for variablen egenkapital?<br />
+</li>
+<li>Hvad bliver standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) for variablen egenkapital?<br />
+</li>
+<li>Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% konfidensintervallet, for den gennemsnitlige egenkapital for virksomheder i populationen?<br />
+</li>
+<li>Hvad bliver parameterestimatet for standardafvigelsen <span class="math inline">\(\hat\sigma\)</span> for variablen egenkapital?<br />
+</li>
+<li>Hvad bliver nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen for variablen egenkapital?<br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Svar Danske virksomheder egenkapital</summary></p>
+<ol style="list-style-type: decimal">
+<li>Parameterestimatet for middelværdien for variablen egenkapital, udregnes som gennemsnittet af stikprøven<br />
+<span class="math inline">\(\hat\mu=\bar{x}=\frac{\sum_1^nx_i}{n}=\frac{\sum_1^nx_i}{369}=\)</span><span class="math inline">\(155327.97\)</span>. Resultatet står som stikprøve gennemsnit i output fra Freestat herunder.<br />
+</li>
+<li>Parameterestimatet for standard afvigelsen for variablen egenkapital findes som <span class="math inline">\(\hat\sigma=S=\sqrt{\frac{\sum_1^n(x_i-\bar{x})^2}{n-1}}=\frac{\sum_1^nx_i}{368}=\)</span><span class="math inline">\(676727.53\)</span>. Resultatet står som standard afvigelse spredning i Freestat herunder.round(sd(Egenkapital),2). Husk vi korrigerer ved at fratrække 1 fra stikprøvestørrelsen i nævneren dvs. n-1.<br />
+</li>
+<li>Standardfejlen for middelværdien kan udregnes som <span class="math inline">\(SEM=\sigma_\bar{X}=\frac{\hat\sigma}{\sqrt{n}}=\)</span><span class="math inline">\(\frac{676727.53}{\sqrt{369}}=35229.03\)</span>. Resultatet står som standard fejl middel i Freestat herunder.<br />
+</li>
+<li>Grænserne for 95% konfidensintervallet for middelværdien i populationen, kan udregnes til:<br />
+<span class="math inline">\(\hat\mu-1.966431\cdot \sigma_\bar{X}=155327.97-1.966431\cdot35229.03\)</span><span class="math inline">\(=86052.51\)</span> og
+<span class="math inline">\(\hat\mu+1.966431\cdot \sigma_\bar{X}=\)</span><span class="math inline">\(155327.97+1.966431\cdot 35229.03\)</span><span class="math inline">\(=224603.43\)</span><br />
+</li>
+<li>Parameterestimatet for standardafvigelsen <span class="math inline">\(\hat\sigma\)</span> bliver <span class="math inline">\(676727.53\)</span><br />
+</li>
+<li>Nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen bliver hhv. <span class="math inline">\(631170.46\)</span> og <span class="math inline">\(729427.12\)</span></li>
+</ol>
+<p>Herunder ses det output man ville generere i Freestat Deskriptiv statistik.</p>
+<p><img src="img/freestatvirkdksem.png" alt="freestatvirkdksem" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål Danske virksomheder årets resultat</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlVmxHTDltNk1VSG8">VIRKSOMHEDER-DK</a>, der viser data for 369 danske virksomheder med ekstern revision. Der er således en overvægt af virksomheder af en vis størrelse, hvorfor samtlige beløb er angivet i antal 1000 DKK. For at benytte stikprøven til at udtale sig om populationen, forudsættes det at denne er simpelt tilfældigt udtrukket fra populationen. Besvar følgende spørgsmål for variablen årets resultat i antal 1000 DKK.</p>
+<ol style="list-style-type: decimal">
+<li>Hvad bliver parameterestimatet for middelværdien for variablen årets resultat?<br />
+</li>
+<li>Hvad bliver parameterestimatet for standard afvigelsen for variablen årets resultat?<br />
+</li>
+<li>Hvad bliver standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) for variablen årets resultat?<br />
+</li>
+<li>Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% konfidensintervallet, for den gennemsnitlige egenkapital for virksomheder i populationen?<br />
+</li>
+<li>Hvad bliver parameterestimatet for standardafvigelsen <span class="math inline">\(\hat\sigma\)</span> for variablen årets resultat?<br />
+</li>
+<li>Hvad bliver nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen?</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Svar Danske virksomheder årets resultat</summary></p>
+<ol style="list-style-type: decimal">
+<li>Parameterestimatet for middelværdien for variablen årets resultat, udregnes som gennemsnittet af stikprøven<br />
+<span class="math inline">\(\hat\mu=\bar{x}=\frac{\sum_1^nx_i}{n}=\frac{\sum_1^nx_i}{369}=39733.96\)</span>. Resultatet står som stikprøve gennemsnit i output fra Freestat herunder.<br />
+</li>
+<li>Parameterestimatet for standard afvigelsen for variablen årets resultat findes som <span class="math inline">\(\hat\sigma=S=\sqrt{\frac{\sum_1^n(x_i-\bar{x})^2}{n-1}}=\frac{\sum_1^nx_i}{368}=374398.75\)</span>. Resultatet står som standard afvigelse spredning i Freestat herunder.round(sd(ar),2). Husk vi korrigerer ved at fratrække 1 fra stikprøvestørrelsen i nævneren dvs. n-1.<br />
+</li>
+<li>Standardfejlen for middelværdien kan udregnes som <span class="math inline">\(SEM=\sigma_\bar{X}=\frac{\sigma}{\sqrt{n}}=\frac{374398.75}{\sqrt{369}}=19490.42\)</span>. Resultatet står som standard fejl middel i Freestat herunder.<br />
+</li>
+<li>Grænserne for 95% konfidensintervallet for middelværdien i populationen, kan udregnes til:<span class="math inline">\(\hat\mu-1.966431\cdot \sigma_\bar{X}=39733.96-1.966431\cdot19490.42=1407.39\)</span> og <span class="math inline">\(\hat\mu+1.966431\cdot\sigma_\bar{X}=39733.96+1.966431\cdot19490.42=78060.53\)</span><br />
+</li>
+<li>Parameterestimatet for standardafvigelsen <span class="math inline">\(\hat\sigma\)</span> bliver 374398.75<br />
+</li>
+<li>Nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen bliver hhv. 349194.35 og 403554.74 i antal 1000 DKK.</li>
+</ol>
+<p>Herunder ses det output man ville generere i Freestat Deskriptiv statistik.</p>
+<p><img src="img/freestatvirkar.png" alt="freestatvirkar" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål til diskussion dagsafkast på danske aktier.</summary></p>
+<p><a href="https://www.dropbox.com/s/8rxorw99odikion/DK%20aktiekurser.xls?dl=01">DK aktiekurser.xls hentes her</a></p>
+<p>Man siger ofte at kursfaldet ved en korrektion, er hurtigere og voldsommere end stigningen i et positivt marked. Kan man baseret på data for aktierne, konkludere at dette synes at være tilfældet?</p>
+<p>Hvorfor kan en portefølje, der ikke er volatil(lille standardafvigelse), være en fordel for den risikoaverse investor?</p>
+<p>Man siger at man bør have cykliske og defensive aktier/aktiver i sin portefølje, kan man ud fra formlen for variansen forklare, hvorfor dette kunne være en god ide (hint tænk på dagsafkastet som det gennemsnitlige afkast af porteføljen)?</p>
+<p>[/toggle]</p>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål Hypotesetests danske virksomheders omsætning.</summary></p>
+<p>I linket her er filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlVmxHTDltNk1VSG8">VIRKSOMHEDER-DK</a>, der viser data for 369 danske virksomheder med ekstern revision. Der er således en overvægt af virksomheder af en vis størrelse, hvorfor samtlige beløb er angivet i antal 1000 DKK. Vi betragter i det følgende variablen omsætning.</p>
+<ol style="list-style-type: decimal">
+<li>Hvilken type variabel er variablen Omsætning?<br />
+</li>
+<li>Hvad bliver standardfejlen?<br />
+</li>
+<li>Hvad bliver 95% konfidensintervallet for den gennemsnitlige omsætning i populationen?<br />
+</li>
+<li>Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 500.000.000 DKK, dvs. en halv mia. DKK, på et 5% signifikans niveau? Hvorledes ville hypoteserne for et test af denne påstand se ud?<br />
+</li>
+<li>Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 600.000.000 DKK på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?<br />
+</li>
+<li>Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 700.000.000 DKK, på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?<br />
+</li>
+<li>Har de 3 tests ensidede eller tosidede alternativ hypoteser, eller et mix af disse?<br />
+</li>
+<li>Hvad bliver 90% konfidensintervallet for den gennemsnitlige omsætning i populationen? Er dette konfidensinterval smallere eller bredere end 95% konfidensintervallet?<br />
+</li>
+<li>En revisionsteam har en begrundet formodning om at den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK. Opstil hypoteser og undersøg på 5% signifikansniveau, om denne påstand kan antages at være korrekt, bestem herunder signifikanssandsynligheden og hold denne op mod signifikansniveauet.<br />
+</li>
+<li>Kunne revisorteamet ud fra teststørrelsen afgøre at man ikke kunne forkaste nulhypotesen?</li>
+<li>Test på 10% signifikansniveau, om den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK, bestem herunder signifikanssandsynligheden og hold denne op mod signifikansniveauet.<br />
+</li>
+<li>Er konklusionen niveaufølsom?<br />
+</li>
+<li>Test om den gennemsnitlige omsætning i populationen er højst 250 mio. DKK?<br />
+</li>
+<li>Test på 1% signifikansniveau om den gennemsnitlige omsætning i populationen er højst 250 mio. DKK?<br />
+</li>
+<li>Test om den gennemsnitlige omsætning i populationen er mindst 600 mio. DKK?<br />
+</li>
+<li>Test på 1% signifikansniveau om den gennemsnitlige omsætning i populationen er mindst 600 mio. DKK?<br />
+</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Svar Hypotesetests danske virksomheders omsætning.</summary></p>
+<p>Herunder ses histogrammet for omsætning for de danske virksomheder, vi kan af histogrammet se at fordelingen er stærkt højreskæv og leptokurtisk. Der er endnu tydeligere outliers end for variablen egenkapital, dvs kæmpe virksomheder med høj omsætning.</p>
+<p><img src="bookdown-demo_files/figure-html/egenkapital1-1.svg" width="864" />
+1. Variablen Omsætning er en kvanitativ, kontinuert variabel, ratioskala, vi kan således benytte fanen 1 Kvantitativ stikprøve i Freestat.<br />
+2. Standardfejlen for middelværdien bliver <span class="math inline">\(SEM=\frac{\sigma}{\sqrt{n}}=\frac{1.829.195.752}{\sqrt{369}}=95.224.127\)</span> DDK eller ca. 95 mio.<br />
+3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i konfidensintervallet. Nedre grænse findes fx. som <span class="math inline">\(427.387.680-1.9664\cdot95.224.127\)</span> Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter signifikansniveauet i den hvide celle til 5% for at ændre konfidensniveaet til 95%.<br />
+<img src="img/dkvirkoms5.png" alt="dkvirkoms5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/><br />
+4. Nej, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 500 mio. DKK er indeholdt i dette interval. Kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 500 mio. DKK.<br />
+Hypoteserne ville være:<br />
+<span class="math display">\[H_0: \mu=500\ mio.\]</span><br />
+<span class="math display">\[H_1: \mu\neq500\ mio.\]</span><br />
+Vi kan således ikke forkaste nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen kan antages at være 500 mio.<br />
+5. Nej, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 600 mio. DKK er indeholdt i dette interval, kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 600 mio. DKK.<br />
+Hypoteserne ville være:<br />
+<span class="math display">\[H_0: \mu=600\ mio.\]</span><br />
+<span class="math display">\[H_1: \mu\neq600\ mio.\]</span><br />
+Vi kan således ikke forkaste nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen kan antages at være 600 mio.<br />
+6. Ja, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, kan vi afvise en antagelse om at den gennemsnitlige omsætning skulle være 700 mio. DKK.
+Hypoteserne ville være:<br />
+<span class="math display">\[H_0: \mu=700\ mio.\]</span><br />
+<span class="math display">\[H_1: \mu\neq700\ mio\]</span><br />
+Vi forkaster nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen, ikke kan antages at være 700 mio.<br />
+7. Alle tre tests har tosidede alternativ hypoteser, alle tre indeholder forskellig fra operatoren <span class="math inline">\(\neq\)</span><br />
+8. Vi kan med 90% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem
+270.363 og 584.413 1.000 DKK. Dette konfideninterval er altså smallere end 95% konfidensintervallet, hvilket giver god mening nu har hver hale 5% af sandsynligheden mod 2.5% før. Vi er jo også kun 90% sikre på at <span class="math inline">\(\mu\)</span> ligger i intervallet. Ønsker man smallere konfidensinterval øget præcision, uden at øge stikprøvestørrelsen kan man således slække på konfidensniveauet. Herunder ses output fra Freestat, bemærk vi ændrer signifikansniveauet i den hvide celle til 10% for at ændre konfidensniveaet til 90%.<br />
+<img src="img/dkvirkoms10.png" alt="dkvirkoms10" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/><br />
+9. Testet bliver:<br />
+<span class="math display">\[H_0:\mu=250\ mio.\]</span><br />
+<span class="math display">\[H_0:\mu\neq250\ mio.\]</span><br />
+Af nedenstående output fra Freestat ses at p-værdien bliver 6.33%, hvilket lige er større end 5% signifikansniveauet. Vi kan altså ikke forkaste nulhypotesen. Vi kan ikke afvise revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, signifikansniveau til 5% og Test middel af populationen til 250000 1000 DKK.<br />
+<img src="img/dkvirkomshyp5.png" alt="dkvirkomshyp5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/><br />
+10 Ja, da alternativhypotesen er tosidet skal teststørrelsen ligge mellem -1.9664 og 1.9664 svarende til 2.5% og 97.5% fraktilerne for t-fordelingen med 368 frihedsgrader. Man kan se den numeriske værdi af disse i Excel med kommandoen =TINV(5%;368). Teststørrelsen er angivet i Freestat til 1.8628 denne er således ikke så stor at det er kritisk for nulhypotesen, men teststørrelsen er dog tæt på den øvre grænse, hvilket tydeligere illustreres af at p-værdien er tæt på 5%.<br />
+11 Testet bliver:<br />
+<span class="math display">\[H_0:\mu=250\ mio.\]</span><br />
+<span class="math display">\[H_0:\mu\neq250\ mio.\]</span><br />
+Af ovenstående output fra Freestat ses at p-værdien bliver 6.33%, hvilket er mindre end 10% signifikansniveauet. Vi må forkaste nulhypotesen. Vi afviser revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, signifikansniveau til 10% og Test middel af populationen til 250000 1000 DKK.
+12 Ja konklusionen er niveaufølsom, p-værdien betyder vi forkaster nulhypotesen på 10% signifikansniveau, men ikke på 5% signifikansniveau.<br />
+13. Vi kan oversætte højst til symbolet <span class="math inline">\(\leq\)</span>, da symbolet indeholder lighedstegn, skal det i nulhypotesen. Da signifikansniveauet ikke er angivet tester vi på 5% signifikansniveau.<br />
+Testet bliver:<br />
+<span class="math display">\[H_0:\mu\leq 250\ mio.\]</span><br />
+<span class="math display">\[H_1:\mu&gt;250\ mio.\]</span><br />
+Af output fra Freestat under svar 11 test nr. 2, ses at p-værdien bliver 3.16%, hvilket er mindre end 5% signifikansniveauet. Vi må forkaste nulhypotesen. Vi afviser nulhypotesen om at den gennemsnitlige omsætning er højst 250 mio. DKK. Vi konkluderer at den gennemsnitlige omsætning er signifikant større end 250 mio. DKK.<br />
+14. Testet bliver ligesom i 13 igen:<br />
+<span class="math display">\[H_0:\mu\leq 250\ mio.\]</span><br />
+<span class="math display">\[H_1:\mu&gt;250\ mio.\]</span><br />
+Af output fra Freestat ses som før at p-værdien bliver 3.16%, hvilket er større end 1% signifikansniveauet. Vi kan ikke forkaste nulhypotesen. Vi kan ikke afvise nulhypotesen om at den gennemsnitlige omsætning er højst 250 mio. DKK. Vi konkluderer at den gennemsnitlige omsætning er højst end 250 mio. DKK. Når vi har 1% signifikansniveau, skal her mere til at vi forkaster nulhypotesen, p-værdien skal være mindre end 1% i modsætning til før hvor p-værdien skulle være mindre end 5%.<br />
+15. Vi kan oversætte mindst til symbolet <span class="math inline">\(\geq\)</span>, da symbolet indeholder lighedstegn, skal det i nulhypotesen. Da signifikansniveauet ikke er angivet tester vi på 5% signifikansniveau.
+Testet bliver:<br />
+<span class="math display">\[H_0:\mu\geq 600\ mio.\]</span><br />
+<span class="math display">\[H_1:\mu&lt;600\ mio.\]</span><br />
+Vi får følgende output fra Freestat:<br />
+<img src="img/freestat600hyp.png" alt="freestat600hyp" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/><br />
+Vi får en p-værdi på 3.53%, hvilket er mindre end 5% signifikansniveauet. Vi kan altså afvise nulhypotesen om at den gennemsnitlige omsætning er mindst 600 mio. DKK.<br />
+16. Testet bliver ligesom i 15 igen:<br />
+<span class="math display">\[H_0:\mu\geq 600\ mio.\]</span><br />
+<span class="math display">\[H_1:\mu&lt;600\ mio.\]</span><br />
+Af output fra Freestat under svar 15 test nr. 3, ses at p-værdien bliver 3.53%, hvilket er større end 1% signifikansniveauet. Vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at den gennemsnitlige omsætning er mindst 600 mio. DKK. Når vi har 1% signifikansniveau, skal her mere til at vi forkaster nulhypotesen, halen bliver jo mindre. Konklusionen er niveaufølsom.</p>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål Eksamen Januar 2015 spørgsmål 2.1 og 2.2 Finansøkonom.</summary></p>
+<p>ABC-Bank, som er en større udenlandsk bank, overvejer at etablere sig i Danmark.
+Men ABC-Bank har indtryk af, at det danske bankmarked er kendetegnet ved relativt mange filialer og bankansatte i forhold til antallet af kunder. Inden den endelige beslutning træffes, ønsker ABC- Banks bestyrelse derfor en analyse af bankmarkedet Danmark.<br />
+Man tilfældigt udvalgt 24 danske banker og undersøgt følgende:<br />
+1. Antal nye kunder i 3. kvartal 2014 - Netto tilgang af kunder i kvartalet.<br />
+2. Antal medarbejdere pr. 1.000 kunder - Gennemsnitligt antal fuldtidsansatte delt med samlet antal privat- og erhvervskunder målt i tusinder. Tallene stammer fra de 24 bankers årsrapporter 2013.<br />
+3. Rente på en almindelig indlånskonto - Bankens annoncerede indlånsrente på en anfordringskonto ved udgangen af 3. kvartal 2014.<br />
+4. Rente på boliglån - Bankens annoncerede rente på boliglån ved udgangen af 3. kvartal 2014.<br />
+5. Har banken samarbejde med en ejendomsmægler/mæglerkæde - 0 angiver ikke samarbejde 1 angiver samarbejde</p>
+<p>Resultaterne af ABC-Banks dataindsamling vises i Excel-filen <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMldkt1OUx6LTEyMXM">2015 Januar Data.xlsx</a>. Du bedes med udgangspunkt i disse resultater besvare nedenstående opgaver.<br />
+I bedømmelsen bliver der lagt vægt på, at du argumenterer for dine valg af løsningsmetoder, undersøger om eventuelle forudsætninger er opfyldt samt fortolker dine resultater.</p>
+Opgave 2<br />
+På ABC-Banks hjemmemarked har banken 4,9 ansatte pr. 1.000 kunder. Bestyrelsen vil gerne have undersøgt, om der virkelig er flere ansatte pr. 1.000 kunder i danske banker.<br />
+Spørgsmål 2.1 (10 %)<br />
+Du bedes teste på 5 % signifikansniveau om det gennemsnitlige antal ansatte pr. 1.000 kunder er over 4,9 i danske banker.<br />
+Forskellen på kundesammensætningen i filialerne påvirker behovet for ansatte i forhold til antal kunder. Bestyrelsen i ABC-Bank vil gerne vide, hvor stor variation der er i antal ansatte pr. 1.000 kunder.<br />
+Spørgsmål 2.2 (10 %)<br />
+Du bedes derfor udarbejde et 95 % konfidensinterval for standardafvigelsen for antal ansatte pr. 1.000 kunder i de danske banker.
+</details>
+<br>
+<details>
+<p><summary> Svar Eksamen Januar 2015 spørgsmål 2.1 og 2.2 Finansøkonom.</summary></p>
+<p>Opgave 2.1<br />
+Bemærk da antallet af observationer i stikprøven er mindre end 30 skal vi sikre os at data er approximativt normalfordelte. Dette afgøres vha. QQ plot, hvor vi ser at observationerne ligger nogenlunde på en ret linje.<br />
+<img src="img/freestatjan2015qq.png" alt="freestatjan2015qq" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Vi indsætter data i Freestat i fanen 1 kvantitativ stikprøve:</p>
+<p>Af teksten ses:</p>
+<p>“der virkelig er <strong>flere</strong> ansatte pr. 1.000 kunder”</p>
+<p>Vi ved således vi skal benytte større end &gt;, symbolet er uden lighedstegn dette hører derfor til i alternativ hypotesen. Altså skal vi benytte <span class="math inline">\(\leq\)</span> i nulhypotesen. Testet bliver således:</p>
+<p><span class="math display">\[H_0:\mu\leq 4.9\]</span><br />
+<span class="math display">\[H_1:\mu&gt; 4.9\]</span></p>
+<p><img src="img/freestatjan2015hyp.png" alt="freestatjan2015hyp" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+Da signifikanssandsynligheden/p-værdien er 0.0077 mindre end signifikans niveauet 5% forkaster vi nulhypotesen.<br />
+Antal ansatte pr. 1000 kunder er altså større end 4.9.<br />
+Opgave 2.2<br />
+Vi kan med 95% sikkerhed sige at standardafvigelsen i populationen ligger mellem 0.3500 og 0.6317
+<img src="img/freestatstdki.png" alt="freestatstdki" align="left" width="60%" height="60%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
+</details>
+<br>
+<details>
+<p><summary> Spørgsmål US aktier</summary></p>
+<p>I datasættet <a href="https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ" target="_blank">USA aktier</a> findes månedlige aktieafkast i %, fra 5 store amerikanske virksomheder siden år 2000. Virksomhederne er Coca Cola, Bank of America, JP Morgan Chase, Microsoft og Kellogs den sidste variabel US portefølje er en portefølje bestående at 20% af hver af disse 5 aktier. Vi forudsætter at stikprøven er repræsentativ for populationen. Angiv korte præcise svar, angiv hypoteser, p-værdier teknisk og ikke-teknisk konklusion hvor det er relevant.</p>
+<ol style="list-style-type: decimal">
+<li><p>Angiv 95% konfidensintervallet for middelværdien for Bank of America og for US porteføljen.</p></li>
+<li><p>Angiv 95% konfidensintervallet for standardafvigelsen for Bank of America og for US porteføljen.</p></li>
+<li><p>Angiv mindste og største månedlige afkast for Bank of America og for US porteføljen.</p></li>
+<li><p>Test om det gennemsnitlige afkast for Bank of America er mindst 1%?</p></li>
+<li><p>Test om det gennemsnitlige afkast for US porteføljen er mindst 1%?</p></li>
+<li><p>Undersøg om vi kan være sikre på (5% signifikansniveau), at det gennemsnitlige afkast for Bank of America er større end 0%?</p></li>
+<li><p>Undersøg om vi kan være sikre på (5% signifikansniveau), at det gennemsnitlige afkast for US porteføljen er større end 0%?</p></li>
+<li><p>Test på 1% signifikansniveau om standardafvigelsen er højst 5% for Bank of America afkastet.</p></li>
+<li><p>Test på 1% signifikansniveau om standardafvigelsen er højst 5% for US portefølje afkastet.</p></li>
+</ol>
+<p>Ville du helst investere i US porteføljen eller en af aktierne i dag? angiv en kort begrundelse.</p>
+</details>
+<br>
+<details>
+<p><summary> Svar US aktier</summary>
+Du kan se en videogennemgang af opgaven <a href="https://youtu.be/jAPfCsEvndE">her</a></p>
+<p>Du kan hente løsningen til opgaven <a href="https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlSDNPZi1zSTlqNk0" target="_blank">hent USA aktier løsning</a></p>
+</details>
+</div>
+<div id="selvtest-1" class="section level2">
+<h2><span class="header-section-number">6.7</span> Selvtest</h2>
+<h2>
+<a href="https://www.edutest.dk/mod/quiz/view.php?id=56" target="_blank">Selvtest konfidensinterval og middelværdi med videoløsning.</a>
+</h2>
+</div>
+<div id="selvtest-2" class="section level2">
+<h2><span class="header-section-number">6.8</span> Selvtest</h2>
+<h2>
+<a href="https://www.edutest.dk/mod/quiz/view.php?id=51" target="_blank">Selvtest middel Dow Jones med videoløsning.</a>
+</h2>
+</div>
+<div id="selvtest-3" class="section level2">
+<h2><span class="header-section-number">6.9</span> Selvtest</h2>
+<h2>
+<a href="https://www.edutest.dk/mod/quiz/view.php?id=67" target="_blank">Selvtest normalfordelingen med videoløsning</a>
+</h2>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="konfidensintervaller.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="andel.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

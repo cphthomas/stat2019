@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Udvidet Statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Statistik.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistik." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Udvidet Statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Statistik." />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="korrelation.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Stat2</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#deskriptorer"><i class="fa fa-check"></i><b>3.1</b> Deskriptorer</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.1.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.1.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.1.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.1.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.1.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.1.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.1.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.1.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.1.5</b> Modus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.2</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.2.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.3</b> Skævhed</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.4</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.5</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.6</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://tepedu.com" target="blank">Thomas Petersen</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Udvidet Statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="liner-regressionsanalyse" class="section level1">
+<h1><span class="header-section-number">Kapitel 11</span> Lineær regressionsanalyse</h1>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/228379418" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Hvis en variabel Y, påvirkes lineært af en anden X, kan vi bestemme en lineær funktion til at forudsige værdien af Y for værdier af X. Nedenfor er et mini-eksempel vi kun benytter for at vise hvad det er vi beregner. Vi går ikke i detaljer med de matematiske beviser og formler bag teknikken.</p>
+<div id="joe-and-the-juice" class="section level2">
+<h2><span class="header-section-number">11.1</span> Joe and The Juice</h2>
+<p>En kvik juicer har observeret hvordan vejret er, og hvor mange Go Away Doc drinks, der er solgt.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Temperatur</th>
+<th align="left">Drinks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">5</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="left">6</td>
+</tr>
+</tbody>
+</table>
+<p>Det virker ikke logisk at salget på Joe and the Juice påvirker temperaturen, derimod giver det god mening at temperaturen påvirker salget af drinks. Vi angiver salget af drinks på y-aksen og temperaturen på x-aksen.<img src="img/joeandthejuice.png" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Variablen vi ønsker at forudsige, her salget af drinks, kalder vi:</p>
+<ul>
+<li>Y</li>
+<li>Responsvariablen</li>
+<li>Den forklarede variabel</li>
+<li>Den afhængige variabel</li>
+<li>Den endogene variabel</li>
+</ul>
+<p>En variabel vi bruger til at forudsige, her temperaturen, kaldes:</p>
+<ul>
+<li>X</li>
+<li>Prædiktoren</li>
+<li>Den forklarende variabel</li>
+<li>Den uafhængige variabel</li>
+<li>Den eksogene variabel</li>
+</ul>
+<p>Baseret på observationerne kan vi forsøge at forudsige salget af drinks, til dette formål opstiller vi en lineær model.
+Normalt når vi har en lineær funktion har vi i matematik lært at denne har forskriften <span class="math display">\[y=ax+b\]</span>
+Når vi har at gøre med lineær regression bruger vi typisk betegnelsen <span class="math inline">\(\beta_1\)</span> eller mere sigende <span class="math inline">\(\beta_{temperatur}\)</span> eller <span class="math inline">\(\beta_{temp}\)</span> om hældningskoefficienten <span class="math inline">\(a\)</span>. Vi bruger ofte betegnelsen <span class="math inline">\(\beta_0\)</span> eller <span class="math inline">\(\alpha\)</span> om skæringen med y-aksen b også kaldet interceptet.</p>
+<p>Det betyder vores gamle matematik formel for linjen <span class="math display">\[y=ax+b\]</span> Bliver til vores model af virkeligheden: <span class="math display">\[\hat{Y}=\hat{\beta}_{temp} \cdot X_{temp}+\hat{\beta}_0\]</span> For at vi kan bruge modellen til at sige noget om salget af drinks, skal vi baseret på vore observationer estimere hældningskoefficienten <span class="math inline">\(\beta_{temp}\)</span> og skæringen <span class="math inline">\(\beta_0\)</span>. Vi kender ikke de sande værdier parametrene <span class="math inline">\(\beta_{temp}\)</span> og <span class="math inline">\(\beta_0\)</span>, men ud fra vore faktiske observationer kan vi give vores bedste gæt parameterestimaterne <span class="math inline">\(\hat{\beta}_{temp}\)</span> og <span class="math inline">\(\hat{\beta}_0\)</span>. Software beregner parameterestimaterne til linjen, der bedst beskriver sammenhængen mellem den uafhængige variabel temperatur og responsvariablen drinks. Vi kalder denne linje regressionslinjen. Da den beregnede værdi af antallet af drinks er baseret på estimater, vælger vi at skrive <span class="math inline">\(\hat{Y}\)</span> i stedet for <span class="math inline">\(Y\)</span></p>
+<p>Nedenstående forklaring på metoden til beregning af modellens forklaringskraft, kan være svær at forstå. Det er ikke nødvendigt for at fortolke modellerne, men kan give indsigt i mekanikken bag modellen.</p>
+<p>Når vi beregner estimaterne for regressionslinjen, bruger vi en metode, der kaldes mindste kvadraters metode (på engelsk ordinary least squares OLS) til at beregne vore estimater.</p>
+<p>Vi får software til at beregne de 2 estimater
+<span class="math display">\[\hat{\beta}_{temp}=0.75 ~~ \hat{\beta}_0=0.5\]</span>
+Disse parameterestimater kan vi nu indsætte i modellen:</p>
+<p><span class="math display">\[\hat{Y}=\hat{\beta}_{temp} \cdot X_{temp}+\hat{\beta}_0\]</span>
+<span class="math display">\[\hat{Y}=0.75 \cdot X_{temp}+0.5\]</span></p>
+<p>Når vi kender en temperatur fx. 6 grader, kan vi indsætte denne værdi i regressionslinjen, i stedet for <span class="math inline">\(X_{temp}\)</span> og forudsige/estimere hvad salget af drinks vil være.
+<span class="math display">\[\hat{Y}=0.75 \cdot X_{temp}+0.5 \Leftrightarrow\]</span>
+<span class="math display">\[\hat{Y}=0.75 \cdot 6+0.5\Leftrightarrow\]</span>
+<span class="math display">\[\hat{Y}=5\]</span></p>
+<p>Vi kan i figuren se at de sorte prikker er faktiske observationer, og linjen er modellen af virkeligheden. Vi har beregnet modellens forudsigelse af drinkssalget ved de 3 temperaturer 2, 4 og 8 grader, modellens forudsigelser er illustreret ved sorte trekanter. Vi kalder forskellen mellem faktiske og observerede værdier for residualer, definitionen for residualer er altså faktisk minus observeret værdi. Man benytter ofte det græske bogstav epsilon <span class="math inline">\(\epsilon\)</span> til at betegne residualerne. For at have et mål for hvor stor forskellen mellem modellen og de faktiske observationer er samlet set, bruger vi summen af de kvadrerede residualer SSR.
+Residualer af observerede salg af drinks beregnes som: <span class="math display">\[SSR=(1-2)^2+(5-3.5)^2+(6-6.5)^2=1+2.25+0.25=3.5\]</span> Vi kalder værdien for summen af kvadrerede residualer på engelsk SSR sums of squared residuals, de 3 kvadrerede residualer er illustreret som de 3 grå kvadrater i figuren nedenfor.</p>
+<p><img src="bookdown-demo_files/figure-html/joereg1-1.svg" width="864" /></p>
+<p>Hvis der ikke er en lineær sammenhæng mellem temperatur og drinkssalg, og regressionslinjen derfor ikke kan bruges til at forklare salget, så kan vi i stedet benytte det observerede gennemsnitlige salg af drinks. Vi beregner det gennemsnitlige salg af drinks i stikprøven som <span class="math inline">\(\frac{1+5+6}{3}=\frac{12}{3}=4\)</span>. Vi beregner nu de summen af de kvadrerede afvigelser fra det gennemsnitlige observerede salg af drinks som:
+<span class="math display">\[SST=(1-4)^2+(5-4)^2+(6-4)^2=9+1+4=14\]</span></p>
+<p>Vi kalder værdien for summen af kvadrerede afvigelser total på engelsk SST sums of squared total, de 3 kvadrerede afvigelser er illustreret som de 3 grå kvadrater i figuren nedenfor.</p>
+<div class="Keats">
+<p><b>Ekstrapolation</b> <img src="img/engine.png" align="right" width="40%" height="50%"style="border:0.0px solid #eeeeee; padding:2px; margin:3px;"/>
+To statistikere flyver fra København til New York. En time inde i flyvningen meddeler piloten, man har mistet en motor, der er dog ikke grund til bekymring, der er stadig 3 tilbage, rejsetiden vil dog blive 11 i stedet for 9 timer.</p>
+<p>Lidt efter meddeler piloten, at man har mistet yderligere en motor, der er dog stadig 2 tilbage, men rejsetiden vil nu være 15 timer.</p>
+<p>Noget senere vender piloten tilbage 3. motor har også sat ud, nu vil det tage 22 timer at nå frem.</p>
+<p>Hvorpå den ene statistiker udbryder “Fandens! hvis den sidste motor sætter ud, vil vi være i luften i evigheder”</p>
+</div>
+<p>Vi kan vise hvor godt responsvariablen forklares ud fra den forklarende variabel i modellen, vha. forholdet mellem SSR og SST. Er SSR og SST næsten ens, vinder vi ikke meget ved at beskrive responsvariablen Y ud fra den forklarende variabel X. SST vil aldrig være mindre end SSR, da en linje med tilpasset hældningskoefficient altid vil beskrive observationerne mindst ligeså godt som en vandret linje. Vi beskriver modellens forklaringskraft ud fra R-kvadreret som er defineret som</p>
+<p><span class="math display">\[1-\frac{SSR}{SST}=1-\frac{3.5}{14}=1-0.25=0.75\]</span></p>
+<p>Vi kan udtrykke dette som at 75% af variationen i responsvariablen - Drinks solgt kan forklares ved variationen i den forklarende variabel - Temperatur. Denne forklaringskraft afhænger dog af om der er nok observationer, og at disse viser at hældningen på den rette linje er signifikant forskellig fra 0. Er hældningen på linjen 0, betyder det, at man sælger samme antal drinks ligegyldigt hvordan vejret er. Vi bør have flere observationer end de kun 3 vi benytter i dette minieksempel.</p>
+<p><img src="bookdown-demo_files/figure-html/joereg2-1.svg" width="864" /></p>
+<p>Her har vi kun en forklarende variabel temperatur, vi kalder derfor specielt analysen for simpel lineær regression. Vi vil senere se på analyse vha. lineær regression med flere forklarende variable, denne analysetype kalder vi for multipel lineær regression.</p>
+</div>
+<div id="freestat-output-liner-regression-joe-and-the-juice" class="section level2">
+<h2><span class="header-section-number">11.2</span> Freestat output lineær regression Joe and The Juice</h2>
+<p>Vi kan få software til at beregne output for os, i Freestat kan fanen mreg, benyttes til lineær regression. Vi skal altid taste værdier for responsvariablen Y i <strong>I-søjlen</strong> husk overskift. Vi sætter en eller flere forklarende variable i de efterfølgende søjler.</p>
+<p><img src="img/freestatmregjoe.png" /></p>
+<p>I cellen <strong>C11</strong> ses SSR som vi tidligere regnede ud til at være 3.5.<br />
+I cellen <strong>C12</strong> ses SST som vi tidligere regnede ud til at være 14.<br />
+I cellen <strong>B3</strong> ses R-kvadreret som vi tidligere regnede ud til at være 0.75.<br />
+I cellen <strong>B15</strong> ses estimatet for parameteren <span class="math inline">\(\beta_0\)</span> altså <span class="math inline">\(\hat{\beta}_0\)</span>.<br />
+I cellen <strong>B16</strong> ses estimatet for parameteren <span class="math inline">\(\beta_{temp}\)</span> altså <span class="math inline">\(\hat{\beta}_{temp}\)</span>.<br />
+I cellerne <strong>I3-I5</strong> har vi de faktiske værdier.<br />
+I cellerne <strong>G3-G5</strong> har vi de forventede eller forudsagte værdier.<br />
+I cellerne <strong>H3-H5</strong> har vi residualerne, dette er faktisk minus forudsagt.</p>
+<p>Vi nævnte tidligere at modellen her egentlig er fjollet lille, dette resulterer i at den ikke kan bruges til noget, da den ene forklarende variabel ikke er signifikant.</p>
+<p>Vi opstiller et t-test, for at afgøre om teperaturen har en effekt:</p>
+<p><span class="math display">\[H_0:\beta_{temp}=0 \ Den\ forklarende\ variabel\ er\ ikke\ signifikant\]</span><span class="math display">\[H_1:\beta_{temp}\neq 0 \ Den\ forklarende\ variabel\ er\ signifikant\]</span></p>
+<p>Nulhypotesen betyder at vi ikke kan afvise at hældningen på regressionslinjen er 0, hvilket betyder at den vil være vandret. Hvis regressionslinjen er vandret har temperaturen ingen effekt på salget, salget vil jo være konstant ifølge modellen.</p>
+<p>Alternativhypotesen siger derimod at den ene forklarende variabel er signifikant forskellig fra 0. Det vil altså sige at temperaturen har effekt på drinkssalg.</p>
+<p>I cellen <strong>D16</strong> ses t-teststørrelsen for testet af <span class="math inline">\(\beta_{temp}\)</span>, er teststørrelsen cirka mindre end -2 eller større end 2, får vi en p-værdi der er mindre end 0.05.<br />
+I cellen <strong>E16</strong> ses p-værdien for testet, her er p-værdien større end 0.05, hvilket betyder, vi kan ikke forkaste nulhypotesen. Vi kan altså ikke afvise at <span class="math inline">\(\beta_{temp}=0\)</span>, hvilket vil sige temperaturen påvirker ikke salget af drinks signifikant. Havde vi haft en større stikprøvestørrelse, er det muligt, vi havde kunnet konkludere at hældningen <span class="math inline">\(\beta_{temp}\)</span>, var signifikant forskellig fra 0.</p>
+</div>
+<div id="forudstninger-liner-regression." class="section level2">
+<h2><span class="header-section-number">11.3</span> Forudsætninger lineær regression.</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/228381611" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Der er 4 forudsætninger, der skal være opfyldt for at kvaliteten af vor lineære regressionsmodel er god. Linearitet, varianshomogenitet, uafhængighed residualer og normalitet residualer. Vi kan undersøge om de 4 forudsætninger er opfyldt, ved at se på 3 forskellige plots et linjetilpasningsplot, et residualplot og et normalfraktildiagram. Et linjetilpasningsplot er et xy-punktdiagram hvor regressionslinjen er indtegnet. De 3 plots tegnes automatisk, når man genererer en lineær regressionsmodel i Freestat.</p>
+<div id="linearitet" class="section level3">
+<h3><span class="header-section-number">11.3.1</span> Linearitet</h3>
+<p>For at benytte lineær regression, er den vigtigste forudsætning, at der er en lineær sammenhæng mellem den forklarende variabel X og responsvariablen Y. Er der ikke en lineær sammenhæng, kan vi ikke beskrive sammenhængen ved en lineær regressionsmodel. Herunder er nogle eksempler på linjetilpasningsplots, hvor der er problemer med forudsætningen om lineraritet.</p>
+<p>I de fire røde linjetilpasningsplots, er der problemer med linearitet. Responsvariablen i plot 1 og 2, kunne bedre beskrives ved en parabel. Modellerne over- og undervurderer konsekvent værdien af y. Hvis forudsætningen om linearitet, ikke er opfyldt er det alvorligt, vi ser af figurerne at modellen ikke vil beskrive responsvariablen korrekt. Responsvariablen i plot 3 og 4 kunne synes at følge en eksponentiel eller polynomisk udvikling. Bemærk man kan ikke umiddelbart ud fra r-kvadereret og p-værdien for F- og t-testet, konstatere at der er problemer med linearitetsantagelsen. Vi kan imidlertid let se der er problemer med lineariteten i linjetilpasningsplots.</p>
+<p><img src="bookdown-demo_files/figure-html/pol1-1.svg" width="864" /></p>
+<p>I de 4 linjetilpasningsplots nedenfor er problemet, at der tilsyneladende ikke er en lineær sammenhæng mellem den forklarende og responsvariablen. Vi kan her se ud fra R-kvadreret, at modellens forklaringskraft er meget lav for de 4 linjetilpasningsplots. Her giver det således ikke mening at beskrive responsvariablen ud fra den forklarende variabel.</p>
+<p><img src="bookdown-demo_files/figure-html/scatter2-1.svg" width="864" /></p>
+<p>I de 4 linjetilpasningsplots 9 til 12, nedenfor er forudsætningen om linearitet opfyldt, bemærk p-værdierne alle er mindre end 5% samt R kvadreret er relativt høj.</p>
+<p><img src="bookdown-demo_files/figure-html/scatter1-1.svg" width="864" /></p>
+</div>
+<div id="varianshomogenitet-1" class="section level3">
+<h3><span class="header-section-number">11.3.2</span> Varianshomogenitet</h3>
+<p>Varianshomogenitet betyder responsvariablen Y skal have samme afvigelse fra regressionslinjen ligegyldigt hvilken værdi den uafhængige variabel X har. I eksemplet med Joe and the Juice betyder det, for alle temperaturer skal det faktiske salg af drinks, afvige nogenlunde med samme størrelse. Hvis det fx. er 20 grader og afvigelsen i forhold til det af modellen forudsagte er 100 drinks mod en afvigelse på kun 5 drinks når det er 0 grader, er der ikke varianshomogenitet. Det er nemmest at undersøge om der er varianshomogenitet, ved at se på residualplottet. Hvis der fx. er en trompetform, som i residualplots 1, 2, 3 og 4 nedenfor, er antagelsen om varianshomogenitet ikke opfyldt. I residualplot 1 vil modellen være meget præcis, når X antager værdier mellem 60 og 90 og gradvis mere upræcis herefter. Der er er varianshomogenitet i resiualplots 5, 6, 7 og 8, det kan vi se da de lodrette afstande er nogenlunde de samme for alle værdier af den uafhængige variabel X, hvilket betyder variationen i afvigelserne er ens for alle værdier af den uafhængige variabel.</p>
+<p>Er der varianshomogenitet, siger man med et fint specialudtryk, at der er homoskedasticitet, hvilket betyder der er ens varians for de forudsagte værdier og dermed ingen trompetform, forudsætningen er altså opfyldt. Hvis der er trompetform, siger vi med et fint ord, at der er heteroskedasticitet, så er der altså ikke varianshomogenitet, forudsætningen er således ikke opfyldt.</p>
+</div>
+<div id="uafhngighed-residualer" class="section level3">
+<h3><span class="header-section-number">11.3.3</span> Uafhængighed residualer</h3>
+<p>Uafhængighed af residualer betyder at hverken værdien af X eller andre residualer påvirker en residual, målefejlen er altså tilfældig. I resiualplots 1, 2, og 3 er der uafhængighed mellem residualerne, lave residualer medfører fx ikke nødvendigvis lave eller høje residualer. Der er som før beskrevet ikke varianshomogenitet , men der er ikke afhængighed i residualerne.
+I resiualplots 4, 5 og 6, er der ikke uafhængige residualer, lave residualer medfører lave residualer og høje residualer medfører høje residualer. Der må ikke være systematik imellem residualerne, punkterne i residualplottet skal ligge tilfældigt som i residualplot 7 og 8, her er både antagelsen om varianshomogenitet og uafhængige residualer opfyldt.</p>
+<p><img src="bookdown-demo_files/figure-html/residualplots-1.svg" width="864" /></p>
+</div>
+<div id="normalitet-residualer" class="section level3">
+<h3><span class="header-section-number">11.3.4</span> Normalitet residualer</h3>
+<p>Vi kan undersøge normaliteten af residualerne ved at plotte disse i et normalfraktildiagram. Her skal punkterne ligge tæt omkring den rette linje. Af nedenstående plots er kun residualerne i 1. plot normalfordelte.</p>
+<p><img src="bookdown-demo_files/figure-html/normalfraktildiagrammer-1.svg" width="864" /></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Forudsætning</th>
+<th align="left">Plot</th>
+<th align="left">Udseende af plot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Linearitet af observationer</td>
+<td align="left">Linjetilpasningsplot</td>
+<td align="left">Observationerne følger en linjeform</td>
+</tr>
+<tr class="even">
+<td align="left">Uafhængighed af residualerne</td>
+<td align="left">Residualplot</td>
+<td align="left">Der er ikke systematik i residualplottet</td>
+</tr>
+<tr class="odd">
+<td align="left">Varianshomogenitet/homoskedasticitet</td>
+<td align="left">Residualplot</td>
+<td align="left">Der er ikke trompetform i residualplottet</td>
+</tr>
+<tr class="even">
+<td align="left">Normalitet af residualerne</td>
+<td align="left">Normalfraktildiagram for residualerne</td>
+<td align="left">Punkterne ligger pænt om den rette linje</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="simpel-liner-regression-rm" class="section level2">
+<h2><span class="header-section-number">11.4</span> Simpel lineær regression Rømø</h2>
+<div id="video-simpel-liner-regression-pi-og-ki" class="section level3">
+<h3><span class="header-section-number">11.4.1</span> Video simpel lineær regression PI og KI</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226071259" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="video-simpel-liner-regression-pi-og-ki-1" class="section level3">
+<h3><span class="header-section-number">11.4.2</span> Video simpel lineær regression PI og KI</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/225987363" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p>Hvis vi ønsker at undersøge om lejeprisen på sommerhuse afhænger af kvm. prisen, kan vi benytte lineær regressionsanalyse til at afgøre om lejeprisen kan forudsiges af kvm. prisen.</p>
+<p>For at vi kan beskrive responsvariablen vha. lineær regression, skal der være en lineær sammenhæng, dette kan vi undersøge ved at plotte de 2 variable i et XY punktdiagram. I linket <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlOWNjUzlQd0s4TVE">sommerhuse</a>, findes data som lejepriser og størrelse, for 57 sommerhuse beliggende på Rømø. Vi kan undersøge, om om der er en lineær sammenhæng mellem disse i et punktdiagram. Det er naturligt at antage at lejeprisen afhænger af størrelsen og ikke omvendt, dvs. responsvariablen Y er lejepris og den uafhængige variabel X er størrelsen i kvm. Vi kan forvente en positiv sammenhæng mellem de 2 variable, dvs. jo større sommerhus jo større lejepris.</p>
+<p><img src="bookdown-demo_files/figure-html/sommerhusescatterplot-1.svg" width="864" /></p>
+<p>Ud fra figuren, er antagelsen om en lineær sammenhæng rimelig.</p>
+<p>Når man producerer en simpel lineær regression i Freestat fanen linreg, får man automatisk linjetilpasningsplot, residualplot og normalfraktildiagram. Freestat giver os ligeledes følgende beregninger:</p>
+<p><img src="img/simlinreg.png" /></p>
+<div id="brugbarhed-signifikanssandsynlighed-og-r-kvadreret" class="section level5">
+<h5><span class="header-section-number">11.4.2.0.1</span> Brugbarhed, signifikanssandsynlighed og R-kvadreret</h5>
+<p>Modellen er signifikant ud fra p-værdien i cellen <strong>E12</strong> eller <strong>E16</strong>, dvs. størrelsen har klart en effekt på lejeprisen. Vi tester begge steder hypotesen
+<span class="math display">\[H_0:\beta_{Kvm}=0\ variablen\ kvm\ har \ ingen\ effekt\]</span><span class="math display">\[H_1:\beta_{Kvm}\neq 0\ variablen\ kvm\ har\ effekt\]</span>
+Størrelsen har en effekt, da p-værdien er mindre end 0.0001 og dermed er klart under signifikansniveauet på 5%. Vi forkaster nulhypotesen, og konstaterer den forklarende variabel Kvm. har en effekt på responsvariablen Lejepris pr. uge.</p>
+<p>Estimatet for skæringen med y-aksen 709.32 er ikke signifikant, p-værdien i celle <strong>E15</strong> 15.61% er jo større end 5% signifikansniveauet,
+<span class="math display">\[H_0:\beta_{0}=0\ Lejeprisen\ for\ et\ 0\ kvm\ hus\ er\ 0\ DKK\]</span><span class="math display">\[H_1:\beta_{0}\neq 0\ Lejeprisen\ for\ et\ 0\ kvm\ hus\ er\ forskellig\ fra\ 0\ DKK\]</span></p>
+<p>Skæringen kunne derfor være fx. 0. Normalt interesserer denne test os ikke, vi udelader derfor test af skæringen fra fremtidige analyser. For at sikre den optimale tilpasning af regressionslinjen (og dermed minimere residualerne), bibeholder vi altid skæringen i modellen.</p>
+<p>Ud fra R-kvadreret i cellen <strong>B3</strong> konstateres at 69% af variationen i responsvariablen Lejepris pr uge, kan forklares ud fra variationen i den forklarende variabel Kvm. Herudover skal 31% af variationen i lejepris, forklares ud fra andre faktorer, der ikke er beskrevet i modellen.</p>
+</div>
+<div id="model" class="section level5">
+<h5><span class="header-section-number">11.4.2.0.2</span> Model</h5>
+<p>Vi kan aflæse parameterestimaterne for <span class="math inline">\(\beta_0\)</span> og <span class="math inline">\(\beta_{kvm}\)</span> i cellerne <strong>B15</strong> og <strong>B16</strong>, vi kan herefter opstille modellen:
+<span class="math display">\[\hat{Y}=\hat{\beta}_0+\hat{\beta}_{Kvm}X\]</span><span class="math display">\[\hat{Y}=709.32+61.32X\]</span></p>
+</div>
+<div id="tolkning-af-koefficienter" class="section level5">
+<h5><span class="header-section-number">11.4.2.0.3</span> Tolkning af koefficienter</h5>
+<p>Ifølge modellen vil lejeprisen pr. uge for et hus på 0 Kvm. være 709.32. Her er det vigtigt at bemærke at vi ikke har observeret huse i nærheden af denne størrelse, der er derfor tale om ekstrapolation. Det er behæftet med usikkerhed at benytte modellen til forudsigelser udenfor intervallet understøttet af data. Vi bemærkede før at skæringen ikke er signifikant forskellig fra 0.</p>
+<p>Ifølge modellen vil lejeprisen pr. uge stige med 61.32, for hver kvadratmeter større sommerhuset er.</p>
+<p>Vi kan beregne hvad et 100 Kvm. sommerhus ifølge modellen koster:</p>
+<p><span class="math display">\[709.32+61.32*100=6841.32\]</span></p>
+<p>Bemærk her forudsiges en lejepris for en sommerhusstørrelse, der er understøttet af data, vi har jo observationer for sommerhuse der er mindre og større end 100 Kvm. Når vi forudsiger lejeprisen er der tale om interpolation.</p>
+<p>Forudsiger vi en lejepris for et 10 eller 200 Kvm. sommerhus er der tale om ekstrapolation, dette er behæftet med usikkerhed.</p>
+</div>
+<div id="prdiktionsinterval" class="section level4">
+<h4><span class="header-section-number">11.4.2.1</span> Prædiktionsinterval</h4>
+<p>For den simple lineære regression, kan vi forudsige, i hvilket interval responsvariablen lejepris pr. uge vil ligge med 95% sandsynlighed, for en bestemt værdi af den uafhængige variabel Kvm. I celle <strong>D4</strong>, kan vi indtaste en vilkårlig x-værdi og bestemme et prædiktionsinterval også kaldet et forudsigelsesinterval. I Freestat output er indsat 100, hvilket svarer til at lejeprisen pr. uge vil med 95% sikkerhed ligge mellem <strong>D6</strong> 4649 DKK og <strong>D8</strong> 9034 DKK. for et 100 Kvm. sommerhus. Der er tale om et meget bredt interval hvilket skyldes, at vi udtaler os om et enkelt sommerhus.</p>
+</div>
+<div id="konfidensinterval" class="section level4">
+<h4><span class="header-section-number">11.4.2.2</span> Konfidensinterval</h4>
+<p>For den simple lineære regression, kan vi forudsige, i hvilket interval den gennemsnitlige lejepris pr. uge vil ligge med 95% sandsynlighed for en bestemt størrelse sommerhus.I celle <strong>E4</strong>, kan vi indtaste en vilkårlig x-værdi og bestemme et konfidensinterval. I Freestat output er indsat 100, hvilket svarer til at den gennemsnitlige lejepris pr. uge vil med 95% sikkerhed ligge mellem <strong>E6</strong> 6514 DKK og <strong>E8</strong> 7169 DKK. for et 100 Kvm. sommerhus. Bemærk konfidensintervallet er smallere end prædiktionsintervallet, da vi udtaler os om gennemsnittet og ikke et enkelt sommerhus.</p>
+</div>
+<div id="forudstninger-1" class="section level4">
+<h4><span class="header-section-number">11.4.2.3</span> Forudsætninger</h4>
+<p>Vi undersøger ligeledes om forudsætningerne om varianshomogenitet ved residualplottet, plottet ser fornuftigt ud, de største residualer er for sommerhuse med et areal omkring på 90 til 120 kvm, men vi vil her konstatere at der ikke er problemer med forudsætningen om varianshomogenitet.</p>
+<p>Der er ikke nogen tydelig systematik i residualplottet, hvorfor vi konstaterer forudsætningen om uafhængighed af residualerne er opfyldt.</p>
+<p><img src="bookdown-demo_files/figure-html/residualplot-1.svg" width="864" /></p>
+<p>Der er i normalfraktildiagrammet store afvigelser i enderne, dette er ikke så kritisk som omkring medianen. Forudsætningen om normalitet af residualerne synes ikke opfyldt, hvilket bemærkes da dette har effekt på kvaliteten af modellen.</p>
+<p><img src="bookdown-demo_files/figure-html/qq-1.svg" width="864" /></p>
+<br>
+<details>
+<p><summary> Spørgsmål sommerhuse Rømø.</summary></p>
+<p>Vi ser fortsat på datasættet med <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlOWNjUzlQd0s4TVE">sommerhuse</a> på Rømø
+Kan det seneste moderniseringsår forklare lejeprisen pr. uge?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar sommerhuse Rømø.</summary></p>
+<p><img src="bookdown-demo_files/figure-html/svar1-1.svg" width="864" /></p>
+<p>Vi får en p-værdi på 0.0347 altså mindre end signifikansniveauet 5%. Dette betyder vi kan forkaste nulhypotesen i testet:
+<span class="math display">\[H_0:\beta_{Moderniseret}=0\ Moderniseret\ har\ ingen\ effekt\]</span><span class="math display">\[H_1:\beta_{Moderniseret}\neq 0\ Moderniseret\ har\ effekt\]</span></p>
+<p>Vi kan altså afvise at hældningen <span class="math inline">\(\beta_{Moderniseret}\)</span> er nul, hvilket betyder moderniseringår seneste har signifikant effekt. Hvis moderniseringsåret er et år senere vokser lejeprisen med 137.33 DKK., hvilket giver god mening. Her giver skæringen absolut ikke mening, skæringen svarer jo til at den forklarende variabel årstal er lig med nul, hvilket jo ville betyde at ugelejen for et sommerhus moderniseret det år Jesus blev født ville være -267313.29 DKK. Man får altså over kvart million om ugen, for at bo i det gamle skrammelhus ifølge modellen. Her er naturligvis tale em ekstrem ekstrapolation der ikke giver mening.</p>
+Modellens forklaringskraft R-kvadreret er kun 0.0786, hvilket er meget lavt, det betyder der er mange andre faktorer, der forklarer lejeprisen. Vi ved jo fra forrige analyse, at også størrelsen på sommerhuset forklarer en del af lejeprisen. I næste afsnit se hvordan vi med multipel regressionsanalyse kan kombinere flere forklarende variable.
+</details>
+<br>
+<details>
+<summary> Spørgsmål sommerhuse Rømø.</summary>
+Kan afstand til strand forklare lejeprisen pr. uge?
+</details>
+<br>
+<details>
+<p><summary> Svar sommerhuse Rømø.</summary>
+<img src="bookdown-demo_files/figure-html/svar2-1.svg" width="864" /></p>
+Vi får en p-værdi på 0.0945 altså større end signifikansniveauet. Dette betyder vi kan ikke forkaste nulhypotesen i testet:
+<span class="math display">\[H_0:\beta_{Strandafstand}=0\ Strandafstand\ har\ ingen\ effekt\]</span><span class="math display">\[H_1:\beta_{Strandafstand}\neq 0\ Strandafstand\ har\ effekt\]</span>
+Vi kan altså ikke afvise at hældningen <span class="math inline">\(\beta_{Strandafstand}\)</span> er nul, hvilket betyder moderniseringår seneste ikke har signifikant effekt. Det betyder vi kan ikke bruge modellen. Bemærk det er muligt variablen ville være signifikant, hvis den indgår i en multipel lineær regression, den er næsten signifikant i den simple lineære model. Når vi kontrollerer for andre forklarende variable i en multipel model, kan dette medføre den bliver signifikant. Bemærk hældningskoeficienten -1.04 i modellen er negativ hvilket vi ville forvente jo større afstand til strand jo lavere lejepris.
+</details>
+</div>
+</div>
+</div>
+<div id="multipel-liner-regression" class="section level2">
+<h2><span class="header-section-number">11.5</span> Multipel lineær regression</h2>
+<div class="Keatswide">
+<p><b>Lineære modeller i virkeligheden</b> <img src="img/target.jpg" align="right" width="50%" height="50%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
+En vred far kommer i 2012 ind i en Target Butik lidt udenfor Minneapolis og forlanger at tale med bestyreren. Faderen er meget fortørnet over butikken sender datteren kupon-tilbud på graviditets produkter som bleer, graviditetstøj og vugger.</p>
+<p>“Hun går kun i High-school, forsøger i at opmuntre hende til noget!!!”</p>
+<p>Bestyreren beklager og ringer et par dage senere for at undskylde igen. Faderen er nu noget brødebetynget i telefonen. Der har været aktiviteter i hjemmet, han ikke var bekendt med, faderen skal være morfar til august.</p>
+<p>Hvordan kunne Target vide datteren var gravid før faderen?</p>
+<p>Target kender sine kunder godt, man registrerer kundernes indkøb med unik ID. Man giver blandt andet graviditetspakker, og kan således identificere, karakteristiske produkter gravide kunder køber. Targets statistiker Andrew Pole fandt bl.a. at i starten af andet trimester køber gravide en stor mængde parfumefri lotion. I de første 20 uger indkøbes store mængder vitamintilskud som zink, magnesium og calcium. Pole kunne nu ved hjælp af liniære modeller meget præcist forudsige om vilkårlige kunder var gravide, og hvor langt de var henne. Target kunne således målrette markedsføringsindsatsen og ved hjælp af kundepleje, sikre sig høj loyalitet, inden de store indkøbsbeslutninger til den lille baby . Target endte i en shitstorm og beklagede. I dag sørger man for ikke at vise kunderne, hvor meget man ved om dem, og sender kupontilbud på både plæneklippere og bleer.</p>
+</div>
+<p><br>
+<br></p>
+<p>Datasættet der er brugt i videoerne herunder kan hentes <a href="https://www.dropbox.com/s/eidlkch361ia57v/Sommerhuse.xlsx?dl=1">her</a></p>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226060430" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<div id="dummy-variable" class="section level3">
+<h3><span class="header-section-number">11.5.1</span> Dummy variable</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226042549" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="forudstning-multikollinaritet" class="section level3">
+<h3><span class="header-section-number">11.5.2</span> Forudsætning multikollinaritet</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/268567497" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+</div>
+<div id="multipel-liner-regression-forudsagt-vrdi" class="section level3">
+<h3><span class="header-section-number">11.5.3</span> Multipel lineær regression forudsagt værdi</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/226060763" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<!-- ### Multipel lineær regression Rømø -->
+<!-- Vi ser fortsat på datasættet [sommerhuse](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlOWNjUzlQd0s4TVE). -->
+<!-- Hvis vi ønsker at undersøge om lejeprisen på sommerhuse kan forklares af flere variable samtidigt kan vi opstillen en multipel lineær regressionsmodel. -->
+<p><br>
+<br></p>
+</div>
+</div>
+<div id="sprgsmal-liner-regression" class="section level2">
+<h2><span class="header-section-number">11.6</span> Spørgsmål lineær regression</h2>
+<!-- 
+Marts 2017 
+[2017 3 2. RE Statistik Fin Opgave](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWjF0WThURjNPbUU)
+[2016 8 Eksamen Statistik data](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldEVIQXVIUXlvTHM) -->
+<br>
+<details>
+<p><summary> Spørgsmål korrelation USA afkast.</summary></p>
+<p>I datasættet USA afkast er der månedsafkast i procent for udvalgte aktier fra Dow Jones indekset samt månedsafkastet af selve indekset i procent. <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ">hent datasættet her</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Er afkastet for Kellogs aktien og Microsoft aktien (MFST) korrelerede?</li>
+<li>Hvilke 2 aktier er mest korrelerede? Vi ser bort fra selve porteføljen?</li>
+<li>Hvorfor er korrelationerne overvejende positive?</li>
+<li>Hvorfor er alle aktier mere korrelerede med porteføljen?</li>
+<li>Hvilken aktie tror du er mest defensiv (dvs. mindst konjunkturfølsom)?</li>
+</ol>
+</details>
+<br>
+<details>
+<p><summary> Svar korrelation USA afkast.</summary></p>
+<ol style="list-style-type: decimal">
+<li>Korrelationskoefficienten mellem Kellogs aktien og Microsoft aktien (MFST) er kun -0.001, får en p-værdi på 98.82 procent, aktierne er altså ikke korrelerede?<br />
+</li>
+<li>JP Morgan JPM og BOA Bank of America er mest korrelerede. Korrelationskoefficienten er 0.6944, ved test for om aktierne er positivt korrelerede får vi en p-værdi på 0.0000. JPM og BOA er altså klart positivt korrelerede. Dette giver god mening da begge selskaber tilhører den finansielle sektor.<br />
+</li>
+<li>Korrelationerne overvejende positive, da alle aktier overordnet påvirkes af konjunkturer samt risikovilligheden.<br />
+</li>
+<li>Alle aktier er mere korrelerede med porteføljen, da porteføljen er opbygget af netop disse aktier.</li>
+<li>Den mest defensive aktie er Kellogs (fødevarer), denne aktie påvirkes ikke af konjunkturer i samme grad som de øvrige aktier, folk skal have mad uanset hvordan markedstemningen er.</li>
+</ol>
+<p>Vi kan indsætte aktieafkastene i Freestat i corrm arket, vi får følgende output:<br />
+<img src="img/korropg.png" /></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål 2016 8 Statistik Fin opg. 1.</summary></p>
+<p>Opgave 1 (30 %)
+Nykøbing Bank ønsker opstille en model der kan forklare, hvilken risikogruppe en given kunde vil tilhøre. Banken antager, at variablen risikogruppe er kvantitativ.<br />
+Som udgangspunkt forventer Nykøbing Bank, at følgende variable kan bruges til at forklare kundernes placering i risikogruppe:<br />
+Alder målt som kundens alder i år<br />
+Bruttoindkomst pr. år målt i kr.<br />
+Kundeanciennitet målt som antal år kunden har været kunde i banken Om kunden har haft overtræk (0 = ikke overtræk og 1 = overtræk)<br />
+Om kunden bor i ejerbolig (0 = ikke ejerbolig og 1 = ejerbolig)<br />
+Banken har i maj 2016 ved tilfældig udvælgelse udtrukket en stikprøve på 28 kunder og undersøgt placering i rating-systemet samt de ovenfor nævnte variable.<br />
+Resultatet af denne dataindsamling findes i den udleverede Excel-fil.</p>
+<p>Spørgsmål 1.1 (25 %)<br />
+Opstil en model der kan forklare kunders placering i rating-systemet. Alle forklarende variable skal være signifikante på 5 % niveau.<br />
+Fortolk dine resultater og vurdér i hvilken grad modellen er brugbar for Nykøbing Bank.<br />
+Spørgsmål 1.2 (5 %)<br />
+Beregn ved hjælp af din signifikante model fra spørgsmål 1.1 hvilken rating nedenstående kunde vil opnå:<br />
+Alder 34 år<br />
+Bruttoindkomst 580.000 kr. Har været kunde i banken i 3 år Har ikke haft overtræk
+Bor i ejerbolig.</p>
+<p>Du finder hele opgaven i linket:</p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMldWRQVGRwZWlkdzQ">2016 8 Eksamen Statistik Opgave</a></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlN29HR09IRmJZSE0">2016 8 Eksamen Statistik Data</a></p>
+</details>
+<br>
+<details>
+<p><summary>Svar 2016 8 Statistik Fin opg. 1.</summary></p>
+<p><a href="https://youtu.be/_WO_M3653vs">Videogennemgang af løsningsforslag</a></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlcHplOUpQeU51MTA">2016 8 Statistik Fin opg 1 LØSNING</a></p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Tyske aktier.</summary></p>
+<p>Hent datasættet <a href="https://www.dropbox.com/s/zd0pw8sp3k5q6eo/Tyskland%20Afkast%20pr.%20md.%20i%20procent.xls?dl=1">Tyskland Afkast pr. md. i procent.xls</a>, i dette datasæt er måneds afkast i procent siden år 2000 for Deutsche Bank, BAYER AG (Tysk kemigigant) samt hele DAX det tyske aktieindeks.</p>
+<p>CAPM er en model til at prisfastsætte finansielle aktiver, vi gennemgår ikke modellen her. Vi kan ved hjælp af simpel lineær regression bestemme hvor volatil/følsom aktien er i forhold til resten af markedet her DAX det tyske aktie indeks. Den risikofri rente er for tiden meget lav her sættes den her til konstant 0, så kan modellen opstilles som:</p>
+<p><span class="math display">\[Y_{aktie}=\beta\cdot X_{DAX}+\beta_0\]</span></p>
+<p>Er størrelsen af <span class="math inline">\(\beta_{marked}\)</span> mindre en 1, er aktien ikke særlig konjunkturfølsom, vi siger aktien er defensiv . Er <span class="math inline">\(\beta_{marked}\)</span> større end en, siger vi aktien er cyklisk.</p>
+<p>Hvad bliver beta-værdierne for hhv. Deutsche Bank og BAYER AG i forhold til DAX, når vi betragter måneds afkast siden år 2000?</p>
+<p>For at beregne beta-værdierne, skal vi opstille 2 simple lineære regressionsmodeller med DAX indekset som forklarende variabel X.</p>
+<p>Hvad bliver beta-værdierne for hhv. Deutsche Bank og BAYER AG i forhold til DAX, når vi betragter de seneste 40 måneders afkast?</p>
+</details>
+<br>
+<details>
+<p><summary> Svar Tyske aktier.</summary>
+<br></p>
+<p>Løsningsforslag ses herunder:</p>
+<div id="deutsche-bank-maneds-afkast-siden-ar-2000" class="section level5">
+<h5><span class="header-section-number">11.6.0.0.1</span> Deutsche Bank måneds afkast siden år 2000</h5>
+<p><img src="bookdown-demo_files/figure-html/svar3-1.svg" width="864" /></p>
+<p>Vi får en p-værdi på 0 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:
+<span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span>
+Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank. Bemærk hældningskoeficienten <span class="math inline">\(\beta=1.19\)</span> i modellen er positiv hvilket hvilket er forventeligt, jo bedre tyske aktier performer, des bedre performer Deutsche Bank. Er Beta større end 1, hvilket betyder aktien er cyklisk, dette ville vi typisk forvente for en bankaktie. Når DAX stiger med 1 procent point, stiger Deutsche Bank med 1.19 procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden 2000-01-31 til 2018-06-30. Konjunkturer har stor betydning for resultatet, vi beregner afkast fra 2000-01-31, finanskrisen vil således påvirke vores resultat.</p>
+</div>
+<div id="bayer-ag-maneds-afkast-i-procent-siden-ar-2000" class="section level5">
+<h5><span class="header-section-number">11.6.0.0.2</span> BAYER AG måneds afkast i procent siden år 2000</h5>
+<p><img src="bookdown-demo_files/figure-html/svar4-1.svg" width="864" /></p>
+<p>Vi får en p-værdi på 0 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
+<span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span></p>
+<p>Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at <span class="math inline">\(\beta\)</span> er mindre end 1 for en kemiaktie, hvilket betyder aktien er defensiv, Når DAX stiger med 1 procent point, stiger Bayer AG med 0.99 procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden 2000-01-31 til 2018-06-30.</p>
+</div>
+<div id="deutsche-bank-maneds-afkast-i-procent-de-sidste-40-maneder" class="section level5">
+<h5><span class="header-section-number">11.6.0.0.3</span> Deutsche Bank måneds afkast i procent de sidste 40 måneder</h5>
+<p><img src="bookdown-demo_files/figure-html/svar5-1.svg" width="864" /></p>
+<p>Vi får en p-værdi på 0.0001015 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
+<span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span></p>
+<p>Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank, jo bedre/værre tyske aktier performer, des bedre/værre performer Deutsche Bank. Bemærk hældningskoeficienten <span class="math inline">\(\beta=1.35\)</span> i modellen. Vi vil forvente at en bank aktie er cyklisk eller konjunkturfølsom dvs. <span class="math inline">\(\beta\)</span> er større end 1. Når DAX stiger med 1 procent point, stiger Deutsche Bank med 1.35 procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra 2015-03-31 til 2018-06-30.</p>
+</div>
+<div id="bayer-ag-maneds-afkast-i-procent-de-sidste-40-maneder" class="section level5">
+<h5><span class="header-section-number">11.6.0.0.4</span> BAYER AG måneds afkast i procent de sidste 40 måneder</h5>
+<p><img src="bookdown-demo_files/figure-html/svar6-1.svg" width="864" /></p>
+<p>Vi får en p-værdi på 0.0000015 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
+<span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span></p>
+Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at en kemi aktie er defensiv dvs. <span class="math inline">\(\beta\)</span> er mindre end 1. Når DAX stiger med 1 procent point, stiger Bayer AG med 0.92 procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra 2015-03-31 til 2018-06-30.
+</details>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="korrelation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
