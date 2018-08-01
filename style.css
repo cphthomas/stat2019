@@ -331,7 +331,7 @@ a.tooltip > span {
   background: #333333;
   background: -webkit-linear-gradient(top, #333333, #999999);
   background: linear-gradient(top, #333333, #999999);     
-  border: 1px solid #000000;       
+  /*border: 1px solid #000000;       */
 }    
     
 a.tooltip span b {
