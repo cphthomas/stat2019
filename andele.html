@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,6 +55,37 @@
 <script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-5.0.6/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-5.0.6/highstock.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-3d.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-more.js"></script>
+<script src="libs/highcharts-5.0.6/modules/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/modules/broken-axis.js"></script>
+<script src="libs/highcharts-5.0.6/modules/data.js"></script>
+<script src="libs/highcharts-5.0.6/modules/drilldown.js"></script>
+<script src="libs/highcharts-5.0.6/modules/exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/funnel.js"></script>
+<script src="libs/highcharts-5.0.6/modules/heatmap.js"></script>
+<script src="libs/highcharts-5.0.6/modules/map.js"></script>
+<script src="libs/highcharts-5.0.6/modules/no-data-to-display.js"></script>
+<script src="libs/highcharts-5.0.6/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-5.0.6/modules/treemap.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-legend.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-points.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/export-csv.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/grouped-categories.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/motion.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/pattern-fill-v2.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/tooltip-delay.js"></script>
+<script src="libs/highcharts-5.0.6/custom/reset.js"></script>
+<script src="libs/highcharts-5.0.6/custom/symbols-extra.js"></script>
+<script src="libs/highcharts-5.0.6/custom/text-symbols.js"></script>
+<link href="libs/fontawesome-4.5.0/font-awesome.min.css" rel="stylesheet" />
+<link href="libs/htmlwdgtgrid-1/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="libs/highchart-binding-0.5.0/highchart.js"></script>
 
 
 
@@ -300,13 +331,13 @@ else{
 <p>Vi så tidligere, hvordan vi udregner konfidensintervaller for andele.
 Vi fandt i den nye undersøgelse at mellem 0.23% og 0.41% i populationen med 95% sandsynlighed i dag bruger MobilPay.</p>
 <p>Tilsvarende kan vi sige at andelen af MobilePay brugere i populationen med 95% sandsynlighed tidligere lå mellem 0.17% og 0.29%. Det kan være lidt svært af afgøre om forskellen er signifikant da vi af nedenstående grafiske præsentation kan se at der er et mindre overlap mellem de 2 konfidensintervaller.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.svg" width="864" /></p>
 <p>Hvis vi ønsker at undersøge om der er en signifikant forskel i andelen af brugere, kan vi se på konfidensintervallet for forskellen mellem andelene. Vi kan med 95% sikkerhed sige at forskellen i populationens andele er mellem -0.02% og 0.19%</p>
 <p>Vi kan i software beregne dette, vi undlader formlen og udregningen her</p>
 <p>Output fra fanen andele i FreestatDK er vist herunder, bemærk vi skriver kun i de hvide felter. Nederst til højre ses konfidensintervallet for forskelle i andele:</p>
 <p><img src="img/freestat2andelemobilepay.png"  width="70%" height="70%"/><br></p>
 <p>Vi sammenligner altså de 2 andele og betragter et konfidensinterval for differencen mellem disse. Hvis 0 er indeholdt i dette interval som her, er der ikke signifikant forskel på andelene. Det er altså en mulighed, at forskellen mellem MobilePay brugere før og nu er 0, hvilket er det samme som ingen forskel på andelene.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.svg" width="864" /></p>
 <p>Vi kan altså ikke konkludere, at der er forskel på andelen af MobilePay brugere før og nu.</p>
 </div>
 <div id="sprgsmal-2-andele-konfidensintervaller" class="section level2">
@@ -320,9 +351,9 @@ Vi fandt i den nye undersøgelse at mellem 0.23% og 0.41% i populationen med 95%
 <details>
 <p><summary> Svar 2 andele utroskab.</summary></p>
 <p>Forskellen i andelene af utro kvinder og mænd ligger med 95% sikkerhed mellem -0.03 og 0.11, en signifikant forskel kan således ikke påvises ved 5% signifikans niveau. Det er dog tæt på, vi vil når vi begynder at teste, se at denne konklusion er tæt på at være niveaufølsom. Andelen af utro mænd, ligger på 27.27%, og andelen af kvinder er 22.86%.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.svg" width="864" /></p>
 <p>Benytter vi i stedet et 90% konfidensniveau, får vi Forskellen i andelene af utro kvinder og mænd ligger med 90% sikkerhed mellem -0.01 og 0.1, det er nu tættere på at forskellen er signifikant.</p>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.svg" width="864" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-36-1.svg" width="864" />
 </details>
 <br>
 <details>
@@ -333,9 +364,9 @@ Vi fandt i den nye undersøgelse at mellem 0.23% og 0.41% i populationen med 95%
 <details>
 <p><summary> Svar 2 andele bankdata.</summary></p>
 <p>I populationen ligger forskellen i andelene af kvinder og mænd i ledelse med 95% sikkerhed mellem 0.18 og 0.3, der er altså signifikant forskel ved 5% signifikans niveau. Andelen af mænd i ledelse, ligger på 28.68% og andelen af kvinder i ledelse ligger på 4.63%.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-37-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-38-1.svg" width="864" /></p>
 <p>I populationen ligger forskellen i andelene af kvinder og mænd i ledelse med 99% sikkerhed mellem 0.16 og 0.32, der er altså signifikant forskel ved 1% signifikans niveau. Andelen af mænd i ledelse, ligger på 28.68% er altså helt sikkert større end andelen af kvinder i ledelse ligger på 4.63%.</p>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-38-1.svg" width="864" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-39-1.svg" width="864" />
 </details>
 </div>
 <div id="hypotesetests-2-andele" class="section level2">

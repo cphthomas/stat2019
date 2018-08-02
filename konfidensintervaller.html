@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,6 +55,37 @@
 <script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-5.0.6/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-5.0.6/highstock.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-3d.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-more.js"></script>
+<script src="libs/highcharts-5.0.6/modules/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/modules/broken-axis.js"></script>
+<script src="libs/highcharts-5.0.6/modules/data.js"></script>
+<script src="libs/highcharts-5.0.6/modules/drilldown.js"></script>
+<script src="libs/highcharts-5.0.6/modules/exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/funnel.js"></script>
+<script src="libs/highcharts-5.0.6/modules/heatmap.js"></script>
+<script src="libs/highcharts-5.0.6/modules/map.js"></script>
+<script src="libs/highcharts-5.0.6/modules/no-data-to-display.js"></script>
+<script src="libs/highcharts-5.0.6/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-5.0.6/modules/treemap.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-legend.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-points.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/export-csv.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/grouped-categories.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/motion.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/pattern-fill-v2.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/tooltip-delay.js"></script>
+<script src="libs/highcharts-5.0.6/custom/reset.js"></script>
+<script src="libs/highcharts-5.0.6/custom/symbols-extra.js"></script>
+<script src="libs/highcharts-5.0.6/custom/text-symbols.js"></script>
+<link href="libs/fontawesome-4.5.0/font-awesome.min.css" rel="stylesheet" />
+<link href="libs/htmlwdgtgrid-1/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="libs/highchart-binding-0.5.0/highchart.js"></script>
 
 
 
@@ -353,18 +384,18 @@ stikprøve ved 200 respondender. Det viser sig, at den gennemsnitlige afstand er
 <p>Hent seneste data for dagsafkastet i procent på trygaktien <a href="DK aktiekurser.xlsx" download>her.</a></p>
 <p>Vi bestemmer nedre grænse for 95% KI ved:</p>
 <p><span class="math display">\[\bar{X} - t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
-<span class="math display">\[0.0778723 - 1.966\cdot \frac{0.9807789}{\sqrt[]{393}}=\]</span>
-<span class="math display">\[-0.0194\]</span></p>
-<p>Hvor vi har benyttet 97.5% fraktilen for t-fordelingen med 392 frihedsgrader denne er 1.966, bemærk denne er ikke langt fra 97.5% fraktilen for z-fordelingen 1.96, når vi har en stikprøve på 393</p>
+<span class="math display">\[0.0284748 - 1.9768\cdot \frac{0.9339839}{\sqrt[]{143}}=\]</span>
+<span class="math display">\[-0.1259\]</span></p>
+<p>Hvor vi har benyttet 97.5% fraktilen for t-fordelingen med 142 frihedsgrader denne er 1.9768, bemærk denne er ikke langt fra 97.5% fraktilen for z-fordelingen 1.96, når vi har en stikprøve på 143</p>
 <p>Vi bestemmer tilsvarende øvre grænse for 95% KI ved:</p>
 <p><span class="math display">\[\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
-<span class="math display">\[0.0778723 + 1.966\cdot \frac{0.9807789}{\sqrt[]{393}}=\]</span>
-<span class="math display">\[0.1751\]</span></p>
-<p>Vi kan altså med 95% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0194% og 0.1751%.</p>
+<span class="math display">\[0.0284748 + 1.9768\cdot \frac{0.9339839}{\sqrt[]{143}}=\]</span>
+<span class="math display">\[0.1829\]</span></p>
+<p>Vi kan altså med 95% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.1259% og 0.1829%.</p>
 <p>Tilsvarende bestemmer vi 90% KI for Tryg aktien:</p>
-<p>Vi kan altså med 90% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0037% og 0.1594%.</p>
+<p>Vi kan altså med 90% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.1008% og 0.1578%.</p>
 <p>99% KI for Tryg aktien bliver:</p>
-<p>Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0502% og 0.2059%.</p>
+<p>Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.1754% og 0.2324%.</p>
 </div>
 </div>
 <div id="sprgsmal-konfidensinterval-og-fejlmargin" class="section level2">

@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,6 +55,37 @@
 <script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-5.0.6/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-5.0.6/highstock.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-3d.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-more.js"></script>
+<script src="libs/highcharts-5.0.6/modules/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/modules/broken-axis.js"></script>
+<script src="libs/highcharts-5.0.6/modules/data.js"></script>
+<script src="libs/highcharts-5.0.6/modules/drilldown.js"></script>
+<script src="libs/highcharts-5.0.6/modules/exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/funnel.js"></script>
+<script src="libs/highcharts-5.0.6/modules/heatmap.js"></script>
+<script src="libs/highcharts-5.0.6/modules/map.js"></script>
+<script src="libs/highcharts-5.0.6/modules/no-data-to-display.js"></script>
+<script src="libs/highcharts-5.0.6/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-5.0.6/modules/treemap.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-legend.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-points.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/export-csv.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/grouped-categories.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/motion.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/pattern-fill-v2.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/tooltip-delay.js"></script>
+<script src="libs/highcharts-5.0.6/custom/reset.js"></script>
+<script src="libs/highcharts-5.0.6/custom/symbols-extra.js"></script>
+<script src="libs/highcharts-5.0.6/custom/text-symbols.js"></script>
+<link href="libs/fontawesome-4.5.0/font-awesome.min.css" rel="stylesheet" />
+<link href="libs/htmlwdgtgrid-1/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="libs/highchart-binding-0.5.0/highchart.js"></script>
 
 
 
@@ -295,9 +326,9 @@ else{
 </div>
 <p>Vi vil i dette kapitel se på forskellige typer af fordelinger. Data- stikprøve og sandsynlighedsfordelingen. For at forstå sammenhængen mellem disse er normalfordelingen essentiel. Normalfordelingen er den vigtigste sandsynligheds fordeling,<img src="img/height.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> den er kontinuert symmetrisk mesokurtisk og bestemmes entydigt ud fra middelværdien <span class="math inline">\(\mu\)</span> og standardafvigelsen <span class="math inline">\(\sigma\)</span>.</p>
 <p>En undersøgelse hos <a href="https://tall.life/height-percentile-calculator-age-country/">Tall life</a> viste, at danske mænds højde i gennemsnit er 180.4 centimeter, med en standardafgivelse på 7.42 centimeter. Vi udtager simpelt tilfældigt 3 stikprøver på 1000 danske mænd og måler deres højde, og markerer hver persons højde i centimeter på x-aksen.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-7-1.svg" width="864" /></p>
-<p>Bemærk hvorledes personerne ligger meget tættere omkring middelværdien 180.4, her er figuren næsten sort. Vi kan se at der er forskellige meget høje og lave personer i de 3 stikprøver. Vi kan indtegne fordelingen af alle danske mænds højder, som en normalfordelings tæthedsfunktion. Når observationerne ligger tættere vil kurven være højere.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-8-1.svg" width="864" /></p>
+<p>Bemærk hvorledes personerne ligger meget tættere omkring middelværdien 180.4, her er figuren næsten sort. Vi kan se at der er forskellige meget høje og lave personer i de 3 stikprøver. Vi kan indtegne fordelingen af alle danske mænds højder, som en normalfordelings tæthedsfunktion. Når observationerne ligger tættere vil kurven være højere.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-1.svg" width="864" /></p>
 <p><img src="img/popcorn.png" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
 <p>IQ, Popcorn poptider, nedbør, vandstand etc. er normalfordelte fænomener. Tæthedsfunktionen for normalfordelingen er givet ved:</p>
 <p><span class="math display">\[ f\left( x, \mu, \sigma \right) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^ { - \frac {\left( x - \mu \right)^2} {2 \sigma^2} }\]</span></p>
@@ -427,12 +458,12 @@ Nedenfor ses begge fordelinger med 0.00135 fraktilen.
 <div id="parameter-estimat-for-middelvrdi" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Parameter-estimat for middelværdi</h3>
 <p>Hvis vi ønsker at udtale os om det gennemsnitlige daglige afkast af Tryg aktien den sande middelværdi <span class="math inline">\(latex \mu\)</span>, kan vi estimere det gennemsnitlige afkast i populationen, ved gennemsnittet i stikprøven $ {x}$.</p>
-<p><span class="math display">\[\hat{\mu}=\bar{x}=\frac{\sum_1^n (x_i)}{n}=\frac{30.6038}{393}=0.0779\]</span></p>
+<p><span class="math display">\[\hat{\mu}=\bar{x}=\frac{\sum_1^n (x_i)}{n}=\frac{4.0719}{143}=0.0285\]</span></p>
 </div>
 <div id="parameter-estimat-for-standardafvigelsen" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Parameter-estimat for standardafvigelsen</h3>
 <p>Vi har nævnt at standardafvigelsen af afkastet, er en vigtig faktor, når en investor skal bestemme volatiliteten i en aktie. Vi kan estimere den sande standardafvigelse i populationen <span class="math inline">\(\sigma\)</span>, ud fra estimatet af standardafvigelsen <span class="math inline">\(\hat{\sigma}\)</span> vha. stikprøven. For Tryg aktien regnes dette ud som:</p>
-<p><span class="math display">\[Parameteren\  \sigma\  estimeres\ ved\ \hat{\sigma}=S=\sqrt[]{\frac{\sum_1^n (x_i-\bar{x})^2}{n-1}}=\sqrt[]{\frac{377.0755}{393-1}}=0.98\]</span></p>
+<p><span class="math display">\[Parameteren\  \sigma\  estimeres\ ved\ \hat{\sigma}=S=\sqrt[]{\frac{\sum_1^n (x_i-\bar{x})^2}{n-1}}=\sqrt[]{\frac{123.8703}{143-1}}=0.93\]</span></p>
 <p>Nedenfor er en oversigt over vigtige parametre samt deres estimater. Vi er udover estimatet interesseret i, hvor sikre vi er på dette estimat, her er det vi vil benytte konfidensintervaller.</p>
 <table>
 <colgroup>
@@ -490,7 +521,7 @@ Vi forestiller os nu at Finanstilsynet, ønsker at estimere det gennemsnitlige i
 <h3><span class="header-section-number">4.3.4</span> Den centrale grænseværdisætning CLT</h3>
 <p>Den centrale grænseværdisætning CLT siger, at hvis man med tilbagelægning udtager tilstrækkeligt store stikprøver af størrelse n af en population, vil stikprøvefordelingen af middelværdien være approximativt normal. Er populationsfordelingen hverken symmetrisk eller mesokurtisk vil stikprøve fordelingen stadig være tilnærmelsesvist normal, når blot stikprøve størrelsen er tilstrækkelig stor (mange bøger sætter denne grænse ved 30).</p>
 <p>Nedenfor har vi en højreskæv populationsfordeling med <span class="math inline">\(\mu=8\)</span> og <span class="math inline">\(\sigma=4\)</span>, dette er jo den sædvanligvis ukendte population, fra hvilken vi trækker en stikprøve på størrelse n.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-10-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-1.svg" width="864" /></p>
 <p>Middelværdien for stikprøvefordelingen skrives i mange bøger med notationen <span class="math inline">\(\mu_{\bar{X}}\)</span> er:
 <span class="math display">\[\mu_{\bar{X}}=\mu\]</span></p>
 <p>Standardafvigelsen for stikprøvefordelingen kaldes standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) <span class="math inline">\(\sigma_{\bar{X}}\)</span> er:</p>
@@ -498,33 +529,33 @@ Vi forestiller os nu at Finanstilsynet, ønsker at estimere det gennemsnitlige i
 <p>Vi bruger standardfejlen for middelværdien SEM til at beregne konfidensintervaller som vi ser på senere. Der gælder jo mindre SEM jo smallere konfidensinterval, og når stikprøvestørrelsen bliver større bliver SEM mindre. Det giver jo god mening, større stikprøve giver mindre SEM og dermed smallere konfidensinterval dvs. større præcision.</p>
 <p>På figurerne er udtaget 3 gange 100 stikprøver af størrelse n hhv. 30, 100 og 1000. På hver figur er gennemsnittene af de 100 stikprøver angivet. Der er altså 100 pinde i hvert diagram. Bemærk CLT siger at for alle tre stikprøvefordelinger er <span class="math inline">\(\mu=8\)</span>, det ses af figurerne at gennemsnittene i stikprøverne er centreret omkring middelværdien i populationen <span class="math inline">\(\mu=8\)</span>.</p>
 <p>Vi kan ligeledes se at variationen falder (stikprøvegennemsnittene ligger mere snævert), når stikprøvestørrelsen vokser.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-12-1.svg" width="864" /></p>
 <p>På de 3 figurer nedenfor ses de tilsvarende stikprøvefordelinger.</p>
 <p>Når stikprøvestørrelsen er n=30, kan standard fejlen da <span class="math inline">\(\sigma=4\)</span> jvf. CLT udregnes til:</p>
 <p><span class="math display">\[SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}=\frac{4}{\sqrt[]{30}}=0.73\]</span></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-12-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.svg" width="864" /></p>
 <p>Når stikprøvestørrelsen er n=100, kan standard fejlen da <span class="math inline">\(\sigma=4\)</span> jvf. CLT udregnes til:</p>
 <p><span class="math display">\[SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}=\frac{4}{\sqrt[]{100}}=0.4\]</span></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.svg" width="864" /></p>
 <p>Når stikprøvestørrelsen er n=1000, kan standard fejlen da <span class="math inline">\(\sigma=4\)</span> jvf. CLT udregnes til:</p>
 <p><span class="math display">\[SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}=\frac{4}{\sqrt[]{1000}}=0.13\]</span></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.svg" width="864" /></p>
 <p>Da stikprøvefordelingerne er normalfordelte, ved vi at hvis man trækker 1.96 gange standard fejlen SEM <span class="math inline">\(\frac{\sigma}{\sqrt[]{n}}\)</span> fra middelværdien <span class="math inline">\(\mu\)</span> og lægger 1.96 gange SEM <span class="math inline">\(\frac{\sigma}{\sqrt[]{n}}\)</span> til middelværiden <span class="math inline">\(\mu\)</span>, er der i hver hale 2.5% og imellem halerne 95% af sandsynligheden. Vi kan altså beregne følgende nedre og øvre intervalgrænser for de tre stikprøvefordelinger, jo større stikprøve jo smallere interval.</p>
 <p>Vi udregner nedre intervalgrænse når n er 30 som:</p>
 <p><span class="math inline">\(\mu-1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8-1.96\cdot\frac{4}{\sqrt[]{30}}=6.57\)</span></p>
 <p>Vi udregner øvre intervalgrænse når n er 30 som:</p>
 <p><span class="math inline">\(\mu+1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8+1.96\cdot\frac{4}{\sqrt[]{30}}=9.43\)</span></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.svg" width="864" /></p>
 <p>Vi udregner nedre intervalgrænse når n er 100 som:</p>
 <p><span class="math inline">\(\mu-1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8-1.96\cdot\frac{4}{\sqrt[]{100}}=7.22\)</span></p>
 <p>Vi udregner øvre intervalgrænse når n er 100 som:</p>
 <p><span class="math inline">\(\mu+1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8+1.96\cdot\frac{4}{\sqrt[]{100}}=8.78\)</span></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.svg" width="864" /></p>
 <p>Vi udregner nedre intervalgrænse når n er 1000 som:</p>
 <p><span class="math inline">\(\mu-1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8-1.96\cdot\frac{4}{\sqrt[]{1000}}=7.75\)</span></p>
 <p>Vi udregner øvre intervalgrænse når n er 1000 som:</p>
 <p><span class="math inline">\(\mu+1.96\cdot\frac{\sigma}{\sqrt[]{n}}=8+1.96\cdot\frac{4}{\sqrt[]{1000}}=8.25\)</span></p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.svg" width="864" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-18-1.svg" width="864" /></p>
 </div>
 </div>
 <div id="frihedsgrader" class="section level2">
