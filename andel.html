@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2018-10-22">
+<meta name="date" content="2018-10-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -324,9 +324,9 @@ else{
 <h2><span class="header-section-number">7.1</span> Parameterestimat for andele</h2>
 <p>Hvis vi har spurgt 100 danskere om de bruger MobilePay, er vi ikke specifikt interesseret i hvor mange af netop disse 100 personer, der benytter MobilePay. Vi har udtaget en stikprøve af en population (populationen er her alle danskere med en konto), som vi benytter til at udtale os om, hvor stor en andel i populationen, der kan antages at benytte MobilePay. Hvis 31 ud af 100 danskere bruger MobilePay, er vores bedste gæt på andelen i populationen der benytter MobilePay 0.31. Vi er imidlertid godt klar over, at det ville være højst besynderligt, at netop 31,000…% af alle danskere benytter MobilePay. Vi kalder <span class="math inline">\(\hat{p}\)</span> for vores estimat (vores bedste gæt) på populationsandelen <span class="math inline">\(p\)</span> “den sande ukendte andel af kontohavere der benytter MobilePay”.</p>
 <p><span class="math display">\[Parameterestimatet\  for\  p\ er\ \hat{p} = \frac{31}{100}=0.31\]</span></p>
-<p>Vi betragter nu igen Tryg aktien i datasættet<a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, 90 dage ud af 200 dage var der et positivt afkast.</p>
+<p>Vi betragter nu igen Tryg aktien i datasættet<a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, 91 dage ud af 202 dage var der et positivt afkast.</p>
 <p>Vi kan nu bestemme parameterestimatet for p den sande andel af dage med overskud i Tryg aktien.
-<span class="math display">\[\hat{p}=\frac{x}{n}=\frac{90}{200}=0.45\]</span></p>
+<span class="math display">\[\hat{p}=\frac{x}{n}=\frac{91}{202}=0.45\]</span></p>
 <p>Bemærk at den kvantitative kontinuerte variabel dagligt afkast for Trygaktien, blev omdannet til en kvalitativ binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores stikprøve fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores stikprøve stammer jo fra en bestemt periode, en repræsentativ stikprøve, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.</p>
 </div>
 <div id="konfidensinterval-for-en-andel" class="section level2">
@@ -365,31 +365,31 @@ else{
 <div id="tryg-aktien-2" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> Tryg aktien</h3>
 <p>Vi fandt tidligere parameterestimatet for p den sande andel af dage med overskud i Tryg aktien som:</p>
-<p><span class="math display">\[\hat{p}=\frac{x}{n}=\frac{90}{200}=0.45 \]</span></p>
-<p>Vi kender antallet af succeser dvs gunstige udfald 90, ud af den totale stikprøvestørrelse <span class="math inline">\(n=200\)</span>. Vi kan nu ved at indsætte i formlen for KI for andele bestemme et 95% KI (det betyder <span class="math inline">\(\alpha=5\%\)</span>).</p>
+<p><span class="math display">\[\hat{p}=\frac{x}{n}=\frac{91}{202}=0.4505 \]</span></p>
+<p>Vi kender antallet af succeser dvs gunstige udfald 91, ud af den totale stikprøvestørrelse <span class="math inline">\(n=202\)</span>. Vi kan nu ved at indsætte i formlen for KI for andele bestemme et 95% KI (det betyder <span class="math inline">\(\alpha=5\%\)</span>).</p>
 <p>Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.05}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.45-1.96\cdot\sqrt[]{\frac{0.45(1-0.45)}{100}}=0.3811\]</span></p>
+<span class="math display">\[0.4505-1.96\cdot\sqrt[]{\frac{0.4505(1-0.4505)}{100}}=0.3819\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.05}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.45+1.96\cdot\sqrt[]{\frac{0.45(1-0.45)}{100}}=0.5189\]</span></p>
-<p>Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 38.11% og 51.89%</p>
+<span class="math display">\[0.4505+1.96\cdot\sqrt[]{\frac{0.4505(1-0.4505)}{100}}=0.5191\]</span></p>
+<p>Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 38.19% og 51.91%</p>
 <p>Vi kan, hvis vi ønsker at finde 90% KI, blot ændre z-fraktilen fra 97.5% til 95%, dvs. fra 1.96 til 1.6448.
 Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.1}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.45-1.6448\cdot\sqrt[]{\frac{0.45(1-0.45)}{100}}=0.3921\]</span></p>
+<span class="math display">\[0.4505-1.6448\cdot\sqrt[]{\frac{0.4505(1-0.4505)}{100}}=0.3929\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.1}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.45+1.6448\cdot\sqrt[]{\frac{0.45(1-0.45)}{100}}=0.5079\]</span></p>
-<p>Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 39.21% og 50.79%</p>
+<span class="math display">\[0.4505+1.6448\cdot\sqrt[]{\frac{0.4505(1-0.4505)}{100}}=0.5081\]</span></p>
+<p>Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 39.29% og 50.81%</p>
 <p>99% KI findes ved at benytte 0.995 z-fraktilen der er 2.5758
 Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.01}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.45-2.5758\cdot\sqrt[]{\frac{0.45(1-0.45)}{100}}=0.3594\]</span></p>
+<span class="math display">\[0.4505-2.5758\cdot\sqrt[]{\frac{0.4505(1-0.4505)}{100}}=0.3603\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.01}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.45+2.5758\cdot\sqrt[]{\frac{0.45(1-0.45)}{100}}=0.5406\]</span></p>
-<p>Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 35.94% og 54.06%</p>
+<span class="math display">\[0.4505+2.5758\cdot\sqrt[]{\frac{0.4505(1-0.4505)}{100}}=0.5407\]</span></p>
+<p>Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 36.03% og 54.07%</p>
 </div>
 </div>
 <div id="sprgsmal-konfidensinterval-andele" class="section level2">
@@ -561,8 +561,8 @@ I Freestat vil vi vælge den 2. hypotesetest i test af andele, hvilket ses på b
 <h2><span class="header-section-number">7.9</span> Spørgsmål hypotesetests 1 andel.</h2>
 <details>
 <p><summary> Spørgsmål andelen af MobilePay brugere </summary>
-Vi benytter fortsat undersøgelsen med 31 MobilePay brugere ud af 100 adspurgte.
-Hvad er sandsynligheden for at andelen af MobilePay brugere er 25%?
+Vi benytter fortsat undersøgelsen med 31 MobilePay brugere ud af 100 adspurgte.<br />
+Kan man antage at andelen af MobilePay brugere er 25%?<br />
 Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.</p>
 </details>
 <br>
@@ -582,7 +582,7 @@ Vi konkluderer altså andelen af MobilePay brugere er 25%.
 <br>
 <details>
 <p><summary> Spørgsmål andelen af MobilePay brugere </summary></p>
-<p>Hvad er sandsynligheden for at andelen af MobilePay brugere er 20%?<br />
+<p>Kan man antage at andelen af MobilePay brugere er 20%?<br />
 Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.</p>
 </details>
 <br>
@@ -603,7 +603,7 @@ Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt 
 <br>
 <details>
 <p><summary> Spørgsmål andelen af MobilePay brugere </summary></p>
-<p>Hvad er sandsynligheden for at andelen af MobilePay brugere er højst 22%?
+<p>Kan man antage at andelen af MobilePay brugere højst er 22%?<br />
 Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.</p>
 </details>
 <br>
@@ -625,7 +625,7 @@ Her bliver hypoteserne</p>
 <details>
 <p><summary> Spørgsmål andelen af kvinder i ledelse bankdata </summary></p>
 <p>Vi ser igen på datasættet <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRENKWWxlNlBXbmM">bankdata</a>, her findes data på funktion, antal års uddannelse, køn og race for 474 amerikanske bankansatte.</p>
-<p>Vi betragter nu andelen af kvinder i ledelse (manage). Er andelen af kvinder i ledelsen mindre end 50%?<br />
+<p>Vi betragter nu andelen af kvinder i ledelse (manage). Er andelen af kvinder i ledelsen mindre end 50%? Husk vi betrager kun ledelsen (manage).<br />
 Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.</p>
 </details>
 <br>
