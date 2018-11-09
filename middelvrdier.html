@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2018-10-25">
+<meta name="date" content="2018-11-09">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -336,7 +336,7 @@ else{
 <p><img src="img/freestatmaeglerpooled.png" /></p>
 <p>Her har vi som ses af output fra Freestat, valgt mæglerens egen undersøgelse som 1. stikprøve, og konkurrentens som 2. stikprøve. Vi kan med 95% sikkerhed sige at forskellen mellem mæglerens og konkurrentens kunders gennemsnitlige afstand til filial ligger mellem 11,9 og 80.1 meter (markeret med rødt). Da 0 ikke er indeholdt i konfidensintervallet kan vi konstatere at denne forskel er signifikant, der er altså forskel på afstanden til nærmeste filial i de 2 kæder. Vi kan undersøge om vi også er 99% sikre på konklusionen ved at ændre signifikansniveauet til 1%, jo et bredere konfidensinterval, da præcisionen falder, når sikkerheden stiger.</p>
 <p>Det er ikke så vigtigt hvilken stikprøve, der er 1. og 2. stikprøve, men det er væsentligt for tolkningen af konfidensintervallet. Bemærk konfidensintervallets øvre grænse, vil hvis man bytter rundt, blive den nedre grænse med fortegnsskift, og tilsvarende for den nedre grænse. Begge grænser i konfidensintervallet er positive, forskellen måles altid som 1. stikprøve minus 2. stikprøve, specielt i dette tilfælde altså kædens egen undersøgelse minus konkurrentens undersøgelse. Det er altid en MEGET god ide, at holde fuldstændig styr på hvilken stikprøve, der er 1. og 2., hvilket vi senere vil se i forbindelse med hypotestests med ensidet alternativhypotese.</p>
-<p>Vi skal undersøge om varianserne er ens, tommelfingerreglen er overholdt, da standardafvigelsen for den store stikprøve <span class="math inline">\(\hat{\sigma}_1=109\)</span>, ikke er mere end dobbelt så stor, som standardafvigelsen for den lille stikprøve <span class="math inline">\(\hat{\sigma}_2=89\)</span>. Vi har dog en mere præcis metode, nederst til højre markeret med blåt testes varianshomogenitet automatisk. Vi har endnu ikke gennemgået hvorledes hypotesetests opstilles og aflæses, men vi kan godt forstå sidste del i konklusionen af hypotesetesten, “varianserne er ens”.</p>
+<p>Vi skal undersøge om varianserne er ens, tommelfingerreglen er overholdt, da standardafvigelsen for den store stikprøve <span class="math inline">\(\hat{\sigma}_1=102\)</span>, ikke er mere end dobbelt så stor, som standardafvigelsen for den lille stikprøve <span class="math inline">\(\hat{\sigma}_2=89\)</span>. Vi har dog en mere præcis metode, nederst til højre markeret med blåt testes varianshomogenitet automatisk. Vi har endnu ikke gennemgået hvorledes hypotesetests opstilles og aflæses, men vi kan godt forstå sidste del i konklusionen af hypotesetesten, “varianserne er ens”.</p>
 <p>Vi kan som nævnt, ændre signifinkansniveauet til 1% se om konfidensintervallet nu indeholder 0.</p>
 <p>Vi kan med 99% sikkerhed sige, at forskellen mellem mæglerens og konkurrentens kunders gennemsnitlige afstand til filial ligger mellem 1,1 og 90.9 meter. Vi er altså relativt sikre på vor konklusion, om forskel i afstande til nærmeste filial for de 2 kæder.</p>
 <p><img src="img/freestatpooledmaegler2.png" /></p>
@@ -384,9 +384,9 @@ Vi kunne være interesseret i, at teste om kvinder får højere karakterer end m
 <p><span class="math display">\[H_0:\mu_{kvinder}\leq\mu_{mænd}\]</span>
 <span class="math display">\[H_1:\mu_{kvinder}&gt;\mu_{mænd}\]</span></p>
 <p>Hvilket vi også kan skrive som</p>
-<p><span class="math display">\[H_0:\mu_{kvinder}-\mu_{mænd}\leq 0\]</span>
-<span class="math display">\[H_1:\mu_{kvinder}-\mu_{mænd}&gt; 0\]</span></p>
-<p>Vi får en test-størrelse på 0.536, denne medfører en p-værdi på 0.5942.Vi kan ikke forkaste nulhypotesen.</p>
+<p><span class="math display">\[H_0:\mu_{kvinder}-\mu_{mæ\ nd}\leq 0\]</span>
+<span class="math display">\[H_1:\mu_{kvinder}-\mu_{mæ\ nd}&gt; 0\]</span></p>
+<p>Vi får en test-størrelse på 0.536, denne medfører en p-værdi på 29.71%.Vi kan ikke forkaste nulhypotesen.</p>
 <p>Vi kan altså ikke konkludere at kvinder får en højere karakter end mænd.</p>
 <p>Bemærk i Freestat, står der D for difference, dette skyldes man kan undersøge om en forskel mellem middelværdier kan være fx. 0.25, ved at sætte D, i det gule felt til 0.25.</p>
 <p><img src="img/freestatpooledkarakterer.png" /></p>
