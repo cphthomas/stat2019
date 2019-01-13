@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2018-11-25">
+<meta name="date" content="2019-01-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="prev" href="korrelation.html">
-<link rel="next" href="materialer.html">
+<link rel="next" href="binomialfordelingen.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -86,8 +86,74 @@
 <link href="libs/fontawesome-4.5.0/font-awesome.min.css" rel="stylesheet" />
 <link href="libs/htmlwdgtgrid-1/htmlwdgtgrid.css" rel="stylesheet" />
 <script src="libs/highchart-binding-0.5.0/highchart.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -236,15 +302,89 @@
 <li class="chapter" data-level="11.8" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-9"><i class="fa fa-check"></i><b>11.8</b> Selvtest</a></li>
 <li class="chapter" data-level="11.9" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-10"><i class="fa fa-check"></i><b>11.9</b> Selvtest</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="materialer.html"><a href="materialer.html"><i class="fa fa-check"></i><b>12</b> Materialer</a><ul>
-<li class="chapter" data-level="12.1" data-path="materialer.html"><a href="materialer.html#videoer-teori"><i class="fa fa-check"></i><b>12.1</b> Videoer teori</a><ul>
-<li class="chapter" data-level="12.1.1" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test"><i class="fa fa-check"></i><b>12.1.1</b> Chi i anden test</a></li>
-<li class="chapter" data-level="12.1.2" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test-2"><i class="fa fa-check"></i><b>12.1.2</b> Chi i anden test 2</a></li>
-<li class="chapter" data-level="12.1.3" data-path="materialer.html"><a href="materialer.html#anova"><i class="fa fa-check"></i><b>12.1.3</b> Anova</a></li>
+<li class="chapter" data-level="12" data-path="binomialfordelingen.html"><a href="binomialfordelingen.html"><i class="fa fa-check"></i><b>12</b> Binomialfordelingen</a><ul>
+<li class="chapter" data-level="12.1" data-path="binomialfordelingen.html"><a href="binomialfordelingen.html#selvtest-11"><i class="fa fa-check"></i><b>12.1</b> Selvtest</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="materialer.html"><a href="materialer.html#freestat-fin"><i class="fa fa-check"></i><b>12.2</b> Freestat FIN</a></li>
-<li class="chapter" data-level="12.3" data-path="materialer.html"><a href="materialer.html#eksamensvideoer"><i class="fa fa-check"></i><b>12.3</b> Eksamensvideoer</a></li>
-<li class="chapter" data-level="12.4" data-path="materialer.html"><a href="materialer.html#eksamensvideoer-au-smartlearning"><i class="fa fa-check"></i><b>12.4</b> Eksamensvideoer AU Smartlearning</a></li>
+<li class="chapter" data-level="13" data-path="den-hypergeometriske-fordeling.html"><a href="den-hypergeometriske-fordeling.html"><i class="fa fa-check"></i><b>13</b> Den hypergeometriske fordeling</a><ul>
+<li class="chapter" data-level="13.1" data-path="den-hypergeometriske-fordeling.html"><a href="den-hypergeometriske-fordeling.html#selvtest-12"><i class="fa fa-check"></i><b>13.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="poisson-fordelingen.html"><a href="poisson-fordelingen.html"><i class="fa fa-check"></i><b>14</b> Poisson fordelingen</a><ul>
+<li class="chapter" data-level="14.1" data-path="poisson-fordelingen.html"><a href="poisson-fordelingen.html#selvtest-13"><i class="fa fa-check"></i><b>14.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="stikprveteori.html"><a href="stikprveteori.html"><i class="fa fa-check"></i><b>15</b> Stikprøveteori</a><ul>
+<li class="chapter" data-level="15.1" data-path="stikprveteori.html"><a href="stikprveteori.html#bekvemmelighedsudvlgelse"><i class="fa fa-check"></i><b>15.1</b> Bekvemmelighedsudvælgelse</a></li>
+<li class="chapter" data-level="15.2" data-path="stikprveteori.html"><a href="stikprveteori.html#snowballing"><i class="fa fa-check"></i><b>15.2</b> Snowballing</a></li>
+<li class="chapter" data-level="15.3" data-path="stikprveteori.html"><a href="stikprveteori.html#simpel-tilfldig-udvlgelse"><i class="fa fa-check"></i><b>15.3</b> Simpel tilfældig udvælgelse</a></li>
+<li class="chapter" data-level="15.4" data-path="stikprveteori.html"><a href="stikprveteori.html#systematisk-udvlgelse"><i class="fa fa-check"></i><b>15.4</b> Systematisk udvælgelse</a></li>
+<li class="chapter" data-level="15.5" data-path="stikprveteori.html"><a href="stikprveteori.html#stratificeret-udvlgelse"><i class="fa fa-check"></i><b>15.5</b> Stratificeret udvælgelse</a><ul>
+<li class="chapter" data-level="15.5.1" data-path="stikprveteori.html"><a href="stikprveteori.html#proportional-allokering"><i class="fa fa-check"></i><b>15.5.1</b> Proportional allokering</a></li>
+<li class="chapter" data-level="15.5.2" data-path="stikprveteori.html"><a href="stikprveteori.html#optimal-allokering"><i class="fa fa-check"></i><b>15.5.2</b> Optimal allokering</a></li>
+<li class="chapter" data-level="15.5.3" data-path="stikprveteori.html"><a href="stikprveteori.html#poststratifikation"><i class="fa fa-check"></i><b>15.5.3</b> Poststratifikation</a></li>
+</ul></li>
+<li class="chapter" data-level="15.6" data-path="stikprveteori.html"><a href="stikprveteori.html#klyngeudvlgelse-eller-cluster-udvlgelse"><i class="fa fa-check"></i><b>15.6</b> Klyngeudvælgelse eller cluster udvælgelse</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="sandsynligheder.html"><a href="sandsynligheder.html"><i class="fa fa-check"></i><b>16</b> Sandsynligheder</a><ul>
+<li class="chapter" data-level="16.0.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#forenings--og-flleshndelser"><i class="fa fa-check"></i><b>16.0.1</b> Forenings- og fælleshændelser</a></li>
+<li class="chapter" data-level="16.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#betingede-sandsynligheder"><i class="fa fa-check"></i><b>16.1</b> Betingede sandsynligheder</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#race-og-ddsdom-eksempel"><i class="fa fa-check"></i><b>16.1.1</b> Race og dødsdom eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="sandsynligheder.html"><a href="sandsynligheder.html#uafhngighed"><i class="fa fa-check"></i><b>16.2</b> Uafhængighed</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html"><i class="fa fa-check"></i><b>17</b> Chi i anden tests</a><ul>
+<li class="chapter" data-level="17.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>17.1</b> Goodness of fit test</a></li>
+<li class="chapter" data-level="17.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#forudstning"><i class="fa fa-check"></i><b>17.2</b> Forudsætning</a></li>
+<li class="chapter" data-level="17.3" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#chi-i-anden-test"><i class="fa fa-check"></i><b>17.3</b> Chi i anden test</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#uafhngighed-1"><i class="fa fa-check"></i><b>17.3.1</b> Uafhængighed</a></li>
+<li class="chapter" data-level="17.3.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#anmeldte-skader-fordelt-pa-regioner-og-antal-skader"><i class="fa fa-check"></i><b>17.3.2</b> Anmeldte skader fordelt på regioner og antal skader</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#selvtest-14"><i class="fa fa-check"></i><b>17.4</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>18</b> ANOVA</a><ul>
+<li class="chapter" data-level="18.1" data-path="anova.html"><a href="anova.html#selvtest-15"><i class="fa fa-check"></i><b>18.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="cran-r.html"><a href="cran-r.html"><i class="fa fa-check"></i><b>19</b> Cran R</a><ul>
+<li class="chapter" data-level="19.1" data-path="cran-r.html"><a href="cran-r.html#r-video-tutorials"><i class="fa fa-check"></i><b>19.1</b> R video-tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="faktoranalyse.html"><a href="faktoranalyse.html"><i class="fa fa-check"></i><b>20</b> Faktoranalyse</a><ul>
+<li class="chapter" data-level="20.1" data-path="faktoranalyse.html"><a href="faktoranalyse.html#hvilke-faktorer-er-vigtige-nar-man-kber-en-ny-computer"><i class="fa fa-check"></i><b>20.1</b> Hvilke faktorer er vigtige når man køber en ny computer:</a></li>
+<li class="chapter" data-level="20.2" data-path="faktoranalyse.html"><a href="faktoranalyse.html#forudstninger-for-faktoranalysen."><i class="fa fa-check"></i><b>20.2</b> Forudsætninger for faktoranalysen.</a></li>
+<li class="chapter" data-level="20.3" data-path="faktoranalyse.html"><a href="faktoranalyse.html#selve-faktoranalysen"><i class="fa fa-check"></i><b>20.3</b> Selve Faktoranalysen</a></li>
+<li class="chapter" data-level="20.4" data-path="faktoranalyse.html"><a href="faktoranalyse.html#hvor-mange-faktorer-br-benyttes"><i class="fa fa-check"></i><b>20.4</b> Hvor mange faktorer bør benyttes?</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="faktoranalyse.html"><a href="faktoranalyse.html#eigenvalues-metoden"><i class="fa fa-check"></i><b>20.4.1</b> Eigenvalues metoden</a></li>
+<li class="chapter" data-level="20.4.2" data-path="faktoranalyse.html"><a href="faktoranalyse.html#screeplot-metoden"><i class="fa fa-check"></i><b>20.4.2</b> Screeplot metoden</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html"><i class="fa fa-check"></i><b>21</b> Klyngeanalyse</a><ul>
+<li class="chapter" data-level="21.1" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#hierakisk-klyngeanalyse-hclust-kommandoen"><i class="fa fa-check"></i><b>21.1</b> Hierakisk klyngeanalyse hclust kommandoen</a></li>
+<li class="chapter" data-level="21.2" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#ikke-hierakisk-klyngeanalyse-kmeans-kommandoen"><i class="fa fa-check"></i><b>21.2</b> Ikke hierakisk klyngeanalyse kmeans kommandoen</a></li>
+<li class="chapter" data-level="21.3" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#validering-med-anova"><i class="fa fa-check"></i><b>21.3</b> Validering med ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html"><i class="fa fa-check"></i><b>22</b> Tidsrækker og ARIMA</a><ul>
+<li class="chapter" data-level="22.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima000"><i class="fa fa-check"></i><b>22.1</b> ARIMA(0,0,0)</a></li>
+<li class="chapter" data-level="22.2" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima100-eller-ar1-autoregression"><i class="fa fa-check"></i><b>22.2</b> ARIMA(1,0,0) eller AR(1) autoregression</a></li>
+<li class="chapter" data-level="22.3" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima010-eller-i1-random-walk-with-a-drift"><i class="fa fa-check"></i><b>22.3</b> ARIMA(0,1,0) eller I(1) Random Walk with a drift</a></li>
+<li class="chapter" data-level="22.4" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima001-eller-ma1-moving-average"><i class="fa fa-check"></i><b>22.4</b> ARIMA(0,0,1) eller MA(1) Moving average</a></li>
+<li class="chapter" data-level="22.5" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#plots-med-forskellige-modeller"><i class="fa fa-check"></i><b>22.5</b> Plots med forskellige modeller</a></li>
+<li class="chapter" data-level="22.6" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-af-hjere-orden"><i class="fa fa-check"></i><b>22.6</b> ARIMA af højere orden</a></li>
+<li class="chapter" data-level="22.7" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-og-ssonalitet"><i class="fa fa-check"></i><b>22.7</b> ARIMA og sæsonalitet</a></li>
+<li class="chapter" data-level="22.8" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-eksempler"><i class="fa fa-check"></i><b>22.8</b> ARIMA eksempler</a><ul>
+<li class="chapter" data-level="22.8.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#traktorer"><i class="fa fa-check"></i><b>22.8.1</b> Traktorer</a></li>
+<li class="chapter" data-level="22.8.2" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#detail-debet-card-forbrug-pa-island-millioner-isk."><i class="fa fa-check"></i><b>22.8.2</b> Detail debet card forbrug på Island (millioner ISK).</a></li>
+</ul></li>
+<li class="chapter" data-level="22.9" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#forecast-aktiekurser"><i class="fa fa-check"></i><b>22.9</b> Forecast Aktiekurser</a></li>
+<li class="chapter" data-level="22.10" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#aktieafkast"><i class="fa fa-check"></i><b>22.10</b> Aktieafkast</a><ul>
+<li class="chapter" data-level="22.10.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-opsamling-video"><i class="fa fa-check"></i><b>22.10.1</b> ARIMA opsamling video</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="materialer.html"><a href="materialer.html"><i class="fa fa-check"></i><b>23</b> Materialer</a><ul>
+<li class="chapter" data-level="23.1" data-path="materialer.html"><a href="materialer.html#videoer-teori"><i class="fa fa-check"></i><b>23.1</b> Videoer teori</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test-1"><i class="fa fa-check"></i><b>23.1.1</b> Chi i anden test</a></li>
+<li class="chapter" data-level="23.1.2" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test-2"><i class="fa fa-check"></i><b>23.1.2</b> Chi i anden test 2</a></li>
+<li class="chapter" data-level="23.1.3" data-path="materialer.html"><a href="materialer.html#anova-1"><i class="fa fa-check"></i><b>23.1.3</b> Anova</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="materialer.html"><a href="materialer.html#freestat-fin"><i class="fa fa-check"></i><b>23.2</b> Freestat FIN</a></li>
+<li class="chapter" data-level="23.3" data-path="materialer.html"><a href="materialer.html#eksamensvideoer"><i class="fa fa-check"></i><b>23.3</b> Eksamensvideoer</a></li>
+<li class="chapter" data-level="23.4" data-path="materialer.html"><a href="materialer.html#eksamensvideoer-au-smartlearning"><i class="fa fa-check"></i><b>23.4</b> Eksamensvideoer AU Smartlearning</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="./">Login</a></li>
@@ -719,28 +859,28 @@ Bor i ejerbolig.</p>
 <p><img src="bookdown-demo_files/figure-html/svar3-1.svg" width="864" /></p>
 <p>Vi får en p-værdi på 0 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:
 <span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span>
-Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank. Bemærk hældningskoeficienten <span class="math inline">\(\beta=1.2\)</span> i modellen er positiv hvilket hvilket er forventeligt, jo bedre tyske aktier performer, des bedre performer Deutsche Bank. Er Beta større end 1, hvilket betyder aktien er cyklisk, dette ville vi typisk forvente for en bankaktie. Når DAX stiger med 1 procent point, stiger Deutsche Bank med 1.2 procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden 2000-01-31 til 2018-11-23. Konjunkturer har stor betydning for resultatet, vi beregner afkast fra 2000-01-31, finanskrisen vil således påvirke vores resultat.</p>
+Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank. Bemærk hældningskoeficienten <span class="math inline">\(\beta=1.21\)</span> i modellen er positiv hvilket hvilket er forventeligt, jo bedre tyske aktier performer, des bedre performer Deutsche Bank. Er Beta større end 1, hvilket betyder aktien er cyklisk, dette ville vi typisk forvente for en bankaktie. Når DAX stiger med 1 procent point, stiger Deutsche Bank med 1.21 procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden 2000-01-31 til 2019-01-11. Konjunkturer har stor betydning for resultatet, vi beregner afkast fra 2000-01-31, finanskrisen vil således påvirke vores resultat.</p>
 </div>
 <div id="bayer-ag-maneds-afkast-i-procent-siden-ar-2000" class="section level5">
 <h5><span class="header-section-number">11.6.0.0.2</span> BAYER AG måneds afkast i procent siden år 2000</h5>
 <p><img src="bookdown-demo_files/figure-html/svar4-1.svg" width="864" /></p>
 <p>Vi får en p-værdi på 0 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
 <span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span></p>
-<p>Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at <span class="math inline">\(\beta\)</span> er mindre end 1 for en kemiaktie, hvilket betyder aktien er defensiv, Når DAX stiger med 1 procent point, stiger Bayer AG med 1 procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden 2000-01-31 til 2018-11-23.</p>
+<p>Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at <span class="math inline">\(\beta\)</span> er mindre end 1 for en kemiaktie, hvilket betyder aktien er defensiv, Når DAX stiger med 1 procent point, stiger Bayer AG med 1 procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden 2000-01-31 til 2019-01-11.</p>
 </div>
 <div id="deutsche-bank-maneds-afkast-i-procent-de-sidste-40-maneder" class="section level5">
 <h5><span class="header-section-number">11.6.0.0.3</span> Deutsche Bank måneds afkast i procent de sidste 40 måneder</h5>
 <p><img src="bookdown-demo_files/figure-html/svar5-1.svg" width="864" /></p>
-<p>Vi får en p-værdi på 0.0002094 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
+<p>Vi får en p-værdi på 0.0000721 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
 <span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span></p>
-<p>Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank, jo bedre/værre tyske aktier performer, des bedre/værre performer Deutsche Bank. Bemærk hældningskoeficienten <span class="math inline">\(\beta=1.34\)</span> i modellen. Vi vil forvente at en bank aktie er cyklisk eller konjunkturfølsom dvs. <span class="math inline">\(\beta\)</span> er større end 1. Når DAX stiger med 1 procent point, stiger Deutsche Bank med 1.34 procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra 2015-08-31 til 2018-11-23.</p>
+<p>Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank, jo bedre/værre tyske aktier performer, des bedre/værre performer Deutsche Bank. Bemærk hældningskoeficienten <span class="math inline">\(\beta=1.6\)</span> i modellen. Vi vil forvente at en bank aktie er cyklisk eller konjunkturfølsom dvs. <span class="math inline">\(\beta\)</span> er større end 1. Når DAX stiger med 1 procent point, stiger Deutsche Bank med 1.6 procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra 2015-10-31 til 2019-01-11.</p>
 </div>
 <div id="bayer-ag-maneds-afkast-i-procent-de-sidste-40-maneder" class="section level5">
 <h5><span class="header-section-number">11.6.0.0.4</span> BAYER AG måneds afkast i procent de sidste 40 måneder</h5>
 <p><img src="bookdown-demo_files/figure-html/svar6-1.svg" width="864" /></p>
-<p>Vi får en p-værdi på 0.000001 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
+<p>Vi får en p-værdi på 0.0000008 altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:<br />
 <span class="math display">\[H_0:\beta=0\ DAX\ har\ ingen \ effekt\]</span><span class="math display">\[H_1:\beta\neq 0\ DAX\ har\ effekt\]</span></p>
-Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at en kemi aktie er defensiv dvs. <span class="math inline">\(\beta\)</span> er mindre end 1. Når DAX stiger med 1 procent point, stiger Bayer AG med 1.04 procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra 2015-08-31 til 2018-11-23.
+Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at en kemi aktie er defensiv dvs. <span class="math inline">\(\beta\)</span> er mindre end 1. Når DAX stiger med 1 procent point, stiger Bayer AG med 1.16 procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra 2015-10-31 til 2019-01-11.
 </details>
 </div>
 </div>
@@ -761,7 +901,6 @@ Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> e
 <h2>
 <a href="https://www.edutest.dk/mod/quiz/view.php?id=54" target="_blank">Selvtest bank lineær regression med videoløsning</a>
 </h2>
-
 </div>
 </div>
             </section>
@@ -770,7 +909,7 @@ Vi kan altså afvise at hældningen <span class="math inline">\(\beta\)</span> e
         </div>
       </div>
 <a href="korrelation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="materialer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="binomialfordelingen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

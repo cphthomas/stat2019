@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Basis statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Basis statistik">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Basis statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Basis statistik" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Basis statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Basis statistik" />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2019-01-13">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="klyngeanalyse.html">
+<link rel="next" href="materialer.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-5.0.6/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-5.0.6/highstock.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-3d.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-more.js"></script>
+<script src="libs/highcharts-5.0.6/modules/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/modules/broken-axis.js"></script>
+<script src="libs/highcharts-5.0.6/modules/data.js"></script>
+<script src="libs/highcharts-5.0.6/modules/drilldown.js"></script>
+<script src="libs/highcharts-5.0.6/modules/exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/funnel.js"></script>
+<script src="libs/highcharts-5.0.6/modules/heatmap.js"></script>
+<script src="libs/highcharts-5.0.6/modules/map.js"></script>
+<script src="libs/highcharts-5.0.6/modules/no-data-to-display.js"></script>
+<script src="libs/highcharts-5.0.6/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-5.0.6/modules/treemap.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-legend.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-points.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/export-csv.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/grouped-categories.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/motion.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/pattern-fill-v2.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/tooltip-delay.js"></script>
+<script src="libs/highcharts-5.0.6/custom/reset.js"></script>
+<script src="libs/highcharts-5.0.6/custom/symbols-extra.js"></script>
+<script src="libs/highcharts-5.0.6/custom/text-symbols.js"></script>
+<link href="libs/fontawesome-4.5.0/font-awesome.min.css" rel="stylesheet" />
+<link href="libs/htmlwdgtgrid-1/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="libs/highchart-binding-0.5.0/highchart.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Login</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.0.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.0.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.0.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.0.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.0.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.0.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.0.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.0.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.0.5</b> Modus</a></li>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.1</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.1.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.2</b> Skævhed</a></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.3</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.4</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+<li class="chapter" data-level="9.7" data-path="middelvrdier.html"><a href="middelvrdier.html#selvtest-7"><i class="fa fa-check"></i><b>9.7</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+<li class="chapter" data-level="11.7" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-8"><i class="fa fa-check"></i><b>11.7</b> Selvtest</a></li>
+<li class="chapter" data-level="11.8" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-9"><i class="fa fa-check"></i><b>11.8</b> Selvtest</a></li>
+<li class="chapter" data-level="11.9" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-10"><i class="fa fa-check"></i><b>11.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="binomialfordelingen.html"><a href="binomialfordelingen.html"><i class="fa fa-check"></i><b>12</b> Binomialfordelingen</a><ul>
+<li class="chapter" data-level="12.1" data-path="binomialfordelingen.html"><a href="binomialfordelingen.html#selvtest-11"><i class="fa fa-check"></i><b>12.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="den-hypergeometriske-fordeling.html"><a href="den-hypergeometriske-fordeling.html"><i class="fa fa-check"></i><b>13</b> Den hypergeometriske fordeling</a><ul>
+<li class="chapter" data-level="13.1" data-path="den-hypergeometriske-fordeling.html"><a href="den-hypergeometriske-fordeling.html#selvtest-12"><i class="fa fa-check"></i><b>13.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="poisson-fordelingen.html"><a href="poisson-fordelingen.html"><i class="fa fa-check"></i><b>14</b> Poisson fordelingen</a><ul>
+<li class="chapter" data-level="14.1" data-path="poisson-fordelingen.html"><a href="poisson-fordelingen.html#selvtest-13"><i class="fa fa-check"></i><b>14.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="stikprveteori.html"><a href="stikprveteori.html"><i class="fa fa-check"></i><b>15</b> Stikprøveteori</a><ul>
+<li class="chapter" data-level="15.1" data-path="stikprveteori.html"><a href="stikprveteori.html#bekvemmelighedsudvlgelse"><i class="fa fa-check"></i><b>15.1</b> Bekvemmelighedsudvælgelse</a></li>
+<li class="chapter" data-level="15.2" data-path="stikprveteori.html"><a href="stikprveteori.html#snowballing"><i class="fa fa-check"></i><b>15.2</b> Snowballing</a></li>
+<li class="chapter" data-level="15.3" data-path="stikprveteori.html"><a href="stikprveteori.html#simpel-tilfldig-udvlgelse"><i class="fa fa-check"></i><b>15.3</b> Simpel tilfældig udvælgelse</a></li>
+<li class="chapter" data-level="15.4" data-path="stikprveteori.html"><a href="stikprveteori.html#systematisk-udvlgelse"><i class="fa fa-check"></i><b>15.4</b> Systematisk udvælgelse</a></li>
+<li class="chapter" data-level="15.5" data-path="stikprveteori.html"><a href="stikprveteori.html#stratificeret-udvlgelse"><i class="fa fa-check"></i><b>15.5</b> Stratificeret udvælgelse</a><ul>
+<li class="chapter" data-level="15.5.1" data-path="stikprveteori.html"><a href="stikprveteori.html#proportional-allokering"><i class="fa fa-check"></i><b>15.5.1</b> Proportional allokering</a></li>
+<li class="chapter" data-level="15.5.2" data-path="stikprveteori.html"><a href="stikprveteori.html#optimal-allokering"><i class="fa fa-check"></i><b>15.5.2</b> Optimal allokering</a></li>
+<li class="chapter" data-level="15.5.3" data-path="stikprveteori.html"><a href="stikprveteori.html#poststratifikation"><i class="fa fa-check"></i><b>15.5.3</b> Poststratifikation</a></li>
+</ul></li>
+<li class="chapter" data-level="15.6" data-path="stikprveteori.html"><a href="stikprveteori.html#klyngeudvlgelse-eller-cluster-udvlgelse"><i class="fa fa-check"></i><b>15.6</b> Klyngeudvælgelse eller cluster udvælgelse</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="sandsynligheder.html"><a href="sandsynligheder.html"><i class="fa fa-check"></i><b>16</b> Sandsynligheder</a><ul>
+<li class="chapter" data-level="16.0.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#forenings--og-flleshndelser"><i class="fa fa-check"></i><b>16.0.1</b> Forenings- og fælleshændelser</a></li>
+<li class="chapter" data-level="16.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#betingede-sandsynligheder"><i class="fa fa-check"></i><b>16.1</b> Betingede sandsynligheder</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#race-og-ddsdom-eksempel"><i class="fa fa-check"></i><b>16.1.1</b> Race og dødsdom eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="sandsynligheder.html"><a href="sandsynligheder.html#uafhngighed"><i class="fa fa-check"></i><b>16.2</b> Uafhængighed</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html"><i class="fa fa-check"></i><b>17</b> Chi i anden tests</a><ul>
+<li class="chapter" data-level="17.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>17.1</b> Goodness of fit test</a></li>
+<li class="chapter" data-level="17.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#forudstning"><i class="fa fa-check"></i><b>17.2</b> Forudsætning</a></li>
+<li class="chapter" data-level="17.3" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#chi-i-anden-test"><i class="fa fa-check"></i><b>17.3</b> Chi i anden test</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#uafhngighed-1"><i class="fa fa-check"></i><b>17.3.1</b> Uafhængighed</a></li>
+<li class="chapter" data-level="17.3.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#anmeldte-skader-fordelt-pa-regioner-og-antal-skader"><i class="fa fa-check"></i><b>17.3.2</b> Anmeldte skader fordelt på regioner og antal skader</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#selvtest-14"><i class="fa fa-check"></i><b>17.4</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>18</b> ANOVA</a><ul>
+<li class="chapter" data-level="18.1" data-path="anova.html"><a href="anova.html#selvtest-15"><i class="fa fa-check"></i><b>18.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="cran-r.html"><a href="cran-r.html"><i class="fa fa-check"></i><b>19</b> Cran R</a><ul>
+<li class="chapter" data-level="19.1" data-path="cran-r.html"><a href="cran-r.html#r-video-tutorials"><i class="fa fa-check"></i><b>19.1</b> R video-tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="faktoranalyse.html"><a href="faktoranalyse.html"><i class="fa fa-check"></i><b>20</b> Faktoranalyse</a><ul>
+<li class="chapter" data-level="20.1" data-path="faktoranalyse.html"><a href="faktoranalyse.html#hvilke-faktorer-er-vigtige-nar-man-kber-en-ny-computer"><i class="fa fa-check"></i><b>20.1</b> Hvilke faktorer er vigtige når man køber en ny computer:</a></li>
+<li class="chapter" data-level="20.2" data-path="faktoranalyse.html"><a href="faktoranalyse.html#forudstninger-for-faktoranalysen."><i class="fa fa-check"></i><b>20.2</b> Forudsætninger for faktoranalysen.</a></li>
+<li class="chapter" data-level="20.3" data-path="faktoranalyse.html"><a href="faktoranalyse.html#selve-faktoranalysen"><i class="fa fa-check"></i><b>20.3</b> Selve Faktoranalysen</a></li>
+<li class="chapter" data-level="20.4" data-path="faktoranalyse.html"><a href="faktoranalyse.html#hvor-mange-faktorer-br-benyttes"><i class="fa fa-check"></i><b>20.4</b> Hvor mange faktorer bør benyttes?</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="faktoranalyse.html"><a href="faktoranalyse.html#eigenvalues-metoden"><i class="fa fa-check"></i><b>20.4.1</b> Eigenvalues metoden</a></li>
+<li class="chapter" data-level="20.4.2" data-path="faktoranalyse.html"><a href="faktoranalyse.html#screeplot-metoden"><i class="fa fa-check"></i><b>20.4.2</b> Screeplot metoden</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html"><i class="fa fa-check"></i><b>21</b> Klyngeanalyse</a><ul>
+<li class="chapter" data-level="21.1" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#hierakisk-klyngeanalyse-hclust-kommandoen"><i class="fa fa-check"></i><b>21.1</b> Hierakisk klyngeanalyse hclust kommandoen</a></li>
+<li class="chapter" data-level="21.2" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#ikke-hierakisk-klyngeanalyse-kmeans-kommandoen"><i class="fa fa-check"></i><b>21.2</b> Ikke hierakisk klyngeanalyse kmeans kommandoen</a></li>
+<li class="chapter" data-level="21.3" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#validering-med-anova"><i class="fa fa-check"></i><b>21.3</b> Validering med ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html"><i class="fa fa-check"></i><b>22</b> Tidsrækker og ARIMA</a><ul>
+<li class="chapter" data-level="22.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima000"><i class="fa fa-check"></i><b>22.1</b> ARIMA(0,0,0)</a></li>
+<li class="chapter" data-level="22.2" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima100-eller-ar1-autoregression"><i class="fa fa-check"></i><b>22.2</b> ARIMA(1,0,0) eller AR(1) autoregression</a></li>
+<li class="chapter" data-level="22.3" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima010-eller-i1-random-walk-with-a-drift"><i class="fa fa-check"></i><b>22.3</b> ARIMA(0,1,0) eller I(1) Random Walk with a drift</a></li>
+<li class="chapter" data-level="22.4" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima001-eller-ma1-moving-average"><i class="fa fa-check"></i><b>22.4</b> ARIMA(0,0,1) eller MA(1) Moving average</a></li>
+<li class="chapter" data-level="22.5" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#plots-med-forskellige-modeller"><i class="fa fa-check"></i><b>22.5</b> Plots med forskellige modeller</a></li>
+<li class="chapter" data-level="22.6" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-af-hjere-orden"><i class="fa fa-check"></i><b>22.6</b> ARIMA af højere orden</a></li>
+<li class="chapter" data-level="22.7" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-og-ssonalitet"><i class="fa fa-check"></i><b>22.7</b> ARIMA og sæsonalitet</a></li>
+<li class="chapter" data-level="22.8" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-eksempler"><i class="fa fa-check"></i><b>22.8</b> ARIMA eksempler</a><ul>
+<li class="chapter" data-level="22.8.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#traktorer"><i class="fa fa-check"></i><b>22.8.1</b> Traktorer</a></li>
+<li class="chapter" data-level="22.8.2" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#detail-debet-card-forbrug-pa-island-millioner-isk."><i class="fa fa-check"></i><b>22.8.2</b> Detail debet card forbrug på Island (millioner ISK).</a></li>
+</ul></li>
+<li class="chapter" data-level="22.9" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#forecast-aktiekurser"><i class="fa fa-check"></i><b>22.9</b> Forecast Aktiekurser</a></li>
+<li class="chapter" data-level="22.10" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#aktieafkast"><i class="fa fa-check"></i><b>22.10</b> Aktieafkast</a><ul>
+<li class="chapter" data-level="22.10.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-opsamling-video"><i class="fa fa-check"></i><b>22.10.1</b> ARIMA opsamling video</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="materialer.html"><a href="materialer.html"><i class="fa fa-check"></i><b>23</b> Materialer</a><ul>
+<li class="chapter" data-level="23.1" data-path="materialer.html"><a href="materialer.html#videoer-teori"><i class="fa fa-check"></i><b>23.1</b> Videoer teori</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test-1"><i class="fa fa-check"></i><b>23.1.1</b> Chi i anden test</a></li>
+<li class="chapter" data-level="23.1.2" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test-2"><i class="fa fa-check"></i><b>23.1.2</b> Chi i anden test 2</a></li>
+<li class="chapter" data-level="23.1.3" data-path="materialer.html"><a href="materialer.html#anova-1"><i class="fa fa-check"></i><b>23.1.3</b> Anova</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="materialer.html"><a href="materialer.html#freestat-fin"><i class="fa fa-check"></i><b>23.2</b> Freestat FIN</a></li>
+<li class="chapter" data-level="23.3" data-path="materialer.html"><a href="materialer.html#eksamensvideoer"><i class="fa fa-check"></i><b>23.3</b> Eksamensvideoer</a></li>
+<li class="chapter" data-level="23.4" data-path="materialer.html"><a href="materialer.html#eksamensvideoer-au-smartlearning"><i class="fa fa-check"></i><b>23.4</b> Eksamensvideoer AU Smartlearning</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./">Login</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basis statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidsrkker-og-arima" class="section level1">
+<h1><span class="header-section-number">Kapitel 22</span> Tidsrækker og ARIMA</h1>
+<p>Gennemgangen af tidsrækkeanalyse bygger meget på praktisk anvendelighed (dvs. vi vil gerne kunne forudsige kursudviklingen), vi vil springe let hen over teorien der kan være tung og er meget omfattende. Nedenstående links giver dog en indføring i den teoretiske del, som vi her ikke berører.</p>
+<p><a href="http://ucanalytics.com/blogs/arima-models-manufacturing-case-study-example-part-3/" class="uri">http://ucanalytics.com/blogs/arima-models-manufacturing-case-study-example-part-3/</a></p>
+<p><a href="http://ucanalytics.com/blogs/step-by-step-graphic-guide-to-forecasting-through-arima-modeling-in-r-manufacturing-case-study-example/" class="uri">http://ucanalytics.com/blogs/step-by-step-graphic-guide-to-forecasting-through-arima-modeling-in-r-manufacturing-case-study-example/</a></p>
+<p>Her er en gennemgang af forskellige typer af tidsrækker man kan opleve.</p>
+<p><a href="https://people.duke.edu/~rnau/411arim.htm#arima010" class="uri">https://people.duke.edu/~rnau/411arim.htm#arima010</a></p>
+<p>Video om ARIMA
+<a href="https://youtu.be/Aw77aMLj9uM" class="uri">https://youtu.be/Aw77aMLj9uM</a></p>
+<p>En tidsrække er observationer, der er observeret over tid, fx. lukkekursen på Novo i 2018, kan vi beskrive som en tidsrække. Hvor vi både registrerer dato og lukkekursen. ARIMA er et avanceret analyseværktøj til at beskrive tidsrækker. Vi vil i de følgende kaptiler, med eksempler beskrive hvordan de enkelte elementer i ARIMA rent praktisk fungerer.</p>
+<p><strong><em>AR</em></strong> står for AutoRegressive
+<strong><em>I</em></strong> står for Integrated
+<strong><em>MA</em></strong> står for Moving Average</p>
+<p>Lad i de følgende afsnit se på nogle simple eksempler for trinvis, at kunne beskrive hvorledes modellen fungerer.</p>
+<div id="arima000" class="section level2">
+<h2><span class="header-section-number">22.1</span> ARIMA(0,0,0)</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/293712878" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Nedenfor har vi aktiekurser for 50 dage for en fiktiv aktie, vi vil nu undersøge om disse kan bruges til at forudsige noget om fremtidige aktiekurser. For at gøre dette, skal man enten importere Excelfilen, eller copy paste data fra rammen nedenfor.</p>
+<p>Hent ARIMA1.xlsx Excel filen <a href="ARIMA1.xlsx" download>her</a>. Importer ARIMA1.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">ARIMA1 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA1)</a></code></pre></div>
+<!-- ```{r, echo=FALSE, comment="",warning=FALSE} -->
+<!-- # write.table(as.data.frame(ARIMA1), file = "ARIMA1") kommando til gemme ts -->
+<!-- library("readxl") -->
+<!-- ARIMA1 <- read_xlsx("ARIMA1.xlsx") -->
+<!-- ARIMA1 <- ts(ARIMA1) -->
+<!-- dput(ARIMA1) -->
+<!-- ``` -->
+<p>Vi kan nu plotte vore data i R.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">plot.ts</span>(ARIMA1, <span class="dt">xlab=</span><span class="st">&#39;Tid&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Kursdata&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
+<p>Det er svært at se nogen tydelig udvikling i kursen.</p>
+<p>Vi benytter auto.arima til at undersøge om der er en systematik i tidsserien, for at bruge denne funktion skal vi hente og loade pakken forecast med fx. pacman:</p>
+<p>Funktionen auto.arima i R er en fantastisk funktion, der automatisk finder den ARIMA model, der passer bedst på observationerne.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">auto.arima</span>(ARIMA1)</a></code></pre></div>
+<pre><code>## Series: ARIMA1 
+## ARIMA(0,0,0) with non-zero mean 
+## 
+## Coefficients:
+##          mean
+##       19.8964
+## s.e.   0.2872
+## 
+## sigma^2 estimated as 4.209:  log likelihood=-106.37
+## AIC=216.74   AICc=217   BIC=220.57</code></pre>
+<p>Output ARIMA(0,0,0) with non-zero mean, fortæller os at data er ligesom hvid støj. Den bedste forudsigelse af aktieprisen, vi kan komme med er gennemsnittet af alle kurserne. Vi kan altså ikke forudsige prisen vha. vore fine værktøjer.</p>
+<p>Akaike Information Criterion (AIC) , og Bayesian Information Criterion (BIC) benyttes til at vælge ARIMA modellen med mindst AIC og BIC værdier. auto.arima finder den bedste model automatisk.</p>
+<p>Her er ligningen for aktiekursen, den bedste forudsigelse af den fremtidige kurs er den gennemsnitlige kurs der tidligere er observeret.</p>
+<p><span class="math display">\[\hat{Y_t}=19.90\]</span></p>
+<p>Variablen <span class="math inline">\(\hat{Y}_t\)</span>, kaldet Y hat t angiver vort estimat (gæt) på aktiekursen på tidspunkt <span class="math inline">\(t=1,2,3,...\)</span>. Der er således så lidt systematik i Data at her er tale om en ARIMA(0,0,0) model. Vi ser også at der står “ARIMA(0,0,0) with non-zero mean” i output fra R.</p>
+</div>
+<div id="arima100-eller-ar1-autoregression" class="section level2">
+<h2><span class="header-section-number">22.2</span> ARIMA(1,0,0) eller AR(1) autoregression</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/293712597" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>En ARIMA(1,0,0) model kan skrives som:</p>
+<p><span class="math display">\[\hat{Y_t}=c + \phi Y_{t-1}\]</span></p>
+<p>Vi kan forklare <span class="math inline">\(\hat{Y_t}\)</span> er værdien for tidsrækken på tidspunkt <span class="math inline">\(t\)</span>, ud fra en konstant <span class="math inline">\(c\)</span> plus en faktor <span class="math inline">\(\phi\)</span>, der ganges på værdien for tidsrækken på tidspunkt <span class="math inline">\(t-1\)</span>. For at bestemme c skal vi kende tidsrækkens sande middelværdi <span class="math inline">\(\mu\)</span> og <span class="math inline">\(\phi\)</span>, disse værdier kan R beregne for os. Vi kan så beregne konstanten <span class="math inline">\(c=(1-\phi)\cdot \mu\)</span>. Det betyder så at vi kan estimere fremtidige værdier tidsrækken.</p>
+<p>Vi har nu et eksempel hvor den sande middelværdi for tidsrækken er <span class="math inline">\(\mu=100\)</span> og <span class="math inline">\(\phi=0.5\)</span> for en ARIMA(1,0,0) model. Så kan vi beregne <span class="math inline">\(c=(1-\phi)\cdot \mu=(1-0.5)\cdot 100=50\)</span> er middelværdien estimeret ved den gennemsnitlige kurs. Ligningen for modellen kan så skrives som:</p>
+<p><span class="math display">\[\hat{Y_t}=c + \phi Y_{t-1} \Leftrightarrow \hat{Y_t}=50 + 0.5 Y_{t-1}\]</span></p>
+<p><span class="math inline">\(\phi\)</span> fortæller, hvis kursen dagen før var 80 gennemsnitskursen er 100, vil kursen imorgen <span class="math inline">\(t=1\)</span> ifølge modellen være forudsagt som:
+<span class="math display">\[50+0.5\cdot 80=90\]</span>
+Dagen efter <span class="math inline">\(t=2\)</span> vil kursen så være forudsagt til:
+<span class="math display">\[50+0.5\cdot 90=95\]</span>
+Om 3 dage dvs. <span class="math inline">\(t=3\)</span> vil kursen så være forudsagt til:
+<span class="math display">\[50+0.5\cdot 95=97.5\]</span>
+Om 4 dage dvs. <span class="math inline">\(t=4\)</span> vil kursen så være forudsagt til:
+<span class="math display">\[50+0.5\cdot 97.5=98.75\]</span></p>
+<p>Osv..</p>
+<p>Vi siger at forudsagte værdier konvergerer mod (dvs. nærmer sig) <span class="math inline">\(\mu=100\)</span>.</p>
+<p>AR i ARIMA, står for autoregression, selv-regression mod middelværdien, i eksemplet så vi hvordan værdien nærmer sig 100, hvis vi forudsiger flere dages kurser kan vi se dette.</p>
+<p><span class="math inline">\(\phi\)</span> må kun antage værdier mellem og ikke lig med -1 og 1, hvilket betyder den er stationær, altså nærmer sig den sande middelværdi <span class="math inline">\(\mu\)</span>.</p>
+<p>Hvad vil der ske hvis <span class="math inline">\(\mu=100\)</span> og <span class="math inline">\(\phi=-0.5\)</span> for en ARIMA(1,0,0) model (husk <span class="math inline">\(c=(1-\phi)\cdot\mu\)</span> når man skal bestemme modellen)?</p>
+<p>Hent ARIMA2.xlsx Excel filen <a href="ARIMA2.xlsx" download>her</a>. Importer ARIMA2.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">ARIMA2 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA2)</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">aaa2 &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(ARIMA2)</a>
+<a class="sourceLine" id="cb80-2" data-line-number="2">aaa2</a></code></pre></div>
+<pre><code>## Series: ARIMA2 
+## ARIMA(1,0,0) with non-zero mean 
+## 
+## Coefficients:
+##          ar1      mean
+##       0.3664  103.2372
+## s.e.  0.1301    2.4492
+## 
+## sigma^2 estimated as 128.3:  log likelihood=-191.36
+## AIC=388.73   AICc=389.25   BIC=394.46</code></pre>
+<p>Her afslører auto.arima 1. ordens autoregression dvs.</p>
+<p>Modellen kan skrives som.</p>
+<p><span class="math display">\[\hat{Y_t}=c + \phi Y_{t-1}\Leftrightarrow \hat{Y_t}=(1-0.3664)\cdot 103.2372 + 0.3664Y_{t-1}\Leftrightarrow \hat{Y_t}=65.4125 + 0.3664Y_{t-1}\]</span></p>
+<p>Vi ser nu igen på vores eksempel med ARIMA2, vi kan nu i R forudsige aktiekursen 12 perioder frem med predict:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA2), <span class="dt">n.ahead =</span> <span class="dv">12</span>)<span class="op">$</span>pred</a></code></pre></div>
+<pre><code>## Time Series:
+## Start = 51 
+## End = 62 
+## Frequency = 1 
+##  [1] 105.3673 104.0177 103.5232 103.3420 103.2756 103.2513 103.2424
+##  [8] 103.2391 103.2379 103.2375 103.2373 103.2373</code></pre>
+<details>
+<summary>Spørgsmål ARIMA(1,0,0)</summary>
+Hent ARIMA22.xlsx Excel filen <a href="ARIMA22.xlsx" download>her</a>. Importer ARIMA22.xlsx til R via menuen File - Import Dataset - Excel. Bestem for den fremtidige aktiekurs 15 perioder frem, udregn direkte fx. vha. Excel og tjek dit resultat i R.
+</details>
+<br>
+<details>
+<p><summary>Svar ARIMA(1,0,0)</summary></p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">ARIMA22 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA22)</a>
+<a class="sourceLine" id="cb84-2" data-line-number="2">aaa22 &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(ARIMA22)</a>
+<a class="sourceLine" id="cb84-3" data-line-number="3">aaa22</a></code></pre></div>
+<pre><code>## Series: ARIMA22 
+## ARIMA(1,0,0) with non-zero mean 
+## 
+## Coefficients:
+##          ar1      mean
+##       0.2286  215.4871
+## s.e.  0.1371    2.3978
+## 
+## sigma^2 estimated as 180.3:  log likelihood=-199.82
+## AIC=405.63   AICc=406.15   BIC=411.37</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA22), <span class="dt">n.ahead =</span> <span class="dv">15</span>)<span class="op">$</span>pred</a></code></pre></div>
+<pre><code>## Time Series:
+## Start = 51 
+## End = 65 
+## Frequency = 1 
+##  [1] 216.7592 215.7779 215.5536 215.5023 215.4905 215.4878 215.4872
+##  [8] 215.4871 215.4871 215.4871 215.4871 215.4871 215.4871 215.4871
+## [15] 215.4871</code></pre>
+</details>
+<br>
+<details>
+<summary>Spørgsmål ARIMA(1,0,0)</summary>
+Hent ARIMA23.xlsx Excel filen <a href="ARIMA23.xlsx" download>her</a>. Importer ARIMA23.xlsx til R via menuen File - Import Dataset - Excel. Bestem for den fremtidige aktiekurs 15 perioder frem, udregn direkte fx. vha. Excel og tjek dit resultat i R.
+</details>
+<p><br></p>
+</div>
+<div id="arima010-eller-i1-random-walk-with-a-drift" class="section level2">
+<h2><span class="header-section-number">22.3</span> ARIMA(0,1,0) eller I(1) Random Walk with a drift</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/293713019" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Hvis en serie er ikke-stationær, er den simpleste model en random walk:</p>
+<p><span class="math display">\[\hat{Y_t}-Y_{t-1}=\mu\Leftrightarrow \hat{Y_t}=Y_{t-1}+\mu\]</span>
+Dette betyder at Y stiger konstant med <span class="math inline">\(\mu\)</span> i hver periode. Drift betyder at tidsrækken stiger konstant.</p>
+<p>Forestiller man sig en ARIMA(0,1,0) med drift 10 og en kurs på tidspunkt t-1 på 120, vil vi forudsige en kurs på 130 ved tid t og 140 ved tid t+1 osv. Vi kan opskrive modellen som:
+<span class="math display">\[\hat{Y_t}-Y_{t-1}=10\Leftrightarrow \hat{Y_t}=Y_{t-1}+10\]</span></p>
+<p>Hent ARIMA3.xlsx Excel filen <a href="ARIMA3.xlsx" download>her</a>. Importer ARIMA3.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="kw">ts.plot</span>(ARIMA3)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="kw">auto.arima</span>(ARIMA3)</a></code></pre></div>
+<pre><code>## Series: ARIMA3 
+## ARIMA(0,1,0) with drift 
+## 
+## Coefficients:
+##        drift
+##       7.9149
+## s.e.  1.2790
+## 
+## sigma^2 estimated as 83.46:  log likelihood=-181.05
+## AIC=366.1   AICc=366.36   BIC=369.93</code></pre>
+<p>Modellen ovenfor kan skrives som:
+<span class="math display">\[\hat{Y_t}-Y_{t-1}=\mu\Leftrightarrow \hat{Y_t}-Y_{t-1}=7.9\Leftrightarrow \hat{Y_t}=Y_{t-1}+7.9\]</span>
+Vi indsætter drift i stedet for <span class="math inline">\(\mu\)</span>, tolningen er at modellen forudsiger at aktiekursen stiger med 7.9 fra periode til periode.</p>
+<p>Hvis vi har en ren random walk model uden drift dvs. med <span class="math inline">\(\mu=0\)</span> ARIMA(0,1,0) for en aktiekurs , forventer vi at kursen til tid t vil være den samme som til tid t-1. Denne kan skrives som:</p>
+<p><span class="math display">\[\hat{Y_t}-Y_{t-1}=0\]</span></p>
+</div>
+<div id="arima001-eller-ma1-moving-average" class="section level2">
+<h2><span class="header-section-number">22.4</span> ARIMA(0,0,1) eller MA(1) Moving average</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/293712987" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Vi kan i stedet for at bruge tidligere aktiekurser til at forudsige aktiekursen i stedet benytte tidligere målefejl residualer til at forudsige kursen.</p>
+<p>Modellen kan skrives som:</p>
+<p><span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\]</span>
+Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="math inline">\(\theta_1=0.5\)</span> kursen til tid t-1 var 120 forudsigelsen til tid t-1 var 100, så målefejlen residualen til tid t-1 er <span class="math inline">\(e_{t-1}\)</span> er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
+<span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\Leftrightarrow \hat{Y_t}=50+0.5\cdot20=60\]</span></p>
+<p>Hent ARIMA4.xlsx Excel filen <a href="ARIMA4.xlsx" download>her</a>. Importer ARIMA4.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="kw">ts.plot</span>(ARIMA4)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="kw">auto.arima</span>(ARIMA4)</a></code></pre></div>
+<pre><code>## Series: ARIMA4 
+## ARIMA(0,0,1) with non-zero mean 
+## 
+## Coefficients:
+##          ma1     mean
+##       0.9053  99.0176
+## s.e.  0.0664   2.5588
+## 
+## sigma^2 estimated as 95.68:  log likelihood=-184.81
+## AIC=375.62   AICc=376.14   BIC=381.35</code></pre>
+<p>Vi kan nu forudsige aktiekursen 12 perioder frem med predict:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA4), <span class="dt">n.ahead =</span> <span class="dv">12</span>)<span class="op">$</span>pred</a></code></pre></div>
+<pre><code>## Time Series:
+## Start = 51 
+## End = 62 
+## Frequency = 1 
+##  [1] 113.64960  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756
+##  [8]  99.01756  99.01756  99.01756  99.01756  99.01756</code></pre>
+<p>Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en residual)</p>
+</div>
+<div id="plots-med-forskellige-modeller" class="section level2">
+<h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
+<pre><code>## Series: ap1 
+## ARIMA(0,1,1) 
+## 
+## Coefficients:
+##           ma1
+##       -0.5627
+## s.e.   0.1113
+## 
+## sigma^2 estimated as 83.97:  log likelihood=-181.39
+## AIC=366.79   AICc=367.04   BIC=370.61</code></pre>
+<p>Kursen svinger omkring middelværdien.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<pre><code>## Series: ap2 
+## ARIMA(1,1,0) 
+## 
+## Coefficients:
+##          ar1
+##       0.4360
+## s.e.  0.1266
+## 
+## sigma^2 estimated as 102.2:  log likelihood=-186.21
+## AIC=376.42   AICc=376.67   BIC=380.24</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
+<pre><code>## Series: ap3 
+## ARIMA(2,0,1) with non-zero mean 
+## 
+## Coefficients:
+##           ar1     ar2     ma1      mean
+##       -0.3433  0.0339  0.8982  100.0396
+## s.e.   0.0833  0.0800  0.0434    0.9897
+## 
+## sigma^2 estimated as 95.36:  log likelihood=-738.02
+## AIC=1486.03   AICc=1486.34   BIC=1502.53</code></pre>
+<p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
+<pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 201      106.03287 93.51806 118.5477 86.89312 125.1726
+## 202       98.55120 84.23858 112.8638 76.66194 120.4405
+## 203      100.75361 86.30738 115.1998 78.66000 122.8472
+## 204       99.74410 85.26935 114.2189 77.60688 121.8813
+## 205      100.16527 85.68557 114.6450 78.02049 122.3100
+## 206       99.98649 85.50590 114.4671 77.84035 122.1326
+## 207      100.06213 85.58139 114.5429 77.91574 122.2085
+## 208      100.03011 85.54933 114.5109 77.88368 122.1765
+## 209      100.04366 85.56288 114.5244 77.89722 122.1901
+## 210      100.03792 85.55715 114.5187 77.89148 122.1844</code></pre>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
+</div>
+<div id="arima-af-hjere-orden" class="section level2">
+<h2><span class="header-section-number">22.6</span> ARIMA af højere orden</h2>
+<p>Arima modeller kan afhænge af flere tidligere perioder, fx kan ligningen for ARIMA(2,0,0) eller AR(2), opskrives som:</p>
+<p><span class="math display">\[\hat{Y_t}=c + \phi Y_{t-1}+ \phi_2 Y_{t-2}\]</span>
+Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegner dette som en model med lag 2.</p>
+<p>Arima modeller kan indeholde flere forskellige elementer med lag som fx. ARIMA(0,2,1).</p>
+</div>
+<div id="arima-og-ssonalitet" class="section level2">
+<h2><span class="header-section-number">22.7</span> ARIMA og sæsonalitet</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/293712749" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Hvis fx. en aktie handles lavere om fredagen kan ARIMA modellerne korrigere for dette ved sæsonkorrektion. I sæsonkorrigerede modeller vises dette som en ekstra vektor med 3 tal for hhv. sæsonkorrigeret AR eller SAR, sæsonkorrigeret I eller SI og sæsonkorrigeret MA eller SMA. En model som ARIMA(1,0,0)(1,0,0) har altså udover AR også en sæsonkomponent.</p>
+</div>
+<div id="arima-eksempler" class="section level2">
+<h2><span class="header-section-number">22.8</span> ARIMA eksempler</h2>
+<div id="traktorer" class="section level3">
+<h3><span class="header-section-number">22.8.1</span> Traktorer</h3>
+<p>Hent følgende data for traktor salg, med følgende kommandoer i R.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1">data =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;http://ucanalytics.com/blogs/wp-content/uploads/2015/06/Tractor-Sales.csv&#39;</span>)</a>
+<a class="sourceLine" id="cb102-2" data-line-number="2">data =<span class="st"> </span><span class="kw">ts</span>(data[,<span class="dv">2</span>],<span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">1</span>),<span class="dt">frequency =</span> <span class="dv">12</span>)</a></code></pre></div>
+<p>Vi ser salget er voksende over tid, der er ligeledes en sæsonkomponent.</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1"><span class="kw">plot</span>(data, <span class="dt">xlab=</span><span class="st">&#39;Years&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Tractor Sales&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p>Differens tranformer data for at generere stationære data mht. middel (fjern trend)</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">diff</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Differenced Tractor Sales&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p>log transformer data for at sikre stationaritet mht. varians.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">log10</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Log (Tractor Sales)&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
+<p>Eventuel Differens og log transformation af data for at sikre stationaritet både mht. middel og varians.</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">diff</span>(<span class="kw">log10</span>(data)),<span class="dt">ylab=</span><span class="st">&#39;Differenced Log (Tractor Sales)&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p>Find bedste model med auto.arima, når der er stationaritet.</p>
+<p>Akaike Information Criterion (AIC) , og Bayesian Information Criterion (BIC), vælg ARIMA modellen med mindst AIC and BIC værdier. auto.arima finder den bedste model automatisk.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="kw">require</span>(forecast)</a>
+<a class="sourceLine" id="cb107-2" data-line-number="2">ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(data), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb107-3" data-line-number="3">ARIMAfit</a></code></pre></div>
+<pre><code>## Series: log10(data) 
+## ARIMA(0,1,1)(0,1,1)[12] 
+## 
+## Coefficients:
+##           ma1     sma1
+##       -0.4047  -0.5529
+## s.e.   0.0885   0.0734
+## 
+## sigma^2 estimated as 0.0002571:  log likelihood=354.4
+## AIC=-702.79   AICc=-702.6   BIC=-694.17</code></pre>
+<p>Nu kan vi forudsige kommende traktor salg med modellen</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb109-2" data-line-number="2">pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)</a>
+<a class="sourceLine" id="cb109-3" data-line-number="3">salg &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">^</span>pred<span class="op">$</span>pred</a>
+<a class="sourceLine" id="cb109-4" data-line-number="4">salg</a></code></pre></div>
+<pre><code>##            Jan       Feb       Mar       Apr       May       Jun       Jul
+## 2015  567.7645  566.4765  670.8226  758.9138  855.9482  817.2827  938.7239
+## 2016  625.2464  623.8280  738.7384  835.7481  942.6065  900.0265 1033.7626
+## 2017  688.5479  686.9859  813.5300  920.3613 1038.0383  991.1474 1138.4233
+##            Aug       Sep       Oct       Nov       Dec
+## 2015  934.5120  703.5005  626.9879  571.9988  668.5363
+## 2016 1029.1243  774.7246  690.4657  629.9094  736.2206
+## 2017 1133.3154  853.1596  760.3701  693.6830  810.7573</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">plot</span>(data,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">2018</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1600</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Tractor Salg&#39;</span>)</a>
+<a class="sourceLine" id="cb111-2" data-line-number="2"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</a>
+<a class="sourceLine" id="cb111-3" data-line-number="3"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a>
+<a class="sourceLine" id="cb111-4" data-line-number="4"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
+</div>
+<div id="detail-debet-card-forbrug-pa-island-millioner-isk." class="section level3">
+<h3><span class="header-section-number">22.8.2</span> Detail debet card forbrug på Island (millioner ISK).</h3>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="co">#Hent fpp pakken og load den</span></a>
+<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="kw">plot</span>(debitcards)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1">dldebitcards &lt;-<span class="st"> </span><span class="kw">diff</span>(<span class="kw">log10</span>(debitcards))</a>
+<a class="sourceLine" id="cb113-2" data-line-number="2"><span class="kw">plot</span>(dldebitcards,<span class="dt">ylab=</span><span class="st">&quot;Differenced Log (debitcards)&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="kw">require</span>(forecast)</a>
+<a class="sourceLine" id="cb114-2" data-line-number="2">ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(debitcards), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb114-3" data-line-number="3">ARIMAfit</a></code></pre></div>
+<pre><code>## Series: log10(debitcards) 
+## ARIMA(2,1,0)(0,1,1)[12] 
+## 
+## Coefficients:
+##           ar1      ar2     sma1
+##       -0.7167  -0.4372  -0.8352
+## s.e.   0.0761   0.0763   0.1085
+## 
+## sigma^2 estimated as 0.0004402:  log likelihood=343.95
+## AIC=-679.9   AICc=-679.61   BIC=-668.05</code></pre>
+<p>Nu kan vi forudsige kommende debetkort omsætning med modellen</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb116-2" data-line-number="2">pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)</a>
+<a class="sourceLine" id="cb116-3" data-line-number="3"><span class="kw">plot</span>(debitcards,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2000</span>,<span class="dv">2016</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">40000</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Debetcard usage&#39;</span>)</a>
+<a class="sourceLine" id="cb116-4" data-line-number="4"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</a>
+<a class="sourceLine" id="cb116-5" data-line-number="5"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a>
+<a class="sourceLine" id="cb116-6" data-line-number="6"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<p>Forudsagt brug af debetkort bliver:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred)</a></code></pre></div>
+<pre><code>##           Jan      Feb      Mar      Apr      May      Jun      Jul
+## 2013 19717.77 19162.87 20436.29 20506.84 23262.14 23545.62 24292.86
+## 2014 20701.39 20352.57 21886.85 21721.53 24745.18 25091.09 25806.49
+## 2015 22017.60 21649.95 23281.85 23104.56 26321.98 26689.74 27450.29
+##           Aug      Sep      Oct      Nov      Dec
+## 2013 25544.16 22267.47 22543.80 22081.63 29090.93
+## 2014 27175.65 23697.15 23970.40 23490.36 30947.83
+## 2015 28907.08 25206.87 25497.43 24986.92 32919.46</code></pre>
+</div>
+</div>
+<div id="forecast-aktiekurser" class="section level2">
+<h2><span class="header-section-number">22.9</span> Forecast Aktiekurser</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/293712809" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Man kan hente online aktiekurser med quantmod pakken installer denne med fx. pacman, vi skal også bruge pakken forecast som vi ligeledes henter. Vi henter nedenfor Google justeret lukkekurs til dato det er 6 søjle i GOOG matricen nedenfor. Vi kan se forecaste aktiekursen vha.</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(quantmod, forecast)</a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="kw">getSymbols</span>(<span class="st">&quot;GOOG&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;GOOG&quot;</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1"><span class="kw">plot</span>(GOOG[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">agoog &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GOOG[,<span class="dv">6</span>])</a>
+<a class="sourceLine" id="cb122-2" data-line-number="2">agoog</a></code></pre></div>
+<pre><code>## Series: GOOG[, 6] 
+## ARIMA(2,1,2) 
+## 
+## Coefficients:
+##           ar1      ar2     ma1     ma2
+##       -0.7526  -0.9478  0.7618  0.8990
+## s.e.   0.0437   0.0608  0.0534  0.0871
+## 
+## sigma^2 estimated as 227:  log likelihood=-2101.02
+## AIC=4212.03   AICc=4212.15   BIC=4233.19</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</a>
+<a class="sourceLine" id="cb124-2" data-line-number="2">fagoog</a></code></pre></div>
+<pre><code>##     Point Forecast     Lo 80    Hi 80     Lo 95    Hi 95
+## 511       1056.047 1036.7391 1075.355 1026.5183 1085.575
+## 512       1062.506 1035.0741 1089.937 1020.5527 1104.458
+## 513       1058.728 1025.6917 1091.765 1008.2033 1109.253
+## 514       1055.450 1017.3138 1093.585  997.1259 1113.773
+## 515       1061.497 1018.6249 1104.370  995.9297 1127.065
+## 516       1060.053 1013.3293 1106.777  988.5952 1131.511
+## 517       1055.408 1005.0332 1105.783  978.3664 1132.450
+## 518       1060.273 1006.2200 1114.325  977.6062 1142.939
+## 519       1061.014 1003.7919 1118.236  973.5003 1148.528
+## 520       1055.845  995.6557 1116.035  963.7932 1147.898</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="kw">plot</span>(fagoog,<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;GS&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;GS&quot;</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="kw">plot</span>(GS[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1">ags &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GS[,<span class="dv">6</span>])</a>
+<a class="sourceLine" id="cb130-2" data-line-number="2">ags</a></code></pre></div>
+<pre><code>## Series: GS[, 6] 
+## ARIMA(0,1,0) 
+## 
+## sigma^2 estimated as 10.74:  log likelihood=-1326.52
+## AIC=2655.04   AICc=2655.05   BIC=2659.27</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1">fags &lt;-<span class="st"> </span><span class="kw">forecast</span>(ags)</a>
+<a class="sourceLine" id="cb132-2" data-line-number="2">fags</a></code></pre></div>
+<pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 511         176.93 172.7292 181.1308 170.5055 183.3545
+## 512         176.93 170.9892 182.8708 167.8443 186.0156
+## 513         176.93 169.6540 184.2059 165.8024 188.0576
+## 514         176.93 168.5285 185.3315 164.0809 189.7790
+## 515         176.93 167.5368 186.3232 162.5643 191.2957
+## 516         176.93 166.6402 187.2197 161.1932 192.6668
+## 517         176.93 165.8158 188.0442 159.9323 193.9277
+## 518         176.93 165.0484 188.8116 158.7587 195.1013
+## 519         176.93 164.3277 189.5323 157.6564 196.2036
+## 520         176.93 163.6460 190.2140 156.6139 197.2461</code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="kw">plot</span>(fags,<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-126-2.png" width="672" /></p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;DANSKE.CO&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;DANSKE.CO&quot;</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="kw">plot</span>(DANSKE.CO[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1">addb &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(DANSKE.CO[,<span class="dv">6</span>])</a>
+<a class="sourceLine" id="cb138-2" data-line-number="2">addb</a></code></pre></div>
+<pre><code>## Series: DANSKE.CO[, 6] 
+## ARIMA(0,2,2) 
+## 
+## Coefficients:
+##           ma1     ma2
+##       -1.0570  0.0666
+## s.e.   0.0465  0.0463
+## 
+## sigma^2 estimated as 7.148:  log likelihood=-1157.49
+## AIC=2320.97   AICc=2321.02   BIC=2333.65</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">faddb &lt;-<span class="st"> </span><span class="kw">forecast</span>(addb)</a>
+<a class="sourceLine" id="cb140-2" data-line-number="2">faddb</a></code></pre></div>
+<pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 508       127.3387 123.9054 130.7720 122.0879 132.5895
+## 509       126.9181 122.2036 131.6326 119.7079 134.1282
+## 510       126.4975 120.7635 132.2314 117.7282 135.2667
+## 511       126.0768 119.4629 132.6908 115.9617 136.1920
+## 512       125.6562 118.2516 133.0608 114.3318 136.9806
+## 513       125.2356 117.1035 133.3677 112.7986 137.6726
+## 514       124.8150 116.0027 133.6272 111.3378 138.2922
+## 515       124.3944 114.9390 133.8497 109.9336 138.8551
+## 516       123.9737 113.9051 134.0424 108.5751 139.3724
+## 517       123.5531 112.8958 134.2105 107.2541 139.8521</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="kw">plot</span>(faddb,<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-127-2.png" width="672" /></p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2000-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;BRK-A&quot;</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">plot</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1">aberkshire &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>])</a>
+<a class="sourceLine" id="cb146-2" data-line-number="2">aberkshire</a></code></pre></div>
+<pre><code>## Series: `BRK-A`[, 6] 
+## ARIMA(3,1,4) with drift 
+## 
+## Coefficients:
+##          ar1      ar2     ar3      ma1     ma2      ma3      ma4    drift
+##       0.9510  -0.9379  0.4284  -0.9800  0.9498  -0.4391  -0.0701  49.8701
+## s.e.  0.1745   0.1521  0.1509   0.1748  0.1628   0.1655   0.0239  21.5401
+## 
+## sigma^2 estimated as 3268626:  log likelihood=-42681.79
+## AIC=85381.58   AICc=85381.62   BIC=85439.85</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1">faberkshire &lt;-<span class="st"> </span><span class="kw">forecast</span>(aberkshire)</a>
+<a class="sourceLine" id="cb148-2" data-line-number="2">faberkshire</a></code></pre></div>
+<pre><code>##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 4788       293459.0 291142.0 295776.0 289915.5 297002.5
+## 4789       293854.1 290624.6 297083.6 288915.0 298793.1
+## 4790       294503.6 290588.4 298418.9 288515.8 300491.5
+## 4791       294597.3 290097.8 299096.8 287715.9 301478.7
+## 4792       294274.3 289324.1 299224.5 286703.6 301844.9
+## 4793       294185.3 288883.6 299487.1 286077.0 302293.7
+## 4794       294471.7 288844.1 300099.3 285865.0 303078.4
+## 4795       294716.9 288756.0 300677.9 285600.5 303833.4
+## 4796       294671.3 288390.2 300952.4 285065.2 304277.4
+## 4797       294548.4 287981.9 301115.0 284505.7 304591.2</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="kw">plot</span>(faberkshire,<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-128-2.png" width="672" /></p>
+</div>
+<div id="aktieafkast" class="section level2">
+<h2><span class="header-section-number">22.10</span> Aktieafkast</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/293712927" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>I Quantmod pakken ligger også mulighed for at beregne fx. dagligt, ugentligt afkast, dette gør vi vha. funktionen “periodReturn”.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;AAPL&quot;</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1">apple &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">AAPL</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)  <span class="co"># Årligt Afkast 2003 til i dag</span></a>
+<a class="sourceLine" id="cb153-2" data-line-number="2"><span class="kw">plot</span>(apple, <span class="dt">main =</span> <span class="st">&quot;Apple årligt afkast siden 2007&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">auto.arima</span>(apple)</a></code></pre></div>
+<pre><code>## Series: apple 
+## ARIMA(1,0,0) with non-zero mean 
+## 
+## Coefficients:
+##           ar1    mean
+##       -0.5484  0.3005
+## s.e.   0.2603  0.0844
+## 
+## sigma^2 estimated as 0.2469:  log likelihood=-8.45
+## AIC=22.9   AICc=25.56   BIC=24.59</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;BRK-A&quot;</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1">berkshire &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)</a>
+<a class="sourceLine" id="cb158-2" data-line-number="2"><span class="kw">plot</span>(berkshire, <span class="dt">main =</span> <span class="st">&quot;Berkshire årligt afkast siden 2007&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="kw">auto.arima</span>(berkshire)</a></code></pre></div>
+<pre><code>## Series: berkshire 
+## ARIMA(0,0,0) with non-zero mean 
+## 
+## Coefficients:
+##         mean
+##       0.0955
+## s.e.  0.0510
+## 
+## sigma^2 estimated as 0.03668:  log likelihood=3.56
+## AIC=-3.12   AICc=-1.92   BIC=-1.99</code></pre>
+<div id="arima-opsamling-video" class="section level3">
+<h3><span class="header-section-number">22.10.1</span> ARIMA opsamling video</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/234990675" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="klyngeanalyse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="materialer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

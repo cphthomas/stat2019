@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Basis statistik for de finansielle uddannelser.</title>
+  <meta name="description" content="Basis statistik">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Basis statistik for de finansielle uddannelser." />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Basis statistik" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Basis statistik for de finansielle uddannelser." />
+  
+  <meta name="twitter:description" content="Basis statistik" />
+  
+
+<meta name="author" content="Thomas Petersen">
+
+
+<meta name="date" content="2019-01-13">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="prev" href="cran-r.html">
+<link rel="next" href="klyngeanalyse.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-5.0.6/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-5.0.6/highstock.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-3d.js"></script>
+<script src="libs/highcharts-5.0.6/highcharts-more.js"></script>
+<script src="libs/highcharts-5.0.6/modules/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/modules/broken-axis.js"></script>
+<script src="libs/highcharts-5.0.6/modules/data.js"></script>
+<script src="libs/highcharts-5.0.6/modules/drilldown.js"></script>
+<script src="libs/highcharts-5.0.6/modules/exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/funnel.js"></script>
+<script src="libs/highcharts-5.0.6/modules/heatmap.js"></script>
+<script src="libs/highcharts-5.0.6/modules/map.js"></script>
+<script src="libs/highcharts-5.0.6/modules/no-data-to-display.js"></script>
+<script src="libs/highcharts-5.0.6/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-5.0.6/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-5.0.6/modules/treemap.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/annotations.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-legend.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/draggable-points.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/export-csv.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/grouped-categories.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/motion.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/pattern-fill-v2.js"></script>
+<script src="libs/highcharts-5.0.6/plugins/tooltip-delay.js"></script>
+<script src="libs/highcharts-5.0.6/custom/reset.js"></script>
+<script src="libs/highcharts-5.0.6/custom/symbols-extra.js"></script>
+<script src="libs/highcharts-5.0.6/custom/text-symbols.js"></script>
+<link href="libs/fontawesome-4.5.0/font-awesome.min.css" rel="stylesheet" />
+<link href="libs/htmlwdgtgrid-1/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="libs/highchart-binding-0.5.0/highchart.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Login</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.0.1</b> Tryg aktien</a></li>
+<li class="chapter" data-level="3.0.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.0.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.0.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.0.3</b> Variansen</a></li>
+<li class="chapter" data-level="3.0.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.0.4</b> Standardafvigelsen</a></li>
+<li class="chapter" data-level="3.0.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.0.5</b> Modus</a></li>
+<li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.1</b> Medianen, kvartiler og fraktilen</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.1.1</b> Fraktiler</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.2</b> Skævhed</a></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.3</b> Kurtosis</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.4</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
+<li class="chapter" data-level="4.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelt-stokastisk-variabel"><i class="fa fa-check"></i><b>4.1</b> Normalfordelt Stokastisk variabel</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#standard-normalfordelingen"><i class="fa fa-check"></i><b>4.1.1</b> Standard normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-1"><i class="fa fa-check"></i><b>4.1.2</b> 68% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-2"><i class="fa fa-check"></i><b>4.1.3</b> 90% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-3"><i class="fa fa-check"></i><b>4.1.4</b> 95% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfordelingen-4"><i class="fa fa-check"></i><b>4.1.5</b> 99% Normalfordelingen</a></li>
+<li class="chapter" data-level="4.1.6" data-path="normalfordelingen.html"><a href="normalfordelingen.html#addition-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.6</b> Addition af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.7" data-path="normalfordelingen.html"><a href="normalfordelingen.html#linearkombinationer-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.7</b> Linearkombinationer af normalfordelinger</a></li>
+<li class="chapter" data-level="4.1.8" data-path="normalfordelingen.html"><a href="normalfordelingen.html#transformation-af-normalfordelinger"><i class="fa fa-check"></i><b>4.1.8</b> Transformation af normalfordelinger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
+<li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
+<li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.1</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.2</b> Konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.7</b> Selvtest</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.8</b> Selvtest</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
+<li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
+<li class="chapter" data-level="7.2" data-path="andel.html"><a href="andel.html#konfidensinterval-for-en-andel"><i class="fa fa-check"></i><b>7.2</b> Konfidensinterval for en andel</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="andel.html"><a href="andel.html#fejlmargin-ved-andele"><i class="fa fa-check"></i><b>7.2.1</b> Fejlmargin ved andele</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
+<li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
+<li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
+<li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+<li class="chapter" data-level="9.7" data-path="middelvrdier.html"><a href="middelvrdier.html#selvtest-7"><i class="fa fa-check"></i><b>9.7</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+<li class="chapter" data-level="11.7" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-8"><i class="fa fa-check"></i><b>11.7</b> Selvtest</a></li>
+<li class="chapter" data-level="11.8" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-9"><i class="fa fa-check"></i><b>11.8</b> Selvtest</a></li>
+<li class="chapter" data-level="11.9" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-10"><i class="fa fa-check"></i><b>11.9</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="binomialfordelingen.html"><a href="binomialfordelingen.html"><i class="fa fa-check"></i><b>12</b> Binomialfordelingen</a><ul>
+<li class="chapter" data-level="12.1" data-path="binomialfordelingen.html"><a href="binomialfordelingen.html#selvtest-11"><i class="fa fa-check"></i><b>12.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="den-hypergeometriske-fordeling.html"><a href="den-hypergeometriske-fordeling.html"><i class="fa fa-check"></i><b>13</b> Den hypergeometriske fordeling</a><ul>
+<li class="chapter" data-level="13.1" data-path="den-hypergeometriske-fordeling.html"><a href="den-hypergeometriske-fordeling.html#selvtest-12"><i class="fa fa-check"></i><b>13.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="poisson-fordelingen.html"><a href="poisson-fordelingen.html"><i class="fa fa-check"></i><b>14</b> Poisson fordelingen</a><ul>
+<li class="chapter" data-level="14.1" data-path="poisson-fordelingen.html"><a href="poisson-fordelingen.html#selvtest-13"><i class="fa fa-check"></i><b>14.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="stikprveteori.html"><a href="stikprveteori.html"><i class="fa fa-check"></i><b>15</b> Stikprøveteori</a><ul>
+<li class="chapter" data-level="15.1" data-path="stikprveteori.html"><a href="stikprveteori.html#bekvemmelighedsudvlgelse"><i class="fa fa-check"></i><b>15.1</b> Bekvemmelighedsudvælgelse</a></li>
+<li class="chapter" data-level="15.2" data-path="stikprveteori.html"><a href="stikprveteori.html#snowballing"><i class="fa fa-check"></i><b>15.2</b> Snowballing</a></li>
+<li class="chapter" data-level="15.3" data-path="stikprveteori.html"><a href="stikprveteori.html#simpel-tilfldig-udvlgelse"><i class="fa fa-check"></i><b>15.3</b> Simpel tilfældig udvælgelse</a></li>
+<li class="chapter" data-level="15.4" data-path="stikprveteori.html"><a href="stikprveteori.html#systematisk-udvlgelse"><i class="fa fa-check"></i><b>15.4</b> Systematisk udvælgelse</a></li>
+<li class="chapter" data-level="15.5" data-path="stikprveteori.html"><a href="stikprveteori.html#stratificeret-udvlgelse"><i class="fa fa-check"></i><b>15.5</b> Stratificeret udvælgelse</a><ul>
+<li class="chapter" data-level="15.5.1" data-path="stikprveteori.html"><a href="stikprveteori.html#proportional-allokering"><i class="fa fa-check"></i><b>15.5.1</b> Proportional allokering</a></li>
+<li class="chapter" data-level="15.5.2" data-path="stikprveteori.html"><a href="stikprveteori.html#optimal-allokering"><i class="fa fa-check"></i><b>15.5.2</b> Optimal allokering</a></li>
+<li class="chapter" data-level="15.5.3" data-path="stikprveteori.html"><a href="stikprveteori.html#poststratifikation"><i class="fa fa-check"></i><b>15.5.3</b> Poststratifikation</a></li>
+</ul></li>
+<li class="chapter" data-level="15.6" data-path="stikprveteori.html"><a href="stikprveteori.html#klyngeudvlgelse-eller-cluster-udvlgelse"><i class="fa fa-check"></i><b>15.6</b> Klyngeudvælgelse eller cluster udvælgelse</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="sandsynligheder.html"><a href="sandsynligheder.html"><i class="fa fa-check"></i><b>16</b> Sandsynligheder</a><ul>
+<li class="chapter" data-level="16.0.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#forenings--og-flleshndelser"><i class="fa fa-check"></i><b>16.0.1</b> Forenings- og fælleshændelser</a></li>
+<li class="chapter" data-level="16.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#betingede-sandsynligheder"><i class="fa fa-check"></i><b>16.1</b> Betingede sandsynligheder</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#race-og-ddsdom-eksempel"><i class="fa fa-check"></i><b>16.1.1</b> Race og dødsdom eksempel</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="sandsynligheder.html"><a href="sandsynligheder.html#uafhngighed"><i class="fa fa-check"></i><b>16.2</b> Uafhængighed</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html"><i class="fa fa-check"></i><b>17</b> Chi i anden tests</a><ul>
+<li class="chapter" data-level="17.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>17.1</b> Goodness of fit test</a></li>
+<li class="chapter" data-level="17.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#forudstning"><i class="fa fa-check"></i><b>17.2</b> Forudsætning</a></li>
+<li class="chapter" data-level="17.3" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#chi-i-anden-test"><i class="fa fa-check"></i><b>17.3</b> Chi i anden test</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#uafhngighed-1"><i class="fa fa-check"></i><b>17.3.1</b> Uafhængighed</a></li>
+<li class="chapter" data-level="17.3.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#anmeldte-skader-fordelt-pa-regioner-og-antal-skader"><i class="fa fa-check"></i><b>17.3.2</b> Anmeldte skader fordelt på regioner og antal skader</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#selvtest-14"><i class="fa fa-check"></i><b>17.4</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>18</b> ANOVA</a><ul>
+<li class="chapter" data-level="18.1" data-path="anova.html"><a href="anova.html#selvtest-15"><i class="fa fa-check"></i><b>18.1</b> Selvtest</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="cran-r.html"><a href="cran-r.html"><i class="fa fa-check"></i><b>19</b> Cran R</a><ul>
+<li class="chapter" data-level="19.1" data-path="cran-r.html"><a href="cran-r.html#r-video-tutorials"><i class="fa fa-check"></i><b>19.1</b> R video-tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="faktoranalyse.html"><a href="faktoranalyse.html"><i class="fa fa-check"></i><b>20</b> Faktoranalyse</a><ul>
+<li class="chapter" data-level="20.1" data-path="faktoranalyse.html"><a href="faktoranalyse.html#hvilke-faktorer-er-vigtige-nar-man-kber-en-ny-computer"><i class="fa fa-check"></i><b>20.1</b> Hvilke faktorer er vigtige når man køber en ny computer:</a></li>
+<li class="chapter" data-level="20.2" data-path="faktoranalyse.html"><a href="faktoranalyse.html#forudstninger-for-faktoranalysen."><i class="fa fa-check"></i><b>20.2</b> Forudsætninger for faktoranalysen.</a></li>
+<li class="chapter" data-level="20.3" data-path="faktoranalyse.html"><a href="faktoranalyse.html#selve-faktoranalysen"><i class="fa fa-check"></i><b>20.3</b> Selve Faktoranalysen</a></li>
+<li class="chapter" data-level="20.4" data-path="faktoranalyse.html"><a href="faktoranalyse.html#hvor-mange-faktorer-br-benyttes"><i class="fa fa-check"></i><b>20.4</b> Hvor mange faktorer bør benyttes?</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="faktoranalyse.html"><a href="faktoranalyse.html#eigenvalues-metoden"><i class="fa fa-check"></i><b>20.4.1</b> Eigenvalues metoden</a></li>
+<li class="chapter" data-level="20.4.2" data-path="faktoranalyse.html"><a href="faktoranalyse.html#screeplot-metoden"><i class="fa fa-check"></i><b>20.4.2</b> Screeplot metoden</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html"><i class="fa fa-check"></i><b>21</b> Klyngeanalyse</a><ul>
+<li class="chapter" data-level="21.1" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#hierakisk-klyngeanalyse-hclust-kommandoen"><i class="fa fa-check"></i><b>21.1</b> Hierakisk klyngeanalyse hclust kommandoen</a></li>
+<li class="chapter" data-level="21.2" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#ikke-hierakisk-klyngeanalyse-kmeans-kommandoen"><i class="fa fa-check"></i><b>21.2</b> Ikke hierakisk klyngeanalyse kmeans kommandoen</a></li>
+<li class="chapter" data-level="21.3" data-path="klyngeanalyse.html"><a href="klyngeanalyse.html#validering-med-anova"><i class="fa fa-check"></i><b>21.3</b> Validering med ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html"><i class="fa fa-check"></i><b>22</b> Tidsrækker og ARIMA</a><ul>
+<li class="chapter" data-level="22.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima000"><i class="fa fa-check"></i><b>22.1</b> ARIMA(0,0,0)</a></li>
+<li class="chapter" data-level="22.2" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima100-eller-ar1-autoregression"><i class="fa fa-check"></i><b>22.2</b> ARIMA(1,0,0) eller AR(1) autoregression</a></li>
+<li class="chapter" data-level="22.3" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima010-eller-i1-random-walk-with-a-drift"><i class="fa fa-check"></i><b>22.3</b> ARIMA(0,1,0) eller I(1) Random Walk with a drift</a></li>
+<li class="chapter" data-level="22.4" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima001-eller-ma1-moving-average"><i class="fa fa-check"></i><b>22.4</b> ARIMA(0,0,1) eller MA(1) Moving average</a></li>
+<li class="chapter" data-level="22.5" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#plots-med-forskellige-modeller"><i class="fa fa-check"></i><b>22.5</b> Plots med forskellige modeller</a></li>
+<li class="chapter" data-level="22.6" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-af-hjere-orden"><i class="fa fa-check"></i><b>22.6</b> ARIMA af højere orden</a></li>
+<li class="chapter" data-level="22.7" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-og-ssonalitet"><i class="fa fa-check"></i><b>22.7</b> ARIMA og sæsonalitet</a></li>
+<li class="chapter" data-level="22.8" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-eksempler"><i class="fa fa-check"></i><b>22.8</b> ARIMA eksempler</a><ul>
+<li class="chapter" data-level="22.8.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#traktorer"><i class="fa fa-check"></i><b>22.8.1</b> Traktorer</a></li>
+<li class="chapter" data-level="22.8.2" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#detail-debet-card-forbrug-pa-island-millioner-isk."><i class="fa fa-check"></i><b>22.8.2</b> Detail debet card forbrug på Island (millioner ISK).</a></li>
+</ul></li>
+<li class="chapter" data-level="22.9" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#forecast-aktiekurser"><i class="fa fa-check"></i><b>22.9</b> Forecast Aktiekurser</a></li>
+<li class="chapter" data-level="22.10" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#aktieafkast"><i class="fa fa-check"></i><b>22.10</b> Aktieafkast</a><ul>
+<li class="chapter" data-level="22.10.1" data-path="tidsrkker-og-arima.html"><a href="tidsrkker-og-arima.html#arima-opsamling-video"><i class="fa fa-check"></i><b>22.10.1</b> ARIMA opsamling video</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="materialer.html"><a href="materialer.html"><i class="fa fa-check"></i><b>23</b> Materialer</a><ul>
+<li class="chapter" data-level="23.1" data-path="materialer.html"><a href="materialer.html#videoer-teori"><i class="fa fa-check"></i><b>23.1</b> Videoer teori</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test-1"><i class="fa fa-check"></i><b>23.1.1</b> Chi i anden test</a></li>
+<li class="chapter" data-level="23.1.2" data-path="materialer.html"><a href="materialer.html#chi-i-anden-test-2"><i class="fa fa-check"></i><b>23.1.2</b> Chi i anden test 2</a></li>
+<li class="chapter" data-level="23.1.3" data-path="materialer.html"><a href="materialer.html#anova-1"><i class="fa fa-check"></i><b>23.1.3</b> Anova</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="materialer.html"><a href="materialer.html#freestat-fin"><i class="fa fa-check"></i><b>23.2</b> Freestat FIN</a></li>
+<li class="chapter" data-level="23.3" data-path="materialer.html"><a href="materialer.html#eksamensvideoer"><i class="fa fa-check"></i><b>23.3</b> Eksamensvideoer</a></li>
+<li class="chapter" data-level="23.4" data-path="materialer.html"><a href="materialer.html#eksamensvideoer-au-smartlearning"><i class="fa fa-check"></i><b>23.4</b> Eksamensvideoer AU Smartlearning</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./">Login</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basis statistik for de finansielle uddannelser.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="faktoranalyse" class="section level1">
+<h1><span class="header-section-number">Kapitel 20</span> Faktoranalyse</h1>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/292365661" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Faktoranalyse FA er ligesom, klyngeanalyse vi ser på senere, en strukturanalyse, der belyser hvilke sammenhænge der er i et datasæt. FA er en statistikmodel der navnlig bruges til at forenkle tolkningen af et datamateriale, der indeholder en stor mængde variable. FA bygger på et kæmpe antal udregninger med udgangspunkt i korrelationskoefficienter og er i praksis nærmest umulig at gennemføre uden brug af computersoftware. Før computerens opfindelse kunne en faktoranalyse nemt lægge beslag på en halv snes statistikere på fuld tid gennem flere måneder. Resultatet ville være identifikation få faktorer, skjult i et datamateriale.</p>
+<p>Faktoranalysen kan fx. hjælpe med at vise sammenhænge mellem svar i spørgeskemaer, hvilket kan være en hjælp markedsføringsmæssigt, til at forstå hvilke svar samvarierer. En sådan gruppering af spørgsmål kan hjælpe med bedre at forstå kundernes ønsker og behov. Faktoranalyse FA er et godt værktøj til at forstå, hvad dine spørgeskemadata betyder, især når du har mange variable. Faktoranalysen forsøger at finde skjulte variable, som forklarer opførslen af dine observerede variable. FA har historiske rødder i psykometri, dvs målingen af mentale egenskaber.</p>
+<p>I modsætning hertil søger man med Klyngeanalysen at finde sammenhænge mellem respondenterne/observationerne og altså ikke variablene, hvilket er et godt hjælpeværktøj i forbindelse med markedssegmentering.</p>
+<p>Der findes 2 typer af FA Exploratory Factor Analysis (EFA) og Confirmatory Factor Analysis (CFA). EFA betyder, at du ikke rigtig ved, hvilke skjulte variable (eller faktorer) der findes, og hvor mange de er, så du forsøger at finde dem. CFA betyder, at du allerede har nogle gæt eller modeller på skjulte variable (eller faktorer), og vi vil kontrollere, om dette er korrekt. Vi benytter i det følgende EFA</p>
+<div id="hvilke-faktorer-er-vigtige-nar-man-kber-en-ny-computer" class="section level2">
+<h2><span class="header-section-number">20.1</span> Hvilke faktorer er vigtige når man køber en ny computer:</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/292365603" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Lad os sige, man har indsamlet et spørgeskema for at undersøge, hvad der er vigtigt, når en forbruger bestemmer, hvilken computer der skal købes. Spørgeskemaet er udformet, som hvor vigtig er Pris for computerkøbet, vægt fra 1 til 7 hvor 7 er højest/vigtigst.</p>
+<p>Dette datasæt er lille i forhold til, hvad der er realistisk, da vi blot forsøger at illustrere analysen. Normalt vil man have flere end 6 variable. For at sikre solide analyseresultater, vil man ligeledes have flere respondenter/observationer.</p>
+<p>I noterne er input til R og output fra R, markeret i grå rammer. Output dvs. resultaterne R leverer er markeret med ## i hver linje. Input dvs. de kommandoer vi skal skrive ind i R er ikke markeret.</p>
+<p>Rammen herunder er input til R, da linjerne ikke er markeret. Læs datasættet ind i R, dette kan du gøre ved at copy paste nedenstående kode, i den grå ramme, direkte ind i R enten i console eller et script.</p>
+<p>Bemærk data.frame er en to-dimensionel data struktur, nedenstående betyder vore 6 variable nu er lagret i en dataframe.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">Pris &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">Software &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">Æstetik &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">Brand &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">Venner &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">Familie &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(Pris, Software, Æstetik, Brand, Venner, Familie)</a></code></pre></div>
+</div>
+<div id="forudstninger-for-faktoranalysen." class="section level2">
+<h2><span class="header-section-number">20.2</span> Forudsætninger for faktoranalysen.</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/292365022" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Nu skal vi undersøge om det er fornuftigt at foretage en faktoranalyse, dette kan vi undersøge ved enten Bartletts korrelationstest eller Kaiser-Meyer-Olkin KMO.</p>
+<p>For at teste dette skal man installere og loade pakken psych, vi skal kun installere første gang. Bemærk install.packages(“psych”) er kommenteret ud nedenfor, så første gang skal du kommentere install.packages(“psych”) ud.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#install.packages(&quot;psych&quot;)</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(<span class="st">&quot;psych&quot;</span>)</a></code></pre></div>
+<p>Du kan alternativt benytte pacman pakken, hvilket ofte er at foretrække. Hvis du indlæser nedenstående installeres og loades pakken psych:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="kw">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</a></code></pre></div>
+<p>Nu hvor psych pakken er indlæst kan vi køre Bartletts test i R:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">cortest.bartlett</span>(data)</a></code></pre></div>
+<pre><code>## $chisq
+## [1] 36.15696
+## 
+## $p.value
+## [1] 0.00167791
+## 
+## $df
+## [1] 15</code></pre>
+<p>Nulhypotesen i Bartletts test er at variablene ikke er korrelerede dvs. alle korrelationskoefficienter <span class="math inline">\(\rho=0\)</span>,</p>
+<p><span class="math display">\[H_0:Alle\ \rho=0\]</span>
+<span class="math display">\[H_1:Ikke\ alle\ \rho=0  \]</span></p>
+<p>Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille p-værdi på 0.00167791, betyder vi gennemfører faktoranalysen.</p>
+<p>Vi kan ligeledes køre Kaiser-Meyer-Olkin KMO testet fra pshych pakken:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">KMO</span>(data)</a></code></pre></div>
+<pre><code>## Kaiser-Meyer-Olkin factor adequacy
+## Call: KMO(r = data)
+## Overall MSA =  0.49
+## MSA for each item = 
+##     Pris Software  Æstetik    Brand   Venner  Familie 
+##     0.71     0.70     0.57     0.49     0.30     0.37</code></pre>
+<p>For KMO skal Overall MSA = 0.49, fortæller om egnethed af data til faktoranalyse. Skal være større end kritisk grænse på ca. 0.5, dette er ikke helt tilfældet her, men vi gennemfører alligevel faktoranalysen.</p>
+<p>Vi kan se af korrelationsmatricen, at nogle variable er korrellerede og andre tilsyneladende ikke.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">cor</span>(data)</a></code></pre></div>
+<pre><code>##                 Pris   Software     Æstetik       Brand     Venner
+## Pris      1.00000000  0.1856123 -0.63202219 -0.58026680 0.03082006
+## Software  0.18561230  1.0000000 -0.14621516 -0.11858645 0.10096774
+## Æstetik  -0.63202219 -0.1462152  1.00000000  0.85285436 0.03989799
+## Brand    -0.58026680 -0.1185864  0.85285436  1.00000000 0.33316719
+## Venner    0.03082006  0.1009677  0.03989799  0.33316719 1.00000000
+## Familie  -0.06183118  0.1765724 -0.06977360  0.02662389 0.60727189
+##              Familie
+## Pris     -0.06183118
+## Software  0.17657236
+## Æstetik  -0.06977360
+## Brand     0.02662389
+## Venner    0.60727189
+## Familie   1.00000000</code></pre>
+<p>Så det ser ud til, at Pris har stærke negative sammenhænge med Æstetik og Brand.
+Venner har en stærk positiv sammenhæng med Familie.</p>
+<p>Det betyder, at vi kan forvente, at vi vil have to fælles faktorer, og en vil være relateret til pris, æstetik og brand, og den anden vil være relateret til ven og familie. Vi kan lave et corrplot, der grafisk illustrerer disse sammenhænge, store blå prikker er positiv korrelation, store røde negativ korrelation. Så vi skal installere corplott pakken, her bruger vi pacman til installationen.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(data), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/corrplot-1.svg" width="672" /></p>
+</div>
+<div id="selve-faktoranalysen" class="section level2">
+<h2><span class="header-section-number">20.3</span> Selve Faktoranalysen</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/292365273" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Vi er nu klar til at teste om der er grundlag for at sammenlægge variable til faktorer. Dette tester vi i selve faktor analysen, ved hjælp af funktionen factanal.</p>
+<p>Hvis vi samler alle spørgsmål til en samlet faktor, har vi følgende faktor analyse:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">fa1 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">fa1</a></code></pre></div>
+<pre><code>## 
+## Call:
+## factanal(x = data, factors = 1)
+## 
+## Uniquenesses:
+##     Pris Software  Æstetik    Brand   Venner  Familie 
+##    0.567    0.977    0.126    0.167    0.974    1.000 
+## 
+## Loadings:
+##          Factor1
+## Pris     -0.658 
+## Software -0.152 
+## Æstetik   0.935 
+## Brand     0.912 
+## Venner    0.161 
+## Familie         
+## 
+##                Factor1
+## SS loadings      2.190
+## Proportion Var   0.365
+## 
+## Test of the hypothesis that 1 factor is sufficient.
+## The chi square statistic is 12.79 on 9 degrees of freedom.
+## The p-value is 0.172</code></pre>
+<p><strong>Uniqueness</strong> angiver hvor meget af variationen i en variabel, der ikke er associeret med faktoren. Jo lavere Uniqueness, des større sammenhæng til faktorerne.</p>
+<p><strong>Loadings</strong> angiver hvordan hver variabel er vægtet for faktorerne, men også hvor stærk korrelationen er til hver faktor. Faktor 1 påvirkes således mest af Æstetik, Brand og Pris. Denne faktor kan ses af corrplottet hvor disse tre variable ses at påvirke hinanden, Pris er negativt korreleret med Æstetik og Brand.</p>
+<p><strong>Proportion Var</strong> er et vigtigt nøgletal, der angiver andelen af variationen i data, der er forklaret af den pågældende faktor. Her forklares alså kun 36.5% af variationen i datasættet. Proportion Var findes som SS loadings divideret med antallet af variable dvs. her 6.</p>
+<p>Lad os se på hvad der sker, hvis vi deler variablene op i 2 faktorer:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">fa2 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">fa2</a></code></pre></div>
+<pre><code>## 
+## Call:
+## factanal(x = data, factors = 2)
+## 
+## Uniquenesses:
+##     Pris Software  Æstetik    Brand   Venner  Familie 
+##    0.559    0.960    0.126    0.080    0.005    0.609 
+## 
+## Loadings:
+##          Factor1 Factor2
+## Pris     -0.657         
+## Software -0.161   0.119 
+## Æstetik   0.933         
+## Brand     0.928   0.242 
+## Venner    0.100   0.992 
+## Familie           0.620 
+## 
+##                Factor1 Factor2
+## SS loadings      2.207   1.453
+## Proportion Var   0.368   0.242
+## Cumulative Var   0.368   0.610
+## 
+## Test of the hypothesis that 2 factors are sufficient.
+## The chi square statistic is 2.16 on 4 degrees of freedom.
+## The p-value is 0.706</code></pre>
+<p><strong>Cumulative Var</strong> 0.61 er summen af proportion var 0.368 og 0.242, og betyder at faktor 1 og faktor 2 forklarer 61% af variationen i datamaterialet.</p>
+<p>Faktor 2 forklares altså primært af Venner og Familie, dette stemmer godt overens med billedet vi så i corrplot.</p>
+<p>Nu opdeler vi variablene i 3 faktorer.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">fa3 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">fa3</a></code></pre></div>
+<pre><code>## 
+## Call:
+## factanal(x = data, factors = 3)
+## 
+## Uniquenesses:
+##     Pris Software  Æstetik    Brand   Venner  Familie 
+##    0.468    0.944    0.154    0.005    0.193    0.005 
+## 
+## Loadings:
+##          Factor1 Factor2 Factor3
+## Pris     -0.717           0.122 
+## Software -0.146   0.172         
+## Æstetik   0.908  -0.130         
+## Brand     0.892  -0.116   0.430 
+## Venner            0.440   0.781 
+## Familie           0.970   0.228 
+## 
+##                Factor1 Factor2 Factor3
+## SS loadings      2.161   1.198   0.872
+## Proportion Var   0.360   0.200   0.145
+## Cumulative Var   0.360   0.560   0.705
+## 
+## The degrees of freedom for the model is 0 and the fit was 0.0188</code></pre>
+<p>Nu forklares 70.5% af variationen i datamaterialet altså ud fra de 3 faktorer.</p>
+</div>
+<div id="hvor-mange-faktorer-br-benyttes" class="section level2">
+<h2><span class="header-section-number">20.4</span> Hvor mange faktorer bør benyttes?</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/292365468" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<p>Der er ingen fast regel for hvor mange faktorer der bør benyttes. Der er flere forskelle metoder til bestemmelse af antallet af faktorer, vi viser herunder 2 metoder.</p>
+<div id="eigenvalues-metoden" class="section level3">
+<h3><span class="header-section-number">20.4.1</span> Eigenvalues metoden</h3>
+<p>Eigenvalues udtrykker hvor meget af datamaterialets samlede varians, der dækkes af den pågældende faktor. Eigenvalues er standardiserede således at summen giver antallet af variable, herunder ses at summen er 6, da der er 6 variable i datasættet. Vi ser hvor stor en del af variationen hver faktor forklarer, når der er 6 faktorer. Faktor 5 og faktor 6 bibringer meget lidt yderligere forklaring af variationen.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">ev &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(data))</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">ev<span class="op">$</span>values</a></code></pre></div>
+<pre><code>## [1] 2.45701130 1.68900056 0.89157047 0.60583326 0.27285334 0.08373107</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">sum</span>(ev<span class="op">$</span>values)</a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">ev<span class="op">$</span>values<span class="op">/</span><span class="kw">sum</span>(ev<span class="op">$</span>values)</a></code></pre></div>
+<pre><code>## [1] 0.40950188 0.28150009 0.14859508 0.10097221 0.04547556 0.01395518</code></pre>
+<p>Når vi benytter Eigenvalues metoden, bestemmes antallet af faktorer ud fra antallet af Eigenvalues større end 1, det er denne metode fx. SPSS benytter. Vi ser at kun 2 Eigenvalues er 2.45701130 og 1.68900056 er større end 1, vi får således kun 2 faktorer. Eigenvalues metoden er ofte lidt konservativ, således at vi får færre faktorer end med de øvrige metoder.</p>
+</div>
+<div id="screeplot-metoden" class="section level3">
+<h3><span class="header-section-number">20.4.2</span> Screeplot metoden</h3>
+<p>Vi kan se på nedenstående screeplot, der hvor kurven flader ud, bibringer yderligere faktorer ikke synderlig megen yderligere forklaring til modellen. Man vil med screeplot kriteriet, vælge antallet af faktorer hvor kurven knækkker i tilfældet med 3 faktorer. Man vil ikke altid entydigt kunne afgøre hvor screeplot kurven knækker, her må man så afgøre dette bedst muligt.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(data),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>,<span class="dt">npcs =</span> <span class="dv">6</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot Computereksempel&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-61-1.svg" width="672" /></p>
+<br>
+<details>
+<p><summary>Spørgsmål personality Stanford</summary>
+Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor høj grad de mener at besidde 32 forskellige personlighedstræk. 1 til 8 hvor 1 er mindst og 8 er mest. Foretag hvis en test viser dette er fordelagtigt en faktoranalyse.</p>
+<p>Download personality fra filen <a href="personality.xlsx" download>her</a> og importer den i R via File - Import Dataset.</p>
+</details>
+<br>
+<details>
+<p><summary>Svar personality Stanford</summary></p>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/292364790" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+</div>
+<p><br></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">cortest.bartlett</span>(personality)</a></code></pre></div>
+<pre><code>## R was not square, finding R from data</code></pre>
+<pre><code>## $chisq
+## [1] 4009.545
+## 
+## $p.value
+## [1] 0
+## 
+## $df
+## [1] 496</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">KMO</span>(personality)</a></code></pre></div>
+<pre><code>## Kaiser-Meyer-Olkin factor adequacy
+## Call: KMO(r = personality)
+## Overall MSA =  0.84
+## MSA for each item = 
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng 
+##    0.88    0.86    0.82    0.87    0.82    0.73    0.84    0.81    0.79 
+## relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl 
+##    0.86    0.75    0.87    0.89    0.87    0.84    0.85    0.86    0.87 
+## worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl 
+##    0.81    0.86    0.83    0.90    0.89    0.83    0.87    0.78    0.87 
+##     lax laidbck withdrw givinup easygon 
+##    0.81    0.73    0.90    0.89    0.78</code></pre>
+<p>Vi gennemfører klart analysen viser begge tests.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-64-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(personality),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot personality&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-65-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">evp<span class="op">$</span>values</a></code></pre></div>
+<pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636
+##  [8] 0.8553802 0.7968460 0.7128793 0.6936229 0.6396893 0.6277046 0.5399600
+## [15] 0.5074253 0.4719721 0.4639916 0.4455816 0.4376430 0.4135706 0.3906941
+## [22] 0.3696839 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649
+## [29] 0.2199461 0.2011492 0.1658493 0.1336176</code></pre>
+<p>Vi benytter her 7 faktorer:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">fapers7 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">fapers7</a></code></pre></div>
+<pre><code>## 
+## Call:
+## factanal(x = personality, factors = 7)
+## 
+## Uniquenesses:
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng 
+##   0.529   0.377   0.491   0.416   0.347   0.576   0.273   0.416   0.512 
+## relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl 
+##   0.390   0.181   0.251   0.640   0.387   0.478   0.517   0.560   0.377 
+## worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl 
+##   0.388   0.411   0.392   0.367   0.421   0.528   0.284   0.229   0.562 
+##     lax laidbck withdrw givinup easygon 
+##   0.663   0.248   0.362   0.557   0.549 
+## 
+## Loadings:
+##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7
+## distant  0.586           0.121  -0.172   0.246   0.137         
+## talkatv -0.760                           0.144   0.105         
+## carelss         -0.280   0.137  -0.134   0.192   0.586   0.111 
+## hardwrk -0.182   0.700   0.141                  -0.187         
+## anxious  0.153           0.774           0.136                 
+## agreebl                          0.577  -0.194           0.212 
+## tense    0.150           0.787           0.208          -0.179 
+## kind    -0.102   0.188           0.699  -0.118  -0.189         
+## opposng                         -0.115   0.672                 
+## relaxed         -0.104  -0.526   0.263                   0.491 
+## disorgn         -0.340                           0.830         
+## outgoin -0.834   0.107           0.166                   0.113 
+## approvn -0.284   0.137           0.438  -0.142           0.214 
+## shy      0.724  -0.240   0.153                                 
+## discipl          0.698                          -0.164         
+## harsh                           -0.265   0.619   0.132         
+## persevr -0.134   0.598           0.216                         
+## friendl -0.504   0.129           0.571  -0.131                 
+## worryin  0.163           0.722           0.119          -0.216 
+## respnsi          0.578           0.331          -0.343  -0.152 
+## contrar                  0.159  -0.162   0.730   0.120         
+## sociabl -0.733                   0.263                         
+## lazy     0.167  -0.664   0.152           0.163   0.208   0.130 
+## coopera          0.136  -0.123   0.603  -0.248                 
+## quiet    0.789  -0.157   0.191   0.173                         
+## organiz          0.433                          -0.753         
+## criticl          0.112   0.124           0.614  -0.122         
+## lax             -0.355           0.102           0.227   0.377 
+## laidbck         -0.102  -0.288                   0.109   0.801 
+## withdrw  0.720           0.172  -0.150   0.224   0.105         
+## givinup  0.337  -0.438   0.280  -0.165   0.136   0.115         
+## easygon -0.159  -0.116  -0.245   0.302                   0.508 
+## 
+##                Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7
+## SS loadings      4.501   3.076   2.494   2.403   2.221   2.068   1.560
+## Proportion Var   0.141   0.096   0.078   0.075   0.069   0.065   0.049
+## Cumulative Var   0.141   0.237   0.315   0.390   0.459   0.524   0.573
+## 
+## Test of the hypothesis that 7 factors are sufficient.
+## The chi square statistic is 460.58 on 293 degrees of freedom.
+## The p-value is 0.00000000137</code></pre>
+<p>Vi benytter her 8 faktorer:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">fapers8 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2">fapers8</a></code></pre></div>
+<pre><code>## 
+## Call:
+## factanal(x = personality, factors = 8)
+## 
+## Uniquenesses:
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng 
+##   0.534   0.375   0.484   0.425   0.342   0.204   0.263   0.439   0.533 
+## relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl 
+##   0.417   0.170   0.257   0.649   0.364   0.490   0.468   0.497   0.333 
+## worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl 
+##   0.347   0.420   0.391   0.365   0.420   0.502   0.276   0.236   0.565 
+##     lax laidbck withdrw givinup easygon 
+##   0.682   0.005   0.367   0.550   0.580 
+## 
+## Loadings:
+##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7 Factor8
+## distant  0.587           0.103  -0.118   0.262   0.134                 
+## talkatv -0.761                           0.152   0.104                 
+## carelss         -0.307   0.115           0.218   0.584          -0.108 
+## hardwrk -0.182   0.694   0.139                  -0.188                 
+## anxious  0.149           0.772           0.144                         
+## agreebl                          0.795  -0.173           0.140  -0.327 
+## tense    0.150           0.796           0.211          -0.152         
+## kind    -0.118   0.227           0.615  -0.151  -0.182           0.238 
+## opposng                  0.102  -0.116   0.654                         
+## relaxed         -0.108  -0.535   0.276                   0.441         
+## disorgn         -0.336                           0.836                 
+## outgoin -0.836   0.107           0.147                                 
+## approvn -0.294   0.129           0.445  -0.135           0.163         
+## shy      0.729  -0.224   0.161                                   0.153 
+## discipl          0.677                          -0.168          -0.105 
+## harsh                           -0.178   0.658   0.124          -0.195 
+## persevr -0.133   0.644           0.127                           0.206 
+## friendl -0.517   0.170           0.471  -0.160                   0.326 
+## worryin  0.164           0.744           0.101          -0.170   0.177 
+## respnsi          0.599           0.285          -0.337  -0.117   0.105 
+## contrar                  0.153  -0.152   0.732   0.118                 
+## sociabl -0.737                   0.222                   0.104   0.123 
+## lazy     0.166  -0.665   0.142           0.166   0.208   0.116         
+## coopera -0.112   0.143  -0.130   0.614  -0.252                         
+## quiet    0.789  -0.147   0.195   0.169                           0.109 
+## organiz          0.434                          -0.748                 
+## criticl          0.124   0.132           0.604  -0.119                 
+## lax             -0.361           0.107           0.231   0.323         
+## laidbck                 -0.277                   0.105   0.942         
+## withdrw  0.721           0.152  -0.111   0.241   0.101                 
+## givinup  0.337  -0.465   0.254  -0.106   0.161   0.108                 
+## easygon -0.169  -0.117  -0.261   0.284                   0.467         
+## 
+##                Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7
+## SS loadings      4.549   3.181   2.531   2.325   2.287   2.052   1.583
+## Proportion Var   0.142   0.099   0.079   0.073   0.071   0.064   0.049
+## Cumulative Var   0.142   0.242   0.321   0.393   0.465   0.529   0.578
+##                Factor8
+## SS loadings      0.539
+## Proportion Var   0.017
+## Cumulative Var   0.595
+## 
+## Test of the hypothesis that 8 factors are sufficient.
+## The chi square statistic is 398.53 on 268 degrees of freedom.
+## The p-value is 0.000000379</code></pre>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Mediedata</summary></p>
+<p>Download filen om mediedata <a href="mediedata.xlsx" download>her</a>. Importer denne i R, husk under importen at vælge det korrekte sheet, der indeholder data.</p>
+<p>Datasættet omhandler danskernes medievaner, 324 danskere er blevet spurgt om deres medievaner. Datasættet indeholder følgende 11 variable.</p>
+<p><strong>TV-kigning</strong>
+samlet Antal minutter pr. dag.</p>
+<p><strong>Radiolytning</strong>
+Samlet Antal minutter pr. dag.</p>
+<p><strong>Avislæsning</strong>
+Samlet Antal minutter pr. dag.</p>
+<p><strong>TV-kigning</strong>
+Nyheder Antal minutter pr. dag. “Nyheder” omfatter “Nyheder, politik og aktuelt”</p>
+<p><strong>Radiolytning</strong>
+Nyheder Antal minutter pr. dag. “Nyheder” omfatter “Nyheder, politik og aktuelt”</p>
+<p><strong>Avislæsning</strong>
+Nyheder Antal minutter pr. dag. “Nyheder” omfatter “Nyheder, politik og aktuelt”</p>
+<p><strong>Internetforbrug</strong>
+0 Ingen internetadgang hjemme eller på arbejde
+1 Bruger aldrig
+2 Mindre end en gang om måneden
+3 En gang om måneden
+4 Flere gange om måneden
+5 En gang om ugen
+6 Flere gange om ugen
+7 Hver dag</p>
+<p><strong>Alder</strong>
+Alder i år</p>
+<p><strong>Højest fuldførte uddannelse </strong>
+1 Folkeskole 6.-8. klasse
+2 Folkeskole 9.-10. klasse
+3 Gymnasielle uddannelser, studentereksamen, HF, HHX, HTX
+4 Kort erhvervsudd. under 1-2 års varighed, F.eks AMU Arbejdsmarkedsudd., Basisår Erhvervsfaglige udd.
+5 Faglig udd. (håndværk, handel, landbrug mv.), F.eks. Faglærte, Social- og sundhedsassistent-udd. og tilsvarende
+6 Kort videreg. udd af op til 2-3 år, F.eks. Erhv.akademi, datamatiker, tandplejer, byggetekniker, installatør, HD
+7 Mellemlang videreg.udd. 3-4 år. Prof.bachelorer, F.eks. Diploming, sygeplejerske, skolelærer, pædagog, journalist, HA
+8 Universitetsbachelor. 1. del af kandidatuddannelse
+9 Lang videregående uddannelse. Kandidatuddannelser af 5.-6. års varighed, F.eks. Cand.mag., cand.jur., cand.polyt. etc.
+10 Forskeruddannelse. Ph.d., doktor</p>
+<p><strong>Kvindedummy</strong>
+Dummy variabel kodet med kvinde=1, mand=0</p>
+<p><strong>Hjemmeboendebørndummy</strong>
+Dummy variabel kodet med Ja=1, Nej=0</p>
+<p>Gennemfør en faktor analyse på datasættet.</p>
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål Genderroles</summary></p>
+<p>Download filen genderroles <a href="genderroles.xlsx" download>her</a> og importer den i R via File - Import Dataset.
+Pas på variablene skal konverteres til dummy variable, hvor det giver mening. Man bør nok udelade variablen Region, ellers skal den ændres til et passende antal dummy variable.</p>
+<p>Gennemfør en faktor analyse på datasættet.</p>
+</details>
+<br>
+<details>
+<summary>Spørgsmål Valgfri datasæt</summary>
+Find et valgfrit datasæt fx. på nettet, gennemfør en faktoranalyse på dette datasæt.
+</details>
+<p><br></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cran-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="klyngeanalyse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
