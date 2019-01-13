@@ -432,8 +432,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Der findes overordnet 2 typer af klyngeudvælgelse:</p>
 <p><strong><em>Ikke-hierarkisk, k-means metoden</em></strong> benyttes, hvis vi har store datasæt hvor der kræves mange observationer, man vælger på forhånd hvor mange klynger man vil have.</p>
 <p><strong><em>Hierarkisk klyngedannelse, agglomerative metode</em></strong> hvor man starter med at hver respondent har sin egen klynge og man derefter sammenhober disse trin for trin kaldes den sammenhobede eller agglomerative metode. Vi benytter til bildatasættet den agglomerative metode, da vi ikke har en stort datasæt, er denne klart at foretrække.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(<span class="st">&quot;datasets&quot;</span>)<span class="co">#Vi henter pakken datasets der indeholder en del datasæt</span></a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="kw">head</span>(mtcars) <span class="co">#Vi kan se starten af datasættet med Head kommandoen</span></a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(<span class="st">&quot;datasets&quot;</span>)<span class="co">#Vi henter pakken datasets der indeholder en del datasæt</span></a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="kw">head</span>(mtcars) <span class="co">#Vi kan se starten af datasættet med Head kommandoen</span></a></code></pre></div>
 <pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
@@ -442,22 +442,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
 ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
 <p>Vi kan se at når vi sammenligner forskellige variable ser det ud til at der er forskellige grupper. Nedenfor ser vi fx de 32 biler plottet i et diagram efter hestekræfter og miles per gallon. Bilerne er farvekodet med antal cylindre.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="co">#Her angiver vi modelnavne for hver bil</span></a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#med label rownames vi bruger geom_text i stedet for point her.</span></a>
-<a class="sourceLine" id="cb39-3" data-line-number="3">pacman<span class="op">::</span><span class="kw">p_load</span>(<span class="st">&quot;ggplot2&quot;</span>)</a>
-<a class="sourceLine" id="cb39-4" data-line-number="4"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb39-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_point</span>() <span class="co">#Plot med kun punkter</span></a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="co">#Her angiver vi modelnavne for hver bil</span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="co">#med label rownames vi bruger geom_text i stedet for point her.</span></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3">pacman<span class="op">::</span><span class="kw">p_load</span>(<span class="st">&quot;ggplot2&quot;</span>)</a>
+<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb40-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_point</span>() <span class="co">#Plot med kun punkter</span></a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl,<span class="dt">label=</span><span class="kw">rownames</span>(mtcars)))<span class="op">+</span></a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">check_overlap =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl,<span class="dt">label=</span><span class="kw">rownames</span>(mtcars)))<span class="op">+</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">check_overlap =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-70-2.png" width="672" /></p>
 <p>Vi kan benytte t til at transponere data matricen, så kan vi tegne et corrplot, det er meget mørkt da alle bilerne er positivt korrelerede, men man kan ane nogle sammenhænge. t(mtcars) betyder vi transponerer (vender) matricen, så ser vi i stedet på grupper af respondenter, som vi netop analyserer i klyngeanalysen. Hvis ikke vi vender matricen ser vi på korrelationsmatricen mellem de 11 variable i stedet, ligesom vi tidligere har gjort med faktoranalysen.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="co">#korrelationsmatricen for transponeret mtcars data, hclust betyder vi ordner efter variable der passer sammen</span></a>
-<a class="sourceLine" id="cb41-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)</a>
-<a class="sourceLine" id="cb41-3" data-line-number="3"><span class="kw">corrplot</span>(<span class="kw">cor</span>(<span class="kw">t</span>(mtcars)), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co">#korrelationsmatricen for transponeret mtcars data, hclust betyder vi ordner efter variable der passer sammen</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)</a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="kw">corrplot</span>(<span class="kw">cor</span>(<span class="kw">t</span>(mtcars)), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-71-1.svg" width="672" /></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co">#Her er korrelationsmatricen ikke transponeret, hvilket svarer til en matrice baseret på variable som ved faktoranalysen vi tidligere så på.</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(mtcars), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co">#Her er korrelationsmatricen ikke transponeret, hvilket svarer til en matrice baseret på variable som ved faktoranalysen vi tidligere så på.</span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(mtcars), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <div id="hierakisk-klyngeanalyse-hclust-kommandoen" class="section level2">
 <h2><span class="header-section-number">21.1</span> Hierakisk klyngeanalyse hclust kommandoen</h2>
@@ -469,7 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p>Vi får nu R til at danne klynger vha. af hclust (hierarcical cluster) kommandoen, denne benytter default en metode der hedder complete til at finde ens klynger, der findes mange andre metoder. For at benytte hclust skal R først beregne afstandene mellem bilerne dette gøres med dist kommandoen. Algoritmen beregner afstandene mellem de forskellige bilmodeller vha. af den euklidiske metrik. Biler med kort afstand kommer i klynger sammen, biler med lang afstand kommer i forskellige klynger.</p>
 <p>Nedenfor ses et udsnit af afstandende mellem hver af de 32 biler, det er en meget stor 32 <span class="math inline">\(\times\)</span> 32 matrice, derfor har vi benyttet head for kun at vise noget af matricen. Fx er afstanden mellem to forskellige biler som en Mazda RX4 og en Lincoln Continental 318.05 hvilket er en stor afstand i forhold til fx. Mazda RX4 og Mazda RX4 Wag på kun 0.62. Bemærk hvordan supersportsvognen Maserati Bora har store afstande til de fleste af de øvrige biler, Maseratien var en komfortabel, rummeligere og kraftigere og tungere sportsvogn end fx. Ferrari Dino.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">head</span>(<span class="kw">as.matrix</span>(<span class="kw">dist</span>(mtcars)))</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">head</span>(<span class="kw">as.matrix</span>(<span class="kw">dist</span>(mtcars)))</a></code></pre></div>
 <pre><code>##                     Mazda RX4 Mazda RX4 Wag Datsun 710 Hornet 4 Drive
 ## Mazda RX4           0.0000000     0.6153251   54.90861       98.11252
 ## Mazda RX4 Wag       0.6153251     0.0000000   54.89152       98.09589
@@ -528,14 +528,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Valiant                 203.0178    106.56948      242.4393  104.18637</code></pre>
 <p>Vi gemmer hclust data i clusters variablen, vi så kan benytte til at tegne en oversigt over klyngerne.
 Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fineste inddeling, hvor samtlige biler er i deres egen klynge. Den blå linje med 3 skæringer i dendogrammet indikerer der er 3 klynger, den røde 4 klynger.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">clusters &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(mtcars))</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;Dendogram af mtcars&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;Bilmodeller&quot;</span>)</a>
-<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">190</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="co">#Tegn rød vandret linje h betyder horisontal</span></a>
-<a class="sourceLine" id="cb45-4" data-line-number="4"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">230</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">clusters &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(mtcars))</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;Dendogram af mtcars&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;Bilmodeller&quot;</span>)</a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">190</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="co">#Tegn rød vandret linje h betyder horisontal</span></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">230</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-74-1.svg" width="672" /></p>
 <p>Hvis vi ønsker at undersøge en indeling med et bestemt antal klynger, kan vi bruge cutree i R, til at undersøge klyngerne i en skæring med fx. 4 klynger nærmere. Her ser vi som nævnt, Maserati Bora skiller sig ud ved at have sin egen klynge. Nummeret ved hver af de 32 biler angiver hvilken klynge bilen tilhører.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">clusterCut &lt;-<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>) <span class="co">#Opdeling i 4 klynger.</span></a>
-<a class="sourceLine" id="cb46-2" data-line-number="2">clusterCut</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">clusterCut &lt;-<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>) <span class="co">#Opdeling i 4 klynger.</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">clusterCut</a></code></pre></div>
 <pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710 
 ##                   1                   1                   1 
 ##      Hornet 4 Drive   Hornet Sportabout             Valiant 
@@ -559,7 +559,7 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 ##       Maserati Bora          Volvo 142E 
 ##                   4                   1</code></pre>
 <p>Vi kan benytte subset kommandoen til at se på hvilke variable der er i hver klynge, herunder ser vi på klynge 3.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">subset</span>(clusterCut,clusterCut<span class="op">==</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">subset</span>(clusterCut,clusterCut<span class="op">==</span><span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##   Hornet Sportabout          Duster 360  Cadillac Fleetwood 
 ##                   3                   3                   3 
 ## Lincoln Continental   Chrysler Imperial          Camaro Z28 
@@ -567,14 +567,14 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 ##    Pontiac Firebird      Ford Pantera L 
 ##                   3                   3</code></pre>
 <p>Vi kan ligeledes sammenligne klyngeinddelingen med de enkelte variable og se om disse passer sammen. Fx. passer hp meget fint med inddelingen i klynger.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
 <pre><code>##           
 ## clusterCut  4  6  8
 ##          1 11  5  0
 ##          2  0  2  5
 ##          3  0  0  8
 ##          4  0  0  1</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>mpg)</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>mpg)</a></code></pre></div>
 <pre><code>##           
 ## clusterCut 10.4 13.3 14.3 14.7 15 15.2 15.5 15.8 16.4 17.3 17.8 18.1 18.7
 ##          1    0    0    0    0  0    0    0    0    0    0    1    0    0
@@ -587,7 +587,7 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 ##          2    0    0  0    1    0    0    0  0    0    0    0    0
 ##          3    1    0  0    0    0    0    0  0    0    0    0    0
 ##          4    0    0  0    0    0    0    0  0    0    0    0    0</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>hp)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>hp)</a></code></pre></div>
 <pre><code>##           
 ## clusterCut 52 62 65 66 91 93 95 97 105 109 110 113 123 150 175 180 205 215
 ##          1  1  1  1  2  1  1  1  1   0   1   2   1   2   0   1   0   0   0
@@ -600,14 +600,14 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 ##          2   0   0   0   0
 ##          3   1   2   1   0
 ##          4   0   0   0   1</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>carb)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>carb)</a></code></pre></div>
 <pre><code>##           
 ## clusterCut 1 2 3 4 6 8
 ##          1 5 6 0 4 1 0
 ##          2 2 2 3 0 0 0
 ##          3 0 2 0 6 0 0
 ##          4 0 0 0 0 0 1</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>wt)</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>wt)</a></code></pre></div>
 <pre><code>##           
 ## clusterCut 1.513 1.615 1.835 1.935 2.14 2.2 2.32 2.465 2.62 2.77 2.78
 ##          1     1     1     1     1    1   1    1     1    1    1    1
@@ -627,16 +627,16 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 ##          3    1     1    0    1     1     1
 ##          4    0     0    0    0     0     0</code></pre>
 <p>Hvis dendogrammet virker lidt uoverskueligt, kan man vælge ape pakken for at lave mere fancy plots, her er rigtig mange muligheder.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="co">#install.packages(&quot;ape&quot;)</span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="kw">library</span>(<span class="st">&quot;ape&quot;</span>)</a>
-<a class="sourceLine" id="cb60-3" data-line-number="3">colors =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;pink&quot;</span>)</a>
-<a class="sourceLine" id="cb60-4" data-line-number="4">clus4 =<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb60-5" data-line-number="5"><span class="kw">plot</span>(<span class="kw">as.phylo</span>(clusters), <span class="dt">type =</span> <span class="st">&quot;fan&quot;</span>, <span class="dt">tip.color =</span> colors[clus4],</a>
-<a class="sourceLine" id="cb60-6" data-line-number="6">     <span class="dt">label.offset =</span> <span class="dv">0</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="co">#install.packages(&quot;ape&quot;)</span></a>
+<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="kw">library</span>(<span class="st">&quot;ape&quot;</span>)</a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">colors =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;pink&quot;</span>)</a>
+<a class="sourceLine" id="cb61-4" data-line-number="4">clus4 =<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb61-5" data-line-number="5"><span class="kw">plot</span>(<span class="kw">as.phylo</span>(clusters), <span class="dt">type =</span> <span class="st">&quot;fan&quot;</span>, <span class="dt">tip.color =</span> colors[clus4],</a>
+<a class="sourceLine" id="cb61-6" data-line-number="6">     <span class="dt">label.offset =</span> <span class="dv">0</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-78-1.svg" width="672" /></p>
 <p>Herunder er et plot, hvor farvekoden er baseret på klyngerne.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="fl">3.5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">col =</span> clusterCut)</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="fl">3.5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">col =</span> clusterCut)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-79-1.svg" width="672" /></p>
 </div>
 <div id="ikke-hierakisk-klyngeanalyse-kmeans-kommandoen" class="section level2">
@@ -648,49 +648,49 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 </div>
 <p><br></p>
 <p>Vi kunne også have brugt kmeans metoden, her skal vi så angive hvor mange klynger, vi ønsker i analysen. Her benytter vi K-means og får 4 klynger med 7, 6, 9, 10 biler. I output fra R kan vi under Cluster means se gennemsnit, for de 4 klynger for alle 11 variable.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">mtcarsCluster4 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb62-2" data-line-number="2">mtcarsCluster4</a></code></pre></div>
-<pre><code>## K-means clustering with 4 clusters of sizes 16, 4, 5, 7
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">mtcarsCluster4 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb63-2" data-line-number="2">mtcarsCluster4</a></code></pre></div>
+<pre><code>## K-means clustering with 4 clusters of sizes 9, 10, 6, 7
 ## 
 ## Cluster means:
-##        mpg      cyl     disp       hp     drat       wt     qsec        vs
-## 1 24.50000 4.625000 122.2937  96.8750 4.002500 2.518000 18.54312 0.7500000
-## 2 14.60000 8.000000 340.5000 272.2500 3.675000 3.537500 15.08750 0.0000000
-## 3 14.68000 8.000000 426.4000 200.0000 3.078000 4.660800 17.45800 0.0000000
-## 4 17.01429 7.428571 276.0571 150.7143 2.994286 3.601429 18.11857 0.2857143
-##       am  gear     carb
-## 1 0.6875 4.125 2.437500
-## 2 0.5000 4.000 5.000000
-## 3 0.0000 3.000 3.200000
-## 4 0.0000 3.000 2.142857
+##        mpg      cyl     disp        hp     drat       wt     qsec
+## 1 14.64444 8.000000 388.2222 232.11111 3.343333 4.161556 16.40444
+## 2 21.48000 5.000000 144.9100 109.50000 3.911000 2.887000 18.43900
+## 3 29.53333 4.000000  84.6000  75.83333 4.155000 1.903000 18.71667
+## 4 17.01429 7.428571 276.0571 150.71429 2.994286 3.601429 18.11857
+##          vs        am     gear     carb
+## 1 0.0000000 0.2222222 3.444444 4.000000
+## 2 0.6000000 0.5000000 4.100000 3.100000
+## 3 1.0000000 1.0000000 4.166667 1.333333
+## 4 0.2857143 0.0000000 3.000000 2.142857
 ## 
 ## Clustering vector:
 ##           Mazda RX4       Mazda RX4 Wag          Datsun 710 
-##                   1                   1                   1 
+##                   2                   2                   3 
 ##      Hornet 4 Drive   Hornet Sportabout             Valiant 
-##                   4                   3                   4 
+##                   4                   1                   4 
 ##          Duster 360           Merc 240D            Merc 230 
-##                   2                   1                   1 
+##                   1                   2                   2 
 ##            Merc 280           Merc 280C          Merc 450SE 
-##                   1                   1                   4 
+##                   2                   2                   4 
 ##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
-##                   4                   4                   3 
+##                   4                   4                   1 
 ## Lincoln Continental   Chrysler Imperial            Fiat 128 
-##                   3                   3                   1 
+##                   1                   1                   3 
 ##         Honda Civic      Toyota Corolla       Toyota Corona 
-##                   1                   1                   1 
+##                   3                   3                   2 
 ##    Dodge Challenger         AMC Javelin          Camaro Z28 
-##                   4                   4                   2 
+##                   4                   4                   1 
 ##    Pontiac Firebird           Fiat X1-9       Porsche 914-2 
-##                   3                   1                   1 
+##                   1                   3                   2 
 ##        Lotus Europa      Ford Pantera L        Ferrari Dino 
-##                   1                   2                   1 
+##                   3                   1                   2 
 ##       Maserati Bora          Volvo 142E 
-##                   2                   1 
+##                   1                   2 
 ## 
 ## Within cluster sum of squares by cluster:
-## [1] 32837.997  7654.146 10981.601 11846.095
-##  (between_SS / total_SS =  89.8 %)
+## [1] 46659.317 11055.093  3628.265 11846.095
+##  (between_SS / total_SS =  88.3 %)
 ## 
 ## Available components:
 ## 
@@ -698,33 +698,33 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 ## [5] &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;        
 ## [9] &quot;ifault&quot;</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 4 klynger med de 32 biler, sorteret efter antallet af cylindre.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">table</span>(mtcarsCluster4<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">table</span>(mtcarsCluster4<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
 <pre><code>##    
-##      4  6  8
-##   1 11  5  0
-##   2  0  0  4
-##   3  0  0  5
-##   4  0  2  5</code></pre>
+##     4 6 8
+##   1 0 0 9
+##   2 5 5 0
+##   3 6 0 0
+##   4 0 2 5</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 3 klynger med de 32 biler, sorteret efter antallet af cylindre. Kører vi kmeans analysen igen, falder bilerne ikke nødvendigvis i samme klynger som tidligere, det skyldes algoritmen kan give forskellig optimale inddelinger.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">mtcarsCluster3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">table</span>(mtcarsCluster3<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">mtcarsCluster3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="kw">table</span>(mtcarsCluster3<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
 <pre><code>##    
 ##      4  6  8
-##   1 11  5  0
-##   2  0  2  5
-##   3  0  0  9</code></pre>
+##   1  0  7  0
+##   2 11  0  0
+##   3  0  0 14</code></pre>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 3 klynger. Bemærk vi skal hente pakken <strong>factoextra</strong>, der indeholder plotfunktionen fviz_cluster(). Vi har benyttet funktionen <strong>scale()</strong>, det er en rigtig god ide at benytte hvis, der er stor forskel på måleenhederne i en data.frame. Funktionen <strong>scale()</strong> bringer variablene i samme skale. Der er fx. stor forskel på enhederne i carb og disp, prøv at sammenligne nedenstående plot med et tilsvarende plot uden scale.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">km3.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">3</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</a>
-<a class="sourceLine" id="cb68-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(factoextra)</a>
-<a class="sourceLine" id="cb68-3" data-line-number="3"><span class="kw">fviz_cluster</span>(km3.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 3 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">km3.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">3</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</a>
+<a class="sourceLine" id="cb69-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(factoextra)</a>
+<a class="sourceLine" id="cb69-3" data-line-number="3"><span class="kw">fviz_cluster</span>(km3.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 3 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 4 klynger.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">km4.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">4</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</a>
-<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="kw">fviz_cluster</span>(km4.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 4 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">km4.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">4</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</a>
+<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">fviz_cluster</span>(km4.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 4 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-84-1.svg" width="672" />
 Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 5 klynger.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">km5.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">5</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</a>
-<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">fviz_cluster</span>(km5.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 5 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">km5.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">5</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">fviz_cluster</span>(km5.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 5 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-85-1.svg" width="672" /></p>
 </div>
 <div id="validering-med-anova" class="section level2">
@@ -753,9 +753,9 @@ Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses pl
 <li>Urbaniseringsgrad andel af bybefolkning.</li>
 <li>Voldtægt, antal arrestationer (pr 100,000)</li>
 </ol>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(datasets)</a>
-<a class="sourceLine" id="cb71-2" data-line-number="2">arrest &lt;-<span class="st"> </span>USArrests</a>
-<a class="sourceLine" id="cb71-3" data-line-number="3"><span class="kw">head</span>(arrest)</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(datasets)</a>
+<a class="sourceLine" id="cb72-2" data-line-number="2">arrest &lt;-<span class="st"> </span>USArrests</a>
+<a class="sourceLine" id="cb72-3" data-line-number="3"><span class="kw">head</span>(arrest)</a></code></pre></div>
 <pre><code>##            Murder Assault UrbanPop Rape
 ## Alabama      13.2     236       58 21.2
 ## Alaska       10.0     263       48 44.5
@@ -782,10 +782,10 @@ Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses pl
 GDP[1:50,]
 og
 GDP[,1]</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">GDP &lt;-<span class="st"> </span>GDP[<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>,]</a>
-<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">row.names</span>(GDP) &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(GDP[,<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb73-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb73-4" data-line-number="4"><span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;GDP&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;GDP&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">GDP &lt;-<span class="st"> </span>GDP[<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>,]</a>
+<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="kw">row.names</span>(GDP) &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(GDP[,<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb74-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb74-4" data-line-number="4"><span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;GDP&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;GDP&quot;</span>)</a></code></pre></div>
 Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres, der er rigtig mange observationer dvs. lande, se i stedet på deldatasæt der giver mening. Illustrer grafisk og kommenter på karakteristika for klyngerne.
 </details>
 <br>
@@ -794,9 +794,9 @@ Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres, der e
 <p>Download filen om de 100 rigeste i USA <a href="Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære kvalitative variable er kodet om til dummy variable.</p>
 <p>Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres. Illustrer grafisk og kommenter på karakteristika for klyngerne.</p>
 <p>Bemærk det er godt at sætte navnene på de velhavende som rækkenavne i din data.frame, for at det er nemmere at få et overblik i klyngetræ diagrammet, dette kan du fx. gøre som nedenfor:</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">row.names</span>(Forbes100) &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Forbes100[,<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb74-2" data-line-number="2">clusters &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(Forbes100))</a>
-<a class="sourceLine" id="cb74-3" data-line-number="3"><span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;US 100 Rigeste&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;US top 100&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">row.names</span>(Forbes100) &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Forbes100[,<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb75-2" data-line-number="2">clusters &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(Forbes100))</a>
+<a class="sourceLine" id="cb75-3" data-line-number="3"><span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;US 100 Rigeste&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;US top 100&quot;</span>)</a></code></pre></div>
 </details>
 <br>
 <details>

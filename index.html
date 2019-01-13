@@ -413,124 +413,126 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="section" class="section level1 unnumbered">
 <h1></h1>
-<!-- BEGIN SENTRY AJAX LOGIN FORM - version 3.1 (Beta Build A) - Member Login Code Copyright © Sentrylogin.com, Shawn, Co. https://www.sentrylogin.com -->
-<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
-<style>
-.handCursor {
-cursor:pointer;
-cursor:hand;
-} 
-#magicGroup form {
-margin: 0;
-padding: 0; 
-}
-#magicGroup A:link {text-decoration: none; color:black;}
-#magicGroup A:visited {text-decoration: none; color:black;}
-#magicGroup A:active {text-decoration: none; color:black;}
-#magicGroup A:hover {text-decoration: none; color:black;}
-.clearfix:after{
-  content:".";display:block;height:0;clear:both;visibility:hidden;
-}
-  .spacer0{clear:both; height:0px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  .spacer{clear:both; height:1px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  .spacer2{clear:both; height:2px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  .spacer3{clear:both; height:3px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  .spacer4{clear:both; height:4px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  .spacer5{clear:both; height:5px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  .spacer10{clear:both; height:10px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  .spacer20{clear:both; height:20px; margin:0px; padding:0px; line-height:0px; font-size:0px;}
-  </style>
-<script type="text/javascript" src="https://www.sentrylogin.com/sentry/scripts/Sentry_AJAX.js"></script>
-<div id="Settings" alignment="CENTER" manner="GROW" style="display:none;">
+<!-- BEGIN SENTRY AJAX LOGIN FORM - "Flat and Fresh" version 1.0 (Beta Build D) - Member Login Code Copyright © Sentrylogin.com, Shawn, Co. https://www.sentrylogin.com -->
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<link rel="stylesheet" type="text/css" href="https://www.sentrylogin.com/sentry/scripts/CSS_flat.css">
+<script type="text/javascript" src="https://www.sentrylogin.com/sentry/scripts/Sentry_AJAX_Style2014.js">
+</script>
+<div id="Settings" manner="NORMAL" showsignup="YES" style="display:none;">
 
 </div>
-<div id="Sentry_outermost" style="width:175px; position:relative;">
+<!-- IT'S EASY TO MAKE CHANGES! 
+
+We've added the text "Member Login" but you can use any wording. You can also use different images by changing "src" in the img tags to bring in your own, or NO image just by deleting the whole <img> tag.
+
+If your site is dark and you'd prefer white icons, just replace the img "icon_loginDoor.png" with "icon_loginDoor_white.png" and the img "icon_hamburger_black.png" with "icon_hamburger_white.png"
+
+Also, if your site is dark, be sure to change the text color in the spans "SentryTrigger" and "SentryHello" by changing "color: Black;" to "color: White;" (or any light color).
+
+We've deliberately put the styling directly in the tags here so you can easily change fonts, colors, sizes, etc., or just remove the "style" attribute and allow your web page to apply its style automatically.
+
+-->
+<p><span id="SentryTrigger" class="handCursor" onclick="SentryPopUp();" title="Click here to log in." style="color: Black; font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif; font-size: 18px; font-weight: normal;"> Member Login <img src="https://www.sentrylogin.com/sentry/images/icon_loginDoor.png" align="absmiddle" alt="Member Login"> </span></p>
+<p><span id="SentryHello" class="handCursor" style="color: Black; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 14px; font-weight: normal; display: none;"> <span onclick="SentryPopUp(1);" title="Click to enter the member area, make changes to your membership, and more.">Hi, <span id="helloName">(First Name)</span> <img src="https://www.sentrylogin.com/sentry/images/icon_hamburger_black.png" align="absmiddle" alt="Member Area"></span> | <span onclick="LogOut();" style="padding-left: 3px;">Log Out</span></p>
+</span>
+<div id="SentryOverlay">
 
 
-<form name="Sentry_login_form" onsubmit="sentryLogin();">
-<div style="height:1px;">
-<a href="https://www.sentrylogin.com"><img src="https://www.sentrylogin.com/sentry/images/logo.gif" alt="Sentry Password Protection Member Login" width="2" height="1" border="0"></a>
-</div>
-<div id="TopBar" class="handCursor" onclick="Sentry_onClick(this.id);" style="width:175px; background-color:White; padding-top:2px; padding-bottom:2px; border-width:1px; border-style:solid; border-color:LightGray; border-radius: 6px;">
-<div id="Sentry_label" style="text-align: right; font-family:sans-serif; font-size:12px; font-weight:bold; margin-bottom:3px;">
-<span id="Sentry_label_span" style="padding-right:10px; padding-left:5px;">Member Login</span><span id="downArrow"><img src="https://www.sentrylogin.com/sentry/images/down_arrow.png" align="baseline" style="margin-right:5px;"></span>
-</div>
-</div>
-<div id="magicGroup" style="z-index: 10000; background-color:white; text-align:left; position:absolute; left: -9999px; width:175px; padding-top:15px; border-style:solid; border-color:LightGray; border-top-width:0px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; border-radius: 6px;">
-<div id="messages" style="display:none; padding-left:15px; padding-right:15px; padding-bottom:15px; font-family: Arial; font-size:12px; color: red;">
-.
-</div>
-<div id="Sentry_emailDiv" style="width:146px; margin-left:15px;">
-<span style="text-align:left;">
-<input type="text" id="Sentry_email" style="padding-left: 3px; border-style:solid; border-width:1px; border-color:LightGray; border-radius: 6px; width:146px; height:24px;" onfocus="Sentry_onfocus(this.id);" onkeydown="Sentry_onkeydown(event, this.id);" onkeyup="Sentry_onkeyup(this.value, this.id, event);" onblur="Sentry_onblur(this.value, this.id);" value="E-mail Address"></span>
-</div>
-<div id="Sentry_passwordDiv" style="width:146px; margin-left:15px; margin-top:2px;">
-<span style="text-align:left;">
-<input type="text" id="Sentry_password" style=" padding-left: 3px; border-style:solid; border-width:1px; border-color:LightGray; border-radius: 6px; width:146px; height:24px;" onfocus="Sentry_onfocus(this.id);" onkeydown="Sentry_onkeydown(event, this.id);" onkeyup="Sentry_onkeyup(this.value, this.id, event);" onblur="Sentry_onblur(this.value, this.id);" value="Password"></span>
-</div>
-<div id="Sentry_HIDpasswordDiv" style="width:146px; display: none; margin-left:15px; margin-top:2px;">
-<span style="text-align:left;">
-<input type="password" id="Sentry_HIDpassword" style=" padding-left: 3px; border-style:solid; border-width:1px; border-color:LightGray; border-radius: 6px; width:146px; height:24px;" onfocus="Sentry_onfocus(this.id);" onkeydown="Sentry_onkeydown(event, this.id);" onkeyup="Sentry_onkeyup(this.value, this.id, event);" onblur="Sentry_onblur(this.value, this.id);"></span>
-</div>
-<div id="unHideDiv" style="margin-bottom:5px; font-family:Arial; font-size:10px;">
-<span id="forgotSpan" class="handCursor" onclick="Sentry_onClick(this.id);" style="vertical-align:top; margin-left:15px; font-family:Arial; font-size:10px; color:gray;">Forgot?</span>
-<input type="checkbox" id="unHide" style="height:12px; width:10px; margin:4px; display:none;" value="1">
-<span id="unHideSpan" class="handCursor" style="width:25px; vertical-align:top; font-family: Arial;font-size:10px; color:gray; margin-left:78px;" onclick="Sentry_onClick(this.id);" title="Do not reveal password in public">Show</span>
-</div>
-<div id="buttonDiv" style="float:left; width:45px; margin-left:15px;">
-<button type="button" onclick="sentryLogin();" style="height:25px; padding:2; width:45px; font-family:Arial; font-size:11px;" id="Sentry_button">Go</button>
-</div>
-<div id="psistDiv" style="float:left; width:98px; text-align:right; margin-top:10px; margin-right:15px;">
-<input id="psist" type="checkbox" value="1" style="height:10px; width:10px; margin:0; margin-bottom:2px; margin-right:2px;" class="handCursor" title="Do not use when in public" onclick="Sentry_onClick(this.id);">
-<span id="psistSpan" class="handCursor" style="font-family: Arial;font-size:10px; color:gray;" onclick="Sentry_onClick(this.id);" title="Do not use when in public">Stay Logged In</span>
-</div>
-<div class="spacer0">
+
+<div id="SentryOutermost" class="before">
+
+<div id="SentryLoginBox" style="background-color: #007BFF;border-radius: 0px;">
+
+<div id="SentryTitleBar" style="background-color: #FFFFFF;border-top-left-radius: 0px; border-top-right-radius: 0px;">
+<div id="iconKey" style="background: none;">
 
 </div>
-<div class="spacer10">
+<div id="Title" style="color: #FFFFFF;font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 22px;">
+Member Login
+</div>
+<div id="Welcome" style="color: #FFFFFF;font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 22px;">
+Welcome, <span id="welcomeBarName">(First Name)</span>!
+</div>
+</div>
+<div id="SentryFormGroup">
+<form name="Sentry_login_form" onSubmit="sentryLogin();">
+<div id="SentryInputGroup" style="height: 79px; width: 282px; border-radius: 2px; border-color: #FFFFFF;background-color: #FFFFFF;">
+
+<div id="iconEmail">
 
 </div>
-<div id="goInside" style="font-family: Arial;font-size:12px; text-align: right; margin-top:10px; margin-right:15px; margin-bottom:5px; margin-left:15px; display:none;">
-<span id="goInsideSpan" class="handCursor" style="font-weight:bold;">.</span>
-</div>
-<div id="myProfile" class="handCursor" onclick="Sentry_onClick(this.id);" style="font-family: Arial;font-size:12px; font-weight:bold; text-align: right; margin-top:2px; margin-right:15px; margin-left:15px;">
-My Profile
-</div>
-<div id="signUp" style="font-family: Arial;font-size:12px; font-weight:bold; text-align: right; margin-top:2px; margin-right:15px; margin-bottom:5px; margin-left:15px;">
-<a href="https://www.sentrylogin.com/sentry/member_signup_list.asp?Site_ID=22367" title="Click to Subscribe Now">Sign Up</a>
-</div>
-<div id="logOut" style="font-family: Arial;font-size:12px; font-weight:bold; text-align: right; margin-top:2px; margin-right:15px; margin-bottom:5px; margin-left:15px; display:none;">
-<span class="handCursor" onclick="LogOut();">Log Out</span>
-</div>
-<div class="spacer0">
+<p><input type="text" id="Sentry_email" onFocus="Sentry_onfocus(this.id);" onKeyDown="Sentry_onkeydown(event, this.id);" onKeyUp="Sentry_onkeyup(this.value, this.id, event);" onBlur="Sentry_onblur(this.value, this.id);" value="E-mail Address" tabindex="1" style="height: 38px; font-weight: normal;  border-top-right-radius: 1px;background-color: #FFFFFF;font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;font-size: 16px;color: #020202;"></p>
+<hr class="clear" id="inputsSep" style=" background-color: #FFFFFF !important; display: block;">
+<div id="iconPassword">
 
 </div>
-<div id="xbox" style="margin-top:12px;">
-<img id="xout" onclick="Sentry_onClick(this.id);" src="https://www.sentrylogin.com/sentry/images/x.png" style="margin:2px; margin-right:9px;" class="handCursor">
-</div>
-<div class="spacer5">
+<div id="iconShowPassword">
 
 </div>
+<input type="text" id="Sentry_password" onFocus="Sentry_onfocus(this.id);" onKeyDown="Sentry_onkeydown(event, this.id);" onKeyUp="Sentry_onkeyup(this.value, this.id, event);" onBlur="Sentry_onblur(this.value, this.id);" value="Password" tabindex="2" style="height: 38px; font-weight: normal;  border-bottom-right-radius: 1px;background-color: #FFFFFF;font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;font-size: 16px;color: #020202;">
 </div>
-<input id="Sentry_ID" type="hidden" value="22367">
-<input id="univ" type="hidden" value="1">
-<div id="Sentry_noJSLogin" style="width:175px; background-color:white;">
-<span style="color:red; font-family: Arial;font-size:12px; font-weight:bold;">Javascript Required</span>
+<p><span id="forgotSpan" onclick="Sentry_onClick(this.id);" lnk="https://www.sentrylogin.com/sentry/sentry_remind_pw.asp?Sentry_ID=22367" tabindex="0" style="font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 13px; color: #DDDDDD;">Forgot?</span></p>
+<p><input type="checkbox" id="unHide" style="height:0px; width:0px; margin:0px; display: none;" value="1"><span id="unHideSpan" class="handCursor" onclick="Sentry_onClick(this.id);" title="Do not reveal password in public" tabindex="0" style="font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 13px;color: #FFFFFF; ">Show</span> <span id="Stay" onKeyDown="Sentry_onkeydown(event, this.id);" onKeyUp="Sentry_onkeyup(this.value, this.id, event);" tabindex="3"></p>
+<p><input name="" type="checkbox" value="" id="psist" class="SentryCss-checkbox"><label id="psistLabel" for="psist" class="SentryCss-label" style="font-weight: normal; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;font-size: 13px;color: #FFFFFF; ">Stay Logged In</label></span></p>
+<div id="Sentry_button" class="SentryLoginButton" onclick="Sentry_onClick(this.id);" onkeydown="Sentry_onkeydown(event, this.id);" onkeyup="Sentry_onkeyup(this.value, this.id, event);" onblur="Sentry_onblur(this.value, this.id);" tabindex="4" style="border-radius: 0px;">
+<span id="lgnBtnText" style="font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 16px;">Log In</span>
 </div>
 </form>
 </div>
-<div id="Sentry_loggingIn" style="width:175px; display:none;">
-<img src="https://www.sentrylogin.com/sentry/images/wait_animated_sentry.gif">
+<style>
+ .SentryLoginButton {
+
+    background-color: #FFFFFF;
+
+    color: #020202;
+    
+ }
+ .SentryLoginButton:hover {
+
+    background-color: #020202;
+
+    color: #020202;
+
+}
+</style>
+<div id="SentryHelloGroup">
+<div id="EnterMember" onclick="Sentry_onClick(this.id);" style="font-family: Tahoma, Geneva, Arial, sans-serif;font-size: 16px;color: #FFFFFF; ">
+Enter Member Area
 </div>
-<div id="Sentry_In" style="display:none;">
-For testing.
+<div id="messages" style="display: none; font-family: Tahoma, Geneva, Arial, sans-serif;font-size: 16px;color: #FFFFFF; ">
+<p><span id="msgSpan">(Message automatically replaces this text)</span></p>
+<div id="msgOkBtn" class="SentryLoginButton" onclick="Sentry_onClick(this.id);" onkeydown="Sentry_onkeydown(event, this.id);" onkeyup="Sentry_onkeyup(this.value, this.id, event);" tabindex="4" style="border-radius: 0px;">
+<span id="msgOkBtnText" style="font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 16px;">OK</span>
 </div>
-<script language="JavaScript" type="text/JavaScript">initializeSentry(); 
-  </script>
-<noscript>
-You must have JavaScript enabled in order to log in.
-</noscript>
+</div>
+<div id="wobbler">
+
+</div>
+</div>
+<div id="SentryFooterBar">
+<pre><code>&lt;style&gt;
+ #iconProfile {
+    background: none;
+    width: 0px;
+}
+&lt;/style&gt;</code></pre>
+<div id="iconProfile">
+
+</div>
+<p><span id="myProfile" onclick="Sentry_onClick(this.id);" style="font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 13px;color: #FFFFFF;">My Profile</span></p>
+<p><span id="signUpLnk" onclick="Sentry_onClick(this.id);" style="font-family: &#39;HelveticaNeue-Light&#39;, &#39;Helvetica Neue Light&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, &#39;Lucida Grande&#39;, sans-serif;font-size: 13px;color: #FFFFFF;">Not a member? Sign up.</span></p>
+<span id="txtLogOut" onclick="LogOut();" style="font-family: Tahoma, Geneva, Arial, sans-serif;font-size: 16px;color: #FFFFFF;">Log Out</span>
+<div id="xout" onclick="Sentry_onClick(this.id);" title="Close">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><input id="Sentry_ID" type="hidden" value="22367"></p>
+<p><input id="univ" type="hidden" value="1"></p>
+<script> initializeSentry(); </script>
 <!-- END SENTRY AJAX LOGIN FORM -->
 <p><br>
 <br>

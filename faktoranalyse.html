@@ -431,14 +431,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I noterne er input til R og output fra R, markeret i grå rammer. Output dvs. resultaterne R leverer er markeret med ## i hver linje. Input dvs. de kommandoer vi skal skrive ind i R er ikke markeret.</p>
 <p>Rammen herunder er input til R, da linjerne ikke er markeret. Læs datasættet ind i R, dette kan du gøre ved at copy paste nedenstående kode, i den grå ramme, direkte ind i R enten i console eller et script.</p>
 <p>Bemærk data.frame er en to-dimensionel data struktur, nedenstående betyder vore 6 variable nu er lagret i en dataframe.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">Pris &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">Software &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">Æstetik &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">Brand &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">Venner &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">Familie &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(Pris, Software, Æstetik, Brand, Venner, Familie)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">Pris &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">Software &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">Æstetik &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">Brand &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">Venner &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">Familie &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(Pris, Software, Æstetik, Brand, Venner, Familie)</a></code></pre></div>
 </div>
 <div id="forudstninger-for-faktoranalysen." class="section level2">
 <h2><span class="header-section-number">20.2</span> Forudsætninger for faktoranalysen.</h2>
@@ -450,13 +450,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p>Nu skal vi undersøge om det er fornuftigt at foretage en faktoranalyse, dette kan vi undersøge ved enten Bartletts korrelationstest eller Kaiser-Meyer-Olkin KMO.</p>
 <p>For at teste dette skal man installere og loade pakken psych, vi skal kun installere første gang. Bemærk install.packages(“psych”) er kommenteret ud nedenfor, så første gang skal du kommentere install.packages(“psych”) ud.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#install.packages(&quot;psych&quot;)</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(<span class="st">&quot;psych&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co">#install.packages(&quot;psych&quot;)</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">library</span>(<span class="st">&quot;psych&quot;</span>)</a></code></pre></div>
 <p>Du kan alternativt benytte pacman pakken, hvilket ofte er at foretrække. Hvis du indlæser nedenstående installeres og loades pakken psych:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="kw">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="kw">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</a></code></pre></div>
 <p>Nu hvor psych pakken er indlæst kan vi køre Bartletts test i R:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">cortest.bartlett</span>(data)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">cortest.bartlett</span>(data)</a></code></pre></div>
 <pre><code>## $chisq
 ## [1] 36.15696
 ## 
@@ -470,7 +470,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[H_1:Ikke\ alle\ \rho=0  \]</span></p>
 <p>Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille p-værdi på 0.00167791, betyder vi gennemfører faktoranalysen.</p>
 <p>Vi kan ligeledes køre Kaiser-Meyer-Olkin KMO testet fra pshych pakken:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">KMO</span>(data)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">KMO</span>(data)</a></code></pre></div>
 <pre><code>## Kaiser-Meyer-Olkin factor adequacy
 ## Call: KMO(r = data)
 ## Overall MSA =  0.49
@@ -479,7 +479,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##     0.71     0.70     0.57     0.49     0.30     0.37</code></pre>
 <p>For KMO skal Overall MSA = 0.49, fortæller om egnethed af data til faktoranalyse. Skal være større end kritisk grænse på ca. 0.5, dette er ikke helt tilfældet her, men vi gennemfører alligevel faktoranalysen.</p>
 <p>Vi kan se af korrelationsmatricen, at nogle variable er korrellerede og andre tilsyneladende ikke.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">cor</span>(data)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">cor</span>(data)</a></code></pre></div>
 <pre><code>##                 Pris   Software     Æstetik       Brand     Venner
 ## Pris      1.00000000  0.1856123 -0.63202219 -0.58026680 0.03082006
 ## Software  0.18561230  1.0000000 -0.14621516 -0.11858645 0.10096774
@@ -497,8 +497,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Så det ser ud til, at Pris har stærke negative sammenhænge med Æstetik og Brand.
 Venner har en stærk positiv sammenhæng med Familie.</p>
 <p>Det betyder, at vi kan forvente, at vi vil have to fælles faktorer, og en vil være relateret til pris, æstetik og brand, og den anden vil være relateret til ven og familie. Vi kan lave et corrplot, der grafisk illustrerer disse sammenhænge, store blå prikker er positiv korrelation, store røde negativ korrelation. Så vi skal installere corplott pakken, her bruger vi pacman til installationen.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(data), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(data), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/corrplot-1.svg" width="672" /></p>
 </div>
 <div id="selve-faktoranalysen" class="section level2">
@@ -511,8 +511,8 @@ Venner har en stærk positiv sammenhæng med Familie.</p>
 <p><br></p>
 <p>Vi er nu klar til at teste om der er grundlag for at sammenlægge variable til faktorer. Dette tester vi i selve faktor analysen, ved hjælp af funktionen factanal.</p>
 <p>Hvis vi samler alle spørgsmål til en samlet faktor, har vi følgende faktor analyse:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">fa1 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">fa1</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">fa1 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">fa1</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## factanal(x = data, factors = 1)
@@ -541,8 +541,8 @@ Venner har en stærk positiv sammenhæng med Familie.</p>
 <p><strong>Loadings</strong> angiver hvordan hver variabel er vægtet for faktorerne, men også hvor stærk korrelationen er til hver faktor. Faktor 1 påvirkes således mest af Æstetik, Brand og Pris. Denne faktor kan ses af corrplottet hvor disse tre variable ses at påvirke hinanden, Pris er negativt korreleret med Æstetik og Brand.</p>
 <p><strong>Proportion Var</strong> er et vigtigt nøgletal, der angiver andelen af variationen i data, der er forklaret af den pågældende faktor. Her forklares alså kun 36.5% af variationen i datasættet. Proportion Var findes som SS loadings divideret med antallet af variable dvs. her 6.</p>
 <p>Lad os se på hvad der sker, hvis vi deler variablene op i 2 faktorer:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">fa2 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">fa2</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">fa2 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">fa2</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## factanal(x = data, factors = 2)
@@ -571,8 +571,8 @@ Venner har en stærk positiv sammenhæng med Familie.</p>
 <p><strong>Cumulative Var</strong> 0.61 er summen af proportion var 0.368 og 0.242, og betyder at faktor 1 og faktor 2 forklarer 61% af variationen i datamaterialet.</p>
 <p>Faktor 2 forklares altså primært af Venner og Familie, dette stemmer godt overens med billedet vi så i corrplot.</p>
 <p>Nu opdeler vi variablene i 3 faktorer.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">fa3 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2">fa3</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">fa3 &lt;-<span class="st"> </span><span class="kw">factanal</span>(data, <span class="dt">factor=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">fa3</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## factanal(x = data, factors = 3)
@@ -610,19 +610,19 @@ Venner har en stærk positiv sammenhæng med Familie.</p>
 <div id="eigenvalues-metoden" class="section level3">
 <h3><span class="header-section-number">20.4.1</span> Eigenvalues metoden</h3>
 <p>Eigenvalues udtrykker hvor meget af datamaterialets samlede varians, der dækkes af den pågældende faktor. Eigenvalues er standardiserede således at summen giver antallet af variable, herunder ses at summen er 6, da der er 6 variable i datasættet. Vi ser hvor stor en del af variationen hver faktor forklarer, når der er 6 faktorer. Faktor 5 og faktor 6 bibringer meget lidt yderligere forklaring af variationen.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">ev &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(data))</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">ev<span class="op">$</span>values</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">ev &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(data))</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">ev<span class="op">$</span>values</a></code></pre></div>
 <pre><code>## [1] 2.45701130 1.68900056 0.89157047 0.60583326 0.27285334 0.08373107</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">sum</span>(ev<span class="op">$</span>values)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">sum</span>(ev<span class="op">$</span>values)</a></code></pre></div>
 <pre><code>## [1] 6</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">ev<span class="op">$</span>values<span class="op">/</span><span class="kw">sum</span>(ev<span class="op">$</span>values)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">ev<span class="op">$</span>values<span class="op">/</span><span class="kw">sum</span>(ev<span class="op">$</span>values)</a></code></pre></div>
 <pre><code>## [1] 0.40950188 0.28150009 0.14859508 0.10097221 0.04547556 0.01395518</code></pre>
 <p>Når vi benytter Eigenvalues metoden, bestemmes antallet af faktorer ud fra antallet af Eigenvalues større end 1, det er denne metode fx. SPSS benytter. Vi ser at kun 2 Eigenvalues er 2.45701130 og 1.68900056 er større end 1, vi får således kun 2 faktorer. Eigenvalues metoden er ofte lidt konservativ, således at vi får færre faktorer end med de øvrige metoder.</p>
 </div>
 <div id="screeplot-metoden" class="section level3">
 <h3><span class="header-section-number">20.4.2</span> Screeplot metoden</h3>
 <p>Vi kan se på nedenstående screeplot, der hvor kurven flader ud, bibringer yderligere faktorer ikke synderlig megen yderligere forklaring til modellen. Man vil med screeplot kriteriet, vælge antallet af faktorer hvor kurven knækkker i tilfældet med 3 faktorer. Man vil ikke altid entydigt kunne afgøre hvor screeplot kurven knækker, her må man så afgøre dette bedst muligt.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(data),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>,<span class="dt">npcs =</span> <span class="dv">6</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot Computereksempel&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(data),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>,<span class="dt">npcs =</span> <span class="dv">6</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot Computereksempel&quot;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-61-1.svg" width="672" /></p>
 <br>
 <details>
@@ -639,8 +639,8 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 </iframe>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">cortest.bartlett</span>(personality)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="kw">cortest.bartlett</span>(personality)</a></code></pre></div>
 <pre><code>## R was not square, finding R from data</code></pre>
 <pre><code>## $chisq
 ## [1] 4009.545
@@ -650,7 +650,7 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 ## 
 ## $df
 ## [1] 496</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">KMO</span>(personality)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">KMO</span>(personality)</a></code></pre></div>
 <pre><code>## Kaiser-Meyer-Olkin factor adequacy
 ## Call: KMO(r = personality)
 ## Overall MSA =  0.84
@@ -664,21 +664,21 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 ##     lax laidbck withdrw givinup easygon 
 ##    0.81    0.73    0.90    0.89    0.78</code></pre>
 <p>Vi gennemfører klart analysen viser begge tests.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span></a>
-<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-64-1.svg" width="672" /></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(personality),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot personality&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(personality),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot personality&quot;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-65-1.svg" width="672" /></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2">evp<span class="op">$</span>values</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">evp<span class="op">$</span>values</a></code></pre></div>
 <pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636
 ##  [8] 0.8553802 0.7968460 0.7128793 0.6936229 0.6396893 0.6277046 0.5399600
 ## [15] 0.5074253 0.4719721 0.4639916 0.4455816 0.4376430 0.4135706 0.3906941
 ## [22] 0.3696839 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649
 ## [29] 0.2199461 0.2011492 0.1658493 0.1336176</code></pre>
 <p>Vi benytter her 7 faktorer:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">fapers7 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2">fapers7</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">fapers7 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">fapers7</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## factanal(x = personality, factors = 7)
@@ -737,8 +737,8 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 ## The chi square statistic is 460.58 on 293 degrees of freedom.
 ## The p-value is 0.00000000137</code></pre>
 <p>Vi benytter her 8 faktorer:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">fapers8 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb35-2" data-line-number="2">fapers8</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">fapers8 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">fapers8</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## factanal(x = personality, factors = 8)
