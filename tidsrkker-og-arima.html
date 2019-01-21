@@ -622,51 +622,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(1,0,0) with non-zero mean 
+## ARIMA(0,1,2) with drift 
 ## 
 ## Coefficients:
-##          ar1     mean
-##       0.5027  79.0556
-## s.e.  0.1250   2.5244
+##           ma1      ma2    drift
+##       -0.4501  -0.2180  -1.0798
+## s.e.   0.1282   0.1187   0.4280
 ## 
-## sigma^2 estimated as 86.46:  log likelihood=-185.21
-## AIC=376.43   AICc=376.94   BIC=382.22</code></pre>
+## sigma^2 estimated as 79.02:  log likelihood=-178.89
+## AIC=365.78   AICc=366.67   BIC=373.43</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(1,1,0) 
+## ARIMA(1,1,2) 
 ## 
 ## Coefficients:
-##          ar1
-##       0.6775
-## s.e.  0.1077
+##          ar1     ma1      ma2
+##       0.8739  0.0433  -0.3358
+## s.e.  0.0999  0.1674   0.1465
 ## 
-## sigma^2 estimated as 105.3:  log likelihood=-187.16
-## AIC=378.33   AICc=378.58   BIC=382.15</code></pre>
+## sigma^2 estimated as 81.81:  log likelihood=-180.11
+## AIC=368.21   AICc=369.1   BIC=375.86</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(2,0,2) with non-zero mean 
+## ARIMA(1,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##          ar1     ar2     ma1      ma2     mean
-##       0.3806  0.4438  0.0613  -0.8071  99.0460
-## s.e.  0.4403  0.2125  0.4414   0.4019   0.9426
+##           ar1     ma1     mean
+##       -0.3925  0.8478  99.8268
+## s.e.   0.0981  0.0583   0.8581
 ## 
-## sigma^2 estimated as 87.12:  log likelihood=-728.51
-## AIC=1469.01   AICc=1469.45   BIC=1488.8</code></pre>
+## sigma^2 estimated as 85.05:  log likelihood=-726.91
+## AIC=1461.82   AICc=1462.02   BIC=1475.01</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      100.41041 88.44844 112.3724 82.11615 118.7047
-## 202       98.39752 85.31980 111.4752 78.39688 118.3982
-## 203       99.40474 86.12037 112.6891 79.08804 119.7214
-## 204       98.89473 85.53064 112.2588 78.45612 119.3333
-## 205       99.14764 85.77489 112.5204 78.69579 119.5995
-## 206       99.01755 85.63676 112.3983 78.55340 119.4817
-## 207       99.08029 85.69945 112.4611 78.61606 119.5445
-## 208       99.04642 85.66421 112.4286 78.58010 119.5128
-## 209       99.06138 85.67905 112.4437 78.59487 119.5279
-## 210       99.05204 85.66929 112.4348 78.58488 119.5192</code></pre>
+## 201       99.77475 87.95622 111.5933 81.69987 117.8496
+## 202       99.84716 86.86121 112.8331 79.98686 119.7075
+## 203       99.81874 86.66214 112.9753 79.69746 119.9400
+## 204       99.82990 86.64721 113.0126 79.66871 119.9911
+## 205       99.82552 86.63881 113.0122 79.65819 119.9928
+## 206       99.82724 86.63991 113.0146 79.65897 119.9955
+## 207       99.82656 86.63914 113.0140 79.65815 119.9950
+## 208       99.82683 86.63939 113.0143 79.65839 119.9953
+## 209       99.82672 86.63929 113.0142 79.65828 119.9952
+## 210       99.82677 86.63933 113.0142 79.65832 119.9952</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
