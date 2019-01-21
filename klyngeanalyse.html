@@ -650,47 +650,47 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <p>Vi kunne også have brugt kmeans metoden, her skal vi så angive hvor mange klynger, vi ønsker i analysen. Her benytter vi K-means og får 4 klynger med 7, 6, 9, 10 biler. I output fra R kan vi under Cluster means se gennemsnit, for de 4 klynger for alle 11 variable.</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">mtcarsCluster4 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb62-2" data-line-number="2">mtcarsCluster4</a></code></pre></div>
-<pre><code>## K-means clustering with 4 clusters of sizes 7, 7, 4, 14
+<pre><code>## K-means clustering with 4 clusters of sizes 7, 16, 4, 5
 ## 
 ## Cluster means:
-##        mpg cyl     disp        hp     drat       wt     qsec        vs
-## 1 19.74286   6 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286
-## 2 24.18571   4 121.7143  94.28571 3.924286 2.508286 19.10286 0.8571429
-## 3 31.00000   4  76.1250  62.25000 4.327500 1.896250 19.19750 1.0000000
-## 4 15.10000   8 353.1000 209.21429 3.229286 3.999214 16.77214 0.0000000
-##          am     gear     carb
-## 1 0.4285714 3.857143 3.428571
-## 2 0.5714286 4.142857 1.714286
-## 3 1.0000000 4.000000 1.250000
-## 4 0.1428571 3.285714 3.500000
+##        mpg      cyl     disp       hp     drat       wt     qsec        vs
+## 1 17.01429 7.428571 276.0571 150.7143 2.994286 3.601429 18.11857 0.2857143
+## 2 24.50000 4.625000 122.2937  96.8750 4.002500 2.518000 18.54312 0.7500000
+## 3 14.60000 8.000000 340.5000 272.2500 3.675000 3.537500 15.08750 0.0000000
+## 4 14.68000 8.000000 426.4000 200.0000 3.078000 4.660800 17.45800 0.0000000
+##       am  gear     carb
+## 1 0.0000 3.000 2.142857
+## 2 0.6875 4.125 2.437500
+## 3 0.5000 4.000 5.000000
+## 4 0.0000 3.000 3.200000
 ## 
 ## Clustering vector:
 ##           Mazda RX4       Mazda RX4 Wag          Datsun 710 
-##                   1                   1                   2 
+##                   2                   2                   2 
 ##      Hornet 4 Drive   Hornet Sportabout             Valiant 
 ##                   1                   4                   1 
 ##          Duster 360           Merc 240D            Merc 230 
-##                   4                   2                   2 
+##                   3                   2                   2 
 ##            Merc 280           Merc 280C          Merc 450SE 
-##                   1                   1                   4 
+##                   2                   2                   1 
 ##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
-##                   4                   4                   4 
+##                   1                   1                   4 
 ## Lincoln Continental   Chrysler Imperial            Fiat 128 
-##                   4                   4                   3 
+##                   4                   4                   2 
 ##         Honda Civic      Toyota Corolla       Toyota Corona 
-##                   3                   3                   2 
+##                   2                   2                   2 
 ##    Dodge Challenger         AMC Javelin          Camaro Z28 
-##                   4                   4                   4 
+##                   1                   1                   3 
 ##    Pontiac Firebird           Fiat X1-9       Porsche 914-2 
-##                   4                   3                   2 
+##                   4                   2                   2 
 ##        Lotus Europa      Ford Pantera L        Ferrari Dino 
-##                   2                   4                   1 
+##                   2                   3                   2 
 ##       Maserati Bora          Volvo 142E 
-##                   4                   2 
+##                   3                   2 
 ## 
 ## Within cluster sum of squares by cluster:
-## [1] 13954.3363  3616.8297   208.0365 93643.9039
-##  (between_SS / total_SS =  82.1 %)
+## [1] 11846.095 32837.997  7654.146 10981.601
+##  (between_SS / total_SS =  89.8 %)
 ## 
 ## Available components:
 ## 
@@ -701,18 +701,18 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">table</span>(mtcarsCluster4<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
 <pre><code>##    
 ##      4  6  8
-##   1  0  7  0
-##   2  7  0  0
-##   3  4  0  0
-##   4  0  0 14</code></pre>
+##   1  0  2  5
+##   2 11  5  0
+##   3  0  0  4
+##   4  0  0  5</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 3 klynger med de 32 biler, sorteret efter antallet af cylindre. Kører vi kmeans analysen igen, falder bilerne ikke nødvendigvis i samme klynger som tidligere, det skyldes algoritmen kan give forskellig optimale inddelinger.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">mtcarsCluster3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">table</span>(mtcarsCluster3<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
 <pre><code>##    
 ##      4  6  8
-##   1 11  0  0
-##   2  0  7  0
-##   3  0  0 14</code></pre>
+##   1  0  0 14
+##   2 11  0  0
+##   3  0  7  0</code></pre>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 3 klynger. Bemærk vi skal hente pakken <strong>factoextra</strong>, der indeholder plotfunktionen fviz_cluster(). Vi har benyttet funktionen <strong>scale()</strong>, det er en rigtig god ide at benytte hvis, der er stor forskel på måleenhederne i en data.frame. Funktionen <strong>scale()</strong> bringer variablene i samme skale. Der er fx. stor forskel på enhederne i carb og disp, prøv at sammenligne nedenstående plot med et tilsvarende plot uden scale.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">km3.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">3</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</a>
 <a class="sourceLine" id="cb68-2" data-line-number="2">pacman<span class="op">::</span><span class="kw">p_load</span>(factoextra)</a>
