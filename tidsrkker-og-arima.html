@@ -667,51 +667,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(0,1,1) 
-## 
-## Coefficients:
-##           ma1
-##       -0.4420
-## s.e.   0.1088
-## 
-## sigma^2 estimated as 91.04:  log likelihood=-183.33
-## AIC=370.66   AICc=370.92   BIC=374.49</code></pre>
-<p>Kursen svinger omkring middelværdien.</p>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
-<pre><code>## Series: ap2 
-## ARIMA(1,2,1) 
+## ARIMA(1,1,1) 
 ## 
 ## Coefficients:
 ##          ar1      ma1
-##       0.4675  -0.9148
-## s.e.  0.1550   0.0761
+##       0.3943  -0.8545
+## s.e.  0.2543   0.1820
 ## 
-## sigma^2 estimated as 99.66:  log likelihood=-181.72
-## AIC=369.45   AICc=369.98   BIC=375.12</code></pre>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
-<pre><code>## Series: ap3 
-## ARIMA(1,0,1) with non-zero mean 
+## sigma^2 estimated as 143.8:  log likelihood=-194.47
+## AIC=394.93   AICc=395.45   BIC=400.67</code></pre>
+<p>Kursen svinger omkring middelværdien.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<pre><code>## Series: ap2 
+## ARIMA(1,1,0) 
 ## 
 ## Coefficients:
-##           ar1     ma1      mean
-##       -0.3828  0.8761  100.1522
-## s.e.   0.1103  0.0701    0.9123
+##          ar1
+##       0.5780
+## s.e.  0.1132
 ## 
-## sigma^2 estimated as 91.95:  log likelihood=-734.81
-## AIC=1477.61   AICc=1477.82   BIC=1490.8</code></pre>
+## sigma^2 estimated as 92.72:  log likelihood=-183.88
+## AIC=371.77   AICc=372.02   BIC=375.59</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
+<pre><code>## Series: ap3 
+## ARIMA(0,0,2) with non-zero mean 
+## 
+## Coefficients:
+##          ma1      ma2      mean
+##       0.3708  -0.2837  101.7482
+## s.e.  0.0693   0.0737    0.7510
+## 
+## sigma^2 estimated as 96.72:  log likelihood=-739.7
+## AIC=1487.4   AICc=1487.61   BIC=1500.59</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201       91.84366 79.55456 104.1328 73.04910 110.6382
-## 202      103.33241 89.62890 117.0359 82.37470 124.2901
-## 203       98.93502 85.03638 112.8337 77.67888 120.1912
-## 204      100.61815 86.69115 114.5451 79.31864 121.9176
-## 205       99.97392 86.04277 113.9051 78.66807 121.2798
-## 206      100.22050 86.28875 114.1523 78.91372 121.5273
-## 207      100.12612 86.19428 114.0580 78.81920 121.4330
-## 208      100.16224 86.23039 114.0941 78.85531 121.4692
-## 209      100.14842 86.21656 114.0803 78.84148 121.4554
-## 210      100.15371 86.22185 114.0856 78.84677 121.4606</code></pre>
+## 201       101.3307 88.72696 113.9344 82.05494 120.6065
+## 202       101.4921 88.04987 114.9343 80.93398 122.0502
+## 203       101.7482 87.83837 115.6579 80.47498 123.0213
+## 204       101.7482 87.83837 115.6579 80.47498 123.0213
+## 205       101.7482 87.83837 115.6579 80.47498 123.0213
+## 206       101.7482 87.83837 115.6579 80.47498 123.0213
+## 207       101.7482 87.83837 115.6579 80.47498 123.0213
+## 208       101.7482 87.83837 115.6579 80.47498 123.0213
+## 209       101.7482 87.83837 115.6579 80.47498 123.0213
+## 210       101.7482 87.83837 115.6579 80.47498 123.0213</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
