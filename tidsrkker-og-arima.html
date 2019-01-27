@@ -622,51 +622,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(0,1,1) with drift 
+## ARIMA(2,0,0) with non-zero mean 
 ## 
 ## Coefficients:
-##           ma1   drift
-##       -0.6621  0.8416
-## s.e.   0.1201  0.4733
+##          ar1     ar2      mean
+##       0.3132  0.4186  105.9777
+## s.e.  0.1256  0.1293    3.9234
 ## 
-## sigma^2 estimated as 90.59:  log likelihood=-182.87
-## AIC=371.75   AICc=372.27   BIC=377.48</code></pre>
+## sigma^2 estimated as 69.65:  log likelihood=-179.39
+## AIC=366.79   AICc=367.66   BIC=374.52</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(1,1,0) 
+## ARIMA(2,1,2) with drift 
 ## 
 ## Coefficients:
-##          ar1
-##       0.5341
-## s.e.  0.1176
+##           ar1      ar2     ma1     ma2   drift
+##       -0.6686  -0.0142  1.6800  0.9453  4.6468
+## s.e.   0.1852   0.1994  0.1913  0.1595  2.1766
 ## 
-## sigma^2 estimated as 62.33:  log likelihood=-173.92
-## AIC=351.84   AICc=352.1   BIC=355.66</code></pre>
+## sigma^2 estimated as 57.09:  log likelihood=-171.37
+## AIC=354.75   AICc=356.7   BIC=366.22</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(3,1,2) 
+## ARIMA(1,0,2) with non-zero mean 
 ## 
 ## Coefficients:
-##           ar1      ar2     ar3      ma1      ma2
-##       -0.0837  -0.2274  0.1018  -0.3695  -0.5944
-## s.e.   0.1641   0.0922  0.1070   0.1544   0.1481
+##           ar1     ma1     ma2      mean
+##       -0.5408  0.9745  0.1221  100.2702
+## s.e.   0.1805  0.1874  0.1282    0.9883
 ## 
-## sigma^2 estimated as 106.2:  log likelihood=-745.69
-## AIC=1503.38   AICc=1503.81   BIC=1523.14</code></pre>
+## sigma^2 estimated as 107.9:  log likelihood=-750.09
+## AIC=1510.19   AICc=1510.49   BIC=1526.68</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201       93.85990 80.65229 107.0675 73.66060 114.0592
-## 202       99.87677 84.82384 114.9297 76.85530 122.8982
-## 203       96.55728 81.18211 111.9324 73.04299 120.0716
-## 204       96.55550 81.17401 111.9370 73.03154 120.0795
-## 205       97.92306 82.42633 113.4198 74.22286 121.6233
-## 206       97.47100 81.97394 112.9681 73.77029 121.1717
-## 207       97.19771 81.70033 112.6951 73.49652 120.8989
-## 208       97.46263 81.95022 112.9750 73.73845 121.1868
-## 209       97.45656 81.93936 112.9738 73.72505 121.1881
-## 210       97.36900 81.84893 112.8891 73.63310 121.1049</code></pre>
+## 201       98.33010 85.01859 111.6416 77.97190 118.6883
+## 202      100.86391 86.35430 115.3735 78.67337 123.0544
+## 203       99.94907 85.36240 114.5357 77.64069 122.2575
+## 204      100.44383 85.83469 115.0530 78.10109 122.7866
+## 205      100.17626 85.56056 114.7920 77.82348 122.5290
+## 206      100.32096 85.70335 114.9386 77.96525 122.6767
+## 207      100.24270 85.62453 114.8609 77.88614 122.5993
+## 208      100.28503 85.66669 114.9034 77.92821 122.6418
+## 209      100.26214 85.64375 114.8805 77.90524 122.6190
+## 210      100.27452 85.65612 114.8929 77.91760 122.6314</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>

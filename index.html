@@ -452,18 +452,18 @@ padding: 0;
 <div style="height:1px;">
 <a href="https://www.sentrylogin.com"><img src="https://www.sentrylogin.com/sentry/images/logo.gif" alt="Sentry Password Protection Member Login" width="2" height="1" border="0"></a>
 </div>
-<div id="TopBar" class="handCursor" onclick="Sentry_onClick(this.id);" style="width:175px; background-color:#007bff;color:White; padding-top:6px; padding-bottom:6px; border-width:0px; border-style:solid; border-color:White; border-radius: 2px;">
+<div id="TopBar" class="handCursor" onclick="Sentry_onClick(this.id);" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:175px; background-color:#007bff;color:White; padding-top:6px; padding-bottom:6px; border-width:0px; border-style:none; border-color:White; border-radius: 2px;">
 <div id="Sentry_label" style="text-align: right; font-size:18px margin-bottom:3px;">
-<span id="Sentry_label_span" style="padding-right:10px; padding-left:5px;">Login</span><span id="downArrow"></span>
+<span id="Sentry_label_span" style="padding-right:10px; padding-left:5px;">Adgang</span><span id="downArrow"></span>
 </div>
 </div>
-<div id="magicGroup" style="z-index: 10000; background-color:white; text-align:left; position:absolute; left: -9999px; width:175px; padding-top:15px; border-style:solid; border-color:LightGray; border-top-width:0px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; border-radius: 2px;">
+<div id="magicGroup" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);z-index: 10000; background-color:white; text-align:left; position:absolute; left: -9999px; width:175px; padding-top:15px; border-style:none; border-color:LightGray; border-top-width:0px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; border-radius: 2px;">
 <div id="messages" style="display:none; padding-left:15px; padding-right:15px; padding-bottom:15px; font-family: Arial; font-size:12px; color: red;">
 .
 </div>
 <div id="Sentry_emailDiv" style="width:146px; margin-left:15px;">
-<span style="text-align:left;">
-<input type="text" id="Sentry_email" style="padding-left: 3px; border-style:solid; border-width:1px; border-color:LightGray; border-radius: 2px; width:146px; height:24px;" onfocus="Sentry_onfocus(this.id);" onkeydown="Sentry_onkeydown(event, this.id);" onkeyup="Sentry_onkeyup(this.value, this.id, event);" onblur="Sentry_onblur(this.value, this.id);" value="E-mail"></span>
+<p><span style="text-align:left;"></p>
+<input type="text" id="Sentry_email" style=" padding-left: 3px; border-style:solid; border-width:0.5px; border-color:LightGray; border-radius: 2px; width:146px; height:24px;" onfocus="Sentry_onfocus(this.id);" onkeydown="Sentry_onkeydown(event, this.id);" onkeyup="Sentry_onkeyup(this.value, this.id, event);" onblur="Sentry_onblur(this.value, this.id);" value="E-mail"></span>
 </div>
 <div id="Sentry_passwordDiv" style="width:146px; margin-left:15px; margin-top:2px;">
 <span style="text-align:left;">
@@ -482,7 +482,7 @@ padding: 0;
 <!-- <button type="button" onclick="sentryLogin();" style="height:25px; padding:12; width:45px; font-family:Helvetica; font-size:11px;" id="Sentry_button">Login</button></div>
   <div id="psistDiv" style="float:left; width:98px; text-align:right; margin-top:10px; margin-right:15px;"> 
  -->
-<button type="button" onclick="sentryLogin();" style="  border-radius: 2px;color:White;background-color:#00C851
+<button type="button" onclick="sentryLogin();" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.19); border-radius: 2px;color:White;background-color:#00C851
 ;border: none;height:25px; padding:12; width:98px; font-size:12px;" id="Sentry_button">Login her!</button>
 </div>
 <div id="psistDiv" style="float:right; width:98px; text-align:right; margin-top:10px; margin-right:10px;">
@@ -504,7 +504,7 @@ padding: 0;
 </div>
 <p><br></p>
 <div id="signUp" style="float:left; width:45px; margin-left:15px;">
-<input type=button id="signUp" onClick="parent.location='https://www.sentrylogin.com/sentry/member_signup.asp?Site_ID=22367&amp;Ppl_ID=38854&amp;tk='" style="color:White; background-color:#007bff
+<input type=button id="signUp" onClick="parent.location='https://www.sentrylogin.com/sentry/member_signup.asp?Site_ID=22367&amp;Ppl_ID=38854&amp;tk='" style="border-radius: 2px;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.19);color:White; background-color:#007bff
 ;border: none;height:25px; padding:12; width:98px;  font-size:11px;" value='Tilmeld basis'>
 <div id="psistDiv" style="float:right; width:98px; text-align:right; margin-top:10px; margin-right:10px;">
 
@@ -518,7 +518,7 @@ padding: 0;
 
 </div>
 <div id="signUp" style="float:left; width:45px; margin-left:15px;">
-<input type=button id="signUp" onClick="parent.location='https://www.sentrylogin.com/sentry/member_signup.asp?Site_ID=22367&amp;Ppl_ID=38855&amp;tk='" style="color:White; background-color:#007bff
+<input type=button id="signUp" onClick="parent.location='https://www.sentrylogin.com/sentry/member_signup.asp?Site_ID=22367&amp;Ppl_ID=38855&amp;tk='" style="border-radius: 2px;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.19);color:White; background-color:#007bff
 ;border: none;height:25px; padding:12; width:110px;  font-size:11px;" value='Tilmeld premium'>
 <div id="psistDiv" style="float:right; width:110px; text-align:right; margin-top:10px; margin-right:10px;">
 
@@ -531,7 +531,7 @@ padding: 0;
 
 </div>
 <div id="signUp" style="float:left; width:45px; margin-left:15px;">
-<button type="button" onclick="Sentry_onClick(this.id);" style="color:White; background-color:#ffbb33
+<button type="button" onclick="Sentry_onClick(this.id);" style="border-radius: 2px;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.19);color:White; background-color:#ffbb33
 ;border: none;height:25px; padding:12; width:98px;  font-size:11px;" id="myProfile">Profil/Afmeld</button>
 <div id="psistDiv" style="float:right; width:98px; text-align:right; margin-top:10px; margin-right:10px;">
 
