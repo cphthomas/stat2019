@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2019-01-26">
+<meta name="date" content="2019-01-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -622,51 +622,46 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(1,0,0) with non-zero mean 
+## ARIMA(0,1,0) 
 ## 
-## Coefficients:
-##          ar1     mean
-##       0.5813  96.9636
-## s.e.  0.1111   3.3143
-## 
-## sigma^2 estimated as 107.7:  log likelihood=-190.88
-## AIC=387.75   AICc=388.26   BIC=393.55</code></pre>
+## sigma^2 estimated as 92.03:  log likelihood=-184
+## AIC=370   AICc=370.08   BIC=371.91</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(2,0,0) with zero mean 
+## ARIMA(2,0,0) with non-zero mean 
 ## 
 ## Coefficients:
-##          ar1      ar2
-##       1.6599  -0.7162
-## s.e.  0.0957   0.1018
+##          ar1      ar2     mean
+##       1.6305  -0.7015  85.6560
+## s.e.  0.1018   0.1083  19.9224
 ## 
-## sigma^2 estimated as 79.71:  log likelihood=-185.09
-## AIC=376.17   AICc=376.68   BIC=381.97</code></pre>
+## sigma^2 estimated as 113.8:  log likelihood=-193.48
+## AIC=394.96   AICc=395.83   BIC=402.68</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
 ## ARIMA(1,0,1) with non-zero mean 
 ## 
 ## Coefficients:
 ##           ar1     ma1      mean
-##       -0.1422  0.7991  100.6478
-## s.e.   0.0908  0.0528    1.0546
+##       -0.4189  0.9253  100.2440
+## s.e.   0.1040  0.0624    0.9461
 ## 
-## sigma^2 estimated as 91.31:  log likelihood=-734.1
-## AIC=1476.2   AICc=1476.41   BIC=1489.39</code></pre>
+## sigma^2 estimated as 98.89:  log likelihood=-742.25
+## AIC=1492.5   AICc=1492.71   BIC=1505.7</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      107.64166 95.39564 119.8877 88.91299 126.3703
-## 202       99.65329 85.00160 114.3050 77.24546 122.0611
-## 203      100.78927 86.09300 115.4855 78.31326 123.2653
-## 204      100.62773 85.93055 115.3249 78.15034 123.1051
-## 205      100.65070 85.95351 115.3479 78.17328 123.1281
-## 206      100.64743 85.95024 115.3446 78.17001 123.1249
-## 207      100.64790 85.95070 115.3451 78.17048 123.1253
-## 208      100.64783 85.95064 115.3450 78.17041 123.1253
-## 209      100.64784 85.95065 115.3450 78.17042 123.1253
-## 210      100.64784 85.95065 115.3450 78.17042 123.1253</code></pre>
+## 201      105.55024 92.80615 118.2943 86.05983 125.0407
+## 202       98.02138 83.73610 112.3067 76.17393 119.8688
+## 203      101.17496 86.63612 115.7138 78.93972 123.4102
+## 204       99.85404 85.27116 114.4369 77.55145 122.1566
+## 205      100.40733 85.81674 114.9979 78.09295 122.7217
+## 206      100.17557 85.58363 114.7675 77.85912 122.4920
+## 207      100.27265 85.68047 114.8648 77.95583 122.5895
+## 208      100.23199 85.63977 114.8242 77.91511 122.5489
+## 209      100.24902 85.65679 114.8412 77.93213 122.5659
+## 210      100.24188 85.64965 114.8341 77.92499 122.5588</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
