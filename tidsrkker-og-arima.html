@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2019-01-27">
+<meta name="date" content="2019-01-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -408,6 +408,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="tidsrkker-og-arima" class="section level1">
 <h1><span class="header-section-number">Kapitel 22</span> Tidsrækker og ARIMA</h1>
+<!-- BEGIN PROTECT-->
+<meta name="robots" content="noindex, nofollow">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<style>
+.Sentry_blanket {
+background-color:#FFFFFF;
+position:absolute;
+z-index: 9001; /*ooveeerrrr nine thoussaaaannnd*/
+top:0px;
+left:0px;
+width:105%;
+height:10000px;
+padding:20px;
+}
+</style>
+<script language="JavaScript" type="text/JavaScript">
+/* BEGIN Editable Settings: ///////////////////////////////////////////////////////////*/
+PpLID = "38855,36811,36812"; /* Makes this page viewable by only members of one or more PayPal plans, enter one Ppl ID or more than one separated by commas */
+pageLevel = 0; /* Access Level required to view this page   */
+SingleOut = 0; /* Makes this page viewable by only one member, enter their account number  */
+/* END Editable Settings: ////////////////////////////////////////////////////////////*/
+Sentry_ID = 22367;
+</script>
+<script type="text/javascript" src="https://www.sentrylogin.com/sentry/scripts/Sentry_pAJAX.js"></script>
+<noscript>
+<meta http-equiv="refresh" content="0; url=https://www.sentrylogin.com/sentry/noscript.asp">
+</noscript>
+<div id="Sentry_noJS" class="Sentry_blanket">
+Sentry Page Protection
+</div>
+<div id="Sentry_redirecting" class="Sentry_blanket" style="display:none;">
+Please Wait…
+</div>
+<script language="JavaScript" type="text/JavaScript">
+if(window.onload){
+  window.onload = SentryProtect;
+}
+else if(document.body.onload){
+  document.body.onload = SentryProtect;
+}
+else{
+  SentryProtect(); /* call it here  */
+}
+</script>
+<!-- END PROTECT -->
 <p>Gennemgangen af tidsrækkeanalyse bygger meget på praktisk anvendelighed (dvs. vi vil gerne kunne forudsige kursudviklingen), vi vil springe let hen over teorien der kan være tung og er meget omfattende. Nedenstående links giver dog en indføring i den teoretiske del, som vi her ikke berører.</p>
 <p><a href="http://ucanalytics.com/blogs/arima-models-manufacturing-case-study-example-part-3/" class="uri">http://ucanalytics.com/blogs/arima-models-manufacturing-case-study-example-part-3/</a></p>
 <p><a href="http://ucanalytics.com/blogs/step-by-step-graphic-guide-to-forecasting-through-arima-modeling-in-r-manufacturing-case-study-example/" class="uri">http://ucanalytics.com/blogs/step-by-step-graphic-guide-to-forecasting-through-arima-modeling-in-r-manufacturing-case-study-example/</a></p>
@@ -622,51 +667,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(2,0,0) with non-zero mean 
+## ARIMA(0,1,1) 
 ## 
 ## Coefficients:
-##          ar1     ar2      mean
-##       0.3132  0.4186  105.9777
-## s.e.  0.1256  0.1293    3.9234
+##           ma1
+##       -0.4420
+## s.e.   0.1088
 ## 
-## sigma^2 estimated as 69.65:  log likelihood=-179.39
-## AIC=366.79   AICc=367.66   BIC=374.52</code></pre>
+## sigma^2 estimated as 91.04:  log likelihood=-183.33
+## AIC=370.66   AICc=370.92   BIC=374.49</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(2,1,2) with drift 
+## ARIMA(1,2,1) 
 ## 
 ## Coefficients:
-##           ar1      ar2     ma1     ma2   drift
-##       -0.6686  -0.0142  1.6800  0.9453  4.6468
-## s.e.   0.1852   0.1994  0.1913  0.1595  2.1766
+##          ar1      ma1
+##       0.4675  -0.9148
+## s.e.  0.1550   0.0761
 ## 
-## sigma^2 estimated as 57.09:  log likelihood=-171.37
-## AIC=354.75   AICc=356.7   BIC=366.22</code></pre>
+## sigma^2 estimated as 99.66:  log likelihood=-181.72
+## AIC=369.45   AICc=369.98   BIC=375.12</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(1,0,2) with non-zero mean 
+## ARIMA(1,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##           ar1     ma1     ma2      mean
-##       -0.5408  0.9745  0.1221  100.2702
-## s.e.   0.1805  0.1874  0.1282    0.9883
+##           ar1     ma1      mean
+##       -0.3828  0.8761  100.1522
+## s.e.   0.1103  0.0701    0.9123
 ## 
-## sigma^2 estimated as 107.9:  log likelihood=-750.09
-## AIC=1510.19   AICc=1510.49   BIC=1526.68</code></pre>
+## sigma^2 estimated as 91.95:  log likelihood=-734.81
+## AIC=1477.61   AICc=1477.82   BIC=1490.8</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201       98.33010 85.01859 111.6416 77.97190 118.6883
-## 202      100.86391 86.35430 115.3735 78.67337 123.0544
-## 203       99.94907 85.36240 114.5357 77.64069 122.2575
-## 204      100.44383 85.83469 115.0530 78.10109 122.7866
-## 205      100.17626 85.56056 114.7920 77.82348 122.5290
-## 206      100.32096 85.70335 114.9386 77.96525 122.6767
-## 207      100.24270 85.62453 114.8609 77.88614 122.5993
-## 208      100.28503 85.66669 114.9034 77.92821 122.6418
-## 209      100.26214 85.64375 114.8805 77.90524 122.6190
-## 210      100.27452 85.65612 114.8929 77.91760 122.6314</code></pre>
+## 201       91.84366 79.55456 104.1328 73.04910 110.6382
+## 202      103.33241 89.62890 117.0359 82.37470 124.2901
+## 203       98.93502 85.03638 112.8337 77.67888 120.1912
+## 204      100.61815 86.69115 114.5451 79.31864 121.9176
+## 205       99.97392 86.04277 113.9051 78.66807 121.2798
+## 206      100.22050 86.28875 114.1523 78.91372 121.5273
+## 207      100.12612 86.19428 114.0580 78.81920 121.4330
+## 208      100.16224 86.23039 114.0941 78.85531 121.4692
+## 209      100.14842 86.21656 114.0803 78.84148 121.4554
+## 210      100.15371 86.22185 114.0856 78.84677 121.4606</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
