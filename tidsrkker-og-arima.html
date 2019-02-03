@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2019-01-28">
+<meta name="date" content="2019-02-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -667,51 +667,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(1,1,1) 
+## ARIMA(0,1,1) with drift 
 ## 
 ## Coefficients:
-##          ar1      ma1
-##       0.3943  -0.8545
-## s.e.  0.2543   0.1820
+##           ma1   drift
+##       -0.5278  1.4636
+## s.e.   0.1195  0.7342
 ## 
-## sigma^2 estimated as 143.8:  log likelihood=-194.47
-## AIC=394.93   AICc=395.45   BIC=400.67</code></pre>
+## sigma^2 estimated as 119.3:  log likelihood=-189.62
+## AIC=385.24   AICc=385.76   BIC=390.98</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(1,1,0) 
+## ARIMA(1,0,3) with non-zero mean 
 ## 
 ## Coefficients:
-##          ar1
-##       0.5780
-## s.e.  0.1132
+##          ar1     ma1     ma2     ma3      mean
+##       0.6550  1.0975  0.7892  0.3222  154.3460
+## s.e.  0.1774  0.2175  0.3074  0.1963   11.6814
 ## 
-## sigma^2 estimated as 92.72:  log likelihood=-183.88
-## AIC=371.77   AICc=372.02   BIC=375.59</code></pre>
+## sigma^2 estimated as 94:  log likelihood=-187.32
+## AIC=386.65   AICc=388.56   BIC=398.24</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(0,0,2) with non-zero mean 
+## ARIMA(2,0,3) with non-zero mean 
 ## 
 ## Coefficients:
-##          ma1      ma2      mean
-##       0.3708  -0.2837  101.7482
-## s.e.  0.0693   0.0737    0.7510
+##          ar1      ar2      ma1      ma2    ma3     mean
+##       1.6039  -0.6793  -1.2452  -0.1513  0.511  99.1656
+## s.e.  0.1222   0.1090   0.1266   0.1600  0.072   1.0222
 ## 
-## sigma^2 estimated as 96.72:  log likelihood=-739.7
-## AIC=1487.4   AICc=1487.61   BIC=1500.59</code></pre>
+## sigma^2 estimated as 95.34:  log likelihood=-736.91
+## AIC=1487.82   AICc=1488.41   BIC=1510.91</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201       101.3307 88.72696 113.9344 82.05494 120.6065
-## 202       101.4921 88.04987 114.9343 80.93398 122.0502
-## 203       101.7482 87.83837 115.6579 80.47498 123.0213
-## 204       101.7482 87.83837 115.6579 80.47498 123.0213
-## 205       101.7482 87.83837 115.6579 80.47498 123.0213
-## 206       101.7482 87.83837 115.6579 80.47498 123.0213
-## 207       101.7482 87.83837 115.6579 80.47498 123.0213
-## 208       101.7482 87.83837 115.6579 80.47498 123.0213
-## 209       101.7482 87.83837 115.6579 80.47498 123.0213
-## 210       101.7482 87.83837 115.6579 80.47498 123.0213</code></pre>
+## 201      105.22298 92.70958 117.7364 86.08539 124.3606
+## 202       98.28744 84.99362 111.5813 77.95629 118.6186
+## 203       97.90052 84.22780 111.5732 76.98990 118.8111
+## 204       97.73314 83.94490 111.5214 76.64585 118.8204
+## 205       97.72754 83.92228 111.5328 76.61422 118.8409
+## 206       97.83225 84.02655 111.6380 76.71825 118.9463
+## 207       98.00400 84.18331 111.8247 76.86708 119.1409
+## 208       98.20832 84.35457 112.0621 77.02084 119.3958
+## 209       98.41936 84.52224 112.3165 77.16555 119.6732
+## 210       98.61904 84.67767 112.5604 77.29756 119.9405</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
@@ -845,21 +845,21 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <pre><code>## Series: GOOG[, 6] 
 ## ARIMA(0,1,0) 
 ## 
-## sigma^2 estimated as 233:  log likelihood=-2146.77
-## AIC=4295.55   AICc=4295.56   BIC=4299.8</code></pre>
+## sigma^2 estimated as 234.8:  log likelihood=-2169.52
+## AIC=4341.05   AICc=4341.06   BIC=4345.31</code></pre>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</a>
 <a class="sourceLine" id="cb124-2" data-line-number="2">fagoog</a></code></pre></div>
-<pre><code>##     Point Forecast    Lo 80    Hi 80     Lo 95    Hi 95
-## 520        1090.99 1071.430 1110.550 1061.0755 1120.904
-## 521        1090.99 1063.328 1118.652 1048.6845 1133.295
-## 522        1090.99 1057.111 1124.869 1039.1766 1142.803
-## 523        1090.99 1051.870 1130.110 1031.1610 1150.819
-## 524        1090.99 1047.252 1134.728 1024.0992 1157.881
-## 525        1090.99 1043.078 1138.902 1017.7148 1164.265
-## 526        1090.99 1039.239 1142.741 1011.8437 1170.136
-## 527        1090.99 1035.666 1146.314 1006.3790 1175.601
-## 528        1090.99 1032.310 1149.670 1001.2465 1180.733
-## 529        1090.99 1029.136 1152.844  996.3921 1185.588</code></pre>
+<pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 525        1110.75 1091.114 1130.386 1080.719 1140.781
+## 526        1110.75 1082.980 1138.520 1068.280 1153.220
+## 527        1110.75 1076.739 1144.761 1058.735 1162.765
+## 528        1110.75 1071.478 1150.022 1050.689 1170.811
+## 529        1110.75 1066.843 1154.657 1043.599 1177.901
+## 530        1110.75 1062.652 1158.848 1037.190 1184.310
+## 531        1110.75 1058.798 1162.702 1031.296 1190.204
+## 532        1110.75 1055.211 1166.289 1025.810 1195.690
+## 533        1110.75 1051.842 1169.658 1020.658 1200.842
+## 534        1110.75 1048.656 1172.844 1015.785 1205.715</code></pre>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="kw">plot</span>(fagoog,<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;GS&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
@@ -871,21 +871,21 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <pre><code>## Series: GS[, 6] 
 ## ARIMA(0,1,0) 
 ## 
-## sigma^2 estimated as 11.23:  log likelihood=-1361.46
-## AIC=2724.92   AICc=2724.93   BIC=2729.17</code></pre>
+## sigma^2 estimated as 11.18:  log likelihood=-1373.33
+## AIC=2748.66   AICc=2748.67   BIC=2752.92</code></pre>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1">fags &lt;-<span class="st"> </span><span class="kw">forecast</span>(ags)</a>
 <a class="sourceLine" id="cb132-2" data-line-number="2">fags</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 520         200.74 196.4451 205.0350 194.1714 207.3086
-## 521         200.74 194.6660 206.8140 191.4507 210.0293
-## 522         200.74 193.3009 208.1791 189.3629 212.1171
-## 523         200.74 192.1501 209.3299 187.6029 213.8771
-## 524         200.74 191.1362 210.3438 186.0523 215.4277
-## 525         200.74 190.2196 211.2604 184.6504 216.8296
-## 526         200.74 189.3766 212.1034 183.3612 218.1188
-## 527         200.74 188.5921 212.8880 182.1613 219.3187
-## 528         200.74 187.8552 213.6249 181.0343 220.4457
-## 529         200.74 187.1582 214.3218 179.9684 221.5116</code></pre>
+## 525         196.54 192.2555 200.8245 189.9874 203.0926
+## 526         196.54 190.4807 202.5992 187.2732 205.8068
+## 527         196.54 189.1190 203.9610 185.1905 207.8895
+## 528         196.54 187.9709 205.1091 183.4347 209.6453
+## 529         196.54 186.9595 206.1205 181.8879 211.1921
+## 530         196.54 186.0451 207.0349 180.4894 212.5906
+## 531         196.54 185.2042 207.8758 179.2034 213.8766
+## 532         196.54 184.4215 208.6585 178.0063 215.0736
+## 533         196.54 183.6864 209.3936 176.8821 216.1979
+## 534         196.54 182.9911 210.0889 175.8188 217.2612</code></pre>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="kw">plot</span>(fags,<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-126-2.png" width="672" /></p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;DANSKE.CO&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
@@ -899,24 +899,24 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##           ma1     ma2
-##       -1.0602  0.0698
-## s.e.   0.0461  0.0460
+##       -1.0657  0.0749
+## s.e.   0.0463  0.0462
 ## 
-## sigma^2 estimated as 7.016:  log likelihood=-1168.69
-## AIC=2343.38   AICc=2343.43   BIC=2356.11</code></pre>
+## sigma^2 estimated as 7.062:  log likelihood=-1180.59
+## AIC=2367.18   AICc=2367.23   BIC=2379.94</code></pre>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">faddb &lt;-<span class="st"> </span><span class="kw">forecast</span>(addb)</a>
 <a class="sourceLine" id="cb140-2" data-line-number="2">faddb</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 518       122.0934 118.6987 125.4880 116.9017 127.2850
-## 519       121.6603 117.0020 126.3187 114.5360 128.7846
-## 520       121.2273 115.5630 126.8916 112.5646 129.8901
-## 521       120.7943 114.2615 127.3271 110.8033 130.7853
-## 522       120.3613 113.0481 127.6744 109.1768 131.5458
-## 523       119.9282 111.8970 127.9595 107.6456 132.2109
-## 524       119.4952 110.7927 128.1978 106.1858 132.8046
-## 525       119.0622 109.7248 128.3995 104.7819 133.3424
-## 526       118.6292 108.6865 128.5719 103.4231 133.8352
-## 527       118.1961 107.6723 128.7200 102.1013 134.2910</code></pre>
+## 523       125.9282 122.5226 129.3339 120.7198 131.1367
+## 524       125.5565 120.8956 130.2173 118.4283 132.6846
+## 525       125.1847 119.5234 130.8459 116.5265 133.8428
+## 526       124.8129 118.2876 131.3381 114.8333 134.7924
+## 527       124.4411 117.1394 131.7427 113.2742 135.6080
+## 528       124.0693 116.0533 132.0853 111.8099 136.3287
+## 529       123.6975 115.0137 132.3812 110.4168 136.9781
+## 530       123.3257 114.0106 132.6407 109.0795 137.5718
+## 531       122.9539 113.0369 132.8709 107.7872 138.1206
+## 532       122.5821 112.0875 133.0767 106.5320 138.6322</code></pre>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="kw">plot</span>(faddb,<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-127-2.png" width="672" /></p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2000-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
@@ -926,31 +926,28 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1">aberkshire &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>])</a>
 <a class="sourceLine" id="cb146-2" data-line-number="2">aberkshire</a></code></pre></div>
 <pre><code>## Series: `BRK-A`[, 6] 
-## ARIMA(4,1,4) with drift 
+## ARIMA(3,1,4) with drift 
 ## 
 ## Coefficients:
-##          ar1      ar2      ar3     ar4      ma1     ma2     ma3      ma4
-##       0.5597  -0.3403  -0.1447  0.4234  -0.5925  0.3442  0.1501  -0.5109
-## s.e.  0.2294   0.3257   0.3239  0.2308   0.2240  0.3248  0.3258   0.2333
-##         drift
-##       50.6684
-## s.e.  20.3865
+##          ar1      ar2     ar3      ma1     ma2      ma3      ma4    drift
+##       0.9997  -0.9950  0.4636  -1.0302  1.0120  -0.4800  -0.0629  52.6235
+## s.e.  0.1732   0.1499  0.1474   0.1737  0.1612   0.1633   0.0248  21.6222
 ## 
-## sigma^2 estimated as 3289302:  log likelihood=-42776.69
-## AIC=85573.37   AICc=85573.42   BIC=85638.13</code></pre>
+## sigma^2 estimated as 3298383:  log likelihood=-42828.41
+## AIC=85674.82   AICc=85674.86   BIC=85733.11</code></pre>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1">faberkshire &lt;-<span class="st"> </span><span class="kw">forecast</span>(aberkshire)</a>
 <a class="sourceLine" id="cb148-2" data-line-number="2">faberkshire</a></code></pre></div>
 <pre><code>##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 4797       303186.3 300862.0 305510.6 299631.6 306741.0
-## 4798       303257.3 300023.6 306490.9 298311.8 308202.7
-## 4799       303713.9 299794.6 307633.2 297719.8 309708.0
-## 4800       303467.4 298956.0 307978.8 296567.8 310367.1
-## 4801       303043.3 298082.0 308004.5 295455.7 310630.9
-## 4802       302879.1 297553.9 308204.4 294734.9 311023.4
-## 4803       303186.0 297530.8 308841.3 294537.1 311834.9
-## 4804       303396.1 297410.0 309382.2 294241.1 312551.1
-## 4805       303278.9 296982.1 309575.7 293648.8 312909.0
-## 4806       303053.3 296482.5 309624.1 293004.1 313102.5</code></pre>
+## 4802       313731.0 311403.5 316058.5 310171.4 317290.6
+## 4803       313582.1 310340.3 316823.8 308624.3 318539.9
+## 4804       313155.7 309223.8 317087.5 307142.4 319168.9
+## 4805       312657.8 308139.6 317176.0 305747.8 319567.8
+## 4806       312543.4 307569.8 317516.9 304937.0 320149.7
+## 4807       312754.7 307424.7 318084.7 304603.1 320906.2
+## 4808       312876.9 307218.2 318535.7 304222.6 321531.2
+## 4809       312763.9 306769.2 318758.5 303595.9 321931.9
+## 4810       312655.1 306336.7 318973.5 302991.9 322318.3
+## 4811       312743.5 306136.9 319350.1 302639.6 322847.5</code></pre>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="kw">plot</span>(faberkshire,<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-128-2.png" width="672" /></p>
 </div>
@@ -974,11 +971,11 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##           ar1    mean
-##       -0.5529  0.3022
-## s.e.   0.2584  0.0836
+##       -0.5600  0.3049
+## s.e.   0.2556  0.0824
 ## 
-## sigma^2 estimated as 0.2435:  log likelihood=-8.36
-## AIC=22.72   AICc=25.39   BIC=24.42</code></pre>
+## sigma^2 estimated as 0.2384:  log likelihood=-8.23
+## AIC=22.46   AICc=25.13   BIC=24.15</code></pre>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1">berkshire &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)</a>
@@ -990,11 +987,11 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##         mean
-##       0.0979
-## s.e.  0.0506
+##       0.1005
+## s.e.  0.0502
 ## 
-## sigma^2 estimated as 0.03606:  log likelihood=3.67
-## AIC=-3.34   AICc=-2.14   BIC=-2.21</code></pre>
+## sigma^2 estimated as 0.03555:  log likelihood=3.76
+## AIC=-3.53   AICc=-2.33   BIC=-2.4</code></pre>
 <div id="arima-opsamling-video" class="section level3">
 <h3><span class="header-section-number">22.10.1</span> ARIMA opsamling video</h3>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
