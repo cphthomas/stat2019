@@ -338,9 +338,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.3.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#anmeldte-skader-fordelt-pa-regioner-og-antal-skader"><i class="fa fa-check"></i><b>17.3.2</b> Anmeldte skader fordelt på regioner og antal skader</a></li>
 </ul></li>
 <li class="chapter" data-level="17.4" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#selvtest-14"><i class="fa fa-check"></i><b>17.4</b> Selvtest</a></li>
+<li class="chapter" data-level="17.5" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#selvtest-15"><i class="fa fa-check"></i><b>17.5</b> Selvtest</a></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>18</b> ANOVA</a><ul>
-<li class="chapter" data-level="18.1" data-path="anova.html"><a href="anova.html#selvtest-15"><i class="fa fa-check"></i><b>18.1</b> Selvtest</a></li>
+<li class="chapter" data-level="18.1" data-path="anova.html"><a href="anova.html#selvtest-16"><i class="fa fa-check"></i><b>18.1</b> Selvtest</a></li>
+<li class="chapter" data-level="18.2" data-path="anova.html"><a href="anova.html#selvtest-17"><i class="fa fa-check"></i><b>18.2</b> Selvtest</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="cran-r.html"><a href="cran-r.html"><i class="fa fa-check"></i><b>19</b> Cran R</a><ul>
 <li class="chapter" data-level="19.1" data-path="cran-r.html"><a href="cran-r.html#r-video-tutorials"><i class="fa fa-check"></i><b>19.1</b> R video-tutorials</a></li>
@@ -667,51 +669,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(0,1,1) with drift 
+## ARIMA(2,1,0) 
 ## 
 ## Coefficients:
-##           ma1   drift
-##       -0.5278  1.4636
-## s.e.   0.1195  0.7342
+##           ar1      ar2
+##       -0.6026  -0.2304
+## s.e.   0.1363   0.1378
 ## 
-## sigma^2 estimated as 119.3:  log likelihood=-189.62
-## AIC=385.24   AICc=385.76   BIC=390.98</code></pre>
+## sigma^2 estimated as 135.6:  log likelihood=-192.87
+## AIC=391.74   AICc=392.26   BIC=397.47</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(1,0,3) with non-zero mean 
+## ARIMA(3,1,0) with drift 
 ## 
 ## Coefficients:
-##          ar1     ma1     ma2     ma3      mean
-##       0.6550  1.0975  0.7892  0.3222  154.3460
-## s.e.  0.1774  0.2175  0.3074  0.1963   11.6814
+##          ar1      ar2      ar3    drift
+##       0.2954  -0.2594  -0.2486  -3.1507
+## s.e.  0.1365   0.1418   0.1401   1.0229
 ## 
-## sigma^2 estimated as 94:  log likelihood=-187.32
-## AIC=386.65   AICc=388.56   BIC=398.24</code></pre>
+## sigma^2 estimated as 80.73:  log likelihood=-178.91
+## AIC=367.82   AICc=369.19   BIC=377.38</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(2,0,3) with non-zero mean 
+## ARIMA(0,0,2) with non-zero mean 
 ## 
 ## Coefficients:
-##          ar1      ar2      ma1      ma2    ma3     mean
-##       1.6039  -0.6793  -1.2452  -0.1513  0.511  99.1656
-## s.e.  0.1222   0.1090   0.1266   0.1600  0.072   1.0222
+##          ma1      ma2     mean
+##       0.5153  -0.2404  98.3253
+## s.e.  0.0708   0.0711   0.9162
 ## 
-## sigma^2 estimated as 95.34:  log likelihood=-736.91
-## AIC=1487.82   AICc=1488.41   BIC=1510.91</code></pre>
+## sigma^2 estimated as 104.9:  log likelihood=-747.91
+## AIC=1503.83   AICc=1504.03   BIC=1517.02</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      105.22298 92.70958 117.7364 86.08539 124.3606
-## 202       98.28744 84.99362 111.5813 77.95629 118.6186
-## 203       97.90052 84.22780 111.5732 76.98990 118.8111
-## 204       97.73314 83.94490 111.5214 76.64585 118.8204
-## 205       97.72754 83.92228 111.5328 76.61422 118.8409
-## 206       97.83225 84.02655 111.6380 76.71825 118.9463
-## 207       98.00400 84.18331 111.8247 76.86708 119.1409
-## 208       98.20832 84.35457 112.0621 77.02084 119.3958
-## 209       98.41936 84.52224 112.3165 77.16555 119.6732
-## 210       98.61904 84.67767 112.5604 77.29756 119.9405</code></pre>
+## 201      101.17469 88.05097 114.2984 81.10369 121.2457
+## 202       97.35526 82.59139 112.1191 74.77587 119.9347
+## 203       98.32526 83.22810 113.4224 75.23615 121.4144
+## 204       98.32526 83.22810 113.4224 75.23615 121.4144
+## 205       98.32526 83.22810 113.4224 75.23615 121.4144
+## 206       98.32526 83.22810 113.4224 75.23615 121.4144
+## 207       98.32526 83.22810 113.4224 75.23615 121.4144
+## 208       98.32526 83.22810 113.4224 75.23615 121.4144
+## 209       98.32526 83.22810 113.4224 75.23615 121.4144
+## 210       98.32526 83.22810 113.4224 75.23615 121.4144</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
