@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2019-02-03">
+<meta name="date" content="2019-02-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -669,51 +669,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(2,1,0) 
+## ARIMA(0,1,1) 
 ## 
 ## Coefficients:
-##           ar1      ar2
-##       -0.6026  -0.2304
-## s.e.   0.1363   0.1378
+##           ma1
+##       -0.4785
+## s.e.   0.1420
 ## 
-## sigma^2 estimated as 135.6:  log likelihood=-192.87
-## AIC=391.74   AICc=392.26   BIC=397.47</code></pre>
+## sigma^2 estimated as 70.61:  log likelihood=-177
+## AIC=358.01   AICc=358.26   BIC=361.83</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(3,1,0) with drift 
+## ARIMA(1,1,0) 
 ## 
 ## Coefficients:
-##          ar1      ar2      ar3    drift
-##       0.2954  -0.2594  -0.2486  -3.1507
-## s.e.  0.1365   0.1418   0.1401   1.0229
+##          ar1
+##       0.4519
+## s.e.  0.1261
 ## 
-## sigma^2 estimated as 80.73:  log likelihood=-178.91
-## AIC=367.82   AICc=369.19   BIC=377.38</code></pre>
+## sigma^2 estimated as 105.5:  log likelihood=-187.02
+## AIC=378.04   AICc=378.3   BIC=381.87</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(0,0,2) with non-zero mean 
+## ARIMA(1,0,2) with non-zero mean 
 ## 
 ## Coefficients:
-##          ma1      ma2     mean
-##       0.5153  -0.2404  98.3253
-## s.e.  0.0708   0.0711   0.9162
+##           ar1     ma1     ma2     mean
+##       -0.4837  1.0042  0.1870  98.4801
+## s.e.   0.3004  0.3048  0.1921   1.0467
 ## 
-## sigma^2 estimated as 104.9:  log likelihood=-747.91
-## AIC=1503.83   AICc=1504.03   BIC=1517.02</code></pre>
+## sigma^2 estimated as 102.8:  log likelihood=-745.28
+## AIC=1500.56   AICc=1500.87   BIC=1517.05</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      101.17469 88.05097 114.2984 81.10369 121.2457
-## 202       97.35526 82.59139 112.1191 74.77587 119.9347
-## 203       98.32526 83.22810 113.4224 75.23615 121.4144
-## 204       98.32526 83.22810 113.4224 75.23615 121.4144
-## 205       98.32526 83.22810 113.4224 75.23615 121.4144
-## 206       98.32526 83.22810 113.4224 75.23615 121.4144
-## 207       98.32526 83.22810 113.4224 75.23615 121.4144
-## 208       98.32526 83.22810 113.4224 75.23615 121.4144
-## 209       98.32526 83.22810 113.4224 75.23615 121.4144
-## 210       98.32526 83.22810 113.4224 75.23615 121.4144</code></pre>
+## 201       97.50428 84.50923 110.4993 77.63007 117.3785
+## 202       98.58764 83.93762 113.2377 76.18237 120.9929
+## 203       98.42815 83.75394 113.1024 75.98588 120.8704
+## 204       98.50529 83.82543 113.1852 76.05438 120.9562
+## 205       98.46798 83.78679 113.1492 76.01504 120.9209
+## 206       98.48603 83.80453 113.1675 76.03262 120.9394
+## 207       98.47730 83.79573 113.1589 76.02378 120.9308
+## 208       98.48152 83.79994 113.1631 76.02798 120.9351
+## 209       98.47948 83.79789 113.1611 76.02593 120.9330
+## 210       98.48047 83.79888 113.1621 76.02691 120.9340</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
