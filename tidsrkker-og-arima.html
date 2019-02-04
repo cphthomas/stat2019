@@ -172,7 +172,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li><a href="index.html#section"></a></li>
-<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a></li>
+<li class="chapter" data-level="1" data-path="indledning.html"><a href="indledning.html"><i class="fa fa-check"></i><b>1</b> Indledning</a><ul>
+<li class="chapter" data-level="1.1" data-path="indledning.html"><a href="indledning.html#freestat-basisversion"><i class="fa fa-check"></i><b>1.1</b> Freestat basisversion</a></li>
+<li class="chapter" data-level="1.2" data-path="indledning.html"><a href="indledning.html#freestat-fuld-version"><i class="fa fa-check"></i><b>1.2</b> Freestat fuld version</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
 <li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
 <li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
@@ -669,15 +672,15 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> Plots med forskellige modeller</h2>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(0,1,1) 
+## ARIMA(0,1,2) with drift 
 ## 
 ## Coefficients:
-##           ma1
-##       -0.4785
-## s.e.   0.1420
+##           ma1      ma2    drift
+##       -0.5990  -0.2274  -0.8567
+## s.e.   0.1276   0.1273   0.3300
 ## 
-## sigma^2 estimated as 70.61:  log likelihood=-177
-## AIC=358.01   AICc=358.26   BIC=361.83</code></pre>
+## sigma^2 estimated as 136.1:  log likelihood=-192.76
+## AIC=393.51   AICc=394.4   BIC=401.16</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
@@ -685,35 +688,35 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## 
 ## Coefficients:
 ##          ar1
-##       0.4519
-## s.e.  0.1261
+##       0.6915
+## s.e.  0.1007
 ## 
-## sigma^2 estimated as 105.5:  log likelihood=-187.02
-## AIC=378.04   AICc=378.3   BIC=381.87</code></pre>
+## sigma^2 estimated as 82.81:  log likelihood=-181.18
+## AIC=366.36   AICc=366.62   BIC=370.19</code></pre>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(1,0,2) with non-zero mean 
+## ARIMA(1,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##           ar1     ma1     ma2     mean
-##       -0.4837  1.0042  0.1870  98.4801
-## s.e.   0.3004  0.3048  0.1921   1.0467
+##           ar1     ma1     mean
+##       -0.2990  0.9030  97.9130
+## s.e.   0.0913  0.0504   0.9724
 ## 
-## sigma^2 estimated as 102.8:  log likelihood=-745.28
-## AIC=1500.56   AICc=1500.87   BIC=1517.05</code></pre>
+## sigma^2 estimated as 89.67:  log likelihood=-732.47
+## AIC=1472.93   AICc=1473.14   BIC=1486.12</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201       97.50428 84.50923 110.4993 77.63007 117.3785
-## 202       98.58764 83.93762 113.2377 76.18237 120.9929
-## 203       98.42815 83.75394 113.1024 75.98588 120.8704
-## 204       98.50529 83.82543 113.1852 76.05438 120.9562
-## 205       98.46798 83.78679 113.1492 76.01504 120.9209
-## 206       98.48603 83.80453 113.1675 76.03262 120.9394
-## 207       98.47730 83.79573 113.1589 76.02378 120.9308
-## 208       98.48152 83.79994 113.1631 76.02798 120.9351
-## 209       98.47948 83.79789 113.1611 76.02593 120.9330
-## 210       98.48047 83.79888 113.1621 76.02691 120.9340</code></pre>
+## 201       96.89074 84.75526 109.0262 78.33113 115.4504
+## 202       98.21871 84.04159 112.3958 76.53668 119.9007
+## 203       97.82158 83.47603 112.1671 75.88196 119.7612
+## 204       97.94034 83.57983 112.3009 75.97783 119.9029
+## 205       97.90483 83.54297 112.2667 75.94027 119.8694
+## 206       97.91545 83.55347 112.2774 75.95071 119.8802
+## 207       97.91227 83.55029 112.2743 75.94751 119.8770
+## 208       97.91322 83.55124 112.2752 75.94846 119.8780
+## 209       97.91294 83.55095 112.2749 75.94818 119.8777
+## 210       97.91302 83.55104 112.2750 75.94826 119.8778</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 </div>
