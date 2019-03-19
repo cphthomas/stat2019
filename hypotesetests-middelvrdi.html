@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-03-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -229,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
 <li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
-<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>6.3.2</b> Ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="6.3.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.3</b> Eksempel</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
 <li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
@@ -580,9 +581,11 @@ I 2. får vi givet alternativ hypotesen da udsagnet ikke indeholder lig med, nul
 <span class="math display">\[H_1:\mu &gt; 730\]</span></p>
 <p>Hvilket betyder vi skal benytte den 2. af de 3 testmuligheder i Freestat output, dvs. signifikanssandsynligheden bliver 0.67%, vi forkaster altså nulhypotesen. Vi konkluderer derfor at <span class="math inline">\(\mu &gt; 730\)</span>. Den gennemsnitlige afstand til nærmeste filial i populationen er altså større end 730 meter. p-værdien er illustreret i figuren nedenfor, som den hvide højre hale.</p>
 <p>Hvis vi her ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er større end, skal vi se på højre hale. Vi skal beregne sandsynligheden (p-værdien) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse større end 2.4957, når nulhypotesen om at afstanden er 730 meter er sand. At teststørrelsen er større end 2.4957, svarer oversat til meter, til at afstanden er større end end 748 meter, sandsynligheden for en mere ekstrem teststørrelse bliver arealet højre hale 0.0067 altså p-værdien.</p>
-<p><img src="bookdown-demo_files/figure-html/t-score3-1.svg" width="864" />
-### Ensidet alternativ hypotese nedad
-Vi viser her testet for ensidet alternativ hypotese nedad. Der er ingen grund til at teste her, vi ved der skal meget til at forkaste nulhypotesen, og vi har et stikprøvegennemsnit, der er større end 730. Vi vil derfor helt sikkert finde, at nulhypotesen om at afstanden til nærmeste filial er mindst 730 meter, ikke kan forkastes. Vi viser alligevel eksemplet med samme værdier, for at man kan se hvorledes sammenhængen er mellem de 3 typer af tests.</p>
+<p><img src="bookdown-demo_files/figure-html/t-score3-1.svg" width="864" /></p>
+</div>
+<div id="ensidet-alternativ-hypotese-nedad" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Ensidet alternativ hypotese nedad</h3>
+<p>Vi viser her testet for ensidet alternativ hypotese nedad. Der er ingen grund til at teste her, vi ved der skal meget til at forkaste nulhypotesen, og vi har et stikprøvegennemsnit, der er større end 730. Vi vil derfor helt sikkert finde, at nulhypotesen om at afstanden til nærmeste filial er mindst 730 meter, ikke kan forkastes. Vi viser alligevel eksemplet med samme værdier, for at man kan se hvorledes sammenhængen er mellem de 3 typer af tests.</p>
 <ol style="list-style-type: decimal">
 <li>Afstanden til nærmeste filial er mindst 730 meter</li>
 <li>Afstanden til nærmeste filial er mindre end 730 meter
@@ -596,9 +599,9 @@ I 2 får vi givet alternativ hypotesen, da udsagnet ikke indeholder lig med, nul
 <p><img src="bookdown-demo_files/figure-html/t-score4-1.svg" width="864" /></p>
 </div>
 <div id="eksempel" class="section level3">
-<h3><span class="header-section-number">6.3.2</span> Eksempel</h3>
+<h3><span class="header-section-number">6.3.3</span> Eksempel</h3>
 <div id="statistik-karakterer" class="section level4">
-<h4><span class="header-section-number">6.3.2.1</span> Statistik karakterer</h4>
+<h4><span class="header-section-number">6.3.3.1</span> Statistik karakterer</h4>
 <p>I datasættet <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ">Statkarakterer</a> <img src="img/12-Ball-Real.pngc200.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> findes 54 statistik 2015 finansøkonom karakterer. Man kan med rette diskutere om karakterer for specifikke klasser/undervisere/lokationer etc. er repræsentative for populationen.
 Her antager vi at stikprøven er respræsentativ. Det er ligeledes tvivlsomt om vi kan behandle karakterer som en kontinuert variabel, der er tale om en kvalitativ ordinal variabel. I uddannelsesmæssige sammenhænge behandles karakterer som en kontinuert variabel, der beregnes gennemsnit og standardafvigelser, derfor forudsætter vi her variablen er kontinuert.</p>
 <p>Vi finder parameterestimatet ved stikprøvegennemsnittet som <span class="math inline">\(\hat{\mu}=4.65\)</span></p>

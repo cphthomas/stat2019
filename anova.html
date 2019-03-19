@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-03-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -229,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
 <li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
-<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>6.3.2</b> Ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="6.3.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.3</b> Eksempel</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
 <li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
@@ -507,14 +508,14 @@ Hent datasættet <a href="Hjemmesidedesigns besøgstider i millisekunder.xls" do
 <details>
 <p><summary>Spørgsmål 3 banker afkast</summary></p>
 <p>Hent datasættet <a href="3 Danske Banker Ugeafkast i procent.xls" download>3 Danske Banker Ugeafkast i procent</a>
-, i dette datasæt er de seneste 263 ugers afkast i procent for hhv. Danske Bank, Jyske Bank og Sydbank. Er der signifikant forskel på afkastene på de 3 bankaktier?</p>
+, i dette datasæt er de seneste 273 ugers afkast i procent for hhv. Danske Bank, Jyske Bank og Sydbank. Er der signifikant forskel på afkastene på de 3 bankaktier?</p>
 </details>
 <br>
 <details>
 <p><summary>Svar 3 banker afkast</summary>
 Vi opstiller hypoteserne for test af om middelværdierne er identiske:
 <span class="math display">\[H_0:\mu_{Danske Bank}=\mu_{Jyske Bank}=\mu_{Sydbank}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens\ for\ de\ 3\ banker\]</span></p>
-<p>Vi får variationen i grupperne SSW til 7378.3782 og variationen mellem grupperne SSA til 2.381. Dette giver en F-teststørrelse på 0.1268 der resulterer i p-værdi på 0.8809. Vi kan altså ikke forkaste altså nulhypotesen om ens middelværdier.</p>
+<p>Vi får variationen i grupperne SSW til 7741.3625 og variationen mellem grupperne SSA til 2.2991. Dette giver en F-teststørrelse på 0.1212 der resulterer i p-værdi på 0.8859. Vi kan altså ikke forkaste altså nulhypotesen om ens middelværdier.</p>
 <p>Vi kan da se at de absolutte forskelle mellem stikprøvegennemsnittene er relativt små:</p>
 <table>
 <thead>
@@ -526,21 +527,21 @@ Vi opstiller hypoteserne for test af om middelværdierne er identiske:
 <tbody>
 <tr class="odd">
 <td align="left">Danske Bank - Jyske Bank</td>
-<td align="left">0.1</td>
+<td align="left">0.11</td>
 </tr>
 <tr class="even">
 <td align="left">Danske Bank - Sydbank</td>
-<td align="left">0.03</td>
+<td align="left">0</td>
 </tr>
 <tr class="odd">
 <td align="left">Jyske Bank - Sydbank</td>
-<td align="left">0.13</td>
+<td align="left">0.11</td>
 </tr>
 </tbody>
 </table>
 <p>Vi skal tjekke forudsætningen om varianshomogenitet</p>
 <p><span class="math display">\[H_0:\sigma_{Danske Bank}=\sigma_{Jyske Bank}=\sigma_{Sydbank}\]</span><span class="math display">\[H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 3\ banker.\]</span></p>
-<p>Vi får en teststørrelse på 4.7691526. Chi i anden testet giver os en p-værdi på 0.092128, hvilket er mindre end signifikanssandsynligheden på 0.05, vi afviser nulhypotesen. Varianserne er ikke ens, så forudsætningen er ikke opfyldt. Vi har således problemer med kvaliteten af analysen.</p>
+<p>Vi får en teststørrelse på 3.2028706. Chi i anden testet giver os en p-værdi på 0.2016069, hvilket er mindre end signifikanssandsynligheden på 0.05, vi afviser nulhypotesen. Varianserne er ikke ens, så forudsætningen er ikke opfyldt. Vi har således problemer med kvaliteten af analysen.</p>
 <p>Normalitet</p>
 <p><img src="bookdown-demo_files/figure-html/qqplotbank-1.svg" width="864" /></p>
 <p>Vi kan grafisk sammenligne middelværdierne for ugeafkastet for de 3 banker i boxplots , her ser vi der ikke er stor forskel på middelværdierne. Middelværdierne er markeret med orange prikker.</p>

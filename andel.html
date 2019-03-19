@@ -25,7 +25,7 @@
 <meta name="author" content="Thomas Petersen">
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-03-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -229,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
 <li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
-<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.2</b> Eksempel</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>6.3.2</b> Ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="6.3.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.3</b> Eksempel</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
 <li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
@@ -462,9 +463,9 @@ else{
 <h2><span class="header-section-number">7.1</span> Parameterestimat for andele</h2>
 <p>Hvis vi har spurgt 100 danskere om de bruger MobilePay, er vi ikke specifikt interesseret i hvor mange af netop disse 100 personer, der benytter MobilePay. Vi har udtaget en stikprøve af en population (populationen er her alle danskere med en konto), som vi benytter til at udtale os om, hvor stor en andel i populationen, der kan antages at benytte MobilePay. Hvis 31 ud af 100 danskere bruger MobilePay, er vores bedste gæt på andelen i populationen der benytter MobilePay 0.31. Vi er imidlertid godt klar over, at det ville være højst besynderligt, at netop 31,000…% af alle danskere benytter MobilePay. Vi kalder <span class="math inline">\(\hat{p}\)</span> for vores estimat (vores bedste gæt) på populationsandelen <span class="math inline">\(p\)</span> “den sande ukendte andel af kontohavere der benytter MobilePay”.</p>
 <p><span class="math display">\[Parameterestimatet\  for\  p\ er\ \hat{p} = \frac{31}{100}=0.31\]</span></p>
-<p>Vi betragter nu igen Tryg aktien i datasættet<a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, 116 dage ud af 274 dage var der et positivt afkast.</p>
+<p>Vi betragter nu igen Tryg aktien i datasættet<a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, 162 dage ud af 301 dage var der et positivt afkast.</p>
 <p>Vi kan nu bestemme parameterestimatet for p den sande andel af dage med overskud i Tryg aktien.
-<span class="math display">\[\hat{p}=\frac{x}{n}=\frac{116}{274}=0.42\]</span></p>
+<span class="math display">\[\hat{p}=\frac{x}{n}=\frac{162}{301}=0.54\]</span></p>
 <p>Bemærk at den kvantitative kontinuerte variabel dagligt afkast for Trygaktien, blev omdannet til en kvalitativ binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores stikprøve fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores stikprøve stammer jo fra en bestemt periode, en repræsentativ stikprøve, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.</p>
 </div>
 <div id="konfidensinterval-for-en-andel" class="section level2">
@@ -503,31 +504,31 @@ else{
 <div id="tryg-aktien-2" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> Tryg aktien</h3>
 <p>Vi fandt tidligere parameterestimatet for p den sande andel af dage med overskud i Tryg aktien som:</p>
-<p><span class="math display">\[\hat{p}=\frac{x}{n}=\frac{116}{274}=0.4234 \]</span></p>
-<p>Vi kender antallet af succeser dvs gunstige udfald 116, ud af den totale stikprøvestørrelse <span class="math inline">\(n=274\)</span>. Vi kan nu ved at indsætte i formlen for KI for andele bestemme et 95% KI (det betyder <span class="math inline">\(\alpha=5\%\)</span>).</p>
+<p><span class="math display">\[\hat{p}=\frac{x}{n}=\frac{162}{301}=0.5382 \]</span></p>
+<p>Vi kender antallet af succeser dvs gunstige udfald 162, ud af den totale stikprøvestørrelse <span class="math inline">\(n=301\)</span>. Vi kan nu ved at indsætte i formlen for KI for andele bestemme et 95% KI (det betyder <span class="math inline">\(\alpha=5\%\)</span>).</p>
 <p>Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.05}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.4234-1.96\cdot\sqrt[]{\frac{0.4234(1-0.4234)}{100}}=0.3649\]</span></p>
+<span class="math display">\[0.5382-1.96\cdot\sqrt[]{\frac{0.5382(1-0.5382)}{100}}=0.4819\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.05}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.4234+1.96\cdot\sqrt[]{\frac{0.4234(1-0.4234)}{100}}=0.4819\]</span></p>
-<p>Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 36.49% og 48.19%</p>
+<span class="math display">\[0.5382+1.96\cdot\sqrt[]{\frac{0.5382(1-0.5382)}{100}}=0.5945\]</span></p>
+<p>Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 48.19% og 59.45%</p>
 <p>Vi kan, hvis vi ønsker at finde 90% KI, blot ændre z-fraktilen fra 97.5% til 95%, dvs. fra 1.96 til 1.6448.
 Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.1}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.4234-1.6448\cdot\sqrt[]{\frac{0.4234(1-0.4234)}{100}}=0.3743\]</span></p>
+<span class="math display">\[0.5382-1.6448\cdot\sqrt[]{\frac{0.5382(1-0.5382)}{100}}=0.4909\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.1}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.4234+1.6448\cdot\sqrt[]{\frac{0.4234(1-0.4234)}{100}}=0.4725\]</span></p>
-<p>Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 37.43% og 47.25%</p>
+<span class="math display">\[0.5382+1.6448\cdot\sqrt[]{\frac{0.5382(1-0.5382)}{100}}=0.5855\]</span></p>
+<p>Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 49.09% og 58.55%</p>
 <p>99% KI findes ved at benytte 0.995 z-fraktilen der er 2.5758
 Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.01}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.4234-2.5758\cdot\sqrt[]{\frac{0.4234(1-0.4234)}{100}}=0.3465\]</span></p>
+<span class="math display">\[0.5382-2.5758\cdot\sqrt[]{\frac{0.5382(1-0.5382)}{100}}=0.4642\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.01}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.4234+2.5758\cdot\sqrt[]{\frac{0.4234(1-0.4234)}{100}}=0.5002\]</span></p>
-<p>Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 34.65% og 50.02%</p>
+<span class="math display">\[0.5382+2.5758\cdot\sqrt[]{\frac{0.5382(1-0.5382)}{100}}=0.6122\]</span></p>
+<p>Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 46.42% og 61.22%</p>
 </div>
 </div>
 <div id="sprgsmal-konfidensinterval-andele" class="section level2">
